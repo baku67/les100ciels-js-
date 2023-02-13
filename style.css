@@ -1,4 +1,6 @@
 body {
+    /* Sacramento */
+    background-color: #11123f;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -48,13 +50,12 @@ body {
   }
   
   .title {
-    font-family: Square Peg,cursive;
+    font-family: 'Montserrat Alternates', sans-serif;
     font-size: 150%;
   
     /* font-family: 'Amatic SC', cursive;
     letter-spacing: 9px; */
   
-    font-family: 'Square Peg', cursive;
     letter-spacing: 5px;
   
     /* font-family: 'Poiret One', cursive;
@@ -129,6 +130,66 @@ body {
     }
     to {
       transform: rotate(-360deg);
+    }
+  }
+
+
+  /* SINON fade In une image from bottom to top avec un mask au dessus https://stackoverflow.com/questions/21621837/fading-an-image-from-top-to-bottom */
+
+  .box {
+    --mask:
+    radial-gradient(45.22px at calc(100% + 40.00px) 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 10.5px + .5px) calc(50% - 40px)/ 21px 80px  repeat-y,
+    radial-gradient(45.22px at -40px 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% + 10.5px) 50%/21px 80px  repeat-y;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+
+    position: absolute;
+    bottom: 50px;
+    height: 0px;
+    width: 100px;
+    /* Transition durant l'anim de la couleur (from green -> jaune, avec "flash" final) */
+    background-color: #16eb67;
+
+    /* Mieux sans scale */
+    /* transform: scale(0.01); */
+    animation: pousse1 5s 2s normal forwards ease;
+  }
+
+  /*  https://css-generators.com/wavy-shapes/ */
+  /* FROM border:1 / size:20 (input range au max)  TO border:6 / size:40 */
+  @keyframes pousse1 {
+    0% {
+        --mask:
+        radial-gradient(45.22px at calc(100% + 40.00px) 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 10.5px + .5px) calc(50% - 40px)/ 21px 80px  repeat-y,
+        radial-gradient(45.22px at -40px 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% + 10.5px) 50%/21px 80px  repeat-y;
+        -webkit-mask: var(--mask);
+              mask: var(--mask);
+
+        height: 0px;
+        /* Mieux sans scale */
+        /* transform: scale(0.01); */
+    }
+    25% {
+
+    }
+    50% {
+
+    }
+    75% {
+
+    }
+    100% {
+        --mask:
+        radial-gradient(92.44px at calc(100% + 80.00px) 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% - 23px + .5px) calc(50% - 80px)/ 46px 160px  repeat-y,
+        radial-gradient(92.44px at -80px 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% + 23px) 50%/46px 160px  repeat-y;
+        -webkit-mask: var(--mask);
+                mask: var(--mask);
+
+        background-color: #ffba31;
+
+        height: 60%;
+        /* Mieux sans scale */
+        /* transform: scale(1); */
     }
   }
   
