@@ -152,45 +152,90 @@ body {
 
     /* Mieux sans scale */
     /* transform: scale(0.01); */
-    animation: pousse1 5s 2s normal forwards ease;
+    animation: pousse1 4s 1.5s normal forwards ease-in-out;
   }
 
-  /*  https://css-generators.com/wavy-shapes/ */
-  /* FROM border:1 / size:20 (input range au max)  TO border:6 / size:40 */
-  @keyframes pousse1 {
-    0% {
-        --mask:
-        radial-gradient(45.22px at calc(100% + 40.00px) 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 10.5px + .5px) calc(50% - 40px)/ 21px 80px  repeat-y,
-        radial-gradient(45.22px at -40px 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% + 10.5px) 50%/21px 80px  repeat-y;
-        -webkit-mask: var(--mask);
-              mask: var(--mask);
-
-        height: 0px;
-        /* Mieux sans scale */
-        /* transform: scale(0.01); */
-    }
-    25% {
-
-    }
-    50% {
-
-    }
-    75% {
-
-    }
-    100% {
-        --mask:
-        radial-gradient(92.44px at calc(100% + 80.00px) 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% - 23px + .5px) calc(50% - 80px)/ 46px 160px  repeat-y,
-        radial-gradient(92.44px at -80px 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% + 23px) 50%/46px 160px  repeat-y;
-        -webkit-mask: var(--mask);
+    /*  https://css-generators.com/wavy-shapes/ */
+    /* (from 1 / 40 to 6 / 40) (input range au max)*/
+    @keyframes pousse1 {
+      0% {
+          --mask:
+          radial-gradient(89.94px at calc(100% + 80.00px) 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% - 20.5px + .5px) calc(50% - 80px)/ 41px 160px  repeat-y,
+          radial-gradient(89.94px at -80px 50%,#0000 calc(99% - 1px),#000 calc(101% - 1px) 99%,#0000 101%) calc(50% + 20.5px) 50%/41px 160px  repeat-y;
+          -webkit-mask: var(--mask);
                 mask: var(--mask);
 
-        background-color: #ffba31;
+          background-color: #16eb67;
+          height: 0px;
+      }
+      20% {
+          --mask:
+          radial-gradient(90.44px at calc(100% + 80.00px) 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% - 21px + .5px) calc(50% - 80px)/ 42px 160px  repeat-y,
+          radial-gradient(90.44px at -80px 50%,#0000 calc(99% - 2px),#000 calc(101% - 2px) 99%,#0000 101%) calc(50% + 21px) 50%/42px 160px  repeat-y;
+          -webkit-mask: var(--mask);
+                mask: var(--mask);
+      }
+      40% {
+          --mask:
+          radial-gradient(90.94px at calc(100% + 80.00px) 50%,#0000 calc(99% - 3px),#000 calc(101% - 3px) 99%,#0000 101%) calc(50% - 21.5px + .5px) calc(50% - 80px)/ 43px 160px  repeat-y,
+          radial-gradient(90.94px at -80px 50%,#0000 calc(99% - 3px),#000 calc(101% - 3px) 99%,#0000 101%) calc(50% + 21.5px) 50%/43px 160px  repeat-y;
+          -webkit-mask: var(--mask);
+                mask: var(--mask);
+      }
+      60% {
+          --mask:
+          radial-gradient(91.44px at calc(100% + 80.00px) 50%,#0000 calc(99% - 4px),#000 calc(101% - 4px) 99%,#0000 101%) calc(50% - 22px + .5px) calc(50% - 80px)/ 44px 160px  repeat-y,
+          radial-gradient(91.44px at -80px 50%,#0000 calc(99% - 4px),#000 calc(101% - 4px) 99%,#0000 101%) calc(50% + 22px) 50%/44px 160px  repeat-y;
+          -webkit-mask: var(--mask);
+                mask: var(--mask);
 
-        height: 60%;
-        /* Mieux sans scale */
-        /* transform: scale(1); */
+          /* Temporisation du changement de couleur (OK) */
+          /* background-color: #16eb67; */
+
+      }
+      80% {
+          --mask:
+          radial-gradient(91.94px at calc(100% + 80.00px) 50%,#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% - 22.5px + .5px) calc(50% - 80px)/ 45px 160px  repeat-y,
+          radial-gradient(91.94px at -80px 50%,#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% + 22.5px) 50%/45px 160px  repeat-y;
+          -webkit-mask: var(--mask);
+                mask: var(--mask);
+
+          /* Temporisation du changement de couleur (OK) */
+          background-color: #16eb67;
+      }
+      100% {
+          --mask:
+          radial-gradient(92.44px at calc(100% + 80.00px) 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% - 23px + .5px) calc(50% - 80px)/ 46px 160px  repeat-y,
+          radial-gradient(92.44px at -80px 50%,#0000 calc(99% - 6px),#000 calc(101% - 6px) 99%,#0000 101%) calc(50% + 23px) 50%/46px 160px  repeat-y;
+          -webkit-mask: var(--mask);
+                mask: var(--mask);
+
+          background-color: #ffba31;
+          height: 42%;
+      }
+    
     }
-  }
+
+
+    .leaf {
+      position: absolute;
+      bottom: 4%;
+      width: 0px;
+      opacity: 0;
+
+      animation: leafPousse 4s 1.5s normal forwards ease-in-out;
+    }
+    @keyframes leafPousse {
+      0% {
+        bottom: 4%;
+        width: 0px;
+        opacity: 0;
+      }
+      100% {
+        transform: translate(62px, 7px);
+        width: 90px;
+        opacity: 1;
+      }
+    }
   
   
