@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+  
+
+
+.main {
+    text-align: center; 
+  }
+  
+  .main-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .main-logo1 {
+      width: 347px;
+      height: 363px;
+      animation: App-logo-spin infinite 50s linear;
+      
+    }
+    .main-logo2 {
+      
+      animation: App-logo-spin2 infinite 78s linear;
+    }
+  }
+  
+  
+  .logo-Container {
+    width: 347px;
+    height: 372px;
+  
+    position: relative;
+  }
+  .logo-image {
+    position: absolute;
+  }
+  
+  .title {
+    font-family: Square Peg,cursive;
+    font-size: 150%;
+  
+    /* font-family: 'Amatic SC', cursive;
+    letter-spacing: 9px; */
+  
+    font-family: 'Square Peg', cursive;
+    letter-spacing: 5px;
+  
+    /* font-family: 'Poiret One', cursive;
+    letter-spacing: 6px; */
+  
+      /* font-family: 'Lato', sans-serif;  
+    letter-spacing: 3px; */
+  
+    /* font-family: 'Zen Loop', cursive;
+    letter-spacing: 6px; */
+  
+      /* font-family: 'Ms Madi', cursive;
+    letter-spacing: 6px; */
+  
+    font-weight: 200;
+  }
+  
+  .main-header {
+    background-color: #11123f;
+    /* background-color: #282c34; */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .main-link {
+    text-decoration: none;
+    color: #c59941;
+  }
+  .haikuLink {
+    text-decoration: none;
+    color: #41b9c5;
+  }
+  .haikuLink:hover {
+    animation: linkHover1 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover1 {
+    from {
+      color: #41b9c5;
+    }
+    to {
+      color: #b6eff4;
+    }
+  }
+  .main-link:hover {
+    animation: linkHover2 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover2 {
+    from {
+      color: #c59941;
+    }
+    to {
+      color: #fdf99e;
+    }
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes App-logo-spin2 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  
