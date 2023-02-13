@@ -147,11 +147,14 @@ body {
     bottom: 50px;
     height: 0px;
     width: 100px;
-    /* Transition durant l'anim de la couleur (from green -> jaune, avec "flash" final) */
-    background-color: #16eb67;
 
-    /* Mieux sans scale */
-    /* transform: scale(0.01); */
+    /* Transition durant l'anim de la couleur (from green -> jaune, avec fadePng en bas de la tige, Idee: flash final) */
+    /* background-color: #16eb67; */
+    background: rgb(22,235,103);
+    background: -moz-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+    background: linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+    
     animation: pousse1 4s 1.5s normal forwards ease-in-out;
   }
 
@@ -165,7 +168,13 @@ body {
           -webkit-mask: var(--mask);
                 mask: var(--mask);
 
-          background-color: #16eb67;
+          /* background-color: #16eb67; */
+          /* Pour le fadePNG en bas de la tige: ATTENTION LA TRANSIOTION DE COULEUR NEST PLUS SMOOTH A CAUSE DU GRADIENT PNG */
+          background: rgb(22,235,103);
+          background: -moz-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+          background: -webkit-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+          background: linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+
           height: 0px;
       }
       20% {
@@ -191,7 +200,11 @@ body {
 
           /* Temporisation du changement de couleur (OK) */
           /* background-color: #16eb67; */
-
+          /* Pour le fadePNG en bas de la tige: ATTENTION LA TRANSIOTION DE COULEUR NEST PLUS SMOOTH A CAUSE DU GRADIENT PNG */
+          background: rgb(22,235,103);
+          background: -moz-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+          background: -webkit-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
+          background: linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
       }
       80% {
           --mask:
@@ -201,7 +214,7 @@ body {
                 mask: var(--mask);
 
           /* Temporisation du changement de couleur (OK) */
-          background-color: #16eb67;
+          /* background-color: #16eb67; */
       }
       100% {
           --mask:
@@ -210,22 +223,29 @@ body {
           -webkit-mask: var(--mask);
                 mask: var(--mask);
 
-          background-color: #ffba31;
+          /* background-color: #ffba31; */
+          /* Pour le fadePNG en bas de la tige: ATTENTION LA TRANSITION DE COULEUR NEST PLUS SMOOTH A CAUSE DU GRADIENT PNG */
+          /* Plus fadeGreen au dessus du transparency */
+          background: rgb(255,186,49);
+          background: -moz-linear-gradient(180deg, rgba(255,186,49,1) 50%, rgba(146,209,74,1) 85%, rgba(22,235,103,0) 100%);
+          background: -webkit-linear-gradient(180deg, rgba(255,186,49,1) 50%, rgba(146,209,74,1) 85%, rgba(22,235,103,0) 100%);
+          background: linear-gradient(180deg, rgba(255,186,49,1) 50%, rgba(146,209,74,1) 85%, rgba(22,235,103,0) 100%);
+
           height: 42%;
       }
     
     }
 
 
-    .leaf {
+    #leafRight {
       position: absolute;
       bottom: 4%;
       width: 0px;
       opacity: 0;
 
-      animation: leafPousse 4s 1.5s normal forwards ease-in-out;
+      animation: leafPousse1 4s 1.5s normal forwards ease-in-out;
     }
-    @keyframes leafPousse {
+    @keyframes leafPousse1 {
       0% {
         bottom: 4%;
         width: 0px;
@@ -237,5 +257,57 @@ body {
         opacity: 1;
       }
     }
+
+
+    /* NE PAS SUPPRIMER **********************/
+    /* LEAF de gauche: ANIM ROTATE STYLEE */
+    /* #leafLeft {
+      position: absolute;
+      bottom: 4%;
+      width: 0px;
+      opacity: 0;
+
+      transform: rotateZ('279deg');
+
+      animation: leafPousse2 4s 1.5s normal forwards ease-in-out;
+    }
+    @keyframes leafPousse2 {
+      0% {
+        bottom: 4%;
+        width: 0px;
+        opacity: 0;
+      }
+      100% {
+        transform: rotateZ(279deg) translate(26px, -69px);
+        width: 112px;
+        opacity: 1;
+      }
+    } */
+
+    /* LEAF de gauche: SANS ANIM ROTATE: */
+    #leafLeft {
+      position: absolute;
+      bottom: 4%;
+      width: 0px;
+      opacity: 0;
+
+      transform: rotateZ(279deg);
+
+      animation: leafPousse2 4s 1.5s normal forwards ease-in-out;
+    }
+    @keyframes leafPousse2 {
+      0% {
+        bottom: 4%;
+        width: 0px;
+        opacity: 0;
+      }
+      100% {
+        width: 112px;
+        opacity: 1;
+        transform: rotateZ(279deg) translate(21px, -64px);
+
+      }
+    }
+
   
   
