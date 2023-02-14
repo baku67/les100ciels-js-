@@ -405,19 +405,20 @@ body {
     #smile {
       position: relative;
 
-      width: 0px;
+      /* width: 0px; */
+      width: 135px;
       opacity: 0;
       right: 9px;
 
-      animation: fadeInSmile 0.7s 4s normal forwards ease-in-out;
+      animation: fadeInSmile 0.7s 3s normal forwards ease-in-out;
     }
     @keyframes fadeInSmile {
       from {
-        width: 0px;
+        /* width: 0px; */
         opacity: 0;
       }
       to {
-        width: 135px;
+        /* width: 135px; */
         opacity: 1;
       }
     }
