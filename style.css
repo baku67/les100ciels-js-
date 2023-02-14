@@ -21,15 +21,14 @@ body {
     text-align: center; 
     /* Anim background SUNFLOWER */
     background-size: 200%;
-    background-position: 0%;
 
 
     background: rgb(17,18,63);
-    background: -moz-linear-gradient(38deg, rgba(17,18,63,1) 72%, rgba(255,186,49,0.21752450980392157) 100%);
-    background: -webkit-linear-gradient(38deg, rgba(17,18,63,1) 72%, rgba(255,186,49,0.21752450980392157) 100%);
-    background: linear-gradient(38deg, rgba(17,18,63,1) 72%, rgba(255,186,49,0.21752450980392157) 100%);
+background: -moz-linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
+background: -webkit-linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
+background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
 
-    animation: bgSunflower 3s 0.7s forwards ease-in-out; 
+    animation: bgSunflower 3s 0.7s normal forwards ease-in-out; 
     }
     @keyframes bgSunflower {
       from {
@@ -37,8 +36,8 @@ body {
         background-size: 200%;
       }
       to {
-        background-size: 200%;
         background-position: 100%;
+        background-size: 200%;
       }
     }
   
