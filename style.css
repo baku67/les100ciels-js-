@@ -155,7 +155,7 @@ body {
     background: -webkit-linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
     background: linear-gradient(180deg, rgba(22,235,103,1) 85%, rgba(22,235,103,0) 100%);
     
-    animation: pousse1 4s 1.5s normal forwards ease-in-out;
+    animation: pousse1 3s 0.7s normal forwards ease-in-out;
   }
 
     /*  https://css-generators.com/wavy-shapes/ */
@@ -243,7 +243,7 @@ body {
       width: 0px;
       opacity: 0;
 
-      animation: leafPousse1 4s 1.5s normal forwards ease-in-out;
+      animation: leafPousse1 3s 0.7s normal forwards ease-in-out;
     }
     @keyframes leafPousse1 {
       0% {
@@ -293,7 +293,7 @@ body {
 
       transform: rotateZ(279deg);
 
-      animation: leafPousse2 4s 1.5s normal forwards ease-in-out;
+      animation: leafPousse2 3s 0.7s normal forwards ease-in-out;
     }
     @keyframes leafPousse2 {
       0% {
@@ -312,17 +312,27 @@ body {
 
 
     #sunflower {
+      position: absolute;
+      /* Fleur qui suit la tige: pas beau */
+      /* bottom: 5%; */
+
       width: 0px;
       opacity: 0;
 
-      animation: sunflower 4s 1.5s normal forwards ease-in-out;
+      animation: sunflower 3s 0.7s normal forwards ease-in-out;
     }
     @keyframes sunflower {
       0% {
+        /* Fleur qui suit la tige: pas beau */
+        /* bottom: 5%; */
+
         width: 0;
         opacity: 0;
       }
       100% {
+        /* Fleur qui suit la tige: pas beau */
+        /* bottom: 39%; */
+
         opacity: 1;
         width: 250px;
         transform: rotate(120deg);
