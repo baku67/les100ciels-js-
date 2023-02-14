@@ -24,9 +24,9 @@ body {
 
 
     background: rgb(17,18,63);
-background: -moz-linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
-background: -webkit-linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
-background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
+    background: -moz-linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
+    background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
+    background: linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
 
     animation: bgSunflower 3s 0.7s normal forwards ease-in-out; 
     }
@@ -38,6 +38,8 @@ background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833
       to {
         background-position: 100%;
         background-size: 200%;
+
+        
       }
     }
   
@@ -56,6 +58,28 @@ background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833
     .main-logo2 {
       
       animation: App-logo-spin2 infinite 78s linear;
+    }
+  }
+
+  #gna {
+    color: #ffba31;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+    position: absolute;
+    top: 20%;
+
+    font-size: 0em;
+    opacity: 0;
+    animation: fadeIn 0.7s 4s forwards ease-in; 
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      font-size: 0em;
+    }
+    to {
+      opacity: 0.9;
+      font-size: 1.3em;
     }
   }
   
@@ -107,7 +131,6 @@ background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833
     font-size: calc(10px + 2vmin);
     color: white;
 
-    animation: backgroundSlide 3s 0.7s forwards normal ease-in-out;
   }
   @keyframes backgroundSlide {
     from {
@@ -380,7 +403,23 @@ background: linear-gradient(66deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833
 
 
     #smile {
-      width: 50px;
+      position: relative;
+
+      width: 0px;
+      opacity: 0;
+      right: 9px;
+
+      animation: fadeInSmile 0.7s 4s normal forwards ease-in-out;
+    }
+    @keyframes fadeInSmile {
+      from {
+        width: 0px;
+        opacity: 0;
+      }
+      to {
+        width: 135px;
+        opacity: 1;
+      }
     }
 
   
