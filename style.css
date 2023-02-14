@@ -70,7 +70,7 @@ body {
 
     font-size: 0em;
     opacity: 0;
-    animation: fadeIn 0.7s 4s forwards ease-in; 
+    animation: fadeIn 0.7s 3s forwards ease-in; 
   }
   @keyframes fadeIn {
     from {
