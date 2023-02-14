@@ -302,9 +302,9 @@ body {
         opacity: 0;
       }
       100% {
-        width: 112px;
+        width: 136px;
         opacity: 1;
-        transform: rotateZ(279deg) translate(21px, -64px);
+        transform: rotateZ(279deg) translate(21px, -82px);
 
       }
     }
