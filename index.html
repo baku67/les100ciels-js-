@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="/favicon1.ico">
         <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='styleSass.css'>
+        <link rel='stylesheet' href='styleSass2k.css'>
+        <link rel='stylesheet' href='phone.css'>
         <script src='script.js'></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,25 +14,72 @@
     </head>
 
     <body>
-        <div class="main">
+        <div id="main" class="main">
+
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+
             <header class="main-header">
-                <div class="logo-Container">
-                    <div class="logo-image">
-                        <img src="logo1.png" class="main-logo1" alt="soleil"/>
-                    </div>
-                    <div class="logo-image">
-                        <img src="logo2.png" class="main-logo2" alt="soleil2"/>
+                <div class="logo-Container" id="logoContainer">
+                    <div class="wrapperOverflow">
+                        <div class="logo-image logoImage1" id="ceinture">
+                            <img src="logo1.png" class="main-logo1" alt="soleil"/>
+                        </div>
+                        <div class="logo-image logoImage2">
+                            <img src="logo2.png" class="main-logo2" alt="soleil2"/>
+                        </div>
                     </div>
                 </div>
 
-                <h1 class="title">Les 100 ciels</h1>
+                <script>
+                    window.onload = function() {
+                        
+                        document.getElementById("logoContainer").addEventListener("click", function() {
 
-                <div>
-                    <a class="main-link" href="peinture.html" rel="noopener noreferrer">Peintures</a>
+                            if(!document.getElementById('ceinture').classList.contains("toggle2dLogo")) {
+                                // Anims Soleil (onclick)
+                                document.getElementById('ceinture').classList.remove("toggle3dLogo");
+                                document.getElementById('ceinture').classList.add("toggle2dLogo");
 
-                &nbsp;&nbsp;&nbsp;
+                                // Anims du background (onClick soleil)
+                                document.getElementById('main').classList.remove("main");
+                                document.getElementById('main').classList.remove("newGradient2");
+                                document.getElementById('main').classList.add("newGradient");
+                            }
+                            else {
+                                // Anims Soleil (onclick)
+                                document.getElementById('ceinture').classList.remove("toggle2dLogo");
+                                document.getElementById('ceinture').classList.add("toggle3dLogo");
 
-                    <a class="haikuLink" href="" rel="noopener noreferrer">Haikus</a>
+                                // Anims du background (onClick soleil)
+                                document.getElementById('main').classList.remove("newGradient");
+                                document.getElementById('main').classList.add("newGradient2");
+
+                                // document.getElementById('main').style.background = "rgb(21 24 54)";
+                            }
+                        });
+                    }
+                </script>
+
+                <div class="homepageDivider"></div>
+
+                <div class="wrapperOverflow">
+                    <div class="subContent">
+                        <h1 class="title">Les 100 ciels</h1>
+
+                        <div class="ongletsLine">
+                            <div class="ongletWrapper" style="margin-right:15px;">
+                                <a class="main-link" href="peinture.html" rel="noopener noreferrer">Peintures</a>
+                                <div class="underline" style="opacity: 0; background-color:#fdf99e;"></div>
+                            </div>
+
+                            <div class="ongletWrapper" style="margin-left:15px;">
+                                <a class="haikuLink" href="" rel="noopener noreferrer">Haikus</a>
+                                <div class="underline" style="opacity: 0; background-color:#b6eff4;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </header>

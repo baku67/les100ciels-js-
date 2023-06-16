@@ -14,34 +14,182 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-  
+
+.homepageDivider {
+  height:1px; 
+  width:0%; 
+  margin: 0 auto;
+  background-color:white;
+
+  animation: dividerGrowth 1s 0.5s forwards ease, shink 1s 3.5s forwards ease;
+}
+@keyframes dividerGrowth {
+  from {
+    width: 0%;
+  }
+  to {
+    width:25%; 
+  }
+}
+@keyframes shink {
+  from {
+    width:25%;
+  }
+  to {
+    width:0%;
+  }
+}
 
 
+.wrapperOverflow {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+
+.ongletWrapper {
+  width: fit-content;
+}
+.underline {
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.ongletsLine {
+  display: flex;
+  justify-content: center;
+}
+
+#ceinture {
+  transition: all 0.5s;
+}
+/* .logo-Container {
+  transition: all 0.4s;
+}
+.logo-Container:hover .logoImage1 {
+  animation: revertSun 1s ease !important;
+}
+@keyframes revertSun {
+  from {
+    transform: translateY(370px) rotate3d(1, 1, 1, 190deg);
+  }
+  to {
+    transform: translateY(0px) rotate3d(1, 1, 1, 0deg);
+  }
+} */
+
+.toggle2dLogo {
+  animation: click2dLogo1 2.5s ease forwards normal !important;
+  /* transform: translateY(370px) rotate3d(1, 1, 1, 0deg); */
+}
+.toggle3dLogo {
+  animation: click3dLogo1 2.5s ease forwards normal !important;
+  /* transform: translateY(370px) rotate3d(1, 1, 1, 0deg); */
+}
+@keyframes click2dLogo1 {
+  from {
+    transform: translateY(0px) rotate3d(1, 1, 1, 190deg);
+  }
+  to {
+    transform: translateY(0px) rotate3d(1, 1, 1, 0deg);
+  }
+}
+@keyframes click3dLogo1 {
+  from {
+    transform: translateY(0px) rotate3d(1, 1, 1, 0deg);
+  }
+  to {
+    transform: translateY(0px) rotate3d(1, 1, 1, 190deg);
+  }
+}
+
+#main {
+  text-align: center; 
+  /* Anim background SUNFLOWER */
+  background-size: 200%;
+
+  background-position: 0%;
+  background-size: 200%;
+
+
+  background: rgb(17,18,63);
+  background: -moz-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+  background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+  background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+
+  transition: all 2.5s;
+}
 .main {
-    text-align: center; 
-    /* Anim background SUNFLOWER */
-    background-size: 200%;
-
-
-    background: rgb(17,18,63);
-    background: -moz-linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
-    background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
-    background: linear-gradient(59deg, rgba(17,18,63,1) 69%, rgba(255,186,49,0.24833683473389356) 100%);
-
     animation: bgSunflower 3s 0.7s normal forwards ease-in-out; 
+  }
+  @keyframes bgSunflower {
+    from {
+      background-position: 0%;
+      background-size: 200%;
     }
-    @keyframes bgSunflower {
-      from {
-        background-position: 0%;
-        background-size: 200%;
-      }
-      to {
-        background-position: 100%;
-        background-size: 200%;
+    to {
+      background-position: 100%;
+      background-size: 200%;
+    }
+  }
 
-        
-      }
+  .newGradient {
+    animation: bgGradientChange 4s forwards ease; 
+  }
+  @keyframes bgGradientChange {
+    from {
+      background-position: 100%;
+      background-size: 200%;
+      /* background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%); */
     }
+    to {
+      background-position: 0%;
+      background-size: 200%;
+      background: #040c0e;
+      /* background: linear-gradient(59deg, rgb(7, 7, 12) 49%, rgba(218, 163, 54, 0.2) 100%); */
+    }
+  }
+  .newGradient2 {
+    animation: bgGradientChange2 4s forwards ease; 
+  }
+  @keyframes bgGradientChange2 {
+    from {
+      background-position: 0%;
+      background-size: 200%;
+      background: #040c0e;
+    }
+    to {
+      background-position: 100%;
+      background-size: 200%;
+
+      background: rgb(17,18,63);
+      background: -moz-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+      background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+      background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
+    
+      /* background: linear-gradient(59deg, rgb(7, 7, 12) 49%, rgba(218, 163, 54, 0.2) 100%); */
+    }
+  }
+
+
+
+
+  .mainBgRotate {
+    animation: gradientRotate 2.5s ease forwards normal !important;
+  }
+  @keyframes gradientRotate {
+    from {
+      transform: rotate(0deg);
+      /* background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%); */
+    }
+    to {
+      transform: rotate(180deg);
+      /* background: linear-gradient(219deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%); */
+    }
+  }
   
   .main-logo {
     height: 40vmin;
@@ -56,8 +204,52 @@ body {
       
     }
     .main-logo2 {
-      
       animation: App-logo-spin2 infinite 78s linear;
+    }
+  }
+
+
+
+  /* Commenté: animation logo1 et logo2 delayed  */
+  .logoImage1 {
+    transform: translateY(370px) rotate3d(1, 1, 1, 0deg);
+    /* animation: slideLogo1 2.5s 2.2s ease forwards normal; */
+    animation: slideLogo1 2.5s 1s ease forwards normal;
+  }
+  .logoImage2 {
+    transform: translateY(0px);
+    animation: slideLogo2 2.5s 1s ease forwards normal;
+  }
+  @keyframes slideLogo1 {
+    from {
+      transform: translateY(370px) rotate3d(1, 1, 1, 0deg);
+    }
+    to {
+      transform: translateY(0px) rotate3d(1, 1, 1, 190deg);
+    }
+  }
+
+  @keyframes slideLogo2 {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-371px);
+    }
+  }
+
+  .subContent {
+    position: relative;
+    transform: translateY(-250px);
+
+    animation: slideSubContent 2.5s 1s ease forwards normal;
+  }
+  @keyframes slideSubContent {
+    from {
+      transform: translateY(-250px);
+    }
+    to {
+      transform: translateY(0px);
     }
   }
 
@@ -87,14 +279,18 @@ body {
   .logo-Container {
     width: 347px;
     height: 372px;
+    cursor: pointer;
   
     position: relative;
   }
   .logo-image {
-    position: absolute;
+    position: relative;
+    /* position: absolute; */
   }
+
   
   .title {
+
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 150%;
   
@@ -143,10 +339,16 @@ body {
   
   .main-link {
     text-decoration: none;
+    font-weight: 300;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0.9em;
     color: #c59941;
   }
   .haikuLink {
     text-decoration: none;
+    font-weight: 300;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0.9em;
     color: #41b9c5;
   }
   .haikuLink:hover {
@@ -171,6 +373,28 @@ body {
       color: #fdf99e;
     }
   }
+
+  .main-link:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 1 !important;
+  } 
+  .haikuLink:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 1 !important;
+  } 
+  @keyframes underlineShow {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+
+
+
+
   
   @keyframes App-logo-spin {
     from {

@@ -1,0 +1,32 @@
+@media (max-width: 480px) {
+    .homepageDivider {
+        height:1px; 
+        width:0%; 
+        margin: 0 auto;
+        background-color:white;
+      
+        animation: dividerGrowth 1s 0.5s forwards ease, shink 1s 3.5s forwards ease;
+    }
+    @keyframes dividerGrowth {
+        from {
+            width: 0%;
+        }
+        to {
+            width:80%; 
+        }
+    }
+    @keyframes shink {
+        from {
+            width:80%;
+        }
+        to {
+            width:0%;
+        }
+    }
+
+
+    .main-header {
+    position: relative;
+    bottom: 70px;
+    }
+}
