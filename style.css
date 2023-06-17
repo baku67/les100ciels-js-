@@ -176,6 +176,11 @@ body {
 
 
 
+  .logo-Container {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+
 
   .mainBgRotate {
     animation: gradientRotate 2.5s ease forwards normal !important;
