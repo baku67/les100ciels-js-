@@ -148,7 +148,9 @@ body {
     to {
       background-position: 0%;
       background-size: 200%;
-      background: #040c0e;
+      /* background: #040c0e; */
+
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
       /* background: linear-gradient(59deg, rgb(7, 7, 12) 49%, rgba(218, 163, 54, 0.2) 100%); */
     }
   }
@@ -159,17 +161,12 @@ body {
     from {
       background-position: 0%;
       background-size: 200%;
-      background: #040c0e;
+      background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
     }
     to {
       background-position: 100%;
       background-size: 200%;
-
-      background: rgb(17,18,63);
-      background: -moz-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
-      background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
-      background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
-    
+   
       /* background: linear-gradient(59deg, rgb(7, 7, 12) 49%, rgba(218, 163, 54, 0.2) 100%); */
     }
   }
