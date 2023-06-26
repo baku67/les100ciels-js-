@@ -1,3 +1,8 @@
+/* html, body, #main {
+  height:100%;
+} */
+
+
 body {
     /* Sacramento */
     background: rgb(17,18,63);
@@ -14,6 +19,25 @@ body {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
+
+
+.fadeInExemple {
+  animation: fadeInGlobal 2.5s 0.7s ease forwards 1;
+}
+@keyframes fadeInGlobal {
+  from {
+    opacity:0;
+    width: 0px;
+    border-radius: 50px;
+  }
+  to {
+    opacity:1;
+    width:200px;
+    border-radius: 5px;
+  }
+}
+
+
 
 .homepageDivider {
   height:1px; 
