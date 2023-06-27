@@ -21,7 +21,7 @@ body {
   }
 
 
-.fadeInExemple {
+/* .fadeInExemple {
   animation: fadeInGlobal 2.5s 0.7s ease forwards 1;
 }
 @keyframes fadeInGlobal {
@@ -35,6 +35,13 @@ body {
     width:200px;
     border-radius: 5px;
   }
+} */
+
+
+.galleryContainer {
+  transform: translateY(50%); 
+  width:90%; 
+  margin:0 auto;
 }
 
 

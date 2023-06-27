@@ -29,4 +29,20 @@
     position: relative;
     bottom: 70px;
     }
+
+    .galleryContainer {
+        transform: translateY(5%); 
+        width:99%; 
+        margin:0 auto;
+    }
+
+    .gallery-item img {
+        width: 150px !important;
+        height: 150px !important;
+        object-fit: cover;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+
 }
