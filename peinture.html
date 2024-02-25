@@ -384,11 +384,12 @@
             }
 
             .titlesDiv h1 {
-                background: -webkit-linear-gradient(white, #38495a);
+                background: -webkit-linear-gradient(white, #e8ca7d);
+
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
 
-                font-weight: 300;
+                font-weight: 200;
 
                 transition: all 0.4s;
             }
@@ -517,21 +518,42 @@
                 height: fit-content;
                 display: block;
                 padding: 8px;
+                position: relative;
+                top: 5px;
+                right: 8px;
             }
             .homeBtnNav {
                 width: 50px;
                 transition: all 0.4s;
             }
             .homeBtnNav:hover {
-                transform: scale(1.15);
+                transform: rotate(0deg) scale(1);
+                filter: saturate(0.5);
+
+                animation: iconHomeRotate 15s 0s linear infinite forwards;
+            }
+            @keyframes iconHomeRotate {
+                0% {
+                    transform: rotate(0deg) scale(1);
+                }
+                3% {
+                    transform: rotate(12deg) scale(1.3);
+                }
+                100% {
+                    transform: rotate(360deg) scale(1.3);
+                }
             }
 
 
             .navActif {
                 text-decoration: underline;
-                text-decoration-color: #fbc949bf;
-                text-underline-offset: 6px;
+                text-decoration-color: #e8ca7d !important;
+                text-underline-offset: 6px !important;
                 text-decoration-thickness: 3px;
+            }
+            .navActif:hover {
+                text-decoration-color: #e8ca7d00 !important;
+                text-underline-offset: 15px !important;
             }
 
             .subTitle {
@@ -543,6 +565,29 @@
                 font-size: 2.5em;
                 margin-block-start: 0;
             }
+
+            .star-selected:after {
+                content: url("./star.png");
+                position: absolute;
+
+                width: 50px;
+            }
+
+            .navOnglet {
+                transition: all 0.3s;
+                
+                text-decoration: underline;
+                text-decoration-color: #e8ca7d00;
+                text-underline-offset: 15px;
+                text-decoration-thickness: 3px;
+            }
+            .navOnglet:hover {
+                text-decoration: underline;
+                text-decoration-color: #e8ca7d;
+                text-underline-offset: 6px;
+                text-decoration-thickness: 3px;
+            }
+
 
             .isDesktop {
                 display: block;
@@ -615,6 +660,7 @@
                 }
 
                 .galleryShortcuts {
+                    border-top: 1px solid #e8ca7d26;
                     position: relative;
                 }
 
@@ -806,11 +852,21 @@
 
 
         <nav class="nav isDesktopFlex">
-            <a href="./index.html" class="homeBtnNavLink"><img class="homeBtnNav" src="./homeBtn.png" /></a>
-            <a href="./peinture.html"><span class="navActif">Toiles</span></a>
-            <a href=""><span>Expositions</span></a>
-            <a href=""><span>Illustrations</span></a>
-            <a href=""><span>Contact</span></a>
+            <a href="./index.html" class="homeBtnNavLink">
+                <img class="homeBtnNav" src="./homeBtn.png" />
+            </a>
+            <a href="./peinture.html">
+                <span class="navOnglet navActif">Toiles</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Expositions</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Illustrations</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Contact</span>
+            </a>
         </nav>
 
 
@@ -2655,7 +2711,7 @@
 
             <div id="gallery" class="gallery galleryContainer" >
 
-                <h2 class="subTitle">Toiles</h2>
+                <h2 class="subTitle">Les Toiles</h2>
 
                 <!-- Hide Btn -->
                 <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
@@ -2825,8 +2881,10 @@
 
                         galleryItems.forEach(function(item2) {
                             item2.style.border = "2px solid transparent";
+                            item2.classList.remove('star-selected');
                         })
                         item.style.border = "2px solid white";
+                        item.classList.add('star-selected');
 
                         const previewImg = document.getElementById("previewImg");
 

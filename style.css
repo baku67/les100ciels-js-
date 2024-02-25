@@ -82,7 +82,8 @@ body {
 }
 .underline {
   width: 0%;
-  height: 2px;
+  /* height: 2px; */
+  height: 1px;
   background-color: white;
   transition: 0.4s;
 }
@@ -90,6 +91,10 @@ body {
 .ongletsLine {
   display: flex;
   justify-content: center;
+
+  width: 50%;
+  margin: 0 auto;
+  flex-flow: wrap;
 }
 
 #ceinture {
@@ -367,7 +372,172 @@ body {
 
     }
   }
-  
+
+  .accueilLink {
+    text-decoration: none;
+    font-weight: 300;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 0.9em;
+    text-wrap: nowrap;
+  }
+  .accueilLink-1 {
+    color: #ff4444;
+  }
+  .accueilLink-2 {
+    color: #ff7d3d;
+  }
+  .accueilLink-3 {
+    color: #e3cf2e;
+  }
+  .accueilLink-4 {
+    color: #80cd38;
+  }
+  .accueilLink-5 {
+    color: #41c5a9;
+  }
+  .accueilLink-6 {
+    color: #3599f1;
+  }
+  .accueilLink-7 {
+    color: #ed2fd4;
+  }
+
+
+  .accueilLink-1:hover {
+    animation: linkHover1 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover1 {
+    from {
+      color: #ff4444;
+    }
+    to {
+      color: #ff8383;
+    }
+  }
+  .accueilLink-1:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 1 !important;
+  } 
+
+
+  .accueilLink-2:hover {
+    animation: linkHover2 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover2 {
+    from {
+      color: #ff7d3d;
+    }
+    to {
+      color: #ffa97e;
+    }
+  }
+  .accueilLink-2:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+  .accueilLink-3:hover {
+    animation: linkHover3 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover3 {
+    from {
+      color: #e3cf2e;
+    }
+    to {
+      color: #ebde82;
+    }
+  }
+  .accueilLink-3:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+  .accueilLink-4:hover {
+    animation: linkHover4 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover4 {
+    from {
+      color: #80cd38;
+    }
+    to {
+      color: #b1e482;
+    }
+  }
+  .accueilLink-4:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+
+  .accueilLink-5:hover {
+    animation: linkHover5 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover5 {
+    from {
+      color: #41c5a9;
+    }
+    to {
+      color: #85ecd6;
+    }
+  }
+  .accueilLink-5:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+
+  .accueilLink-6:hover {
+    animation: linkHover6 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover6 {
+    from {
+      color: #3599f1;
+    }
+    to {
+      color: #7abbf5;
+    }
+  }
+  .accueilLink-6:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+
+  .accueilLink-7:hover {
+    animation: linkHover7 0.4s ease 0s normal forwards running;
+  }
+  @keyframes linkHover7 {
+    from {
+      color: #ed2fd4;
+    }
+    to {
+      color: #f076e0;
+    }
+  }
+  .accueilLink-7:hover + .underline {
+    animation: underlineShow 0.5s forwards ease;
+    opacity: 0.3 !important;
+  } 
+
+
+
+
+
+  .disabledLink {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+
+
+
+
+
   .main-link {
     text-decoration: none;
     font-weight: 300;
@@ -385,25 +555,25 @@ body {
   .haikuLink:hover {
     animation: linkHover1 0.4s ease 0s normal forwards running;
   }
-  @keyframes linkHover1 {
+  /* @keyframes linkHover1 {
     from {
       color: #41b9c5;
     }
     to {
       color: #b6eff4;
     }
-  }
+  } */
   .main-link:hover {
     animation: linkHover2 0.4s ease 0s normal forwards running;
   }
-  @keyframes linkHover2 {
+  /* @keyframes linkHover2 {
     from {
       color: #c59941;
     }
     to {
       color: #fdf99e;
     }
-  }
+  } */
 
   .main-link:hover + .underline {
     animation: underlineShow 0.5s forwards ease;
