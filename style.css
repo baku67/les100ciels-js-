@@ -5,6 +5,7 @@
 
 body {
     /* Sacramento */
+    overflow: hidden;
     background: rgb(17,18,63);
     
     margin: 0;
