@@ -115,6 +115,9 @@
 
             .main {
                 height: 100vh;
+
+                opacity: 0;
+                animation: fadeIn 3s 1.2s ease forwards;
             }
 
             .galleryContainer {
@@ -146,7 +149,7 @@
 
                 opacity: 0;
                 /* transform: scale(0.5); */
-                animation: fadeInSvgArbre 2s 0s ease forwards;
+                animation: fadeInSvgArbre 2s 0.3s ease forwards;
             }
             @keyframes fadeInSvgArbre {
                 from {
@@ -165,9 +168,8 @@
             } */
 
             .svgArbre g {
-                /* fill: #ffb700c7; */
-                /* fill: #ffb700; */
-                fill: #fbc949;
+                /* fill: #fbc949; */
+                fill: #e8ca7d;
 
                 /* animation: svgArbreFillAnm 6s 0s ease forwards infinite; */
             }
@@ -190,8 +192,9 @@
             }
 
             #previewImg {
+                border: 1px solid #e8ca7d;
                 border-radius: 200px;
-                box-shadow: -5px -5px 190px #ffb7005c;
+                box-shadow: -5px -5px 150px #e8ca7da8;
 
                 transition: all 1s;
             }
@@ -217,20 +220,22 @@
                 flex-flow: wrap;
                 place-content: center;
 
-                border-top: 1px solid #ffb70038;
+                border-top: 1px solid #e8ca7d;
                 padding-top: 20px;
             }
 
             #btnRadiusPreview {
                 cursor: pointer;
                 position: absolute;
-                right: -60px;
-                bottom: 0;
-                color: white;
+                /* right: -60px;
+                bottom: 0; */
+                top: 67px;
+                right: 18px;
+                color: #e8ca7d;
                 font-size: 2.5em;
 
                 transition: all 0.4s;
-                opacity: 0.4;
+                opacity: 1;
             }
             #btnRadiusPreview:hover {
                 opacity: 1;
@@ -266,11 +271,16 @@
                 position: absolute;
                 z-index: 99999999;
                 cursor: pointer;
-                top: -53px;
+
+                /* top: -53px;
+                right: -30px; */
+                top: 0;
+                right: 0;
+                transform: translate(30px, -53px);
+
                 width: 106px;
                 height: 103px;
                 border-radius: 50px;
-                right: -30px;
                 /* clip-path: polygon(0 0, 100% 0, 100% 100%); */
                 background-color: #fbc949;
                 transition: all 0.4s;
@@ -324,8 +334,8 @@
                 bottom: 0;
                 left: 0;
                 width: 100%;
-                height: 4px;
-                background-color: #fbc949;
+                height: 1px;
+                background-color: #e8ca7d;
             }
 
             .titlesDiv {
@@ -337,11 +347,35 @@
                 text-align: left;
                 top: 0;
 
+                opacity: 0;
+                animation: fadeIn 2s 0.3s ease forwards;
+
             }
             .titlesDiv h1, .titlesDiv h2 {
                 font-family: 'Montserrat Alternates', sans-serif;
-                font-weight: 100;
+                /* font-weight: 100; */
                 letter-spacing: 5px;
+            }
+
+            .homeBtn2 {
+                position: relative;
+                right: 0px;
+                top: 0px;
+
+                font-size: 1.2em;
+            }
+
+            .breadcrumbs {
+                font-size: 2.5em;
+                font-family: 'Montserrat Alternates', sans-serif;
+                /* font-weight: 100; */
+                letter-spacing: 5px;
+
+                position: relative;
+                left: 15px;
+                color: #ffd770;
+
+                font-weight: 100;
             }
 
             a {
@@ -350,6 +384,12 @@
             }
 
             .titlesDiv h1 {
+                background: -webkit-linear-gradient(white, #38495a);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                font-weight: 300;
+
                 transition: all 0.4s;
             }
             .titlesDiv h1:hover {
@@ -360,7 +400,11 @@
                 position: relative;
                 left: 15px;
                 color: #ffd770;
+
+                font-weight: 100;
             }
+
+
 
             .preview-img {
                 transition: opacity 0.5s ease; /* Définir la transition pour l'opacité (ou toute autre propriété que vous souhaitez animer) */
@@ -383,12 +427,137 @@
                 display: block;
             }
 
+            .h1title {
+                font-size: 3em;
+                width: max-content;
+            }
+
+
+
+
+            .hideBtn {
+                position: fixed;
+                top: 18px;
+                right: 5px;
+                font-size: 2em;
+                padding: 11px;
+                /* color: #ffffff85; */
+                color: #e8ca7d;
+                z-index: 9999999;
+                cursor: pointer;
+            }
+
+
+            .fadeOut {
+                animation: fadeOut 0.7s 0s ease forwards;
+            }
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+
+            .fadeIn {
+                animation: fadeIn 0.7s 0s ease forwards;
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+
+
+            #svgArbre {
+                transition: all 2s 0s;
+            }
+            .arbreOpacityTransition {
+                animation: arbreOpacityTransition 0.7s 0s ease forwards;
+            }
+            @keyframes arbreOpacityTransition {
+                from {
+                    opacity: 0.65;
+                }
+                to {
+                    opacity: 1;
+                    filter: saturate(0.6);
+                }
+            }
+
+            .svgArbrePositionToggle {
+                left: 50%;
+                transform: translateX(-50%) scale(1.3);
+            }
+
+
+            .nav {
+                position: absolute;
+                z-index: 9999999;
+                right: 10px;
+                top: 10px;
+                /* right: 0;
+                top: 0; */
+
+                display: inline-flex;
+                align-items: center;
+            }
+            .nav a span {
+                color: white;
+                font-size: 1.3em;
+                padding: 5px 10px;
+            }
+
+            .homeBtnNavLink {
+                height: fit-content;
+                display: block;
+                padding: 8px;
+            }
+            .homeBtnNav {
+                width: 50px;
+                transition: all 0.4s;
+            }
+            .homeBtnNav:hover {
+                transform: scale(1.15);
+            }
+
+
+            .navActif {
+                text-decoration: underline;
+                text-decoration-color: #fbc949bf;
+                text-underline-offset: 6px;
+                text-decoration-thickness: 3px;
+            }
+
+            .subTitle {
+                color: #e8ca7d;
+                background: -webkit-linear-gradient(#e8ca7d, rgb(246, 250, 255));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: 'Montserrat Alternates', sans-serif;
+                font-size: 2.5em;
+                margin-block-start: 0;
+            }
+
             .isDesktop {
                 display: block;
+            }
+            .isDesktopFlex {
+                display: inline-flex;
             }
             .isMobile {
                 display: none;
             }
+            .isMobileFlex {
+                display: none;
+            }
+
+            
 
 
 
@@ -398,8 +567,14 @@
                 .isDesktop {
                     display: none;
                 }
+                .isDesktopFlex {
+                    display: none;
+                }
                 .isMobile {
                     display: block;
+                }
+                .isMobileFlex {
+                    display: inline-flex;
                 }
 
                 .main {
@@ -408,27 +583,94 @@
                     height: auto;
                 }
 
+                .nav a span {
+                    font-size: 1em;
+                }
+
+                .breadcrumbs {
+                    font-size: 1em;
+
+                    left: 0;
+                    text-align: center;
+                }
+
+                #btnRadiusPreview 
+                {
+                    font-size: 1.7em;
+                    right: 17px;
+                    top: 60px;
+                }
+                .facircle {
+                    right: 2px;
+                    top: 10px;
+                }
+
+                #hideBtn {
+                    font-size: 1.3em;
+                }
+
+                #btnRadiusPreview:hover {
+                    opacity: 0.7;
+                    transform: scale(1.1);
+                }
+
+                .galleryShortcuts {
+                    position: relative;
+                }
+
+                @keyframes fadeInSvgArbre {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 0.65;
+                    }
+                }
+
+                #previewImg {
+                    border-radius: 105px;
+                }
+
+                .traitBottom {
+                    height: 1px;
+                }
+
+                #btnRadiusPreview {
+                    opacity: 1;
+                }
+
                 .titlesDiv {
                     position: relative;
-                    /* width: 100%; */
+                    width: 100%;
                     left: 0px;
-                    margin-left: 14px;
+                    margin-left: 0px;
                     font-size: 85%;
                 }
                 .titlesDiv h1, .titlesDiv h2 {
                     letter-spacing: 3px;
                     font-weight: 200;
                 }
+                .h1title {
+                    font-size: 2em;
+                    width: auto;
+                }
                 .titlesDiv h1 {
-                    width: max-content;
+                    width: auto;
+                    font-weight: 400;
+                    text-align: center;
                     margin-block-start: 0em;
                     margin-block-end: 0em;
-                    padding-block-start: 0.3em;
+                    padding-block-start: 0.4em;
                     padding-block-end: 0.4em;
                 }
                 .titlesDiv h2 {
+                    text-align: center;
+                    left: 0px;
                     margin-block-start: 0em;
                     margin-block-end: 0em;
+                }
+                .linkTitle {
+                    width: auto;
                 }
                 /* .linkTitle {
                     width: auto;
@@ -563,6 +805,15 @@
     <body class="bodyPeinture">
 
 
+        <nav class="nav isDesktopFlex">
+            <a href="./index.html" class="homeBtnNavLink"><img class="homeBtnNav" src="./homeBtn.png" /></a>
+            <a href="./peinture.html"><span class="navActif">Toiles</span></a>
+            <a href=""><span>Expositions</span></a>
+            <a href=""><span>Illustrations</span></a>
+            <a href=""><span>Contact</span></a>
+        </nav>
+
+
         <!-- Try bg étoile rotate -->
         <div class="bgStars">
             <div id="stars"></div>
@@ -570,25 +821,19 @@
             <div id="stars3"></div>
         </div>
 
-        <!-- btn home top right -->
-        <div id="homeContainer" class="homeContainer isDesktop">
-            <i class="homeBtn fa-solid fa-house"></i>
-        </div>
-        
 
         <!-- titre absolute -->
         <div class="titlesDiv">
             <a href="./index.html" class="linkTitle">
-                <h1 style="width: max-content;">Les 100 ciels</h1>
+                <h1 class="h1title">Les 100 ciels</h1>
             </a>
-            <h2>Gallerie</h2>
         </div>
 
         <!-- trait bottom -->
         <div class="traitBottom"></div>
 
         <!-- svg arbre -->
-        <svg class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
+        <svg id="svgArbre" class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
         width="957.000000pt" height="968.000000pt" viewBox="0 0 957.000000 968.000000"
         preserveAspectRatio="xMidYMid meet">
 
@@ -2389,28 +2634,40 @@
         </svg>
 
 
+        <!-- Hide Btn -->
+        <!-- <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i> -->
+
+
+        <!-- <nav class="nav isMobileFlex">
+            <a href="./index.html" class="homeBtnNavLink"><img class="homeBtnNav" src="./homeBtn.png" /></a>
+            <a href="./peinture.html"><span>Toiles</span></a>
+            <a href=""><span>Expositions</span></a>
+            <a href=""><span>Illustrations</span></a>
+            <a href=""><span>Contact</span></a>
+        </nav> -->
 
 
 
         <div id="main" class="main" style="position:relative; background:rgba(0,0,0,0);">
 
-            <!-- <h2 style="text-align:center;color:white; margin-block-start:0; padding-inline-start:0; padding-block-start:0;">Site en construction...</h2>
-            <a href="index.html" style="text-decoration:none; color:lightgrey;">Retour</a>
-
-            <div id="loader"></div> -->
+            <!-- <div id="loader"></div>  -->
 
 
             <div id="gallery" class="gallery galleryContainer" >
 
+                <h2 class="subTitle">Toiles</h2>
+
+                <!-- Hide Btn -->
+                <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
+                <div id="btnRadiusPreview">
+                    <i class="fa-solid fa-square"></i>
+                    <i class="facircle fa-solid fa-circle"></i>
+                </div>
 
                 <div id="galleriePreview" class="galleriePreview">
 
                     <img id="previewImg" src="" alt="Toile 1">
 
-                    <div id="btnRadiusPreview">
-                        <i class="fa-solid fa-square"></i>
-                        <i class="facircle fa-solid fa-circle"></i>
-                    </div>
                 </div>
 
 
@@ -2491,14 +2748,49 @@
             
             document.addEventListener("DOMContentLoaded", function() {
 
-                // Bouton home top right
-                document.getElementById("homeContainer").addEventListener("click", function() {
-                    location.href = "./index.html";
-                });
 
                 // bouton toggle carré/rond preview 
                 document.getElementById("btnRadiusPreview").addEventListener("click", function() {
                     document.getElementById("previewImg").classList.toggle("toggleRadiusPreview");
+                });
+
+
+                // Btn toggle hide/show 
+                document.getElementById("hideBtn").addEventListener("click", function() {
+
+                    const gallery = document.getElementById("gallery");
+                    const arbre = document.getElementById("svgArbre");
+
+                    if (gallery.classList.contains("fadeOut") || gallery.style.opacity == "0") {
+
+                        gallery.classList.add('fadeIn');
+
+                        setTimeout(function() {
+                            gallery.style.opacity = "1";
+                            gallery.classList.remove('fadeIn');
+                        }, 701);
+                    }
+                    else {
+
+                        gallery.classList.add('fadeOut');
+
+                        document.getElementById("svgArbre").classList.add('svgArbrePositionToggle');
+
+                        // NEW
+                        arbre.classList.add('arbreOpacityTransition');
+
+                        setTimeout(function() {
+
+                            gallery.style.opacity = "0";
+                            gallery.classList.remove('fadeOut');
+
+                            // NEW
+                            arbre.style.opacity = "1";
+                            arbre.style.filter = "saturate(0.6)";
+                            // arbre.classList.remove('arbreOpacityTransition');
+
+                        }, 701);
+                    }
                 });
                 
 
@@ -2527,19 +2819,6 @@
                 const viewerContainer = document.querySelector(".viewer-container");
                 const viewerImage = document.querySelector(".viewer-image");
             
-                // galleryItems.forEach(function(item) {
-                //     item.addEventListener("click", function() {
-                //     const imageSrc = this.querySelector("img").src;
-                //     viewerImage.src = imageSrc;
-                //     viewerContainer.style.display = "block";
-                //     });
-                // });
-            
-                // viewerContainer.addEventListener("click", function() {
-                //     viewerContainer.style.display = "none";
-                // });
-
-                
                 galleryItems.forEach(function(item) {
 
                     item.addEventListener("click", function() {
@@ -2551,12 +2830,12 @@
 
                         const previewImg = document.getElementById("previewImg");
 
-                        previewImg.classList.add("fade-out"); // Ajouter la classe fade-out pour déclencher l'animation de disparition
+                        previewImg.classList.add("fade-out"); 
 
                         setTimeout(function() {
                             previewImg.src = item.src;
-                            previewImg.classList.remove("fade-out"); // Supprimer la classe fade-out après le changement d'image
-                        }, 500); // Attendre la fin de l'animation (0.5s) avant de changer l'image
+                            previewImg.classList.remove("fade-out"); 
+                        }, 500); 
                     })
                 });
 
