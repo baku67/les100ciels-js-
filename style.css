@@ -550,7 +550,8 @@ body {
   #link-section3 {
     border-radius: 10px;
 
-    padding: 1px 0px 7px 13px;
+    text-shadow: 1px 1px 2px black;
+    padding: 6px 0px 10px 16px;
     
     background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
@@ -562,7 +563,8 @@ body {
   #link-section4 {
     border-radius: 10px;
 
-    padding: 1px 0px 7px 13px;
+    text-shadow: 1px 1px 2px black;
+    padding: 6px 0px 10px 16px;
     
     background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
