@@ -547,6 +547,29 @@ body {
   }
 
 
+  #link-section3 {
+    border-radius: 10px;
+
+    padding: 1px 0px 7px 13px;
+    
+    background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/22_button2.png");
+    background-size: cover;
+    background-position-y: center;
+  }
+
+  #link-section4 {
+    border-radius: 10px;
+
+    padding: 1px 0px 7px 13px;
+    
+    background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/55_button.png");
+    background-size: cover;
+    background-position-y: center;
+  }
 
 
   .acryliqueBackBtn {
@@ -555,6 +578,28 @@ body {
     position: absolute;
     left: 22px;
     top: 36px;
+    cursor: pointer;
+
+    transition: all 0.4s;
+  }
+  .acryliqueBackBtn:hover {
+    opacity: 0.8;
+    transform: translateX(-5px) scale(1.1);
+  }
+
+  .acryliqueBackBtnAccueil {
+    z-index: 9999999;
+    color: #e8ca7d;
+    font-size: 1.8em;
+    position: absolute;
+    right: 5vw;
+    top: 30px;
+
+    transition: all 0.4s;
+  }
+  .acryliqueBackBtnAccueil:hover {
+    opacity: 0.8;
+    transform: translateX(-5px) scale(1.1);
   }
 
 
