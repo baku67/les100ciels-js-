@@ -12,6 +12,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+
+
         <!-- Splide (caroussel) -->
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
@@ -133,7 +136,7 @@
                 margin: 0 auto;
 
                 padding: 25px;
-                background-color: #0000000f;
+                /* background-color: #0000000f; */
                 border-radius: 32px;
             }
 
@@ -562,8 +565,30 @@
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-family: 'Montserrat Alternates', sans-serif;
-                font-size: 2.5em;
+
                 margin-block-start: 0;
+                margin-block-end: 1.8em;
+
+                font-weight: 100;
+                font-size: 2.7em;
+
+            }
+
+            .subSubTitle {
+                cursor: pointer;
+                color: #e8ca7d;
+                /* background: -webkit-linear-gradient(#e8ca7d, rgb(246, 250, 255));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; */
+                /* font-family: 'Montserrat Alternates', sans-serif; */
+                font-size: 2.3em;
+                margin-block-start: 0;
+
+                transition: all 0.4s;
+            }
+            .subSubTitle:hover {
+                letter-spacing: 1px;
+                color: #ffedbe;
             }
 
             .star-selected:after {
@@ -690,7 +715,7 @@
                     width: 100%;
                     left: 0px;
                     margin-left: 0px;
-                    font-size: 85%;
+                    /* font-size: 85%; */
                 }
                 .titlesDiv h1, .titlesDiv h2 {
                     letter-spacing: 3px;
@@ -702,12 +727,14 @@
                 }
                 .titlesDiv h1 {
                     width: auto;
-                    font-weight: 400;
-                    text-align: center;
+                    font-weight: 200;
+                    position: relative;
+                    left: 13px;
+                    /* text-align: center; */
                     margin-block-start: 0em;
                     margin-block-end: 0em;
                     padding-block-start: 0.4em;
-                    padding-block-end: 0.4em;
+                    padding-block-end: 0;
                 }
                 .titlesDiv h2 {
                     text-align: center;
@@ -741,7 +768,7 @@
                     border-radius: 12px;
                     margin: 0 auto;
 
-                    padding: 50px 0px;
+                    padding: 30px 0px;
                     background-color: #00000000;
 
                     position: relative;
@@ -772,6 +799,16 @@
                     margin: 2px;
                     height: 62px;
                 }
+
+                .subTitle {
+                    margin-block-end: 1em;
+                    font-weight: 200;
+                    font-size: 1.7em;
+                }
+
+                .subSubTitle {
+                    font-size: 1.3em;
+                }
             }
 
 
@@ -789,7 +826,7 @@
                     width: 90%;
                     margin: 0 auto;
                     padding: 80px 25px;
-                    background-color: #0000004a;
+                    /* background-color: #0000004a; */
                     border-radius: 19px;
                 }
             }
@@ -803,6 +840,11 @@
                 .gallery-item img {
                     width: 60px;
                     height: 60px;
+                }
+
+                /* TEST plus d'espace entre arbre et content*/
+                .galleryContainer {
+                    right: 3vw;
                 }
             }
 
@@ -851,23 +893,35 @@
     <body class="bodyPeinture">
 
 
-        <nav class="nav isDesktopFlex">
+        <!-- Désactivé car trops d'éléments / trop long  -->
+        <!-- Burger Desktop ??? -->
+
+        <!-- <nav class="nav isDesktopFlex">
             <a href="./index.html" class="homeBtnNavLink">
                 <img class="homeBtnNav" src="./homeBtn.png" />
             </a>
             <a href="./peinture.html">
-                <span class="navOnglet navActif">Toiles</span>
+                <span class="navOnglet navActif">Acrylique</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Aquarelle</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">M&eacute;thode Haushka</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Haikus</span>
+            </a>
+            <a href="">
+                <span class="navOnglet">Reproductions</span>
             </a>
             <a href="">
                 <span class="navOnglet">Expositions</span>
             </a>
             <a href="">
-                <span class="navOnglet">Illustrations</span>
-            </a>
-            <a href="">
                 <span class="navOnglet">Contact</span>
             </a>
-        </nav>
+        </nav> -->
 
 
         <!-- Try bg étoile rotate -->
@@ -885,8 +939,6 @@
             </a>
         </div>
 
-        <!-- trait bottom -->
-        <div class="traitBottom"></div>
 
         <!-- svg arbre -->
         <svg id="svgArbre" class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -2708,194 +2760,120 @@
 
             <!-- <div id="loader"></div>  -->
 
-
             <div id="gallery" class="gallery galleryContainer" >
-
-                <h2 class="subTitle">Les Toiles</h2>
-
-                <!-- Hide Btn -->
-                <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
-                <div id="btnRadiusPreview">
-                    <i class="fa-solid fa-square"></i>
-                    <i class="facircle fa-solid fa-circle"></i>
-                </div>
-
-                <div id="galleriePreview" class="galleriePreview">
-
-                    <img id="previewImg" src="" alt="Toile 1">
-
-                </div>
-
-
-                <div class="galleryShortcuts">
-
-                    <div class="gallery-item">
-                        <img src="toiles/11.jpg" alt="Toile 1">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/22.jpg" alt="Toile 2">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/33.jpg" alt="Toile 3">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/44.jpg" alt="Toile 4">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/55.jpg" alt="Toile 5">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/66.jpg" alt="Toile 6">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/77.jpg" alt="Toile 7">
-                    </div>
-
-                    <div class="gallery-item">
-                        <img src="toiles/1-min.jpg" alt="Toile 8">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/2-min.jpg" alt="Toile 9">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/3-min.jpg" alt="Toile 10">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/4-min.jpg" alt="Toile 11">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/5-min.jpg" alt="Toile 12">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/6-min.jpg" alt="Toile 13">
-                    </div>
-        
-                    <div class="gallery-item">
-                        <img src="toiles/7-min.jpg" alt="Toile 14">
-                    </div>
-
-                </div>
-    
+                <!-- Contenu load JS -->
             </div>
     
-            <div class="viewer-container">
-                <img class="viewer-image" src="" alt="Viewer Image">
-            </div>
-
-
         </div>
 
         
 
 
+
+
         <script>
 
-            
             document.addEventListener("DOMContentLoaded", function() {
 
 
-                // bouton toggle carré/rond preview 
-                document.getElementById("btnRadiusPreview").addEventListener("click", function() {
-                    document.getElementById("previewImg").classList.toggle("toggleRadiusPreview");
-                });
+                $("#gallery").load("peinture-links.html", function() {
+                    console.log("LOADED .load");
+                })
 
 
-                // Btn toggle hide/show 
-                document.getElementById("hideBtn").addEventListener("click", function() {
+                // *** bouton toggle carré/rond preview 
+                // document.getElementById("btnRadiusPreview").addEventListener("click", function() {
+                //     document.getElementById("previewImg").classList.toggle("toggleRadiusPreview");
+                // });
 
-                    const gallery = document.getElementById("gallery");
-                    const arbre = document.getElementById("svgArbre");
 
-                    if (gallery.classList.contains("fadeOut") || gallery.style.opacity == "0") {
 
-                        gallery.classList.add('fadeIn');
+                // *** Btn toggle hide/show 
+                // document.getElementById("hideBtn").addEventListener("click", function() {
 
-                        setTimeout(function() {
-                            gallery.style.opacity = "1";
-                            gallery.classList.remove('fadeIn');
-                        }, 701);
-                    }
-                    else {
+                //     const gallery = document.getElementById("gallery");
+                //     const arbre = document.getElementById("svgArbre");
 
-                        gallery.classList.add('fadeOut');
+                //     if (gallery.classList.contains("fadeOut") || gallery.style.opacity == "0") {
 
-                        document.getElementById("svgArbre").classList.add('svgArbrePositionToggle');
+                //         gallery.classList.add('fadeIn');
 
-                        // NEW
-                        arbre.classList.add('arbreOpacityTransition');
+                //         setTimeout(function() {
+                //             gallery.style.opacity = "1";
+                //             gallery.classList.remove('fadeIn');
+                //         }, 701);
+                //     }
+                //     else {
 
-                        setTimeout(function() {
+                //         gallery.classList.add('fadeOut');
 
-                            gallery.style.opacity = "0";
-                            gallery.classList.remove('fadeOut');
+                //         document.getElementById("svgArbre").classList.add('svgArbrePositionToggle');
 
-                            // NEW
-                            arbre.style.opacity = "1";
-                            arbre.style.filter = "saturate(0.6)";
-                            // arbre.classList.remove('arbreOpacityTransition');
+                //         // NEW
+                //         arbre.classList.add('arbreOpacityTransition');
 
-                        }, 701);
-                    }
-                });
+                //         setTimeout(function() {
+
+                //             gallery.style.opacity = "0";
+                //             gallery.classList.remove('fadeOut');
+
+                //             // NEW
+                //             arbre.style.opacity = "1";
+                //             arbre.style.filter = "saturate(0.6)";
+                //             // arbre.classList.remove('arbreOpacityTransition');
+
+                //         }, 701);
+                //     }
+                // });
                 
 
-                const imagesUrl = [
-                    "toiles/11.jpg",
-                    "toiles/22.jpg",
-                    "toiles/33.jpg",
-                    "toiles/44.jpg",
-                    "toiles/55.jpg",
-                    "toiles/66.jpg",
-                    "toiles/77.jpg",
-                    "toiles/1-min.jpg",
-                    "toiles/2-min.jpg",
-                    "toiles/3-min.jpg",
-                    "toiles/4-min.jpg",
-                    "toiles/5-min.jpg",
-                    "toiles/6-min.jpg",
-                    "toiles/7-min.jpg",
-                ]
-                const randomIndex = Math.floor(Math.random() * imagesUrl.length);
-                document.getElementById("previewImg").src = imagesUrl[randomIndex];
+                // *** Random image preview 
+                // const imagesUrl = [
+                //     "toiles/11.jpg",
+                //     "toiles/22.jpg",
+                //     "toiles/33.jpg",
+                //     "toiles/44.jpg",
+                //     "toiles/55.jpg",
+                //     "toiles/66.jpg",
+                //     "toiles/77.jpg",
+                //     "toiles/1-min.jpg",
+                //     "toiles/2-min.jpg",
+                //     "toiles/3-min.jpg",
+                //     "toiles/4-min.jpg",
+                //     "toiles/5-min.jpg",
+                //     "toiles/6-min.jpg",
+                //     "toiles/7-min.jpg",
+                // ]
+                // const randomIndex = Math.floor(Math.random() * imagesUrl.length);
+                // document.getElementById("previewImg").src = imagesUrl[randomIndex];
 
 
-                // Ancien onclick previews => modal :
-                const galleryItems = document.querySelectorAll(".gallery-item img");
-                const viewerContainer = document.querySelector(".viewer-container");
-                const viewerImage = document.querySelector(".viewer-image");
+                // // Ancien onclick previews => modal :
+                // const galleryItems = document.querySelectorAll(".gallery-item img");
+                // const viewerContainer = document.querySelector(".viewer-container");
+                // const viewerImage = document.querySelector(".viewer-image");
             
-                galleryItems.forEach(function(item) {
+                // galleryItems.forEach(function(item) {
 
-                    item.addEventListener("click", function() {
+                //     item.addEventListener("click", function() {
 
-                        galleryItems.forEach(function(item2) {
-                            item2.style.border = "2px solid transparent";
-                            item2.classList.remove('star-selected');
-                        })
-                        item.style.border = "2px solid white";
-                        item.classList.add('star-selected');
+                //         galleryItems.forEach(function(item2) {
+                //             item2.style.border = "2px solid transparent";
+                //             item2.classList.remove('star-selected');
+                //         })
+                //         item.style.border = "2px solid white";
+                //         item.classList.add('star-selected');
 
-                        const previewImg = document.getElementById("previewImg");
+                //         const previewImg = document.getElementById("previewImg");
 
-                        previewImg.classList.add("fade-out"); 
+                //         previewImg.classList.add("fade-out"); 
 
-                        setTimeout(function() {
-                            previewImg.src = item.src;
-                            previewImg.classList.remove("fade-out"); 
-                        }, 500); 
-                    })
-                });
+                //         setTimeout(function() {
+                //             previewImg.src = item.src;
+                //             previewImg.classList.remove("fade-out"); 
+                //         }, 500); 
+                //     })
+                // });
 
 
             });

@@ -1,0 +1,112 @@
+<div id="contentSectionAcrylique" class="acrylique-content-fade">
+
+
+    <!-- Back Button -->
+    <div id="acryliqueBackBtn" class="acryliqueBackBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+    </div>
+
+
+    <h2 class="subTitle">La fl&ucirc;te enchant&eacute;e de Mozart</h2>
+
+
+
+
+
+
+    
+
+    <!-- **** Preview random et liste raccourcis toiles: -->
+    <!--            
+        <!- - Hide Btn - ->
+        <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
+        <!- - Btn shape preview - ->
+        <div id="btnRadiusPreview">
+            <i class="fa-solid fa-square"></i>
+            <i class="facircle fa-solid fa-circle"></i>
+        </div>
+
+        <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - ->
+        <div id="galleriePreview" class="galleriePreview">
+
+            <img id="previewImg" src="" alt="Toile 1">
+
+        </div>
+
+        <!- - liste des images - ->
+        <div class="galleryShortcuts">
+
+            <div class="gallery-item">
+                <img src="toiles/11.jpg" alt="Toile 1">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/22.jpg" alt="Toile 2">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/33.jpg" alt="Toile 3">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/44.jpg" alt="Toile 4">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/55.jpg" alt="Toile 5">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/66.jpg" alt="Toile 6">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/77.jpg" alt="Toile 7">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/1-min.jpg" alt="Toile 8">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/2-min.jpg" alt="Toile 9">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/3-min.jpg" alt="Toile 10">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/4-min.jpg" alt="Toile 11">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/5-min.jpg" alt="Toile 12">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/6-min.jpg" alt="Toile 13">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/7-min.jpg" alt="Toile 14">
+            </div>
+
+        </div>
+    -->
+
+</div>
+
+
+<script>
+    document.getElementById("acryliqueBackBtn").addEventListener("click", function() {
+
+        document.getElementById("contentSectionAcrylique").style.opacity = "0";
+
+        setTimeout(function() {
+            $("#gallery").load("peinture-links.html", function() {
+                console.log("backBtn links loaded");
+            });
+    }, 501);
+    })
+</script>

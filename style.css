@@ -4,6 +4,7 @@
 
 
 body {
+  -webkit-tap-highlight-color: transparent;
     /* Sacramento */
     overflow: hidden;
     background: rgb(17,18,63);
@@ -528,9 +529,52 @@ body {
 
 
 
+
   .disabledLink {
     opacity: 0.3;
     cursor: default;
+    /* cursor: wait; */
+    /* cursor: progress; */
+  }
+
+
+
+
+  .acryliqueSectionList {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+
+
+
+  .acryliqueBackBtn {
+    color: #e8ca7d;
+    font-size: 1.8em;
+    position: absolute;
+    left: 22px;
+    top: 36px;
+  }
+
+
+  .acrylique-content-fade {
+    opacity: 0;
+    animation: fadeInAcryliqueContent 0.5s 0s ease forwards;
+  }
+  @keyframes fadeInAcryliqueContent {
+    from {
+      opacity: 0;
+    } 
+    to {
+      opacity: 1;
+    }
+  }
+
+
+
+  #linksSectionAcrylique, #contentSectionAcrylique {
+    transition: opacity 0.5s;
   }
 
 

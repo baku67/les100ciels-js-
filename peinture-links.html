@@ -1,0 +1,63 @@
+<div id="linksSectionAcrylique">
+
+    <h2 class="subTitle">Peinture acrylique</h2>
+
+    <div class="acryliqueSectionList">
+        <span id="link-section1" class="subSubTitle">L'esprit et l'épouse</span>
+        <span id="link-section2" class="subSubTitle">La fl&ucirc;te enchant&eacute;e de Mozart</span>
+        <span id="link-section3" class="subSubTitle">Les licornes</span>
+        <span id="link-section4" class="subSubTitle">Illustrations de contes</span>
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+    document.getElementById("link-section1").addEventListener("click", function() {
+
+        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+
+        setTimeout(function() {
+            $("#gallery").load("peinture-group1.html", function() {
+                console.log("peinture section 1 loaded");
+            })
+        },501)
+    })
+
+    document.getElementById("link-section2").addEventListener("click", function() {
+
+        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+
+        setTimeout(function() {
+            $("#gallery").load("peinture-group2.html", function() {
+                console.log("peinture section 2 loaded");
+            })
+        },501)
+    })
+
+    document.getElementById("link-section3").addEventListener("click", function() {
+
+        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+
+        setTimeout(function() {
+            $("#gallery").load("peinture-group3.html", function() {
+                console.log("peinture section 3 loaded");
+            })
+        },501)
+    })
+
+    document.getElementById("link-section4").addEventListener("click", function() {
+
+        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+
+        setTimeout(function() {
+            $("#gallery").load("peinture-group4.html", function() {
+                console.log("peinture section 4 loaded");
+            })
+        },501)
+    })
+
+</script>
