@@ -452,7 +452,7 @@
             }
 
             .h1title {
-                font-size: 2em;
+                font-size: 2.4em;
                 width: max-content;
             }
 
@@ -581,19 +581,33 @@
 
 
             .subTitle {
-                color: #e8ca7d;
-                background: -webkit-linear-gradient(#e8ca7d, rgb(246, 250, 255));
+
+                color: #ffffff;
+                background: -webkit-linear-gradient(#ffffff, rgb(246, 250, 255));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 font-family: 'Montserrat Alternates', sans-serif;
 
                 margin-block-start: 0;
-                margin-block-end: 1.8em;
+                /* margin-block-end: 1.8em; */
+                margin: 0;
 
-                font-weight: 100;
-                font-size: 2.3em;
-
+                font-weight: 900;
+                font-size: 2.2em;
             }
+            .acryliqueBackBtn4 {
+                position: relative;
+                left: 0;
+                top: 0;
+            }
+
+            .subTitleAcrylique {
+                display: inline-flex;
+                align-items: center;
+                gap: 40px;
+                margin-bottom: 55px;
+            }
+
 
             .subSubTitle {
                 cursor: pointer;
@@ -679,6 +693,10 @@
                     font-size: 1em;
                 }
 
+                .subTitleAcrylique {
+                    margin-bottom: 15px;
+                }
+
                 .breadcrumbs {
                     font-size: 1em;
 
@@ -687,6 +705,7 @@
                 }
 
                 .acryliqueBackBtn {
+
                     left: 90%;
                     top: 0px;
                 }
@@ -830,7 +849,8 @@
                 }
 
                 .subTitle {
-                    margin-block-end: 1em;
+                    /* margin-block-end: 1em; */
+                    margin: 0;
                     font-weight: 200;
                     font-size: 1.5em;
                 }
@@ -903,7 +923,7 @@
                 }
 
                 .subTitle {
-                    font-size: 2.2em;
+                    font-size: 1.1em;
                 }
                 .subSubTitle {
                     font-size: 1.7em;
@@ -919,39 +939,12 @@
 
     </head>
 
+
     <style type="text/css">
         html, body {
             height:100%;
         }
     </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -12782,9 +12775,7 @@
             <!-- <div id="loader"></div>  -->
 
             <!-- Back Accueil Button -->
-            <a href="./index.html" class="acryliqueBackBtnAccueil">
-                <i id="acryliqueBackBtn" class="fa-solid fa-arrow-left"></i>
-            </a>
+
 
             <div id="gallery" class="gallery galleryContainer" >
                 <!-- Contenu load JS -->
@@ -12802,9 +12793,21 @@
             document.addEventListener("DOMContentLoaded", function() {
 
 
+                var imagesUrl = [];
+                var randomIndex = 0;
+
+                var galleryItems = document.querySelectorAll(".gallery-item img");
+                var viewerContainer = document.querySelector(".viewer-container");
+                var viewerImage = document.querySelector(".viewer-image");
+
+                const previewImg = document.getElementById("previewImg");
+
+
                 $("#gallery").load("peinture-links.html", function() {
-                    console.log("LOADED .load");
+
                 })
+
+
 
 
                 // *** bouton toggle carré/rond preview 

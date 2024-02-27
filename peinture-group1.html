@@ -1,13 +1,11 @@
 <div id="contentSectionAcrylique" class="acrylique-content-fade">
 
 
-    <!-- Back Button -->
-    <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
-
-
-    <h2 class="subTitle">L'esprit et l'épouse</h2>
-
-
+    <!-- Titre et back to acryliques Btn -->
+    <div class="subTitleAcrylique">
+        <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
+        <h2 class="subTitle">L'esprit et l'épouse</h2>
+    </div>
 
 
 
@@ -21,55 +19,19 @@
             <i class="facircle fa-solid fa-circle"></i>
         </div>
 
-        <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - ->
+                -->
+
+        <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
         <div id="galleriePreview" class="galleriePreview">
 
             <img id="previewImg" src="" alt="Toile 1">
 
         </div>
 
-        <!- - liste des images - ->
+
+
+        <!-- <!- - liste des images - -> -->
         <div class="galleryShortcuts">
-
-            <div class="gallery-item">
-                <img src="toiles/11.jpg" alt="Toile 1">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/22.jpg" alt="Toile 2">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/33.jpg" alt="Toile 3">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/44.jpg" alt="Toile 4">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/55.jpg" alt="Toile 5">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/66.jpg" alt="Toile 6">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/77.jpg" alt="Toile 7">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/1-min.jpg" alt="Toile 8">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/2-min.jpg" alt="Toile 9">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/3-min.jpg" alt="Toile 10">
-            </div>
 
             <div class="gallery-item">
                 <img src="toiles/4-min.jpg" alt="Toile 11">
@@ -87,12 +49,82 @@
                 <img src="toiles/7-min.jpg" alt="Toile 14">
             </div>
 
+            <div class="gallery-item">
+                <img src="toiles/8-min.jpg" alt="Toile 14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/9-min.jpg" alt="Toile 14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/10-min.jpg" alt="Toile 14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/11-min.jpg" alt="Toile 14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/12-min.jpg" alt="Toile 14">
+            </div>
+
+            <div class="gallery-item">
+                <img src="toiles/13-min.jpg" alt="Toile 14">
+            </div>
+
         </div>
-    -->
+
 
 </div>
 
 <script>
+
+    // *** Random image preview 
+    imagesUrl = [
+        "toiles/4-min.jpg",
+        "toiles/5-min.jpg",
+        "toiles/6-min.jpg",
+        "toiles/7-min.jpg",
+        "toiles/8-min.jpg",
+        "toiles/9-min.jpg",
+        "toiles/10-min.jpg",
+        "toiles/11-min.jpg",
+        "toiles/12-min.jpg",
+        "toiles/13-min.jpg",
+    ]
+    randomIndex = Math.floor(Math.random() * imagesUrl.length);
+    document.getElementById("previewImg").src = imagesUrl[randomIndex];
+
+
+    // onclick previews => modal :
+    galleryItems = document.querySelectorAll(".gallery-item img");
+    viewerContainer = document.querySelector(".viewer-container");
+    viewerImage = document.querySelector(".viewer-image");
+
+    galleryItems.forEach(function(item) {
+
+        item.addEventListener("click", function() {
+
+            galleryItems.forEach(function(item2) {
+                item2.style.border = "2px solid transparent";
+                item2.classList.remove('star-selected');
+            })
+            item.style.border = "2px solid white";
+            item.classList.add('star-selected');
+
+            previewImg.classList.add("fade-out"); 
+
+            setTimeout(function() {
+                previewImg.src = item.src;
+                previewImg.classList.remove("fade-out"); 
+            }, 500); 
+        })
+    });
+
+
+
+    // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn2").addEventListener("click", function() {
 
         document.getElementById("contentSectionAcrylique").style.opacity = "0";

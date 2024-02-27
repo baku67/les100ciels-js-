@@ -1,7 +1,0 @@
-Tige sunflower:
-https://css-generators.com/wavy-shapes/
-
-CSS anims avec path paramétrable
-https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Motion_Path
-
-

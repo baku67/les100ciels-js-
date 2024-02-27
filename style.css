@@ -546,6 +546,18 @@ body {
     gap: 2vh;
   }
 
+  #link-section1 {
+    border-radius: 10px;
+
+    text-shadow: 1px 1px 2px black;
+    padding: 6px 0px 10px 16px;
+    
+    background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/11_button.png");
+    background-size: cover;
+    background-position-y: center;
+  }
 
   #link-section3 {
     border-radius: 10px;
@@ -574,12 +586,26 @@ body {
   }
 
 
+  #link-section5 {
+    border-radius: 10px;
+
+    text-shadow: 1px 1px 2px black;
+    padding: 6px 0px 10px 16px;
+    
+    background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/66_button.png");
+    background-size: cover;
+    background-position-y: center;
+  }
+
+
   .acryliqueBackBtn {
     color: #e8ca7d;
     font-size: 1.8em;
-    position: absolute;
-    left: 22px;
-    top: 36px;
+    position: relative;
+    /* left: 22px;
+    top: 36px; */
     cursor: pointer;
 
     transition: all 0.4s;
@@ -588,6 +614,15 @@ body {
     opacity: 0.8;
     transform: translateX(-5px) scale(1.1);
   }
+
+  #acryliqueBackBtn {
+    transition: all 0.4s;
+  }
+  #acryliqueBackBtn:hover {
+    opacity: 0.8;
+    transform: translateX(-7px) scale(1.1);
+  }
+  
 
   .acryliqueBackBtnAccueil {
     z-index: 9999999;
@@ -599,10 +634,10 @@ body {
 
     transition: all 0.4s;
   }
-  .acryliqueBackBtnAccueil:hover {
+  /* .acryliqueBackBtnAccueil:hover {
     opacity: 0.8;
     transform: translateX(-5px) scale(1.1);
-  }
+  } */
 
 
   .acrylique-content-fade {
