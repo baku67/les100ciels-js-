@@ -90,12 +90,16 @@
     // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn4").addEventListener("click", function() {
 
-        document.getElementById("contentSectionAcrylique").style.opacity = "0";
+    document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+    document.getElementById("contentSectionAcrylique").style.opacity = "1";
+    document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
-        setTimeout(function() {
+
+    setTimeout(function() {
             $("#gallery").load("peinture-links.html", function() {
-                console.log("backBtn links loaded");
+                document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fadeOut');
             });
         }, 501);
     })
+    
 </script>

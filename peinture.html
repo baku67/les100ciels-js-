@@ -580,6 +580,15 @@
             }
 
 
+            #previewImg {
+                cursor: pointer;
+                transition: all 0.4s;
+            }
+            #previewImg:hover {
+                opacity: 0.7;
+                transform: scale(0.95);
+            }
+
             .subTitle {
 
                 color: #ffffff;
@@ -621,8 +630,8 @@
                 transform: translateX(15px);
                 /* GARDER UN DES 2 au moins  */
                 /* filter: drop-shadow(2px 4px 6px black); */
-                /* filter: invert(1); */
-                filter: drop-shadow(2px 4px 6px black) invert(1);
+                filter: invert(1);
+                /* filter: drop-shadow(2px 4px 6px black) invert(1); */
 
                 color: #fbfbfb;
             }
@@ -706,7 +715,7 @@
 
                 .acryliqueBackBtn {
 
-                    left: 90%;
+                    /* left: 90%; */
                     top: 0px;
                 }
 
@@ -801,6 +810,10 @@
                     text-align: center;
                 } */
 
+                .subTitleAcrylique {
+                    gap: 22px;
+                }
+
 
                 /* (ATTENTION l'overflow du body marche pas donc ça dépasse si je veux faire un zoom) */
                 .svgArbre {
@@ -816,7 +829,7 @@
                     border-radius: 12px;
                     margin: 0 auto;
 
-                    padding: 45px 0px;
+                    padding: 30px 0px;
                     background-color: #00000000;
 
                     position: relative;
@@ -851,8 +864,8 @@
                 .subTitle {
                     /* margin-block-end: 1em; */
                     margin: 0;
-                    font-weight: 200;
-                    font-size: 1.5em;
+                    font-weight: 500;
+                    font-size: 1.6em;
                 }
 
                 .subSubTitle {
@@ -869,18 +882,39 @@
                     padding-top: 15px;
                 }
 
+                #link-section1 {
+                    border-radius: 4px;
+                    padding: 5px 0px 9px 0px;
+                    background: linear-gradient(to left, #3a7c91, rgba(0, 0, 0, 0.1)), url("./toiles/toilesButtonBg/11_button.png");
+                    background-size: cover;
+                    background-position-y: center;
+                }
+                /* #link-section2 {
+                    border-radius: 4px;
+                    padding: 5px 0px 9px 0px;
+                    background: linear-gradient(to left, #3a7c91, rgba(0, 0, 0, 0.1)), url(./toiles/toilesButtonBg/22_button2.png);
+                    background-size: cover;
+                    background-position-y: center;
+                } */
                 
                 #link-section3 {
                     border-radius: 4px;
-                    padding: 9px 0px 14px 0px;
+                    padding: 5px 0px 9px 0px;
                     background: linear-gradient(to left, #3a7c91, rgba(0, 0, 0, 0.1)), url(./toiles/toilesButtonBg/22_button2.png);
                     background-size: cover;
                     background-position-y: center;
                 }
                 #link-section4 {
                     border-radius: 4px;
-                    padding: 9px 0px 14px 0px;
+                    padding: 5px 0px 9px 0px;
                     background: linear-gradient(to left, #914e3a, rgba(0, 0, 0, 0.1)), url(./toiles/toilesButtonBg/55_button.png);
+                    background-size: cover;
+                    background-position-y: center;
+                }
+                #link-section5 {
+                    border-radius: 4px;
+                    padding: 5px 0px 9px 0px;
+                    background: linear-gradient(to left, #c58e52, rgba(0, 0, 0, 0.1)), url("./toiles/toilesButtonBg/66_button.png");
                     background-size: cover;
                     background-position-y: center;
                 }

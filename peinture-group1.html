@@ -50,10 +50,6 @@
             </div>
 
             <div class="gallery-item">
-                <img src="toiles/8-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
                 <img src="toiles/9-min.jpg" alt="Toile 14">
             </div>
 
@@ -80,13 +76,14 @@
 
 <script>
 
+
+
     // *** Random image preview 
     imagesUrl = [
         "toiles/4-min.jpg",
         "toiles/5-min.jpg",
         "toiles/6-min.jpg",
         "toiles/7-min.jpg",
-        "toiles/8-min.jpg",
         "toiles/9-min.jpg",
         "toiles/10-min.jpg",
         "toiles/11-min.jpg",
@@ -127,12 +124,15 @@
     // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn2").addEventListener("click", function() {
 
-        document.getElementById("contentSectionAcrylique").style.opacity = "0";
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        
 
         setTimeout(function() {
             $("#gallery").load("peinture-links.html", function() {
-                console.log("backBtn links loaded");
+                document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fadeOut');
             });
-    }, 501);
+        }, 501);
     })
 </script>

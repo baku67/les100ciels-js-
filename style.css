@@ -653,6 +653,18 @@ body {
     }
   }
 
+  .acrylique-content-fadeOut {
+    opacity: 1;
+    animation: fadeOutAcryliqueContent 0.5s 0s ease forwards;
+  }
+  @keyframes fadeOutAcryliqueContent {
+    from {
+      opacity: 1;
+    } 
+    to {
+      opacity: 0;
+    }
+  }
 
 
   #linksSectionAcrylique, #contentSectionAcrylique {

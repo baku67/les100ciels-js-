@@ -1,4 +1,4 @@
-<div id="linksSectionAcrylique">
+<div id="linksSectionAcrylique" class="acrylique-content-fade">
 
     <div class="subTitleAcrylique">
         <a href="./index.html" class="acryliqueBackBtnAccueil" style="position:relative; display:contents;">
@@ -24,7 +24,8 @@
 
     document.getElementById("link-section1").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        // document.getElementById("linksSectionAcrylique").style.opacity = "0";
 
         // WIP change svg arbre
         
@@ -38,7 +39,8 @@
 
     document.getElementById("link-section2").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        // document.getElementById("linksSectionAcrylique").style.opacity = "0";
 
         setTimeout(function() {
             $("#gallery").load("peinture-group2.html", function() {
@@ -49,7 +51,8 @@
 
     document.getElementById("link-section3").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        // document.getElementById("linksSectionAcrylique").style.opacity = "0";
 
         setTimeout(function() {
             $("#gallery").load("peinture-group3.html", function() {
@@ -60,7 +63,8 @@
 
     document.getElementById("link-section4").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        // document.getElementById("linksSectionAcrylique").style.opacity = "0";
 
         setTimeout(function() {
             $("#gallery").load("peinture-group4.html", function() {
@@ -69,10 +73,10 @@
         },501)
     })
 
-
     document.getElementById("link-section5").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").style.opacity = "0";
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        // document.getElementById("linksSectionAcrylique").style.opacity = "0";
 
         setTimeout(function() {
             $("#gallery").load("peinture-group5.html", function() {
