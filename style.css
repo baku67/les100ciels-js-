@@ -547,54 +547,66 @@ body {
   }
 
   #link-section1 {
-    border-radius: 10px;
+    border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
     padding: 6px 0px 10px 16px;
     
-    background: 
+    /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/11_button.png");
+      url("./toiles/toilesButtonBg/11_button.png"); */
+      background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/less-opacity/1_button.png");
     background-size: cover;
     background-position-y: center;
   }
 
   #link-section3 {
-    border-radius: 10px;
+    border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
     padding: 6px 0px 10px 16px;
     
-    background: 
+    /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/22_button2.png");
+      url("./toiles/toilesButtonBg/22_button2.png"); */
+    background: 
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+    url("./toiles/toilesButtonBg/less-opacity/2_button.png");
     background-size: cover;
     background-position-y: center;
   }
 
   #link-section4 {
-    border-radius: 10px;
+    border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
     padding: 6px 0px 10px 16px;
     
-    background: 
+    /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/55_button.png");
+      url("./toiles/toilesButtonBg/55_button.png"); */
+    background: 
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+    url("./toiles/toilesButtonBg/less-opacity/5_button.png");
     background-size: cover;
     background-position-y: center;
   }
 
 
   #link-section5 {
-    border-radius: 10px;
+    border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
     padding: 6px 0px 10px 16px;
     
-    background: 
+    /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/66_button.png");
+      url("./toiles/toilesButtonBg/66_button.png"); */
+    background: 
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+    url("./toiles/toilesButtonBg/less-opacity/6_button.png");
     background-size: cover;
     background-position-y: center;
   }
