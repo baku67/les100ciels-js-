@@ -74,9 +74,9 @@
 
 </div>
 
+
+
 <script>
-
-
 
     // *** Random image preview 
     imagesUrl = [
@@ -93,6 +93,10 @@
     randomIndex = Math.floor(Math.random() * imagesUrl.length);
     document.getElementById("previewImg").src = imagesUrl[randomIndex];
 
+    // Border selected sur le random preview
+    var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
+    galleryItem.classList.add('galleryImgPreviewSelected');
+
 
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item img");
@@ -104,10 +108,10 @@
         item.addEventListener("click", function() {
 
             galleryItems.forEach(function(item2) {
-                item2.style.border = "2px solid transparent";
+                item2.classList.remove('galleryImgPreviewSelected');
                 item2.classList.remove('star-selected');
             })
-            item.style.border = "2px solid white";
+            item.classList.add('galleryImgPreviewSelected');
             item.classList.add('star-selected');
 
             previewImg.classList.add("fade-out"); 
