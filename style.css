@@ -1,7 +1,13 @@
 /* html, body, #main {
   height:100%;
 } */
-
+html, body {
+  height:100%;
+}
+a { 
+  text-decoration: none;
+  color: inherit;
+}
 
 body {
   -webkit-tap-highlight-color: transparent;
@@ -143,9 +149,8 @@ body {
 
 #main {
   text-align: center; 
-  /* Anim background SUNFLOWER */
-  background-size: 200%;
 
+  /* Anim background SUNFLOWER */
   background-position: 0%;
   background-size: 200%;
 
@@ -158,7 +163,7 @@ body {
   transition: all 2.5s;
 }
 .main {
-    animation: bgSunflower 3s 0.7s normal forwards ease-in-out; 
+    animation: bgSunflower 3s 0s normal forwards ease-in-out; 
   }
   @keyframes bgSunflower {
     from {
