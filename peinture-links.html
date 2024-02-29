@@ -8,11 +8,11 @@
     </div>
 
     <div class="acryliqueSectionList">
-        <span id="link-section1" class="subSubTitle">L'esprit et l'épouse</span>
+        <span id="link-section1" class="subSubTitle">Collection "L'esprit et l'épouse"</span>
         <span id="link-section2" class="subSubTitle">Diptyque "La fl&ucirc;te enchant&eacute;e"</span>
         <span id="link-section3" class="subSubTitle">Triptyque "Les licornes"</span>
         <span id="link-section4" class="subSubTitle">Illustrations de 3 contes</span>
-        <span id="link-section5" class="subSubTitle">Arbres de vie</span>
+        <span id="link-section5" class="subSubTitle">Collection "Arbres de vie"</span>
     </div>
 
 </div>
@@ -28,27 +28,7 @@
 
         setTimeout(function() {
             $("#gallery").load("peinture-group1.html", function() {
-                // Pas besoin ? 
-                // *** Preloads des images (section1)
-                // var imageUrls = [
-                //     "toiles/4-min.jpg",
-                //     "toiles/5-min.jpg",
-                //     "toiles/6-min.jpg",
-                //     "toiles/7-min.jpg",
-                //     "toiles/9-min.jpg",
-                //     "toiles/10-min.jpg",
-                //     "toiles/11-min.jpg",
-                //     "toiles/12-min.jpg",
-                //     "toiles/13-min.jpg",
-                // ];
-                // // Loop through the array and create <link rel="preload"> tags for each image
-                // imageUrls.forEach(function(url) {
-                //     var link = document.createElement("link");
-                //     link.rel = "preload";
-                //     link.href = url;
-                //     link.as = "image";
-                //     document.head.appendChild(link);
-                // });
+                console.log("peinture section 1 loaded");
             })
         },501)
     })

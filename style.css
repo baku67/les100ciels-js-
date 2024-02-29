@@ -550,14 +550,36 @@ body {
     border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
-    padding: 6px 0px 10px 16px;
+    padding: 6px 25px 10px 16px;
     
     /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
       url("./toiles/toilesButtonBg/11_button.png"); */
+
+      /* background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/less-opacity/1_button.png"); */
+
       background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/less-opacity/1_button.png");
+      url("./toiles/toilesButtonBg/gradient/gradient-global/esprit_et_epouse-min.png");
+    background-size: cover;
+    background-position-y: center;
+  }
+
+
+  #link-section2 {
+    border-radius: 7px;
+
+    text-shadow: 1px 1px 2px black;
+    padding: 6px 25px 10px 16px;
+    
+    /* background: 
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+      url("./toiles/toilesButtonBg/22_button2.png"); */
+    background: 
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+    url("./toiles/toilesButtonBg/gradient/gradient-global/flute_enchantee-min.png");
     background-size: cover;
     background-position-y: center;
   }
@@ -566,14 +588,14 @@ body {
     border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
-    padding: 6px 0px 10px 16px;
+    padding: 6px 25px 10px 16px;
     
     /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
       url("./toiles/toilesButtonBg/22_button2.png"); */
     background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/less-opacity/2_button.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/licorne-min.png");
     background-size: cover;
     background-position-y: center;
   }
@@ -582,14 +604,14 @@ body {
     border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
-    padding: 6px 0px 10px 16px;
+    padding: 6px 25px 10px 16px;
     
     /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
       url("./toiles/toilesButtonBg/55_button.png"); */
     background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/less-opacity/5_button.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/3contes-min.png");
     background-size: cover;
     background-position-y: center;
   }
@@ -599,14 +621,14 @@ body {
     border-radius: 7px;
 
     text-shadow: 1px 1px 2px black;
-    padding: 6px 0px 10px 16px;
+    padding: 6px 25px 10px 16px;
     
     /* background: 
       linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
       url("./toiles/toilesButtonBg/66_button.png"); */
     background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/less-opacity/6_button.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/arbre_de_vie-min.png");
     background-size: cover;
     background-position-y: center;
   }
