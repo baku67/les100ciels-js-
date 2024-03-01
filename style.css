@@ -47,6 +47,43 @@ body {
 
 
 
+.subTitle {
+
+  color: #ffffff;
+  background: -webkit-linear-gradient(#ffffff, rgb(246, 250, 255));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Montserrat Alternates', sans-serif;
+
+  margin-block-start: 0;
+  /* margin-block-end: 1.8em; */
+  margin: 0;
+
+  font-weight: 900;
+  font-size: 2.2em;
+}
+
+
+.subSubTitle {
+  cursor: pointer;
+  color: #ffecbc;
+  font-size: 1.9em;
+  margin-block-start: 0;
+  text-align: left;
+  transition: all 0.5s;
+}
+.subSubTitle:hover {
+  transform: translateX(8px);
+  /* GARDER UN DES 2 au moins  */
+  /* filter: drop-shadow(2px 4px 6px black); */
+  filter: invert(1);
+  /* filter: drop-shadow(2px 4px 6px black) invert(1); */
+
+  /* color: #fbfbfb; */
+  color: black;
+  text-shadow: 1px 1px 2px white !important;
+}
+
 
 
 
@@ -410,7 +447,7 @@ body {
 
 
   .accueilLink-1:hover {
-    animation: linkHover1 0.4s ease 0s normal forwards running;
+    animation: linkHover1 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover1 {
     from {
@@ -421,13 +458,13 @@ body {
     }
   }
   .accueilLink-1:hover + .underline {
-    animation: underlineShow 0.5s forwards ease;
+    animation: underlineShow 0.5s ease forwards;
     opacity: 1 !important;
   } 
 
 
   .accueilLink-2:hover {
-    animation: linkHover2 0.4s ease 0s normal forwards running;
+    animation: linkHover2 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover2 {
     from {
@@ -444,7 +481,7 @@ body {
 
 
   .accueilLink-3:hover {
-    animation: linkHover3 0.4s ease 0s normal forwards running;
+    animation: linkHover3 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover3 {
     from {
@@ -461,7 +498,7 @@ body {
 
 
   .accueilLink-4:hover {
-    animation: linkHover4 0.4s ease 0s normal forwards running;
+    animation: linkHover4 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover4 {
     from {
@@ -479,7 +516,7 @@ body {
 
 
   .accueilLink-5:hover {
-    animation: linkHover5 0.4s ease 0s normal forwards running;
+    animation: linkHover5 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover5 {
     from {
@@ -497,7 +534,7 @@ body {
 
 
   .accueilLink-6:hover {
-    animation: linkHover6 0.4s ease 0s normal forwards running;
+    animation: linkHover6 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover6 {
     from {
@@ -515,7 +552,7 @@ body {
 
 
   .accueilLink-7:hover {
-    animation: linkHover7 0.4s ease 0s normal forwards running;
+    animation: linkHover7 0.4s 0s ease normal forwards;
   }
   @keyframes linkHover7 {
     from {
