@@ -10,39 +10,30 @@
 
 
     <!-- **** Preview random et liste raccourcis toiles: -->
-    <!--            
-        <!- - Hide Btn - ->
-        <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
-        <!- - Btn shape preview - ->
-        <div id="btnRadiusPreview">
-            <i class="fa-solid fa-square"></i>
-            <i class="facircle fa-solid fa-circle"></i>
-        </div>
-    -->
 
-         <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
-        <div id="galleriePreview" class="galleriePreview">
+        <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
+    <!-- <div id="galleriePreview" class="galleriePreview">
 
-            <img id="previewImg" src="" alt="Toile 1">
+        <img id="previewImg" src="" alt="Toile 1">
 
+    </div> -->
+
+    <!-- <!- - liste des images - -> -->
+    <div class="galleryShortcuts">
+
+        <div class="gallery-item">
+            <img src="toiles/44.jpg" alt="Toile 4">
         </div>
 
-        <!-- <!- - liste des images - -> -->
-        <div class="galleryShortcuts">
-
-            <div class="gallery-item">
-                <img src="toiles/44.jpg" alt="Toile 4">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/55.jpg" alt="Toile 5">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/66.jpg" alt="Toile 6">
-            </div>
-
+        <div class="gallery-item">
+            <img src="toiles/55.jpg" alt="Toile 5">
         </div>
+
+        <div class="gallery-item">
+            <img src="toiles/66.jpg" alt="Toile 6">
+        </div>
+
+    </div>
 
 
 </div>
@@ -51,17 +42,17 @@
 <script>
 
     // *** Random image preview 
-    imagesUrl = [
-        "toiles/44.jpg",
-        "toiles/55.jpg",
-        "toiles/66.jpg",
-    ]
-    randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    document.getElementById("previewImg").src = imagesUrl[randomIndex];
+    // imagesUrl = [
+    //     "toiles/44.jpg",
+    //     "toiles/55.jpg",
+    //     "toiles/66.jpg",
+    // ]
+    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
+    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
 
     // Border selected sur le random preview
-    var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    galleryItem.classList.add('galleryImgPreviewSelected');
+    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
+    // galleryItem.classList.add('galleryImgPreviewSelected');
 
 
     // onclick previews => modal :

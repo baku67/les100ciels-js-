@@ -3,74 +3,61 @@
 
     <!-- Titre et back to acryliques Btn -->
     <div class="subTitleAcrylique">
-        <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
+        <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-circle-arrow-left"></i>
         <h2 class="subTitle">L'esprit et l'épouse</h2>
     </div>
 
 
 
-    <!-- **** Preview random et liste raccourcis toiles: -->
-    <!--            
-        <!- - Hide Btn - ->
-        <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
-        <!- - Btn shape preview - ->
-        <div id="btnRadiusPreview">
-            <i class="fa-solid fa-square"></i>
-            <i class="facircle fa-solid fa-circle"></i>
+    <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
+    <!-- <div id="galleriePreview" class="galleriePreview">
+
+        <img id="previewImg" src="" alt="Toile 1">
+
+    </div> -->
+
+
+
+    <!-- <!- - liste des images - -> -->
+    <div class="galleryShortcuts">
+
+        <div class="gallery-item">
+            <img src="toiles/4-min.jpg" alt="Toile 11">
         </div>
 
-                -->
-
-        <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
-        <div id="galleriePreview" class="galleriePreview">
-
-            <img id="previewImg" src="" alt="Toile 1">
-
+        <div class="gallery-item">
+            <img src="toiles/5-min.jpg" alt="Toile 12">
         </div>
 
-
-
-        <!-- <!- - liste des images - -> -->
-        <div class="galleryShortcuts">
-
-            <div class="gallery-item">
-                <img src="toiles/4-min.jpg" alt="Toile 11">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/5-min.jpg" alt="Toile 12">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/6-min.jpg" alt="Toile 13">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/7-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/9-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/10-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/11-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/12-min.jpg" alt="Toile 14">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/13-min.jpg" alt="Toile 14">
-            </div>
-
+        <div class="gallery-item">
+            <img src="toiles/6-min.jpg" alt="Toile 13">
         </div>
 
+        <div class="gallery-item">
+            <img src="toiles/7-min.jpg" alt="Toile 14">
+        </div>
+
+        <div class="gallery-item">
+            <img src="toiles/9-min.jpg" alt="Toile 14">
+        </div>
+
+        <div class="gallery-item">
+            <img src="toiles/10-min.jpg" alt="Toile 14">
+        </div>
+
+        <div class="gallery-item">
+            <img src="toiles/11-min.jpg" alt="Toile 14">
+        </div>
+
+        <div class="gallery-item">
+            <img src="toiles/12-min.jpg" alt="Toile 14">
+        </div>
+
+        <div class="gallery-item">
+            <img src="toiles/13-min.jpg" alt="Toile 14">
+        </div>
+
+    </div>
 
 </div>
 
@@ -79,23 +66,23 @@
 <script>
 
     // *** Random image preview 
-    imagesUrl = [
-        "toiles/4-min.jpg",
-        "toiles/5-min.jpg",
-        "toiles/6-min.jpg",
-        "toiles/7-min.jpg",
-        "toiles/9-min.jpg",
-        "toiles/10-min.jpg",
-        "toiles/11-min.jpg",
-        "toiles/12-min.jpg",
-        "toiles/13-min.jpg",
-    ]
-    randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    document.getElementById("previewImg").src = imagesUrl[randomIndex];
+    // imagesUrl = [
+    //     "toiles/4-min.jpg",
+    //     "toiles/5-min.jpg",
+    //     "toiles/6-min.jpg",
+    //     "toiles/7-min.jpg",
+    //     "toiles/9-min.jpg",
+    //     "toiles/10-min.jpg",
+    //     "toiles/11-min.jpg",
+    //     "toiles/12-min.jpg",
+    //     "toiles/13-min.jpg",
+    // ]
+    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
+    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
 
     // Border selected sur le random preview
-    var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    galleryItem.classList.add('galleryImgPreviewSelected');
+    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
+    // galleryItem.classList.add('galleryImgPreviewSelected');
 
 
     // onclick previews => modal :

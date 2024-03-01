@@ -12,20 +12,13 @@
     
 
     <!-- **** Preview random et liste raccourcis toiles: -->           
-        <!-- <!- - Hide Btn - -> -->
-        <!-- <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i> -->
-        <!-- <!- - Btn shape preview - -> -->
-        <!-- <div id="btnRadiusPreview">
-            <i class="fa-solid fa-square"></i>
-            <i class="facircle fa-solid fa-circle"></i>
-        </div> -->
 
         <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
-        <div id="galleriePreview" class="galleriePreview">
+        <!-- <div id="galleriePreview" class="galleriePreview">
 
             <img id="previewImg" src="" alt="Toile 1">
 
-        </div>
+        </div> -->
 
         <!-- <!- - liste des images - -> -->
         <div class="galleryShortcuts">
@@ -51,17 +44,17 @@
 <script>
 
     // *** Random image preview 
-    imagesUrl = [
-        "toiles/11.jpg",
-        "toiles/22.jpg",
-        "toiles/33.jpg",
-    ]
-    randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    document.getElementById("previewImg").src = imagesUrl[randomIndex];
+    // imagesUrl = [
+    //     "toiles/11.jpg",
+    //     "toiles/22.jpg",
+    //     "toiles/33.jpg",
+    // ]
+    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
+    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
 
     // Border selected sur le random preview
-    var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    galleryItem.classList.add('galleryImgPreviewSelected');
+    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
+    // galleryItem.classList.add('galleryImgPreviewSelected');
 
 
     // onclick previews => modal :

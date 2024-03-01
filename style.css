@@ -676,7 +676,12 @@ body {
   }
 
 
+  #acryliqueBackBtn {
+    padding: 10px;
+  }
   .acryliqueBackBtn {
+    padding: 10px;
+
     color: #e8ca7d;
     font-size: 1.8em;
     position: relative;
@@ -687,16 +692,18 @@ body {
     transition: all 0.4s;
   }
   .acryliqueBackBtn:hover {
+    color: whitesmoke;
     opacity: 0.8;
-    transform: translateX(-5px) scale(1.1);
+    transform: translateX(-5px) scale(1.2);
   }
 
   #acryliqueBackBtn {
     transition: all 0.4s;
   }
   #acryliqueBackBtn:hover {
+    color: whitesmoke;
     opacity: 0.8;
-    transform: translateX(-7px) scale(1.1);
+    transform: translateX(-7px) scale(1.2);
   }
   
 
