@@ -925,6 +925,16 @@
         </div>
 
 
+        <!-- Modal preview -->
+        <div id="modalPreview">
+            <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
+            <div class="modalPreviewContent">
+                <h2>Titre image</h2>
+                <img id="modalPreviewImg" src="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dictum tellus, sed efficitur nibh. Aliquam nec luctus dolor. Ut ut iaculis justo. Integer massa arcu, hendrerit ac molestie nec, feugiat id orci. In mollis sagittis ultricies. Donec ac gravida eros.</p>
+            </div>
+        </div>
+
         <!-- titre absolute -->
         <div class="titlesDiv">
             <a href="./index.html" class="linkTitle">
@@ -2762,105 +2772,14 @@
 
 
                 $("#gallery").load("peinture-links.html", function() {
-
+                    
                 })
 
 
-
-
-                // *** bouton toggle carré/rond preview 
-                // document.getElementById("btnRadiusPreview").addEventListener("click", function() {
-                //     document.getElementById("previewImg").classList.toggle("toggleRadiusPreview");
-                // });
-
-
-
-                // *** Btn toggle hide/show 
-                // document.getElementById("hideBtn").addEventListener("click", function() {
-
-                //     const gallery = document.getElementById("gallery");
-                //     const arbre = document.getElementById("svgArbre");
-
-                //     if (gallery.classList.contains("fadeOut") || gallery.style.opacity == "0") {
-
-                //         gallery.classList.add('fadeIn');
-
-                //         setTimeout(function() {
-                //             gallery.style.opacity = "1";
-                //             gallery.classList.remove('fadeIn');
-                //         }, 701);
-                //     }
-                //     else {
-
-                //         gallery.classList.add('fadeOut');
-
-                //         document.getElementById("svgArbre").classList.add('svgArbrePositionToggle');
-
-                //         // NEW
-                //         arbre.classList.add('arbreOpacityTransition');
-
-                //         setTimeout(function() {
-
-                //             gallery.style.opacity = "0";
-                //             gallery.classList.remove('fadeOut');
-
-                //             // NEW
-                //             arbre.style.opacity = "1";
-                //             arbre.style.filter = "saturate(0.6)";
-                //             // arbre.classList.remove('arbreOpacityTransition');
-
-                //         }, 701);
-                //     }
-                // });
-                
-
-                // *** Random image preview 
-                // const imagesUrl = [
-                //     "toiles/11.jpg",
-                //     "toiles/22.jpg",
-                //     "toiles/33.jpg",
-                //     "toiles/44.jpg",
-                //     "toiles/55.jpg",
-                //     "toiles/66.jpg",
-                //     "toiles/77.jpg",
-                //     "toiles/1-min.jpg",
-                //     "toiles/2-min.jpg",
-                //     "toiles/3-min.jpg",
-                //     "toiles/4-min.jpg",
-                //     "toiles/5-min.jpg",
-                //     "toiles/6-min.jpg",
-                //     "toiles/7-min.jpg",
-                // ]
-                // const randomIndex = Math.floor(Math.random() * imagesUrl.length);
-                // document.getElementById("previewImg").src = imagesUrl[randomIndex];
-
-
-                // // Ancien onclick previews => modal :
-                // const galleryItems = document.querySelectorAll(".gallery-item img");
-                // const viewerContainer = document.querySelector(".viewer-container");
-                // const viewerImage = document.querySelector(".viewer-image");
-            
-                // galleryItems.forEach(function(item) {
-
-                //     item.addEventListener("click", function() {
-
-                //         galleryItems.forEach(function(item2) {
-                //             item2.style.border = "2px solid transparent";
-                //             item2.classList.remove('star-selected');
-                //         })
-                //         item.style.border = "2px solid white";
-                //         item.classList.add('star-selected');
-
-                //         const previewImg = document.getElementById("previewImg");
-
-                //         previewImg.classList.add("fade-out"); 
-
-                //         setTimeout(function() {
-                //             previewImg.src = item.src;
-                //             previewImg.classList.remove("fade-out"); 
-                //         }, 500); 
-                //     })
-                // });
+                // Btn close Modal
+                document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
+                    document.getElementById('modalPreview').style.display = "none";
+                })
 
 
             });

@@ -8,16 +8,6 @@
     </div>
 
 
-
-    <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
-    <!-- <div id="galleriePreview" class="galleriePreview">
-
-        <img id="previewImg" src="" alt="Toile 1">
-
-    </div> -->
-
-
-
     <!-- <!- - liste des images - -> -->
     <div class="galleryShortcuts">
 
@@ -65,48 +55,15 @@
 
 <script>
 
-    // *** Random image preview 
-    // imagesUrl = [
-    //     "toiles/4-min.jpg",
-    //     "toiles/5-min.jpg",
-    //     "toiles/6-min.jpg",
-    //     "toiles/7-min.jpg",
-    //     "toiles/9-min.jpg",
-    //     "toiles/10-min.jpg",
-    //     "toiles/11-min.jpg",
-    //     "toiles/12-min.jpg",
-    //     "toiles/13-min.jpg",
-    // ]
-    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
-
-    // Border selected sur le random preview
-    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    // galleryItem.classList.add('galleryImgPreviewSelected');
-
-
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item img");
-    viewerContainer = document.querySelector(".viewer-container");
-    viewerImage = document.querySelector(".viewer-image");
 
     galleryItems.forEach(function(item) {
 
         item.addEventListener("click", function() {
 
-            galleryItems.forEach(function(item2) {
-                item2.classList.remove('galleryImgPreviewSelected');
-                item2.classList.remove('star-selected');
-            })
-            item.classList.add('galleryImgPreviewSelected');
-            item.classList.add('star-selected');
-
-            previewImg.classList.add("fade-out"); 
-
-            setTimeout(function() {
-                previewImg.src = item.src;
-                previewImg.classList.remove("fade-out"); 
-            }, 500); 
+            document.getElementById('modalPreviewImg').src = item.src;
+            document.getElementById('modalPreview').style.display = "block";
         })
     });
 

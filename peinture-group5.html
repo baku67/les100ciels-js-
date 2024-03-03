@@ -43,22 +43,8 @@
 
 </div>
 
+
 <script>
-
-    // *** Random image preview 
-    // imagesUrl = [
-    //     "toiles/1-min.jpg",
-    //     "toiles/2-min.jpg",
-    //     "toiles/3-min.jpg",
-    //     "toiles/8-min.jpg",
-    // ]
-    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
-
-    // Border selected sur le random preview
-    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    // galleryItem.classList.add('galleryImgPreviewSelected');
-
 
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item img");
@@ -90,12 +76,12 @@
     // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn2").addEventListener("click", function() {
 
-    document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
-    document.getElementById("contentSectionAcrylique").style.opacity = "1";
-    document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
 
-    setTimeout(function() {
+        setTimeout(function() {
             $("#gallery").load("peinture-links.html", function() {
                 document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fadeOut');
             });

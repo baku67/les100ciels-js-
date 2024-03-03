@@ -9,16 +9,7 @@
 
 
 
-    
-
     <!-- **** Preview random et liste raccourcis toiles: -->           
-
-        <!-- <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - -> -->
-        <!-- <div id="galleriePreview" class="galleriePreview">
-
-            <img id="previewImg" src="" alt="Toile 1">
-
-        </div> -->
 
         <!-- <!- - liste des images - -> -->
         <div class="galleryShortcuts">
@@ -42,20 +33,6 @@
 
 
 <script>
-
-    // *** Random image preview 
-    // imagesUrl = [
-    //     "toiles/11.jpg",
-    //     "toiles/22.jpg",
-    //     "toiles/33.jpg",
-    // ]
-    // randomIndex = Math.floor(Math.random() * imagesUrl.length);
-    // document.getElementById("previewImg").src = imagesUrl[randomIndex];
-
-    // Border selected sur le random preview
-    // var galleryItem = document.querySelector('div.gallery-item img[src="' + imagesUrl[randomIndex] + '"]');
-    // galleryItem.classList.add('galleryImgPreviewSelected');
-
 
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item img");
@@ -87,12 +64,12 @@
     // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn3").addEventListener("click", function() {
 
-    document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
-    document.getElementById("contentSectionAcrylique").style.opacity = "1";
-    document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
 
-    setTimeout(function() {
+        setTimeout(function() {
             $("#gallery").load("peinture-links.html", function() {
                 document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fadeOut');
             });
