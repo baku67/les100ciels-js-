@@ -48,26 +48,13 @@
 
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item img");
-    viewerContainer = document.querySelector(".viewer-container");
-    viewerImage = document.querySelector(".viewer-image");
 
     galleryItems.forEach(function(item) {
 
         item.addEventListener("click", function() {
 
-            galleryItems.forEach(function(item2) {
-                item2.classList.remove('galleryImgPreviewSelected');
-                item2.classList.remove('star-selected');
-            })
-            item.classList.add('galleryImgPreviewSelected');
-            item.classList.add('star-selected');
-
-            previewImg.classList.add("fade-out"); 
-
-            setTimeout(function() {
-                previewImg.src = item.src;
-                previewImg.classList.remove("fade-out"); 
-            }, 500); 
+            document.getElementById('modalPreviewImg').src = item.src;
+            document.getElementById('modalPreview').style.display = "block";
         })
     });
 
@@ -83,7 +70,20 @@
 
         setTimeout(function() {
             $("#gallery").load("peinture-links.html", function() {
-                document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fadeOut');
+
+                // *** load svg arbre (retour sur rubriques)
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+                        var svgArbreGroup = document.getElementById('svgArbreGroup');
+                        svgArbreGroup.innerHTML = xhr.responseText;
+                    } else {
+                        console.error('Failed to load external SVG: ' + xhr.statusText);
+                    }
+                };
+                xhr.send();
+
             });
         }, 501);
     })
