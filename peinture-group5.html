@@ -54,7 +54,13 @@
         item.addEventListener("click", function() {
 
             document.getElementById('modalPreviewImg').src = item.src;
+            
             document.getElementById('modalPreview').style.display = "block";
+            document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+            setTimeout(()=> {
+                document.getElementById('modalPreview').style.opacity = "1";
+                document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+            }, 701)
         })
     });
 

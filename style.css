@@ -581,12 +581,43 @@ body {
 
 
   #modalPreview {
+    opacity: 0;
     display: none;
+
     position: absolute;
     z-index: 9999999999;
     width: 100%;
     height: 100%;
     background-color: #151b35f0;
+
+    transform: translateY(20px);
+  }
+  .fadeInModalPreview {
+    animation: fadeInModalPreview 0.7s 0s ease forwards;
+  }
+  @keyframes fadeInModalPreview {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  /* Anim fadeOut JS depuis peinture.html (JS global) */
+  .fadeOutModalPreview {
+    animation: fadeOutModalPreview 0.7s 0s ease forwards;
+  }
+  @keyframes fadeOutModalPreview {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
   }
 
   .closeModalPreview {

@@ -25,9 +25,18 @@
         gap: 1vh;
     }
 
+    .modalPreviewContent {
+        width: 85%;
+    }
+
     .modalPreviewContent img {
-        width: 100%;
+        width: 90%;
         height: 50vh;
+    }
+
+    .closeModalPreview {
+        top: 21px;
+        right: 23px;
     }
 
 

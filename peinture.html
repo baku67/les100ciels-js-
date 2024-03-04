@@ -993,9 +993,18 @@
                 })
 
 
-                // Btn close Modal
+                // Btn close Modal (+ remove anims modal)
                 document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
-                    document.getElementById('modalPreview').style.display = "none";
+
+                    document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                    document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
+                    setTimeout(() => {
+                        document.getElementById('modalPreview').style.display = "none";
+                        document.getElementById('modalPreview').style.opacity = "0";
+                        document.getElementById('modalPreview').style.transform = "translateY(20px)";
+                        document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
+                    }, 701)
+                    
                 })
 
             });
