@@ -734,6 +734,14 @@ body {
   }
 
 
+  #svgArbreGroup {
+    transform: translate(0px, 968px) scale(0.1, -0.1);
+  }
+  .svgArbreGroup-rubrique2 {
+    transform: translate(0px, 1076px) scale(0.1, -0.1) !important
+  }
+
+
   .acryliqueSectionList {
     display: inline-flex;
     flex-direction: column;

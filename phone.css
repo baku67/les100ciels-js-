@@ -82,6 +82,11 @@
     }
 
 
+    .svgArbreGroup-rubrique2 {
+        transform: translate(-26px, 1076px) scale(0.1, -0.1) !important;
+    }
+
+
     #modalPreviewPrevious, #modalPreviewNext {
         width: 85pt;
         height: 35pt;

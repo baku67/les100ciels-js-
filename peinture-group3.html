@@ -236,6 +236,9 @@
 
             $("#gallery").load("peinture-links.html", function() {
 
+                // Reset Fix SVG position rubrique 2:
+                document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique2');
+
                 // *** load svg arbre (retour sur rubriques)
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
