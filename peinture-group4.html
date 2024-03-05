@@ -75,7 +75,32 @@
 
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item");
-    var index = 0;
+    // var index = 0;
+
+
+    
+    // *** Suppression anciens écouteurs d'évènement Next/Previous (fix cumul entres rubriques)
+
+    // Obtenez une référence à l'élément
+    var modalPreviewPrevious = document.getElementById('modalPreviewPrevious');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewPrevious'
+    removeAllEventListeners(modalPreviewPrevious);
+
+    // Obtenez une référence à l'élément
+    var modalPreviewNext = document.getElementById('modalPreviewNext');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewNext'
+    removeAllEventListeners(modalPreviewNext);
+
 
 
     // Btn nextImg:

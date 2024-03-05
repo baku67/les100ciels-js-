@@ -933,6 +933,9 @@
 
             document.addEventListener("DOMContentLoaded", function() {
 
+                var index = 0;
+                var imagesObj = [];
+
                 // *** load svg arbre (initial)
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
