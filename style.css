@@ -869,6 +869,29 @@ body {
 
 
 
+  .svgFadeOut {
+    animation: svgFadeOut 0.7s 0s ease forwards;
+  }
+  @keyframes svgFadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  .svgFadeIn {
+    animation: svgFadeIn 0.7s 0s ease forwards;
+  }
+  @keyframes svgFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
 
 
 

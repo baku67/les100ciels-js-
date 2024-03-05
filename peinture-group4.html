@@ -59,8 +59,15 @@
         document.getElementById("contentSectionAcrylique").style.opacity = "1";
         document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
 
+
+        svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
             $("#gallery").load("peinture-links.html", function() {
 
                 // *** load svg arbre (retour sur rubriques)
@@ -68,8 +75,14 @@
                 xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
                         svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
                     } else {
                         console.error('Failed to load external SVG: ' + xhr.statusText);
                     }
@@ -77,7 +90,7 @@
                 xhr.send();
 
             });
-        }, 501);
+        }, 701);
     })
 
 </script>

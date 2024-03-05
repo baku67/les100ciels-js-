@@ -44,18 +44,31 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');        
 
-        setTimeout(function() {
-            $("#gallery").load("peinture-group1.html", function() {
+        // Anim fade In/Out SVG + changement path svg selon rubrique:
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+        
+        
+        svgArbreGroup.classList.add('svgFadeOut');
+        setTimeout(()=> {
 
-                // document.getElementById('svgArbre').style.width = "140%";
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
+            $("#gallery").load("peinture-group1.html", function() {
                 
-                // *** load svg licornes
+                // *** load svg esprit&epouse
                 var xhr = new XMLHttpRequest();
                 xhr.open('GET', '../esprit_et_epouse2.svg', true);
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
                         svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
                     } else {
                         console.error('Failed to load external SVG: ' + xhr.statusText);
                     }
@@ -63,9 +76,13 @@
                 xhr.send();
 
             })
-        },501)
+
+        }, 701)
+
     })
 
+
+    // TODO imgs + svg "flute enchantée"
     document.getElementById("link-section2").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
@@ -77,11 +94,22 @@
         },501)
     })
 
+
+
     document.getElementById("link-section3").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Anim fade In/Out SVG + changement path svg selon rubrique:
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+                
+
+        svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
             $("#gallery").load("peinture-group3.html", function() {
                 
                 // *** load svg licornes
@@ -89,8 +117,14 @@
                 xhr.open('GET', '../licorne-gContent.svg', true);
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
                         svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
                     } else {
                         console.error('Failed to load external SVG: ' + xhr.statusText);
                     }
@@ -98,14 +132,26 @@
                 xhr.send();
 
             })
-        },501)
+
+        },701)
     })
+
+
 
     document.getElementById("link-section4").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Anim fade In/Out SVG + changement path svg selon rubrique:
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
+
+        svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+            
             $("#gallery").load("peinture-group4.html", function() {
                 
                 // *** load svg licornes
@@ -113,8 +159,14 @@
                 xhr.open('GET', '../3contes-3-gContent.svg', true);
                 xhr.onload = function() {
                     if (xhr.status >= 200 && xhr.status < 300) {
-                        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
                         svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+                        
                     } else {
                         console.error('Failed to load external SVG: ' + xhr.statusText);
                     }
@@ -122,9 +174,12 @@
                 xhr.send();
 
             })
-        },501)
+
+        },701)
     })
 
+
+    // TODO SVG arbre rond "arbre de vie"
     document.getElementById("link-section5").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
