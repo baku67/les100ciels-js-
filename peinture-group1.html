@@ -13,38 +13,56 @@
 
         <div class="gallery-item">
             <img src="toiles/4-min.jpg" alt="Toile 11">
+            <p class="titleImage">Titre image 1</p>
+            <p class="descriptionImage">Description image 1</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/5-min.jpg" alt="Toile 12">
+            <p class="titleImage">Titre image 2</p>
+            <p class="descriptionImage">Description image 2</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/6-min.jpg" alt="Toile 13">
+            <p class="titleImage">Titre image 3</p>
+            <p class="descriptionImage">Description image 3</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/7-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 4</p>
+            <p class="descriptionImage">Description image 4</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/9-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 5</p>
+            <p class="descriptionImage">Description image 5</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/10-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 6</p>
+            <p class="descriptionImage">Description image 6</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/11-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 7</p>
+            <p class="descriptionImage">Description image 7</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/12-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 8</p>
+            <p class="descriptionImage">Description image 8</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/13-min.jpg" alt="Toile 14">
+            <p class="titleImage">Titre image 9</p>
+            <p class="descriptionImage">Description image 9</p>
         </div>
 
     </div>
@@ -56,13 +74,15 @@
 <script>
 
     // onclick previews => modal :
-    galleryItems = document.querySelectorAll(".gallery-item img");
+    galleryItems = document.querySelectorAll(".gallery-item");
 
     galleryItems.forEach(function(item) {
 
         item.addEventListener("click", function() {
 
-            document.getElementById('modalPreviewImg').src = item.src;
+            document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+            document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
+            document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
             
             document.getElementById('modalPreview').style.display = "block";
             document.getElementById('modalPreview').classList.add("fadeInModalPreview");

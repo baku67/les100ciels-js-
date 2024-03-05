@@ -13,14 +13,20 @@
 
         <div class="gallery-item">
             <img src="toiles/44.jpg" alt="Toile 4">
+            <p class="titleImage">Titre image 1</p>
+            <p class="descriptionImage">Description image 1</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/55.jpg" alt="Toile 5">
+            <p class="titleImage">Titre image 2</p>
+            <p class="descriptionImage">Description image 2</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/66.jpg" alt="Toile 6">
+            <p class="titleImage">Titre image 3</p>
+            <p class="descriptionImage">Description image 3</p>
         </div>
 
     </div>
@@ -32,13 +38,15 @@
 <script>
 
     // onclick previews => modal :
-    galleryItems = document.querySelectorAll(".gallery-item img");
+    galleryItems = document.querySelectorAll(".gallery-item");
 
     galleryItems.forEach(function(item) {
 
         item.addEventListener("click", function() {
 
-            document.getElementById('modalPreviewImg').src = item.src;
+            document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+            document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
+            document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
             
             document.getElementById('modalPreview').style.display = "block";
             document.getElementById('modalPreview').classList.add("fadeInModalPreview");
