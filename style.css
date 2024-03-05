@@ -679,7 +679,7 @@ body {
     -webkit-text-fill-color: transparent;
     font-weight: 200;
   }
-  .modalPreviewContent img {
+  #modalPreviewImg {
     width: 50%;
     height: 60vh;
     object-fit: contain;
@@ -687,6 +687,35 @@ body {
   .modalPreviewContent p {
     color: white;
   }
+
+  .modalPreviewNavContainer {
+    display: inline-flex;
+  }
+
+
+  #modalPreviewPrevious, #modalPreviewNext {
+    cursor: pointer;
+    padding: 15px;
+    transition: all 0.4s;
+  }
+
+  #modalPreviewPreviousG {
+    fill: #E8CA7D;
+    transition: all 0.4s;
+  }
+  #modalPreviewPrevious:hover {
+    opacity: 0.6;
+    transform: translateX(-5px);
+  }
+  #modalPreviewNextG {
+    fill: #E8CA7D;
+    transition: all 0.4s;
+  }
+  #modalPreviewNext:hover {
+    opacity: 0.6;
+    transform: translateX(5px);
+  }
+
 
 
 

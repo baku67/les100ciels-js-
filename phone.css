@@ -71,7 +71,7 @@
         width: 85%;
     }
 
-    .modalPreviewContent img {
+    #modalPreviewImg {
         width: 90%;
         height: 50vh;
     }
@@ -79,6 +79,12 @@
     .closeModalPreview {
         top: 21px;
         right: 23px;
+    }
+
+
+    #modalPreviewPrevious, #modalPreviewNext {
+        width: 85pt;
+        height: 35pt;
     }
 
 
