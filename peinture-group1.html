@@ -148,9 +148,58 @@
 
 
 
+
+
+
+
+    
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item");
     var index = 0;
+
+
+    // Btn nextImg:
+    document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+        if(index+1 > imagesObj.length) {
+            var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+            index = 1;
+        }
+        else {
+            var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+            index += 1;
+        }
+
+        document.getElementById('modalPreviewImg').src = nextImg.src;
+        document.getElementById('modalPreviewTitle').textContent = nextImg.title;
+        document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+
+        // Puce pagination:
+        paginationClick(index);
+    });
+
+    // Btn previousImg:
+    document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+        if(index-1 < 1) {
+            var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+            index = imagesObj.length;
+        }
+        else {
+            var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+            index -= 1;
+        }
+
+        document.getElementById('modalPreviewImg').src = prevImg.src;
+        document.getElementById('modalPreviewTitle').textContent = prevImg.title;
+        document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+
+        // Puce pagination:
+        paginationClick(index);
+    });
+
+
+
 
     galleryItems.forEach(function(item) {
 
@@ -160,45 +209,11 @@
             // get l'index pour équivalent [] 
             index = +item.querySelector('.indexImage').innerText;
 
-            document.getElementById('modalPreviewNext').addEventListener("click", function() {
-
-                if(index+1 > imagesObj.length) {
-                    var nextImg = findByPropertyValue(imagesObj, 'index', 1);
-                    index = 1;
-                }
-                else {
-                    var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
-                    index += 1;
-                }
-
-                document.getElementById('modalPreviewImg').src = nextImg.src;
-                document.getElementById('modalPreviewTitle').textContent = nextImg.title;
-                document.getElementById('modalPreviewDescription').textContent = nextImg.description;
-
-                // Puce pagination:
-                paginationClick(index);
+            // remove les puces .selected 
+            var paginationPuces = document.getElementsByClassName('paginationPuce');
+            Array.from(paginationPuces).forEach(function(elem) {
+                elem.classList.remove('selectedPagination');
             });
-
-            document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
-
-                if(index-1 < 1) {
-                    var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
-                    index = imagesObj.length;
-                }
-                else {
-                    var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
-                    index -= 1;
-                }
-
-                document.getElementById('modalPreviewImg').src = prevImg.src;
-                document.getElementById('modalPreviewTitle').textContent = prevImg.title;
-                document.getElementById('modalPreviewDescription').textContent = prevImg.description;
-
-                // Puce pagination:
-                paginationClick(index);
-            });
-
-
             // Pagination ajout .selected sur puce associée
             document.getElementById(`paginationNbr${index}`).classList.add('selectedPagination');
 
