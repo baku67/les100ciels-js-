@@ -1,110 +1,248 @@
 <div id="contentSectionAcrylique" class="acrylique-content-fade">
 
 
-    <!-- Back Button -->
-    <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
-
-
-    <h2 class="subTitle">Diptyque "La fl&ucirc;te enchant&eacute;e"</h2>
-
-
-
+    <!-- Titre et back to acryliques Btn -->
+    <div class="subTitleAcrylique">
+        <i id="acryliqueBackBtn3" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
+        <h2 class="subTitle">Diptyque "La flûte enchantée"</h2>
+    </div>
 
 
 
-    
+    <!-- **** Preview random et liste raccourcis toiles: -->           
 
-    <!-- **** Preview random et liste raccourcis toiles: -->
-    <!--            
-        <!- - Hide Btn - ->
-        <i id="hideBtn" class="hideBtn fa-regular fa-eye-slash"></i>
-        <!- - Btn shape preview - ->
-        <div id="btnRadiusPreview">
-            <i class="fa-solid fa-square"></i>
-            <i class="facircle fa-solid fa-circle"></i>
-        </div>
-
-        <!- - Preview image random JS (ou si clique sur raccourcis de la liste) - ->
-        <div id="galleriePreview" class="galleriePreview">
-
-            <img id="previewImg" src="" alt="Toile 1">
-
-        </div>
-
-        <!- - liste des images - ->
+        <!-- <!- - liste des images - -> -->
         <div class="galleryShortcuts">
 
             <div class="gallery-item">
-                <img src="toiles/11.jpg" alt="Toile 1">
+                <img src="toiles/88.jpg" alt="Toile 1">
+                <p class="titleImage">Titre image 1</p>
+                <p class="descriptionImage">Description image 1</p>
+                <p class="indexImage">1</p>
             </div>
 
             <div class="gallery-item">
-                <img src="toiles/22.jpg" alt="Toile 2">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/33.jpg" alt="Toile 3">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/44.jpg" alt="Toile 4">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/55.jpg" alt="Toile 5">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/66.jpg" alt="Toile 6">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/77.jpg" alt="Toile 7">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/1-min.jpg" alt="Toile 8">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/2-min.jpg" alt="Toile 9">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/3-min.jpg" alt="Toile 10">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/4-min.jpg" alt="Toile 11">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/5-min.jpg" alt="Toile 12">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/6-min.jpg" alt="Toile 13">
-            </div>
-
-            <div class="gallery-item">
-                <img src="toiles/7-min.jpg" alt="Toile 14">
+                <img src="toiles/99.jpg" alt="Toile 2">
+                <p class="titleImage">Titre image 2</p>
+                <p class="descriptionImage">Description image 2</p>
+                <p class="indexImage">2</p>
             </div>
 
         </div>
-    -->
+
 
 </div>
 
 
 <script>
-    document.getElementById("acryliqueBackBtn2").addEventListener("click", function() {
 
-        document.getElementById("contentSectionAcrylique").style.opacity = "0";
+    imagesObj = [
+        {
+            index: 1,
+            title: "Titre image 1",
+            src: "toiles/88.jpg",
+            description: "Description image 1",
+        },
+        {
+            index: 2,
+            title: "Titre image 2",
+            src: "toiles/99.jpg",
+            description: "Description image 2",
+        },
+    ]
 
-        setTimeout(function() {
-            $("#gallery").load("peinture-links.html", function() {
-                console.log("backBtn links loaded");
+    // trouver l'objet selon index:
+    function findByPropertyValue(array, property, value) {
+        return array.find(function(element) {
+            return element[property] === value;
+        });
+    }
+
+
+
+
+    
+    // onclick previews => modal :
+    galleryItems = document.querySelectorAll(".gallery-item");
+    // var index = 0;
+
+
+
+    // *** Suppression anciens écouteurs d'évènement Next/Previous (fix cumul entres rubriques)
+
+    // Obtenez une référence à l'élément
+    var modalPreviewPrevious = document.getElementById('modalPreviewPrevious');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewPrevious'
+    removeAllEventListeners(modalPreviewPrevious);
+
+    // Obtenez une référence à l'élément
+    var modalPreviewNext = document.getElementById('modalPreviewNext');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewNext'
+    removeAllEventListeners(modalPreviewNext);
+
+
+
+    // Btn nextImg:
+    document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+        // console.log('CLICK SUIVANT rubrique3');
+
+        if(index+1 > imagesObj.length) {
+            var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+            index = 1;
+        }
+        else {
+            var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+            index += 1;
+        }
+
+        document.getElementById('modalPreviewImg').src = nextImg.src;
+        document.getElementById('modalPreviewTitle').textContent = nextImg.title;
+        document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+
+        // Puce pagination:
+        paginationClick(index);
+    });
+
+    // Btn previousImg:
+    document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+        if(index-1 < 1) {
+            var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+            index = imagesObj.length;
+        }
+        else {
+            var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+            index -= 1;
+        }
+
+        document.getElementById('modalPreviewImg').src = prevImg.src;
+        document.getElementById('modalPreviewTitle').textContent = prevImg.title;
+        document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+
+        // Puce pagination:
+        paginationClick(index);
+    });
+
+
+
+    
+    galleryItems.forEach(function(item) {
+
+        item.addEventListener("click", function() {
+
+            // *** NAVIGATION prev/next image modal
+            // get l'index pour équivalent [] 
+            index = +item.querySelector('.indexImage').innerText;
+
+            // remove les puces .selected 
+            var paginationPuces = document.getElementsByClassName('paginationPuce');
+            Array.from(paginationPuces).forEach(function(elem) {
+                elem.classList.remove('selectedPagination');
             });
-        }, 501);
+            // Pagination ajout .selected sur puce associée
+            document.getElementById(`paginationNbr${index}`).classList.add('selectedPagination');
+
+
+            // *** Modif modal 
+            document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+            document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
+            document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
+            
+            document.getElementById('modalPreview').style.display = "block";
+            document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+            setTimeout(()=> {
+                document.getElementById('modalPreview').style.opacity = "1";
+                document.getElementById('modalPreview').style.transform = "translateY(0px)";
+                document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+            }, 701)
+        })
+    });
+
+
+
+
+
+    // pagination modalPreview:
+    function paginationClick(targetIndex) {
+
+        var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+        index = targetIndex;
+
+            // Style puce selected:
+            // remove les .selected
+            var paginationPuces = document.getElementsByClassName('paginationPuce');
+            Array.from(paginationPuces).forEach(function(elem) {
+                elem.classList.remove('selectedPagination');
+            });
+            // ajout .selected à la puce cliquée
+            var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+            currentIcon.classList.add('selectedPagination');
+
+        document.getElementById('modalPreviewImg').src = targetImg.src;
+        document.getElementById('modalPreviewTitle').textContent = targetImg.title;
+        document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+    }
+
+    var paginationContent = "";
+
+    for (let index = 1; index <= imagesObj.length; index++) {
+        paginationContent += `<i id='paginationNbr${index}' onclick='paginationClick(${index})' class='paginationPuce fa-solid fa-circle'></i>`;
+    }
+    document.getElementById('modalPreviewPaginationDiv').innerHTML = paginationContent;
+
+
+
+
+
+    // Back Btn to "peinture acrylique"
+    document.getElementById("acryliqueBackBtn3").addEventListener("click", function() {
+
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
+
+        svgArbreGroup.classList.add('svgFadeOut');
+        setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
+            $("#gallery").load("peinture-links.html", function() {
+
+                // *** load svg arbre (retour sur rubriques)
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
+                    } else {
+                        console.error('Failed to load external SVG: ' + xhr.statusText);
+                    }
+                };
+                xhr.send();
+
+            });
+        }, 701);
     })
 </script>
