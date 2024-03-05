@@ -29,21 +29,7 @@ body {
   }
 
 
-/* .fadeInExemple {
-  animation: fadeInGlobal 2.5s 0.7s ease forwards 1;
-}
-@keyframes fadeInGlobal {
-  from {
-    opacity:0;
-    width: 0px;
-    border-radius: 50px;
-  }
-  to {
-    opacity:1;
-    width:200px;
-    border-radius: 5px;
-  }
-} */
+
 
 
 
@@ -346,11 +332,9 @@ body {
   @keyframes fadeIn {
     from {
       opacity: 0;
-      font-size: 0em;
     }
     to {
       opacity: 0.9;
-      font-size: 1.3em;
     }
   }
   
@@ -568,6 +552,53 @@ body {
   } 
 
 
+
+
+  .titlesDiv {
+    position: absolute;
+    z-index: 99999999;
+    width: 50%;
+    color: white;
+    left: 25px;
+    text-align: left;
+    top: 0;
+
+    opacity: 0;
+    animation: fadeIn 2s 0.3s ease forwards;
+
+}
+.titlesDiv h1, .titlesDiv h2 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    /* font-weight: 100; */
+    letter-spacing: 3px;
+}
+
+.h1title {
+  font-size: 2.4em;
+  width: max-content;
+}
+
+.titlesDiv h1 {
+  background: -webkit-linear-gradient(white, #e8ca7d);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-weight: 200;
+
+  transition: all 0.4s;
+}
+.titlesDiv h1:hover {
+  letter-spacing: 4px;
+}
+
+.titlesDiv h2 {
+  position: relative;
+  left: 15px;
+  color: #ffd770;
+
+  font-weight: 100;
+}
 
 
 
@@ -830,6 +861,11 @@ body {
   #linksSectionAcrylique, #contentSectionAcrylique {
     transition: opacity 0.5s;
   }
+  
+  /* #contentSectionAcrylique {
+    flex-wrap: nowrap;
+    display: flex;
+  } */
 
 
 
@@ -1148,3 +1184,37 @@ body {
 
   
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Contact.html */
+    .contactSubTitle {
+      margin: 0;
+      text-align: center;
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: #e8ca7d;
+  }
+
+  #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 {
+      width: 50% !important;
+      margin: 10px auto !important;
+      background-color: rgba(255, 255, 255, 0) !important;
+  }
+  #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 input.plezi-submit-btn {
+      background: #e8ca7d !important;
+  }
