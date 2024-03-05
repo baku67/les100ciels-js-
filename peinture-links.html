@@ -54,6 +54,9 @@
             svgArbreGroup.classList.remove('svgFadeOut');
 
             $("#gallery").load("peinture-group1.html", function() {
+
+                // Fix SVG position rubrique 1:
+                document.getElementById('svgArbreGroup').classList.add('svgArbreGroup-rubrique1');
                 
                 // *** load svg esprit&epouse
                 var xhr = new XMLHttpRequest();
