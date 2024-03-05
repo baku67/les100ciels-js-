@@ -15,54 +15,63 @@
             <img src="toiles/4-min.jpg" alt="Toile 11">
             <p class="titleImage">Titre image 1</p>
             <p class="descriptionImage">Description image 1</p>
+            <p class="indexImage">1</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/5-min.jpg" alt="Toile 12">
             <p class="titleImage">Titre image 2</p>
             <p class="descriptionImage">Description image 2</p>
+            <p class="indexImage">2</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/6-min.jpg" alt="Toile 13">
             <p class="titleImage">Titre image 3</p>
             <p class="descriptionImage">Description image 3</p>
+            <p class="indexImage">3</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/7-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 4</p>
             <p class="descriptionImage">Description image 4</p>
+            <p class="indexImage">4</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/9-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 5</p>
             <p class="descriptionImage">Description image 5</p>
+            <p class="indexImage">5</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/10-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 6</p>
             <p class="descriptionImage">Description image 6</p>
+            <p class="indexImage">6</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/11-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 7</p>
             <p class="descriptionImage">Description image 7</p>
+            <p class="indexImage">7</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/12-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 8</p>
             <p class="descriptionImage">Description image 8</p>
+            <p class="indexImage">8</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/13-min.jpg" alt="Toile 14">
             <p class="titleImage">Titre image 9</p>
             <p class="descriptionImage">Description image 9</p>
+            <p class="indexImage">9</p>
         </div>
 
     </div>
@@ -73,6 +82,65 @@
 
 <script>
 
+    var imagesObj = [
+        {
+            index: 1,
+            title: "Titre image 1",
+            src: "toiles/4-min.jpg",
+            description: "Description image 1",
+        },
+        {
+            index: 2,
+            title: "Titre image 2",
+            src: "toiles/5-min.jpg",
+            description: "Description image 2",
+        },
+        {
+            index: 3,
+            title: "Titre image 3",
+            src: "toiles/6-min.jpg",
+            description: "Description image 3",
+        },
+        {
+            index: 4,
+            title: "Titre image 4",
+            src: "toiles/7-min.jpg",
+            description: "Description image 4",
+        },
+        {
+            index: 5,
+            title: "Titre image 5",
+            src: "toiles/9-min.jpg",
+            description: "Description image 5",
+        },
+        {
+            index: 6,
+            title: "Titre image 6",
+            src: "toiles/10-min.jpg",
+            description: "Description image 6",
+        },
+        {
+            index: 7,
+            title: "Titre image 7",
+            src: "toiles/11-min.jpg",
+            description: "Description image 7",
+        },
+        {
+            index: 8,
+            title: "Titre image 8",
+            src: "toiles/12-min.jpg",
+            description: "Description image 8",
+        },
+        {
+            index: 9,
+            title: "Titre image 9",
+            src: "toiles/13-min.jpg",
+            description: "Description image 9",
+        },
+    ]
+
+
+
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -80,6 +148,57 @@
 
         item.addEventListener("click", function() {
 
+            // *** NAVIGATION prev/next image modal
+            // get l'index pour équivalent [] 
+            var index = +item.querySelector('.indexImage').innerText;
+            console.log('index: ' + index);
+
+            function findByPropertyValue(array, property, value) {
+                return array.find(function(element) {
+                    return element[property] === value;
+                });
+            }
+
+            document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+                if(index+1 > imagesObj.length) {
+                    var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+                    index = 1;
+                }
+                else {
+                    var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+                    index += 1;
+                }
+
+                console.log('SUIVANT');
+                console.log('nextImg index: ' + nextImg.index);
+
+                document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewTitle').textContent = nextImg.title;
+                document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+            });
+
+            document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+                if(index-1 < 1) {
+                    var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+                    index = imagesObj.length;
+                }
+                else {
+                    var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+                    index -= 1;
+                }
+
+                console.log('PRECEDENT');
+                console.log('previousImg index: ' + prevImg.index);
+
+                document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewTitle').textContent = prevImg.title;
+                document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+            });
+
+
+            // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
             document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
             document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;

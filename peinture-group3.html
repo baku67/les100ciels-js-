@@ -18,18 +18,21 @@
                 <img src="toiles/11.jpg" alt="Toile 1">
                 <p class="titleImage">Titre image 1</p>
                 <p class="descriptionImage">Description image 1</p>
+                <p class="indexImage">1</p>
             </div>
 
             <div class="gallery-item">
                 <img src="toiles/22.jpg" alt="Toile 2">
                 <p class="titleImage">Titre image 2</p>
                 <p class="descriptionImage">Description image 2</p>
+                <p class="indexImage">2</p>
             </div>
 
             <div class="gallery-item">
                 <img src="toiles/33.jpg" alt="Toile 3">
                 <p class="titleImage">Titre image 3</p>
                 <p class="descriptionImage">Description image 3</p>
+                <p class="indexImage">3</p>
             </div>
 
         </div>
@@ -40,6 +43,28 @@
 
 <script>
 
+    var imagesObj = [
+        {
+            index: 1,
+            title: "Titre image 1",
+            src: "toiles/11.jpg",
+            description: "Description image 1",
+        },
+        {
+            index: 2,
+            title: "Titre image 2",
+            src: "toiles/22.jpg",
+            description: "Description image 2",
+        },
+        {
+            index: 3,
+            title: "Titre image 3",
+            src: "toiles/33.jpg",
+            description: "Description image 3",
+        },
+    ]
+
+
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item");
 
@@ -47,6 +72,57 @@
 
         item.addEventListener("click", function() {
 
+            // *** NAVIGATION prev/next image modal
+            // get l'index pour équivalent [] 
+            var index = +item.querySelector('.indexImage').innerText;
+            console.log('index: ' + index);
+
+            function findByPropertyValue(array, property, value) {
+                return array.find(function(element) {
+                    return element[property] === value;
+                });
+            }
+
+            document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+                if(index+1 > imagesObj.length) {
+                    var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+                    index = 1;
+                }
+                else {
+                    var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+                    index += 1;
+                }
+
+                console.log('SUIVANT');
+                console.log('nextImg index: ' + nextImg.index);
+
+                document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewTitle').textContent = nextImg.title;
+                document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+            });
+
+            document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+                if(index-1 < 1) {
+                    var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+                    index = imagesObj.length;
+                }
+                else {
+                    var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+                    index -= 1;
+                }
+
+                console.log('PRECEDENT');
+                console.log('previousImg index: ' + prevImg.index);
+
+                document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewTitle').textContent = prevImg.title;
+                document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+            });
+
+
+            // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
             document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
             document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
