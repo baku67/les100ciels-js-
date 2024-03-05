@@ -843,6 +843,36 @@
     <body class="bodyPeinture">
 
 
+        <!-- *** Nav MenuBurger mobile -->
+        <!-- NavDiv -->
+        <div id="mySidenav" class="sidenav isMobile">
+            <a id="closeBtn" href="#" class="close">×</a>
+            <ul>
+              <li><a href="peinture.html" class="burgerOngletActif">Acrylique</a></li>
+              <li><a href="#">Aquarelle</a></li>
+              <li><a href="#">Haushka</a></li>
+              <li><a href="#">Haikus</a></li>
+              <li><a href="#">Reproductions</a></li>
+              <li><a href="#">Expositions</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="mentionsLegalesDiv">
+                <a href="mentionsLegales.html">Mentions légales</a>
+            </div>
+        </div>
+        <!-- Btn burger -->
+        <a href="#" id="openBtn" class="isMobile">
+            <span class="burger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+        </a>
+
+
+
+
         <!-- Try bg étoile  -->
         <div class="bgStars">
             <div id="stars"></div>
@@ -902,7 +932,7 @@
 
 
         <!-- titre absolute -->
-        <div class="titlesDiv">
+        <div id="titlesDiv" class="titlesDiv">
             <a href="./index.html" class="linkTitle">
                 <h1 class="h1title">Les 100 ciels</h1>
             </a>
@@ -969,6 +999,36 @@
                     }, 701)
                     
                 })
+
+
+                // Menu burger mobile pop:
+                var sidenav = document.getElementById("mySidenav");
+                var openBtn = document.getElementById("openBtn");
+                var closeBtn = document.getElementById("closeBtn");
+
+                openBtn.onclick = openNav;
+                closeBtn.onclick = closeNav;
+
+                function openNav() {
+                    sidenav.classList.add("active");
+
+                    document.getElementById("titlesDiv").style.filter = "blur(2px)";
+                    document.getElementById("main").style.filter = "blur(3px)";
+                    document.getElementById("svgArbre").style.filter = "blur(2px)";
+                }
+
+                function closeNav() {
+                    sidenav.classList.remove("active");
+
+                    document.getElementById("titlesDiv").style.filter = "blur(0px)";
+                    document.getElementById("main").style.filter = "blur(0px)";
+                    document.getElementById("svgArbre").style.filter = "blur(0px)";
+
+                    sidenav.classList.add('closeBurgerColorAnimated');
+                    setTimeout(function() {
+                        sidenav.classList.remove('closeBurgerColorAnimated');
+                    }, 500);
+                }
 
             });
         </script>

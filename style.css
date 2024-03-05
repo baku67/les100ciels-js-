@@ -183,7 +183,8 @@ body {
   background: -webkit-linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
   background: linear-gradient(59deg, rgba(17,18,63,1) 49%, rgba(255,186,49,0.2) 100%);
 
-  transition: all 2.5s;
+  /* transition: all 2.5s; */
+  transition: top 2.5s, transform 2.5s, filter 0.5s;
 }
 .main {
     animation: bgSunflower 3s 0s normal forwards ease-in-out; 
@@ -197,6 +198,10 @@ body {
       background-position: 100%;
       background-size: 200%;
     }
+  }
+
+  #titlesDiv {
+    transition: filter 0.5s;
   }
 
   .newGradient {
@@ -557,7 +562,8 @@ body {
   .titlesDiv {
     position: absolute;
     z-index: 99999999;
-    width: 50%;
+    /* width: 50%; */
+    width: fit-content;
     color: white;
     left: 25px;
     text-align: left;
@@ -1328,6 +1334,129 @@ body {
 
   
   
+
+
+
+    /* Sidenav menu */
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: -250px;
+    /* Anims: */
+    background-color: #0e123f;
+
+    border-top-left-radius: 12px;
+
+    font-family: 'Montserrat Alternates', sans-serif;
+    
+    padding-top: 60px;
+    z-index: 999999999999;
+
+    transition: right 0.5s ease;
+  }
+
+  /* Sidenav menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .sidenav a:hover {
+    color: #111;
+  }
+
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Active class */
+  .sidenav.active {
+    right: 0;
+    animation: navBurgerColorAnim 0.5s 0s ease forwards;
+  }
+  @keyframes navBurgerColorAnim {
+    from {
+      background-color: #0e123f;
+
+    }
+    to {
+      background-color: #ffecbc;
+
+    }
+  }
+
+  .closeBurgerColorAnimated {
+    animation: closeBurgerColorAnimated 0.5s 0s ease forwards;
+  }
+  @keyframes closeBurgerColorAnimated {
+    from {
+      background-color: #ffecbc;
+    }
+    to {
+      background-color: #0e123f;
+    }
+  }
+
+  /* Close btn */
+  .sidenav .close {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+
+  /* Icône burger */
+  .burger-icon span {
+    display: block;
+    width: 35px;
+    height: 3px;
+    background-color: #ffecbc;
+    border-radius: 2px;
+    margin: 8px 0;
+  }
+
+
+  #openBtn {
+    position: absolute;
+    right: 1px;
+    padding: 8px 15px;
+    top: 0px;
+    z-index: 99999998;
+
+    opacity: 0;
+    animation: fadeIn 0.5s 0.5s ease forwards;
+  }
+
+
+  .burgerOngletActif {
+    color: #010125 !important;
+    font-weight: bold;
+    background-color: #e7d5a4;
+    border-top: 1px solid #0000002b;
+    border-bottom: 1px solid #0000002b;
+  }
+
+
+  .mentionsLegalesDiv {
+    position: absolute;
+    bottom: 75px;
+    width: 100%;
+  }
+  .mentionsLegalesDiv a {
+    font-size: 1em;
+    text-align: center;
+    padding: 10px 0px;
+  }
+
 
 
 
