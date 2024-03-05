@@ -61,8 +61,18 @@
         },
     ]
 
+    // trouver l'objet selon index:
+    function findByPropertyValue(array, property, value) {
+        return array.find(function(element) {
+            return element[property] === value;
+        });
+    }
+
+
+    
     // onclick previews => modal :
     galleryItems = document.querySelectorAll(".gallery-item");
+    var index = 0;
 
     galleryItems.forEach(function(item) {
 
@@ -70,14 +80,7 @@
 
             // *** NAVIGATION prev/next image modal
             // get l'index pour équivalent [] 
-            var index = +item.querySelector('.indexImage').innerText;
-            console.log('index: ' + index);
-
-            function findByPropertyValue(array, property, value) {
-                return array.find(function(element) {
-                    return element[property] === value;
-                });
-            }
+            index = +item.querySelector('.indexImage').innerText;
 
             document.getElementById('modalPreviewNext').addEventListener("click", function() {
 
@@ -90,12 +93,12 @@
                     index += 1;
                 }
 
-                console.log('SUIVANT');
-                console.log('nextImg index: ' + nextImg.index);
-
                 document.getElementById('modalPreviewImg').src = nextImg.src;
                 document.getElementById('modalPreviewTitle').textContent = nextImg.title;
                 document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+
+                // Puce pagination:
+                paginationClick(index);
             });
 
             document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
@@ -109,13 +112,17 @@
                     index -= 1;
                 }
 
-                console.log('PRECEDENT');
-                console.log('previousImg index: ' + prevImg.index);
-
                 document.getElementById('modalPreviewImg').src = prevImg.src;
                 document.getElementById('modalPreviewTitle').textContent = prevImg.title;
                 document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+
+                // Puce pagination:
+                paginationClick(index);
             });
+
+
+            // Pagination ajout .selected sur puce associée
+            document.getElementById(`paginationNbr${index}`).classList.add('selectedPagination');
 
 
             // *** Modif modal 
@@ -132,6 +139,40 @@
             }, 701)
         })
     });
+
+
+
+
+        // pagination modalPreview:
+        function paginationClick(targetIndex) {
+
+            var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+            index = targetIndex;
+
+                // Style puce selected:
+                // remove les .selected
+                var paginationPuces = document.getElementsByClassName('paginationPuce');
+                Array.from(paginationPuces).forEach(function(elem) {
+                    elem.classList.remove('selectedPagination');
+                });
+                // ajout .selected à la puce cliquée
+                var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+                currentIcon.classList.add('selectedPagination');
+
+            document.getElementById('modalPreviewImg').src = targetImg.src;
+            document.getElementById('modalPreviewTitle').textContent = targetImg.title;
+            document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+        }
+
+        var paginationContent = "";
+
+        for (let index = 1; index <= imagesObj.length; index++) {
+        paginationContent += `<i id='paginationNbr${index}' onclick='paginationClick(${index})' class='paginationPuce fa-solid fa-circle'></i>`;
+        }
+        document.getElementById('modalPreviewPaginationDiv').innerHTML = paginationContent;
+
+
+
 
 
 

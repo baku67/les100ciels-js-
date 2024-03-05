@@ -716,7 +716,22 @@ body {
     transform: translateX(5px);
   }
 
+  #modalPreviewPaginationDiv {
+    display: inline-flex;
+      width: 100%;
+      justify-content: center;
+      /* gap: 5px; */
+  }
 
+  .paginationPuce {
+    color: #4d4d4d;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.4s;
+  }
+  .selectedPagination {
+    color: #E8CA7D;
+  }
 
 
   .acryliqueSectionList {
