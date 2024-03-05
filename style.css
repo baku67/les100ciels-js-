@@ -692,6 +692,61 @@ body {
     display: inline-flex;
   }
 
+  .previewImg-slideLeft1 {
+    animation: previewImg-slideLeft1 0.3s 0s ease forwards;
+  }
+  @keyframes previewImg-slideLeft1 {
+    from {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(-30px);
+      opacity: 0;    }
+  }
+
+  .previewImg-slideLeft2 {
+    animation: previewImg-slideLeft2 0.3s 0s ease forwards;
+  }
+  @keyframes previewImg-slideLeft2 {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;    }
+  }
+
+
+
+  
+  .previewImg-slideRight1 {
+    animation: previewImg-slideRight1 0.3s 0s ease forwards;
+  }
+  @keyframes previewImg-slideRight1 {
+    from {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(30px);
+      opacity: 0;    }
+  }
+
+  .previewImg-slideRight2 {
+    animation: previewImg-slideRight2 0.3s 0s ease forwards;
+  }
+  @keyframes previewImg-slideRight2 {
+    from {
+      transform: translateX(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0px);
+      opacity: 1;    }
+  }
+
 
   #modalPreviewPrevious, #modalPreviewNext {
     cursor: pointer;
