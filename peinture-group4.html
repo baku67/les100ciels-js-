@@ -219,22 +219,68 @@
     function paginationClick(targetIndex) {
 
         var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+
+        // Style puce selected:
+        // remove les .selected
+        var paginationPuces = document.getElementsByClassName('paginationPuce');
+        Array.from(paginationPuces).forEach(function(elem) {
+            elem.classList.remove('selectedPagination');
+        });
+        // ajout .selected à la puce cliquée
+        var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+        currentIcon.classList.add('selectedPagination');
+
+        
+        // Anim CSS: Si target index < actuel ? SlidePrev() : SlideNext()
+        if(targetIndex < index) {
+            // Anims Slide Prev
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
+                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                }, 301)
+            }, 301)
+        }
+        else if(targetIndex == index) {
+            // click sur la meme image: rien
+        }
+        else {
+            // Anims Slide Next
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
+                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                }, 301)
+            }, 301)
+        }
+
+
         index = targetIndex;
 
-            // Style puce selected:
-            // remove les .selected
-            var paginationPuces = document.getElementsByClassName('paginationPuce');
-            Array.from(paginationPuces).forEach(function(elem) {
-                elem.classList.remove('selectedPagination');
-            });
-            // ajout .selected à la puce cliquée
-            var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
-            currentIcon.classList.add('selectedPagination');
 
-        document.getElementById('modalPreviewImg').src = targetImg.src;
-        document.getElementById('modalPreviewTitle').textContent = targetImg.title;
-        document.getElementById('modalPreviewDescription').textContent = targetImg.description;
     }
+
+
     function paginationPuceSelect(targetIndex) {
         var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
         index = targetIndex;

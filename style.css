@@ -580,7 +580,7 @@ body {
 .titlesDiv h1, .titlesDiv h2 {
     font-family: 'Montserrat Alternates', sans-serif;
     /* font-weight: 100; */
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 .h1title {
@@ -595,6 +595,8 @@ body {
   -webkit-text-fill-color: transparent;
 
   font-weight: 200;
+
+  margin-block-start: 0.5em;
 
   transition: all 0.4s;
 }

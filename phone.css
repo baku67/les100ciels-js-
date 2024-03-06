@@ -10,7 +10,7 @@
         /* font-size: 85%; */
     }
     .titlesDiv h1, .titlesDiv h2 {
-        letter-spacing: 2px;
+        letter-spacing: 0px;
         font-weight: 200;
     }
     .h1title {
@@ -38,6 +38,46 @@
     }
     .linkTitle {
         width: auto;
+    }
+
+
+    #modalPreviewNext:hover {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    #modalPreviewNext:active {
+        animation: flashNavArrow 0.3s 0s ease;
+    }
+    @keyframes flashNavArrow {
+        0% {
+            filter: saturate(1);
+        }
+        50% {
+            filter: saturate(0);
+        }
+        100% {
+            filter: saturate(1);
+        }
+    }
+
+
+    #modalPreviewPrevious:hover {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    #modalPreviewPrevious:active {
+        animation: flashNavArrow 0.3s 0s ease;
+    }
+    @keyframes flashNavArrow {
+        0% {
+            filter: saturate(1);
+        }
+        50% {
+            filter: saturate(0);
+        }
+        100% {
+            filter: saturate(1);
+        }
     }
 
 
@@ -235,22 +275,25 @@
     .haikusContentContainer {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
     }
 
 
     .haikusContentImg {
-        height: 40vh;
+        height: 35vh;
     }
 
     .haikusContentDescriptionDiv {
         color: whitesmoke;
-        text-align: center;
-        line-height: 1.1em;
-        width: 80%;
+        /* text-align: center; */
+        text-align: left;
+        line-height: 1.2em;
+        /* width: 90%; */
+        width: auto;
     }
 
     .haikusSubTitle {
-        margin-block-start: 1.5em;
+        margin-block-start: 1.2em;
         margin-block-end: 0.6em;
     }
 
@@ -258,6 +301,8 @@
     .haikusContentDescriptionDiv h3 {
         margin-block-end: 1.5em;
         transform: translateX(0px);
+
+        text-align: center;
     }
 
 
