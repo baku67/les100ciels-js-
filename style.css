@@ -1459,6 +1459,20 @@ body {
 
 
 
+  .linkBurgerHomeBtn {
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    padding: 0px !important;
+    height: 54px;
+  }
+  .svgBurgerHomeBtn {
+    width: 50px;
+    height: 50px;
+    padding: 2px 9px;
+  }
+
+
 
 
 
