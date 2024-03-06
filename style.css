@@ -49,6 +49,10 @@ body {
   font-size: 2.2em;
 }
 
+.subTitle span {
+  
+}
+
 
 .subSubTitle {
   cursor: pointer;
@@ -1410,8 +1414,8 @@ body {
   .sidenav .close {
     position: absolute;
     top: 0;
-    right: 25px;
-    font-size: 36px;
+    right: 18px;
+    font-size: 39px;
   }
 
   /* Icône burger */
@@ -1471,12 +1475,35 @@ body {
     height: 50px;
     padding: 2px 9px;
   }
+  .svgBurgerHomeBtn g {
+    fill: #12133f;
+  }
 
 
 
 
+  #nextRubriqueBtn {
+    padding: 5px 15px;
+    font-size: 0.9em;
+    cursor: pointer;
+
+    color: #e8ca7d;
+    -webkit-text-fill-color: #e8ca7d;
+
+    transition: all 0.4s ease;
+  }
+  #nextRubriqueBtn:hover {
+    transform: scale(1.1);
+    -webkit-text-fill-color: #fff6df;
+    transform: translateX(5px);
+
+  }
 
 
+  .subTitleRubrique {
+    display: inline-flex;
+    align-items: center;
+  }
 
 
 

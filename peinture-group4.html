@@ -4,7 +4,10 @@
     <!-- Titre et back to acryliques Btn -->
     <div class="subTitleAcrylique">
         <i id="acryliqueBackBtn4" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
-        <h2 class="subTitle">Illustrations de 3 contes</h2>
+        <h2 class="subTitle subTitleRubrique">
+            <span>Illustrations de 3 contes</span>
+            <i id="nextRubriqueBtn" class="fa-solid fa-chevron-right"></i>
+        </h2>
     </div>
 
 
@@ -35,6 +38,7 @@
     </div>
 
 </div>
+
 
 
 
@@ -303,5 +307,67 @@
             });
         }, 701);
     })
+
+
+
+
+
+
+
+
+
+    // Next rubrique Btn title:
+    document.getElementById('nextRubriqueBtn').addEventListener('click', function() {
+
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
+
+        svgArbreGroup.classList.add('svgFadeOut');
+        setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
+            $("#gallery").load("peinture-group1.html", function() {
+
+                // Reset Fix SVG position rubrique 2:
+                document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique2');
+                // Fix SVG position rubrique 1:
+                document.getElementById('svgArbreGroup').classList.add('svgArbreGroup-rubrique1');
+
+                // *** load svg arbre (retour sur rubriques)
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../esprit_et_epouse2.svg', true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
+                    } else {
+                        console.error('Failed to load external SVG: ' + xhr.statusText);
+                    }
+                };
+                xhr.send();
+
+            });
+        }, 701);
+
+    });
+
+
+
+
+
+
+
 
 </script>

@@ -579,7 +579,7 @@
             .subTitleAcrylique {
                 display: inline-flex;
                 align-items: center;
-                gap: 40px;
+                gap: 30px;
                 margin-bottom:35px;
             }
 
@@ -1261,6 +1261,20 @@
                         sidenav.classList.remove('closeBurgerColorAnimated');
                     }, 500);
                 }
+
+
+                // WIP click outer navBurger = close() (MOBILE):
+                document.getElementById("main").addEventListener('click', function(e){   
+
+                    if (document.getElementById('mySidenav').contains(e.target)){
+                        // click dans nav burger
+                    } else {
+                        // click en dehors nav burger
+                        if (sidenav.classList.contains("active")) {
+                            closeNav();
+                        }
+                    }
+                });
 
             });
         </script>

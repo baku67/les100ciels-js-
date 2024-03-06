@@ -41,6 +41,17 @@
     }
 
 
+    #nextRubriqueBtn {
+        font-size: 1.1em;
+    }
+
+    .acryliqueBackBtn {
+        font-size: 1.5em;
+    }
+
+    #main {
+        height: -webkit-fill-available;
+    }
 
 
     .subTitle {
