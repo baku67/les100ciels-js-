@@ -1348,7 +1348,7 @@ body {
     position: fixed;
     z-index: 1;
     top: 0;
-    right: -250px;
+    right: -255px;
     /* Anims: */
     background-color: #0e123f;
 
@@ -1447,6 +1447,12 @@ body {
     background-color: #e7d5a4;
     border-top: 1px solid #0000002b;
     border-bottom: 1px solid #0000002b;
+
+    filter: drop-shadow(4px 3px 0px black);
+    border-left: 1px solid #00000045;
+
+    transform: translateX(-4px);
+    width: 100%;
   }
 
 
@@ -1466,7 +1472,7 @@ body {
   .linkBurgerHomeBtn {
     position: absolute;
     top: 4px;
-    left: 0px;
+    left: 4px;
     padding: 0px !important;
     height: 54px;
   }
@@ -1504,6 +1510,93 @@ body {
     display: inline-flex;
     align-items: center;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Haikus.html */
+
+    .haikusContentContainer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 100px;
+
+      flex-direction: row;
+    }
+
+
+    .haikusContentDescriptionDiv {
+      color: whitesmoke;
+      text-align: left;
+      line-height: 1.7em;
+    }
+
+
+
+    .haikusContentImg {
+      height: 70vh;
+
+      /* noir: */
+      /* filter: drop-shadow(30px 40px 10px black); */
+      /* légendraire doré: */
+      filter: drop-shadow(9px 16px 47px #e8ca7d);
+    }
+
+
+    .haikusSubTitle {
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: white;
+      margin-block-end: 1.5em;
+    }
+
+
+    .haikusContentDescriptionDiv h3 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: #e8ca7d;
+
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 10px;
+      text-decoration-color: #ffffff7a;
+
+      margin-block-end: 2em;
+      transform: translateX(-15px);
+    }
+
+
+
+
+
+
+
+
+
 
 
 
