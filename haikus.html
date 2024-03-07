@@ -1098,15 +1098,27 @@
                 <h2 class="haikusSubTitle">Ha&iuml;kus</h2>
 
                 <!-- Section img et Section description (row/column) -->
+                <!-- State intial JS -->
                 <div class="haikusContentContainer">
 
                     <div class="haikusContentImgDiv">
-                        <img class="haikusContentImg" src="haiku1.png" alt="haiku 1 block-notes">
+
+                        <img id="haikuImg" class="haikusContentImg" src="haiku1.png" alt="haiku 1 block-notes">
+
+                        <!-- Previous Haiku Mobile chevron -->
+                        <div id="previousHaikuDiv" class="isMobile">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </div>
+                        <!-- Next Haiku Mobile chevron -->
+                        <div id="nextHaikuDiv" class="isMobile">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+
                     </div>
 
                     <div class="haikusContentDescriptionDiv">
-                        <h3>Titre Haiku 1</h3>
-                        <p>
+                        <h3 id="haikuTitle">Titre Haiku 1</h3>
+                        <p id="haikuContent">
                             Pieds nus dans l'herbe,
                             <br>
                             Communion avec les arbres'
@@ -1145,7 +1157,7 @@
                 var haikusArray = [
                     {
                         index: 1,
-                        title: "haiku 1",
+                        title: "Yoga",
                         content: `
                             Pieds nus dans l'herbe,
                             <br>
@@ -1169,28 +1181,120 @@
                     },
                     {
                         index: 2,
-                        title: "haiku 2",
-                        content: "lorem ipsum",
-                        src: "",
+                        title: "Danse",
+                        content: `
+                            Ils dansent de joie
+                            <br>
+                            Fils et filles' de la terre
+                            <br>
+                            Lumière du soir..
+                            <br><br>
+                            Céleste musique,
+                            <br>
+                            Epinette vosgienne et
+                            <br>
+                            Troubadours zèlés.
+                            <br><br>
+                            Techno médiévale'
+                            <br>
+                            A entrainé les amis
+                            <br>
+                            Dans la ronde riante.
+                            <br><br>
+                            Autour de la table'
+                            <br>
+                            Les belles âmes sont nourries
+                            <br>
+                            Flottent sourires !
+                        `,
+                        src: "haiku2.png",
                     },
                     {
                         index: 3,
-                        title: "haiku 3",
-                        content: "lorem ipsum",
-                        src: "",
+                        title: "Chant",
+                        content: `
+                            Les mantras s'élèvent'
+                            <br>
+                            Chants à l'unisson des âmes'
+                            <br>
+                            Tel l'encens vers Toi ...
+                            <br><br>
+                            Gaïa me porte
+                            <br>
+                            Ma vie est une louange,
+                            <br>
+                            La tête dans les ciels.
+                            <br><br>
+                            Nourrie par la terre'
+                            <br>
+                            Ma vie comme une offrande
+                            <br>
+                            à la Source de Vie.
+                        `,
+                        src: "haiku3.png",
                     },
                     {
                         index: 4,
-                        title: "haiku 4",
+                        title: "haiku 5",
                         content: "lorem ipsum",
                         src: "",
                     },
                 ]
 
 
+                // trouver l'objet selon index:
+                function findByPropertyValue(array, property, value) {
+                    return array.find(function(element) {
+                        return element[property] === value;
+                    });
+                }
+
+                // State initial haiku 1 default:
+                var indexHaiku = 1;
+                var currentHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                document.getElementById("haikuImg").src = currentHaiku.src;
+                document.getElementById("haikuTitle").innerHTML = currentHaiku.title;
+                document.getElementById("haikuContent").innerHTML = currentHaiku.content;
 
 
 
+                // Click previous Btn:
+                document.getElementById("previousHaikuDiv").addEventListener("click", function() {
+
+                    if( indexHaiku-1 != 0 ) {
+                        indexHaiku -=1;
+                    } 
+                    else {
+                        indexHaiku = haikusArray.length;
+                    }
+                    // console.log(indexHaiku);
+
+                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
+                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                });
+
+
+                // Click next Btn:
+                document.getElementById("nextHaikuDiv").addEventListener("click", function() {
+
+                    if( indexHaiku+1 <= haikusArray.length ) {
+                        indexHaiku +=1;
+                    } 
+                    else {
+                        indexHaiku = 1;
+                    }
+                    // console.log(indexHaiku);
+
+                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
+                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                });
 
 
 

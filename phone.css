@@ -21,7 +21,7 @@
         position: relative;
         width: auto;
 
-        font-weight: 200;
+        font-weight: 300;
 
         margin-block-start: 0em;
         margin-block-end: 0em;
@@ -38,6 +38,28 @@
     }
     .linkTitle {
         width: auto;
+    }
+
+    .haikusContentImgDiv {
+        position: relative;
+    }
+
+    #nextHaikuDiv {
+        position: absolute;
+        font-size: 3em;
+        color: #ffecbc;
+        top: 50%;
+        left: 110%;
+        transform: translateY(-50%);
+    }
+
+    #previousHaikuDiv {
+        position: absolute;
+        font-size: 3em;
+        color: #ffecbc;
+        top: 50%;
+        right: 110%;
+        transform: translateY(-50%);
     }
 
 
