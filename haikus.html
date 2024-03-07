@@ -108,7 +108,7 @@
                 height: 100vh;
 
                 opacity: 0;
-                animation: fadeIn 3s 1.2s ease forwards;
+                animation: fadeIn 2s 0.5s ease forwards;
             }
 
             .galleryContainer {
@@ -1090,6 +1090,16 @@
 
 
 
+        <!-- Previous Haiku Desktop chevron -->
+        <div id="previousHaikuDivDesktop" class="isDesktop">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <!-- Next Haiku Desktop chevron -->
+        <div id="nextHaikuDivDesktop" class="isDesktop">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+
+
 
         <div id="main" class="main" style="position:relative; background:rgba(0,0,0,0);">
 
@@ -1106,11 +1116,11 @@
                         <img id="haikuImg" class="haikusContentImg" src="haiku1.png" alt="haiku 1 block-notes">
 
                         <!-- Previous Haiku Mobile chevron -->
-                        <div id="previousHaikuDiv" class="isMobile">
+                        <div id="previousHaikuDivMobile" class="isMobile">
                             <i class="fa-solid fa-chevron-left"></i>
                         </div>
                         <!-- Next Haiku Mobile chevron -->
-                        <div id="nextHaikuDiv" class="isMobile">
+                        <div id="nextHaikuDivMobile" class="isMobile">
                             <i class="fa-solid fa-chevron-right"></i>
                         </div>
 
@@ -1157,7 +1167,7 @@
                 var haikusArray = [
                     {
                         index: 1,
-                        title: "Yoga",
+                        title: "<span class='haikuNbr'>4.1</span> Yoga",
                         content: `
                             Pieds nus dans l'herbe,
                             <br>
@@ -1167,13 +1177,13 @@
                             <br><br>
                             L'homme, lien entre
                             <br>
-                            Terre-mère et Père-ciel
+                            Terre-m&egrave;re et P&egrave;re-ciel
                             <br>
-                            Verticalité
+                            Verticalit&eacute;
                             <br><br>
                             Viens nous visiter
                             <br>
-                            Et réchauffe nos âmes
+                            Et r&eacute;chauffe nos &#226;mes
                             <br>
                             Oh soleil levant !
                         `,
@@ -1181,29 +1191,29 @@
                     },
                     {
                         index: 2,
-                        title: "Danse",
+                        title: "<span class='haikuNbr'>4.2</span> Danse",
                         content: `
                             Ils dansent de joie
                             <br>
                             Fils et filles' de la terre
                             <br>
-                            Lumière du soir..
+                            Lumi&egrave;re du soir..
                             <br><br>
-                            Céleste musique,
+                            C&eacute;leste musique,
                             <br>
                             Epinette vosgienne et
                             <br>
-                            Troubadours zèlés.
+                            Troubadours z&eacute;l&eacute;s.
                             <br><br>
-                            Techno médiévale'
+                            Techno m&eacute;di&eacute;vale'
                             <br>
-                            A entrainé les amis
+                            A entrain&eacute; les amis
                             <br>
                             Dans la ronde riante.
                             <br><br>
                             Autour de la table'
                             <br>
-                            Les belles âmes sont nourries
+                            Les belles &#226;mes sont nourries
                             <br>
                             Flottent sourires !
                         `,
@@ -1211,11 +1221,11 @@
                     },
                     {
                         index: 3,
-                        title: "Chant",
+                        title: "<span class='haikuNbr'>4.3</span> <span class='haikuTitleText'>Chant</span>",
                         content: `
-                            Les mantras s'élèvent'
+                            Les mantras s'&eacute;l&egrave;vent'
                             <br>
-                            Chants à l'unisson des âmes'
+                            Chants à l'unisson des &#226;mes'
                             <br>
                             Tel l'encens vers Toi ...
                             <br><br>
@@ -1223,21 +1233,27 @@
                             <br>
                             Ma vie est une louange,
                             <br>
-                            La tête dans les ciels.
+                            La t&#234;te dans les ciels.
                             <br><br>
                             Nourrie par la terre'
                             <br>
                             Ma vie comme une offrande
                             <br>
-                            à la Source de Vie.
+                            &#224; la Source de Vie.
                         `,
                         src: "haiku3.png",
                     },
                     {
                         index: 4,
                         title: "haiku 5",
-                        content: "lorem ipsum",
-                        src: "",
+                        content: `
+                            Gazouillis d'oiseaux,
+                            <br>
+                            Monte vers la lumière,
+                            <br>
+                            Quel concert de joie !
+                        `,
+                        src: "haiku4.png",
                     },
                 ]
 
@@ -1259,8 +1275,8 @@
 
 
 
-                // Click previous Btn:
-                document.getElementById("previousHaikuDiv").addEventListener("click", function() {
+                // Click previous Btn (MOBILE):
+                document.getElementById("previousHaikuDivMobile").addEventListener("click", function() {
 
                     if( indexHaiku-1 != 0 ) {
                         indexHaiku -=1;
@@ -1268,7 +1284,22 @@
                     else {
                         indexHaiku = haikusArray.length;
                     }
-                    // console.log(indexHaiku);
+
+                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
+                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                });
+                // Click next Btn (MOBILE):
+                document.getElementById("nextHaikuDivMobile").addEventListener("click", function() {
+
+                    if( indexHaiku+1 <= haikusArray.length ) {
+                        indexHaiku +=1;
+                    } 
+                    else {
+                        indexHaiku = 1;
+                    }
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 
@@ -1278,8 +1309,24 @@
                 });
 
 
-                // Click next Btn:
-                document.getElementById("nextHaikuDiv").addEventListener("click", function() {
+                // Click previous Btn (DESKTOP):
+                document.getElementById("previousHaikuDivDesktop").addEventListener("click", function() {
+
+                    if( indexHaiku-1 != 0 ) {
+                        indexHaiku -=1;
+                    } 
+                    else {
+                        indexHaiku = haikusArray.length;
+                    }
+
+                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
+                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                });
+                // Click next Btn (DESKTOP):
+                document.getElementById("nextHaikuDivDesktop").addEventListener("click", function() {
 
                     if( indexHaiku+1 <= haikusArray.length ) {
                         indexHaiku +=1;
@@ -1287,7 +1334,6 @@
                     else {
                         indexHaiku = 1;
                     }
-                    // console.log(indexHaiku);
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 

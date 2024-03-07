@@ -42,21 +42,24 @@
 
     .haikusContentImgDiv {
         position: relative;
+        width: 50%;
     }
 
-    #nextHaikuDiv {
+    #nextHaikuDivMobile {
         position: absolute;
         font-size: 3em;
         color: #ffecbc;
+        right: auto;
         top: 50%;
         left: 110%;
         transform: translateY(-50%);
     }
 
-    #previousHaikuDiv {
+    #previousHaikuDivMobile {
         position: absolute;
         font-size: 3em;
         color: #ffecbc;
+        left: auto;
         top: 50%;
         right: 110%;
         transform: translateY(-50%);
@@ -295,6 +298,8 @@
     /* Haikus.html */
 
     .haikusContentContainer {
+        padding: 0;
+
         flex-direction: column;
         gap: 10px;
         width: 100%;
@@ -302,7 +307,7 @@
 
 
     .haikusContentImg {
-        height: 35vh;
+        height: 27vh;
     }
 
     .haikusContentDescriptionDiv {
