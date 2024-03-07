@@ -1287,9 +1287,17 @@
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 
-                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
+                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
+
                     document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
                     document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                    setTimeout(function() {
+                        document.getElementById("haikuImg").src = targetHaiku.src;
+                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
+
+                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
+                    }, 501);
                 });
                 // Click next Btn (MOBILE):
                 document.getElementById("nextHaikuDivMobile").addEventListener("click", function() {
@@ -1303,9 +1311,17 @@
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 
-                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
+                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
+
                     document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
                     document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                    setTimeout(function() {
+                        document.getElementById("haikuImg").src = targetHaiku.src;
+                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
+
+                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
+                    }, 501);
                 });
 
 
@@ -1321,9 +1337,17 @@
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 
-                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
+                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
+
                     document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
                     document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                    setTimeout(function() {
+                        document.getElementById("haikuImg").src = targetHaiku.src;
+                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
+
+                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
+                    }, 501);
                 });
                 // Click next Btn (DESKTOP):
                 document.getElementById("nextHaikuDivDesktop").addEventListener("click", function() {
@@ -1337,9 +1361,17 @@
 
                     var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
 
-                    document.getElementById("haikuImg").src = targetHaiku.src;
+                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
+                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
+
                     document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
                     document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                    setTimeout(function() {
+                        document.getElementById("haikuImg").src = targetHaiku.src;
+                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
+
+                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
+                    }, 501);
                 });
 
 
