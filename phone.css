@@ -151,6 +151,7 @@
     #modalPreviewImg {
         width: 90%;
         height: 50vh;
+        filter: drop-shadow(0px 0px 7px #e8ca7d);
     }
 
     .closeModalPreview {
