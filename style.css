@@ -693,7 +693,7 @@ body {
   }
   #modalPreviewImg {
     width: 50%;
-    height: 60vh;
+    height: 53vh;
     object-fit: contain;
   }
   .modalPreviewContent p {

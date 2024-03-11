@@ -23,8 +23,8 @@
 
         <div class="gallery-item">
             <img src="toiles/5-min.jpg" alt="Toile 12">
-            <p class="titleImage">Titre image 2</p>
-            <p class="descriptionImage">Description image 2</p>
+            <p class="titleImage">Sécurité</p>
+            <p class="descriptionImage">Esaïe 46,16 <br style="display: block;"> &quot;J'ai gravé ton nom sur la paume de mes mains.&quot;</p>
             <p class="indexImage">2</p>
         </div>
 
@@ -44,7 +44,7 @@
 
         <div class="gallery-item">
             <img src="toiles/9-min.jpg" alt="Toile 14">
-            <p class="titleImage">Titre image 5</p>
+            <p class="titleImage">Septénaire</p>
             <p class="descriptionImage">Description image 5</p>
             <p class="indexImage">5</p>
         </div>
@@ -96,9 +96,9 @@
         },
         {
             index: 2,
-            title: "Titre image 2",
+            title: "Sécurité",
             src: "toiles/5-min.jpg",
-            description: "Description image 2",
+            description: "Esaïe 46,16<br>&quot;J'ai gravé ton nom sur la paume de mes mains.&quot;",
         },
         {
             index: 3,
@@ -114,7 +114,7 @@
         },
         {
             index: 5,
-            title: "Titre image 5",
+            title: "Septénaire",
             src: "toiles/9-min.jpg",
             description: "Description image 5",
         },
@@ -209,8 +209,8 @@
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = nextImg.src;
-            document.getElementById('modalPreviewTitle').textContent = nextImg.title;
-            document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+            document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
@@ -245,8 +245,8 @@
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = prevImg.src;
-            document.getElementById('modalPreviewTitle').textContent = prevImg.title;
-            document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+            document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
@@ -283,8 +283,8 @@
 
             // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
-            document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
-            document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
+            document.getElementById('modalPreviewTitle').innerHTML = item.querySelector('.titleImage').innerHTML;
+            document.getElementById('modalPreviewDescription').innerHTML = item.querySelector('.descriptionImage').innerHTML;
             
             document.getElementById('modalPreview').style.display = "block";
             document.getElementById('modalPreview').classList.add("fadeInModalPreview");

@@ -16,21 +16,39 @@
 
         <div class="gallery-item">
             <img src="toiles/44.jpg" alt="Toile 4">
-            <p class="titleImage">Titre image 1</p>
-            <p class="descriptionImage">Description image 1</p>
+            <p class="titleImage">Conte japonais</p>
+            <p class="descriptionImage">
+                Trois hommes avaient pass&eacute; leur apr&egrave;s-midi assis devant le temple, au bord du jardin min&eacute;ral. Ils m&eacute;ditaient en contemplant ces &eacute;tranges dessins faits de sable et plant&eacute;s de quelques rochers. Les lignes &eacute;taient toujours les m&ecirc;mes depuis leur cr&eacute;ation plusieurs si&egrave;cles auparavant. Bien s&ucirc;r, les intemp&eacute;ries les atteignaient, mais depuis toujours, des g&eacute;n&eacute;rations de moines les remodelaient &agrave; l&rsquo;identique avec constance chaque matin. Toujours les m&ecirc;mes et pourtant chaque jour renouvel&eacute;s, image de l&rsquo;&eacute;ph&eacute;m&egrave;re et de l&rsquo;&eacute;ternit&eacute; se rencontrant en ce lieu unique.
+                <br>
+                Le pr&ecirc;tre, le po&egrave;te et le samoura&iuml; choisirent de d&eacute;battre sur la grandeur et le m&eacute;rite respectif de la fonction qu&rsquo;ils occupaient chacun dans la soci&eacute;t&eacute; ! 
+                <br>
+                Soudain, ils s&rsquo;arr&ecirc;t&egrave;rent : une sorte d&rsquo;obstacle se dressait au milieu de l&rsquo;&eacute;troit chemin. Oh, se dresser, c&rsquo;est beaucoup dire : il s&rsquo;agissait en fait d&rsquo;un enfant sagement assis en tailleur et qui tra&ccedil;ait des lignes sur le sable avec application &agrave; l&rsquo;aide d&rsquo;un b&acirc;tonnet. ils sentirent qu&rsquo;une aura particuli&egrave;re se d&eacute;gageait de lui et leur attention fut attir&eacute;e. 
+                <br>
+                Dans un langage respectueux et ch&acirc;ti&eacute; qui semblait au-del&agrave; de son &acirc;ge, il s&rsquo;adressa &agrave; eux en ces termes :&laquo; V&eacute;n&eacute;rables, pourquoi vos paroles troublent-elles la qui&eacute;tude de cette belle fin d&rsquo;apr&egrave;smidi de printemps ? &hellip; Que diriez-vous de m&rsquo;expliquer l&rsquo;un apr&egrave;s l&rsquo;autre l&rsquo;essence de votre mission dans notre univers et de me laisser &ecirc;tre votre arbitre ? &raquo; 
+                <br>
+                Le premier, le pr&ecirc;tre, que cette attente rendait mal &agrave; l&rsquo;aise, fit un pas vers lui et comme pour r&eacute;sumer son discours dit en s&rsquo;inclinant : &laquo; SAVOIR ! &raquo;.
+                <br>
+                L&rsquo;imitant, le samoura&iuml; s&rsquo;avan&ccedil;a &agrave; son tour et dit : &laquo; TUER ! &raquo;. 
+                <br>
+                Pour terminer, le po&egrave;te se pla&ccedil;a sur la m&ecirc;me ligne et s&rsquo;inclinant gracieusement &agrave; son tour, pronon&ccedil;a : &laquo; CREER ! &raquo;. 
+                <br>
+                Lorsque dans la douceur du cr&eacute;puscule, le chant du rossignol s&rsquo;&eacute;leva, m&eacute;lodieux, les trois hommes se redress&egrave;rent comme &agrave; un signal. Mais quelle surprise ! L&rsquo;enfant avait disparu ! 
+                <br>
+                C&rsquo;est alors qu&rsquo;ils d&eacute;couvrirent &agrave; sa place exacte, cet unique kanji soigneusement calligraphi&eacute; dans le sable du chemin : AIMER
+            </p>
             <p class="indexImage">1</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/55.jpg" alt="Toile 5">
-            <p class="titleImage">Titre image 2</p>
+            <p class="titleImage">Conte africain</p>
             <p class="descriptionImage">Description image 2</p>
             <p class="indexImage">2</p>
         </div>
 
         <div class="gallery-item">
             <img src="toiles/66.jpg" alt="Toile 6">
-            <p class="titleImage">Titre image 3</p>
+            <p class="titleImage">Conte indien</p>
             <p class="descriptionImage">Description image 3</p>
             <p class="indexImage">3</p>
         </div>
@@ -47,19 +65,19 @@
     var imagesObj = [
         {
             index: 1,
-            title: "Titre image 1",
+            title: "Conte japonais",
             src: "toiles/44.jpg",
             description: "Description image 1",
         },
         {
             index: 2,
-            title: "Titre image 2",
+            title: "Conte africain",
             src: "toiles/55.jpg",
             description: "Description image 2",
         },
         {
             index: 3,
-            title: "Titre image 3",
+            title: "Conte indien",
             src: "toiles/66.jpg",
             description: "Description image 3",
         },
@@ -126,8 +144,8 @@
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = nextImg.src;
-            document.getElementById('modalPreviewTitle').textContent = nextImg.title;
-            document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+            document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
@@ -161,8 +179,8 @@
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = prevImg.src;
-            document.getElementById('modalPreviewTitle').textContent = prevImg.title;
-            document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+            document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
@@ -199,8 +217,8 @@
 
             // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
-            document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
-            document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
+            document.getElementById('modalPreviewTitle').innerHTML = item.querySelector('.titleImage').innerHTML;
+            document.getElementById('modalPreviewDescription').innerHTML = item.querySelector('.descriptionImage').innerHTML;
             
             document.getElementById('modalPreview').style.display = "block";
             document.getElementById('modalPreview').classList.add("fadeInModalPreview");
