@@ -601,7 +601,7 @@ body {
   transition: all 0.4s;
 }
 .titlesDiv h1:hover {
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .titlesDiv h2 {
