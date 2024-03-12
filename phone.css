@@ -106,6 +106,26 @@
     }
 
 
+    .subTitleSectionWrapper {
+        margin-bottom: 13px;
+        margin-block-start: 0;
+    }
+    .subTitleSection {
+        font-size: 1.4em;
+        margin-left: 5px;
+    }
+
+    .subTitleAcryliqueLinks {
+        margin-bottom: 15px;
+        gap: 11px;
+
+    }
+    .subTitleAcrylique {
+        margin-bottom: 15px;
+        gap: 11px;
+    }
+
+
     #nextRubriqueBtn {
         font-size: 1.1em;
     }
@@ -119,15 +139,22 @@
     }
 
 
+    #nextRubriqueBtn, #prevRubriqueBtn {
+        padding: 5px 12px;
+        border: 1px solid;
+        border-radius: 6px;
+    }
+
+
     .subTitle {
         margin: 0;
-        font-size: 1.5em;
+        font-size: 1.3em;
 
         font-family: 'Montserrat Alternates', sans-serif;
         background: -webkit-linear-gradient(white, #ffffff42);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     .subSubTitle {
@@ -274,8 +301,6 @@
         cursor: pointer;
         transition: all 0.4s;
     } */
-
-
 
 
 

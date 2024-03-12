@@ -1,13 +1,18 @@
 <div id="contentSectionAcrylique" class="acrylique-content-fade">
 
+    <h2 class="subTitleSectionWrapper">
+        <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
+        <span class="subTitleSection"> Peinture acrylique</span>
+    </h2>
 
     <!-- Titre et back to acryliques Btn -->
     <div class="subTitleAcrylique">
-        <i id="acryliqueBackBtn2" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
-        <h2 class="subTitle subTitleRubrique">
+        
+        <h3 class="subTitle subTitleRubrique">
+            <i id="prevRubriqueBtn" class="fa-solid fa-chevron-left"></i>
             <span>L'esprit et l'épouse</span> 
             <i id="nextRubriqueBtn" class="fa-solid fa-chevron-right"></i>
-        </h2>
+        </h3>
     </div>
 
 
@@ -485,6 +490,53 @@
 
 
 
+
+    // Previous rubrique Btn title:
+    document.getElementById('prevRubriqueBtn').addEventListener('click', function() {
+
+        document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
+        document.getElementById("contentSectionAcrylique").style.opacity = "1";
+        document.getElementById("contentSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
+
+        svgArbreGroup.classList.add('svgFadeOut');
+        setTimeout(function() {
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+
+            $("#gallery").load("peinture-group4.html", function() {
+
+                // Reset Fix SVG position rubrique 1:
+                document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique1');
+                // Reset Fix SVG position rubrique 2:
+                document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique2');
+
+                // *** load svg arbre (retour sur rubriques)
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../3contes-3-gContent.svg', true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+
+                    } else {
+                        console.error('Failed to load external SVG: ' + xhr.statusText);
+                    }
+                };
+                xhr.send();
+
+            });
+        }, 701);
+
+    });
 
 
 
