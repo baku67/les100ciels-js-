@@ -15,25 +15,24 @@
             $from = $_POST["from"];
             
             // Additional optional fields
-            $name = isset($_POST["name"]) ? $_POST["name"] : "";
-            $lastName = isset($_POST["last_name"]) ? $_POST["last_name"] : "";
-            $phoneNumber = isset($_POST["phone_number"]) ? $_POST["phone_number"] : "";
+            $name = isset($_POST["name"]) ? $_POST["name"] : "Non renseigné (optionnel)";
+            $lastName = isset($_POST["last_name"]) ? $_POST["last_name"] : "Non renseigné (optionnel)";
+            $phoneNumber = isset($_POST["phone_number"]) ? $_POST["phone_number"] : "Non renseigné (optionnel)";
 
             // Construct the email content
-            $emailContent = "Name: $name\n";
-            $emailContent .= "Last Name: $lastName\n";
-            $emailContent .= "Phone Number: $phoneNumber\n";
+            $emailContent = "Nom du contact (optionnel): $name $lastName\n";
+            // $emailContent .= "Last Name: $lastName\n";
+            $emailContent .= "Numéro de téléphone (optionnel): $phoneNumber\n\n";
             $emailContent .= "Email du contact: $from\n";
-            $emailContent .= "Message: $message\n";
+            $emailContent .= "Message: \"$message\"\n";
             
             // Email configuration
-            // $to = "basile08@hotmail.fr";
             $to = "christine.k2r2@free.fr";
             $subject = "www.les100ciels.art : Nouveau message depuis le formulaire de contact";
             // $headers = "From: $from\r\n";
             $headers = "From: les100ciels.art\r\n";
 
-            // Send the email
+            // Send the emails (cc)
             mail($to, $subject, $emailContent, $headers);
             mail("basile08@hotmail.fr", $subject, $emailContent, $headers);
         } else {
@@ -100,7 +99,7 @@
                 position: relative;
             }
             .titlesDiv h1 {
-                margin-block-end: 0;
+                margin-block-end: 20px;
             }
 
             @media (max-width: 480px) {
@@ -113,7 +112,9 @@
                     overflow: auto;
                 }
 
-
+                .titlesDiv h1 {
+                    margin-block-end: 0px;
+                }
 
             }
 
@@ -395,11 +396,11 @@
             <div id="stars3"></div>
         </div>
 
-        <div class="contactContent">
+        <div id="contactContent" class="contactContent">
 
 
             <!-- titre absolute -->
-            <div class="titlesDiv">
+            <div id="titlesDiv" class="titlesDiv">
                 <a href="./index.html" class="linkTitle">
                     <h1 class="h1title">Les 100 ciels</h1>
                 </a>
@@ -407,7 +408,7 @@
 
             <h2 class="contactSubTitle">
                 <i class="fa-solid fa-envelope contactFormIconTitle"></i>
-                Formulaire de contact
+                <span class="spanContactFormMobile">Formulaire de <br class="isMobile">contact</span>
             </h2>
 
             <div class="contactFormWrapper">
@@ -416,28 +417,28 @@
                     <div class="formLinePc">
                         <div class="formLineElemPc">
                             <label for="name">Votre nom <span class="fieldInfo">(facultatif)</span> :</label>
-                            <input type="text" name="name" id="name">
+                            <input type="text" name="name" id="name" maxlength="75">
                         </div>
 
                         <div class="formLineElemPc">
                             <label for="last_name">Votre prénom <span class="fieldInfo">(facultatif)</span> :</label>
-                            <input type="text" name="last_name" id="last_name">
+                            <input type="text" name="last_name" id="last_name" maxlength="75">
                         </div>
                     </div>
 
                     <br>
 
                     <label for="phone_number">Votre n° de téléphone <span class="fieldInfo">(facultatif)</span> :</label>
-                    <input type="text" name="phone_number" id="phone_number">
+                    <input type="text" name="phone_number" id="phone_number" maxlength="15">
 
 
                     <label for="from">Votre adresse mail <span class="fieldInfo">(afin de vous recontacter)</span> :</label>
-                    <input type="email" name="from" id="from" required>
+                    <input type="email" name="from" id="from" required maxlength="100">
 
                     <br>
 
                     <label for="message">Votre message :</label>
-                    <textarea name="message" id="message" rows="4" required></textarea>
+                    <textarea name="message" id="message" rows="4" required maxlength="2000"></textarea>
 
                     <br>
 
@@ -479,16 +480,14 @@
             sidenav.classList.add("active");
             // pas opti :
             document.getElementById("titlesDiv").style.filter = "blur(2px)";
-            document.getElementById("main").style.filter = "blur(3px)";
-            document.getElementById("svgArbre").style.filter = "blur(2px)";
+            document.getElementById("contactContent").style.filter = "blur(3px)";
         }
 
         function closeNav() {
             sidenav.classList.remove("active");
 
             document.getElementById("titlesDiv").style.filter = "blur(0px)";
-            document.getElementById("main").style.filter = "blur(0px)";
-            document.getElementById("svgArbre").style.filter = "blur(0px)";
+            document.getElementById("contactContent").style.filter = "blur(0px)";
 
             sidenav.classList.add('closeBurgerColorAnimated');
             setTimeout(function() {
@@ -498,7 +497,7 @@
 
 
         // WIP click outer navBurger = close() (MOBILE):
-        document.getElementById("main").addEventListener('click', function(e){   
+        document.getElementById("contactContent").addEventListener('click', function(e){   
 
             if (document.getElementById('mySidenav').contains(e.target)){
                 // click dans nav burger

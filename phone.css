@@ -54,13 +54,22 @@
         margin: 0 auto;
     }
     .contactForm {
-        width: 95%;
+        width: 100%;
         margin: 25px 0px;
-        padding: 13px 15px 30px 15px;
+        padding: 13px 10px 30px 10px;
     }
     .formLinePc {
         gap: 0px;
         flex-direction: column;
+    }
+
+
+    .contactFormIconTitle {
+        font-size: 2em;
+    }
+
+    .spanContactFormMobile {
+        text-align: left;
     }
 
 
@@ -406,7 +415,8 @@
 
 
     .contactFormDisclaimer {
-        margin: 0px 0 25px 0;
+        margin: 0px auto 25px auto;
+        width: 95%;
     }
 
 
