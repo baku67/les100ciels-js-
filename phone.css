@@ -45,6 +45,30 @@
         width: 50%;
     }
 
+    .contactContent {
+        /* margin-top: 20px; */
+    }
+
+    .contactFormWrapper {
+        width: 85%;
+        margin: 0 auto;
+    }
+    .contactForm {
+        width: 90%;
+        margin: 25px 0px;
+    }
+    .formLinePc {
+        gap: 0px;
+        flex-direction: column;
+    }
+
+
+    .contactFormSubmitBtn {
+        padding: 8px 8px !important;
+        margin: 0px auto 0px auto;
+        font-size: 1.1em;
+    }
+
     #nextHaikuDivMobile {
         position: absolute;
         font-size: 3em;
@@ -364,7 +388,18 @@
 
 
 
-
+    .isDesktop {
+        display: none;
+    }
+    .isDesktopFlex {
+        display: none;
+    }
+    .isMobile {
+        display: block;
+    }
+    .isMobileFlex {
+        display: inline-flex;
+    }
 
 
 
@@ -375,7 +410,7 @@
 
     /* Contact.html */
     .contactSubTitle {
-        
+        margin-top: 35px;
     }
   
     #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 {

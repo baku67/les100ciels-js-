@@ -28,7 +28,8 @@
             $emailContent .= "Message: $message\n";
             
             // Email configuration
-            $to = "basile08@hotmail.fr";
+            // $to = "basile08@hotmail.fr";
+            $to = "christine.k2r2@free.fr";
             $subject = "Nouveau message depuis le formulaire de contact de www.les100ciels.art";
             $headers = "From: $from\r\n";
 
@@ -55,16 +56,52 @@
         <link rel='stylesheet' href='phone.css'>
 
         <link rel='stylesheet' href='styleSass.css'>
-        <link rel='stylesheet' href='styleSass2k.css'>
+        <!-- <link rel='stylesheet' href='styleSass2k.css'> -->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet">
 
+        <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
 
+        <!-- reCAPTCHA -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+        <!-- FIX STARS / BODY / HTML -->
         <style>
 
+            body {
+                overflow: scroll;
+            }
+
+            .bgStars {
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            }
+
+            /* Mobile (déjà absulte sur pc) */
+            .titlesDiv {
+                position: relative;
+            }
+
+            @media (max-width: 480px) {
+
+                html {
+                    height: auto;
+                }
+                body {
+                    position: relative;
+                    overflow: auto;
+                }
+
+
+
+            }
 
         </style>
 
@@ -72,14 +109,9 @@
 
 
 
-    <body style="">
+    <body style="overflow:auto;">
 
-        <!-- titre absolute -->
-        <div class="titlesDiv">
-            <a href="./index.html" class="linkTitle">
-                <h1 class="h1title">Les 100 ciels</h1>
-            </a>
-        </div>
+
 
         <div class="bgStars">
             <div id="stars"></div>
@@ -89,29 +121,64 @@
 
         <div class="contactContent">
 
-            <h2 class="contactSubTitle">Contactez-moi</h2>
 
-            <div>
+            <!-- titre absolute -->
+            <div class="titlesDiv">
+                <a href="./index.html" class="linkTitle">
+                    <h1 class="h1title">Les 100 ciels</h1>
+                </a>
+            </div>
 
-            <form method="post" action="contact.php" enctype="multipart/form-data">
-                    <label for="from">Votre email</label>
-                    <input type="email" name="from" id="from" required>
-                    <label for="name">Nom</label>
-                    <input type="text" name="name" id="name">
-                    <label for="last_name">Prénom</label>
-                    <input type="text" name="last_name" id="last_name">
-                    <label for="phone_number">Numéro de téléphone</label>
+            <h2 class="contactSubTitle">
+                <i class="fa-solid fa-envelope contactFormIconTitle"></i>
+                Contactez-moi
+            </h2>
+
+            <div class="contactFormWrapper">
+
+                <form class="contactForm" method="post" action="contact.php" enctype="multipart/form-data">
+                    <div class="formLinePc">
+                        <div class="formLineElemPc">
+                            <label for="name">Votre nom <span class="fieldInfo">(facultatif)</span> :</label>
+                            <input type="text" name="name" id="name">
+                        </div>
+
+                        <div class="formLineElemPc">
+                            <label for="last_name">Votre prénom <span class="fieldInfo">(facultatif)</span> :</label>
+                            <input type="text" name="last_name" id="last_name">
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <label for="phone_number">Votre n° de téléphone <span class="fieldInfo">(facultatif)</span> :</label>
                     <input type="text" name="phone_number" id="phone_number">
-                    <label for="message">Votre message</label>
-                    <textarea name="message" id="message" required></textarea>
+
+
+                    <label for="from">Votre adresse mail <span class="fieldInfo">(afin de vous recontacter)</span> :</label>
+                    <input type="email" name="from" id="from" required>
+
+                    <br>
+
+                    <label for="message">Votre message :</label>
+                    <textarea name="message" id="message" rows="4" required></textarea>
+
+                    <br>
 
                     <!-- Honeypot Field -->
                     <div style="display: none;">
                         <input type="text" name="honeypot" id="honeypot">
                     </div>
 
-                    <input type="submit">
+                    <!-- reCAPTCHA désactivé  -->
+                    <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
+
+                    <!-- Disclaimer  -->
+                    <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter concernant votre demande.</p>
+
+                    <input class="contactFormSubmitBtn" type="submit">
                 </form>
+
 
             </div>
         

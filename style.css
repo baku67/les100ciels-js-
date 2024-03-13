@@ -29,6 +29,20 @@ body {
   }
 
 
+  .isDesktop {
+    display: block;
+}
+.isDesktopFlex {
+    display: inline-flex;
+}
+.isMobile {
+    display: none;
+}
+.isMobileFlex {
+    display: none;
+}
+
+
 
 
 
@@ -372,9 +386,87 @@ body {
   }
 
 
+  .contactFormDisclaimer {
+    color: #e7e7e7;
+    font-style: italic;
+    font-size: 0.9em;
+    line-height: 1em;
+    text-align: justify;
+  }
+
 
   .contactContent {
-    margin-top: 60px;
+    /* margin-top: 60px; */
+  }
+
+  .contactFormWrapper {
+    width: 100%;
+  }
+  .contactForm {
+    color: white;
+    display: inline-flex;
+    flex-direction: column;
+    /* width: auto; */
+    width: 40%;
+
+    position: relative;
+    margin: 40px auto;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 20px 30px 30px 30px;
+    background-color: #f0f8ff17;
+    border: 1px solid #e8ca7d;
+    border-radius: 9px;
+  }
+  .contactForm label {
+    padding: 5px;
+  }
+  .contactForm input, .contactForm textarea {
+    border-radius: 6px;
+    padding: 7px 7px;
+    background-color: #11123f;
+    color: white;
+  }
+
+  .fieldInfo {
+    font-style: italic;
+    color: rgb(184, 178, 126);
+    font-size: 90%;
+  }
+
+  .contactFormSubmitBtn {
+    width: 40%;
+    padding: 14px 8px !important;
+    border-radius: 6px;
+    background-color: #e8ca7d !important;
+    margin: 20px auto 0px auto;
+    font-size: 1.3em;
+    font-family: 'Montserrat Alternates', sans-serif;
+    cursor: pointer;
+    color: black !important;
+
+    transition: all 0.4s;
+  }
+
+
+  .formValidated-backBtn {
+    color: black;
+    padding: 15px 35px;
+    background-color: #e8ca7d;
+  }
+
+
+  .formLinePc {
+    width: 100%;
+    gap: 30px;
+    display: inline-flex;
+    /* justify-content: space-between; */
+    justify-content: flex-start;
+  }
+  .formLineElemPc {
+    display: inline-flex;
+    flex-direction: column;
   }
   
   
@@ -1905,6 +1997,18 @@ body {
       text-align: center;
       font-family: 'Montserrat Alternates', sans-serif;
       color: #e8ca7d;
+
+      align-items: center;
+      display: inline-flex;
+      margin: 0 auto;
+      left: 50%;
+      position: relative;
+      transform: translateX(-50%);
+  }
+
+  .contactFormIconTitle {
+    margin-right: 21px;
+    font-size: 2em;
   }
 
   #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 {
