@@ -392,6 +392,9 @@ body {
     font-size: 0.9em;
     line-height: 1em;
     text-align: justify;
+
+    width: 95%;
+    margin: 0 auto;
   }
 
 
@@ -407,7 +410,8 @@ body {
     display: inline-flex;
     flex-direction: column;
     /* width: auto; */
-    width: 40%;
+    /* width: 40%; */
+    width: 500px;
 
     position: relative;
     margin: 40px auto;
@@ -415,7 +419,8 @@ body {
     transform: translateX(-50%);
 
     padding: 20px 30px 30px 30px;
-    background-color: #f0f8ff17;
+    /* background-color: #f0f8ff17; */
+    background-color: #0b1e4f;
     border: 1px solid #e8ca7d;
     border-radius: 9px;
   }
@@ -424,9 +429,10 @@ body {
   }
   .contactForm input, .contactForm textarea {
     border-radius: 6px;
-    padding: 7px 7px;
+    padding: 10px 7px;
     background-color: #11123f;
     color: white;
+    border-color: #ffffff42;
   }
 
   .fieldInfo {
