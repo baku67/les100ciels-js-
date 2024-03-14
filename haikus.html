@@ -789,6 +789,22 @@
     <body class="bodyPeinture">
 
 
+
+        <!-- Modal preview -->
+        <div id="modalPreview">
+
+            <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
+
+            <div class="modalPreviewContent modalPreviewContent-HaikuMobil">
+
+                <h2 id="modalPreviewTitle"></h2>
+                <img id="modalPreviewImg" class="blueGlowFix-haikus" src="">
+
+            </div>
+        </div>
+        
+
+
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
         <div id="mySidenav" class="sidenav isMobile">
@@ -1415,6 +1431,39 @@
                         }
                     }
                 });
+
+
+                // Click image haiku => Modal 
+                document.getElementById('haikuImg').addEventListener('click', function() {
+
+                    document.getElementById('modalPreviewImg').src = document.getElementById('haikuImg').src;
+                    document.getElementById('modalPreviewTitle').innerHTML = document.getElementById('haikuTitle').innerText;
+                    
+
+                    document.getElementById('modalPreview').style.display = "block";
+                    document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+                    setTimeout(()=> {
+                        document.getElementById('modalPreview').style.opacity = "1";
+                        document.getElementById('modalPreview').style.transform = "translateY(0px)";
+                        document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                    }, 701)
+
+                });
+
+
+                // Btn close Modal (+ remove anims modal)
+                document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
+
+                    document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                    document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
+                    setTimeout(() => {
+                        document.getElementById('modalPreview').style.display = "none";
+                        document.getElementById('modalPreview').style.opacity = "0";
+                        document.getElementById('modalPreview').style.transform = "translateY(20px)";
+                        document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
+                    }, 701)
+
+                })
 
             });
         </script>

@@ -963,10 +963,10 @@ body {
   }
 
   .haikuTitleText {
-    text-decoration: underline;
+    /* text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 10px;
-    text-decoration-color: #ffffff7a;
+    text-decoration-color: #ffffff7a; */
   }
 
 
@@ -1651,7 +1651,7 @@ body {
       right: 5vw;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 99999999999;
+      z-index: 999999999;
       padding: 15px 25px;
       cursor: pointer;
 
@@ -1668,7 +1668,7 @@ body {
       left: 5vw;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 99999999999;
+      z-index: 999999999;
       padding: 15px 25px;
       cursor: pointer;
 
@@ -1862,14 +1862,14 @@ body {
 
 
   #nextHaikuDivDesktop:hover {
-    transform: translate(5px, -50%) scale(1.2);
-    opacity: 0.7;
-    color: white;
+    transform: translate(5px, -50%) scale(1.05);
+    /* opacity: 0.6; */
+    color: #ffffff61;
   }
   #previousHaikuDivDesktop:hover {
-    transform: translate(-5px, -50%) scale(1.2);
-    opacity: 0.7;
-    color: white;
+    transform: translate(-5px, -50%) scale(1.05);
+    /* opacity: 0.6; */
+    color: #ffffff61;
   }
 
 
@@ -1879,7 +1879,7 @@ body {
     width: 100%;
   }
   .mentionsLegalesDiv a {
-    font-size: 1em;
+    font-size: 0.92em;
     text-align: center;
     padding: 10px 0px;
   }
@@ -2002,13 +2002,29 @@ body {
 
 
     .haikusContentImg {
-      height: 60vh;
+      cursor: pointer;
+      height: 55vh;
 
       /* légendraire doré: */
       filter: drop-shadow(9px 16px 47px #e8ca7d);
 
       /* Bleu ciel: */
       filter: drop-shadow(9px 16px 47px #7bd9ff);
+
+      transition: all 0.6s ease;
+    }
+    .haikusContentImg:hover {
+      /* opacity: 0.8 !important; */
+      transform: scale(1.06) rotateZ(-3deg);
+
+      /* légendraire doré: */
+      filter: drop-shadow(9px 16px 47px #e8ca7d);
+    }
+
+
+    .blueGlowFix-haikus {
+      filter: drop-shadow(9px 16px 47px #7bd9ff) !important;
+      height: 86vh !important;
     }
 
 
@@ -2016,6 +2032,8 @@ body {
       font-family: 'Montserrat Alternates', sans-serif;
       color: white;
       margin-block-end: 1.5em;
+      font-size: 2em;
+      font-weight: 200;
     }
 
 
@@ -2024,7 +2042,8 @@ body {
       color: #e8ca7d;
 
 
-      margin-block-end: 2em;
+      margin-block-end: 1.5em;
+      font-size: 1.3em;
       transform: translateX(-15px);
     }
 
