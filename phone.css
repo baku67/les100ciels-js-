@@ -100,6 +100,13 @@
     }
 
 
+    .subTitleRubrique {
+        width: 90%;
+        margin: 0 auto !important;
+    }
+
+
+
     #modalPreviewNext:hover {
         opacity: 1;
         transform: translateX(0px);
@@ -145,7 +152,7 @@
         margin-block-start: 0;
     }
     .subTitleSection {
-        font-size: 1.4em;
+        font-size: 1.25em;
         margin-left: 5px;
     }
 
@@ -160,7 +167,7 @@
     }
 
 
-    #nextRubriqueBtn {
+    #prevRubriqueBtn, #nextRubriqueBtn {
         font-size: 1.1em;
     }
 
@@ -175,8 +182,10 @@
 
     #nextRubriqueBtn, #prevRubriqueBtn {
         padding: 5px 12px;
-        border: 1px solid;
         border-radius: 6px;
+
+        border: 1px solid #e8ca7d21;
+        background-color: #e8ca7d0d;
     }
 
 
@@ -425,7 +434,7 @@
 
     /* Contact.html */
     .contactSubTitle {
-        margin-top: 35px;
+        margin-top: 30px;
     }
   
     #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 {

@@ -366,11 +366,11 @@
             <ul style="margin-top:5px;">
               <!-- <li><a href="index.html">Home</a></li> -->
               <li><a href="peinture.html">Acrylique</a></li>
-              <li><a href="#">Aquarelle</a></li>
-              <li><a href="#">Haushka</a></li>
-              <li><a href="#">Ha&iuml;kus</a></li>
-              <li><a href="#">Reproductions</a></li>
-              <li><a href="#">Expositions</a></li>
+              <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+              <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
+              <li><a href="#" class="navBurgerDisabled">Ha&iuml;kus</a></li>
+              <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+              <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
               <li><a href="contact.php" class="burgerOngletActif">Contact</a></li>
             </ul>
 
@@ -451,7 +451,7 @@
                     <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
 
                     <!-- Disclaimer  -->
-                    <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter concernant votre demande.</p>
+                    <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter.</p>
 
                     <input class="contactFormSubmitBtn" type="submit">
                 </form>

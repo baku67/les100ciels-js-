@@ -404,6 +404,9 @@ body {
 
   .contactFormWrapper {
     width: 100%;
+
+    opacity: 0;
+    animation: fadeIn 1.5s 1s ease forwards;
   }
   .contactForm {
     color: white;
@@ -419,13 +422,16 @@ body {
     transform: translateX(-50%);
 
     padding: 20px 30px 30px 30px;
-    /* background-color: #f0f8ff17; */
-    background-color: #0b1e4f;
+    /* background-color: #0b1e4f; */
+    background-color: #0b1e4fc4;
     border: 1px solid #e8ca7d;
+    box-shadow: 0px 0px 20px #e8ca7d9c;
     border-radius: 9px;
   }
   .contactForm label {
+    font-family: 'Montserrat Alternates', sans-serif;
     padding: 5px;
+    margin-top: 3px;
   }
   .contactForm input, .contactForm textarea {
     border-radius: 6px;
@@ -442,19 +448,31 @@ body {
   }
 
   .contactFormSubmitBtn {
-    width: 40%;
-    padding: 14px 8px !important;
+    width: 32%;
+    padding: 10px 10px !important;
     border-radius: 6px;
     background-color: #e8ca7d !important;
-    margin: 20px auto 0px auto;
-    font-size: 1.3em;
+    margin: 50px auto 0px auto;
+    font-size: 1.2em;
     font-family: 'Montserrat Alternates', sans-serif;
     cursor: pointer;
     color: black !important;
+    border: 2px solid #e8ca7d00;
 
     transition: all 0.4s;
   }
+  .contactFormSubmitBtn:hover {
+    background-color: #0b1e4fc4 !important;
+    color: #e8ca7d !important;
+    border: 2px solid #e8ca7d;
+    letter-spacing: 1px;
+  }
 
+
+  .navBurgerDisabled {
+    opacity: 0.37;
+    pointer-events: none;
+  }
 
   .formValidated-backBtn {
     color: black;
@@ -1491,9 +1509,9 @@ body {
     position: fixed;
     z-index: 1;
     top: 0;
-    right: -255px;
+    right: -260px;
     /* Anims: */
-    background-color: #0e123f;
+    background-color: #ffecbc;
 
     border-top-left-radius: 12px;
 
@@ -1510,7 +1528,7 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #e7d5a4;
     display: block;
     transition: 0.3s;
   }
@@ -1527,29 +1545,28 @@ body {
 
   /* Active class */
   .sidenav.active {
+    border-left: 1px solid #e7d5a44a;
     right: 0;
     animation: navBurgerColorAnim 0.5s 0s ease forwards;
   }
   @keyframes navBurgerColorAnim {
     from {
-      background-color: #0e123f;
-
+      background-color: #ffecbc;
     }
     to {
-      background-color: #ffecbc;
-
+      background-color: #0b1e4f;
     }
   }
 
   .closeBurgerColorAnimated {
-    animation: closeBurgerColorAnimated 0.5s 0s ease forwards;
+    animation: closeBurgerColorAnimated 0.8s 0s ease forwards;
   }
   @keyframes closeBurgerColorAnimated {
     from {
-      background-color: #ffecbc;
+      background-color: #0b1e4f;
     }
     to {
-      background-color: #0e123f;
+      background-color: #ffecbc;
     }
   }
 
@@ -1559,6 +1576,7 @@ body {
     top: 0;
     right: 18px;
     font-size: 39px;
+    color: #e7d5a4;
   }
 
   /* Icône burger */
@@ -1593,6 +1611,10 @@ body {
 
     /* filter: drop-shadow(4px 3px 0px black); */
     border-left: 1px solid #00000045;
+
+    box-shadow: 0px 0px 10px #e7d5a47a;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
 
     transform: translateX(-4px);
     width: 100%;
@@ -1854,7 +1876,7 @@ body {
     padding: 2px 9px;
   }
   .svgBurgerHomeBtn g {
-    fill: #12133f;
+    fill: #e7d5a4;
   }
 
 
@@ -2010,6 +2032,11 @@ body {
       left: 50%;
       position: relative;
       transform: translateX(-50%);
+
+      text-shadow: 2px 2px black;
+
+      opacity: 0;
+      animation: fadeIn 1.5s 1s ease forwards;
   }
 
   .contactFormIconTitle {
