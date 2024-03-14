@@ -76,16 +76,16 @@
             body {
                 overflow: scroll;
 
-                animation: backgroundAnim 1s 0s linear forwards;
+                /* animation: backgroundAnim 1s 0s linear forwards; */
             }
-            @keyframes backgroundAnim {
+            /* @keyframes backgroundAnim {
                 0% {
                     background: rgb(28 29 73);
                 }
                 100% {
                     background: rgb(27 43 69);
                 }
-            }
+            } */
 
             .bgStars {
             height: 100%;
@@ -124,13 +124,13 @@
 
 
 
-    <body style="overflow:auto;">
+    <body class="bodyContact" style="overflow:auto;">
 
 
 
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
-        <div id="mySidenav" class="sidenav isMobile">
+        <div id="mySidenav" class="sidenav sideNavContact isMobile">
 
             <a id="closeBtn" href="#" class="close">&times;</a>
 
@@ -368,17 +368,17 @@
               <li><a href="peinture.html">Acrylique</a></li>
               <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
               <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
-              <li><a href="#" class="navBurgerDisabled">Ha&iuml;kus</a></li>
+              <li><a href="haikus.html">Ha&iuml;kus</a></li>
               <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
               <li><a href="contact.php" class="burgerOngletActif">Contact</a></li>
             </ul>
 
 
-            <!-- (TODO: changer SVG burger: -->
-            <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
+            <!-- (TODO: changer SVG burger: EZ) -->
+            <!-- <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
                 Your browser does not support SVG
-            </object>
+            </object> -->
 
 
             <div class="mentionsLegalesDiv">

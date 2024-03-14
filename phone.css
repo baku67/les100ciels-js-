@@ -65,7 +65,9 @@
     .contactForm {
         width: 100%;
         margin: 25px 0px;
-        padding: 13px 10px 30px 10px;
+        padding: 13px 20px 30px 20px;
+
+        border-radius: 9px;
     }
     .formLinePc {
         gap: 0px;
@@ -82,8 +84,15 @@
     }
 
 
+    .contactForm input, .contactForm textarea {
+        background-color: #e1e9ef;
+        color: black;
+    }
+
+
     .contactFormSubmitBtn {
-        padding: 8px 8px !important;
+        width: 35%;
+        padding: 9px 3px !important;
         margin: 0px auto 0px auto;
         font-size: 1.1em;
     }

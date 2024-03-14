@@ -426,7 +426,7 @@ body {
     background-color: #0b1e4fc4;
     border: 1px solid #e8ca7d;
     box-shadow: 0px 0px 20px #e8ca7d9c;
-    border-radius: 9px;
+    border-radius: 20px;
   }
   .contactForm label {
     font-family: 'Montserrat Alternates', sans-serif;
@@ -436,15 +436,15 @@ body {
   .contactForm input, .contactForm textarea {
     border-radius: 6px;
     padding: 10px 7px;
-    background-color: #11123f;
-    color: white;
+    background-color: #e0dde3;
+    color: black;
     border-color: #ffffff42;
   }
 
   .fieldInfo {
     font-style: italic;
-    color: rgb(184, 178, 126);
-    font-size: 90%;
+    color: rgb(255 236 135);
+    font-size: 80%;
   }
 
   .contactFormSubmitBtn {
@@ -456,7 +456,8 @@ body {
     font-size: 1.2em;
     font-family: 'Montserrat Alternates', sans-serif;
     cursor: pointer;
-    color: black !important;
+    font-weight: 600;
+    color: #371837 !important;
     border: 2px solid #e8ca7d00;
 
     transition: all 0.4s;
@@ -658,7 +659,7 @@ body {
   }
   .accueilLink-4:hover + .underline {
     animation: underlineShow 0.5s forwards ease;
-    opacity: 0.3 !important;
+    opacity: 1 !important;
   } 
 
 
@@ -699,6 +700,27 @@ body {
 
 
 
+  .sideNavContact {
+    /* background: rgb(63 17 59);
+    background: -moz-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
+    background: -webkit-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
+    background: linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%); */
+    background: rgb(43 110 125);
+    background: -moz-linear-gradient(313deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+    background: -webkit-linear-gradient(313deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+    background: linear-gradient(313deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+  }
+
+  .sideNavHaikus {
+    background: rgb(17 63 49);
+    background: -moz-linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
+    background: -webkit-linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
+    background: linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
+  }
+
+
+
   .accueilLink-7:hover {
     animation: linkHover7 0.4s 0s ease normal forwards;
   }
@@ -712,10 +734,21 @@ body {
   }
   .accueilLink-7:hover + .underline {
     animation: underlineShow 0.5s forwards ease;
-    opacity: 0.3 !important;
+    opacity: 1 !important;
   } 
 
 
+  .bodyContact {
+    /* background: rgb(63 17 59);
+    background: -moz-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
+    background: -webkit-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
+    background: linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%); */
+
+    background: rgb(43 110 125); 
+    background: -moz-linear-gradient(129deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+    background: -webkit-linear-gradient(129deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+    background: linear-gradient(129deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
+  }
 
 
   .titlesDiv {
@@ -749,7 +782,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  font-weight: 200;
+  font-weight: 300;
 
   margin-block-start: 0.5em;
 
@@ -1648,7 +1681,8 @@ body {
       position: absolute;
       font-size: 4em;
       color: #ffecbc;
-      right: 5vw;
+      /* right: 5vw; */
+      right: 8%;
       top: 50%;
       transform: translateY(-50%);
       z-index: 999999999;
@@ -1665,7 +1699,8 @@ body {
       position: absolute;
       font-size: 4em;
       color: #ffecbc;
-      left: 5vw;
+      /* left: 5vw; */
+      left: 8%;
       top: 50%;
       transform: translateY(-50%);
       z-index: 999999999;
@@ -2006,10 +2041,10 @@ body {
       height: 55vh;
 
       /* légendraire doré: */
-      filter: drop-shadow(9px 16px 47px #e8ca7d);
+      filter: drop-shadow(0px 0px 47px #e8ca7d);
 
       /* Bleu ciel: */
-      filter: drop-shadow(9px 16px 47px #7bd9ff);
+      filter: drop-shadow(0px 0px 47px #7bd9ff);
 
       transition: all 0.6s ease;
     }
@@ -2018,12 +2053,12 @@ body {
       transform: scale(1.06) rotateZ(-3deg);
 
       /* légendraire doré: */
-      filter: drop-shadow(9px 16px 47px #e8ca7d);
+      filter: drop-shadow(0px 0px 47px #e8ca7d);
     }
 
 
     .blueGlowFix-haikus {
-      filter: drop-shadow(9px 16px 47px #7bd9ff) !important;
+      filter: drop-shadow(0px 0px 47px #7bd9ff) !important;
       height: 86vh !important;
     }
 
