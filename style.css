@@ -959,6 +959,7 @@ body {
   .haikuNbr {
     /* color: white; */
     margin-right: 5px;
+    color: #7bd9ff;
   }
 
   .haikuTitleText {
@@ -979,6 +980,16 @@ body {
   }
   .svgArbreGroup-rubrique2 {
     transform: translate(0px, 1076px) scale(0.1, -0.1) !important;
+  }
+
+
+  .svgBurgerObj {
+    /* position: absolute;
+    bottom: 125px; */
+
+    position: relative;
+    top: 25px;
+    opacity: 0.7;
   }
 
 
@@ -1557,6 +1568,7 @@ body {
   /* Active class */
   .sidenav.active {
     border-left: 1px solid #e7d5a44a;
+    box-shadow: 0px 0px 65px #e7d5a457;
     right: 0;
     animation: navBurgerColorAnim 0.5s 0s ease forwards;
   }
@@ -1634,7 +1646,7 @@ body {
 
   #nextHaikuDivDesktop {
       position: absolute;
-      font-size: 3em;
+      font-size: 4em;
       color: #ffecbc;
       right: 5vw;
       top: 50%;
@@ -1651,7 +1663,7 @@ body {
 
   #previousHaikuDivDesktop {
       position: absolute;
-      font-size: 3em;
+      font-size: 4em;
       color: #ffecbc;
       left: 5vw;
       top: 50%;
@@ -1990,12 +2002,13 @@ body {
 
 
     .haikusContentImg {
-      height: 70vh;
+      height: 60vh;
 
-      /* noir: */
-      /* filter: drop-shadow(30px 40px 10px black); */
       /* légendraire doré: */
       filter: drop-shadow(9px 16px 47px #e8ca7d);
+
+      /* Bleu ciel: */
+      filter: drop-shadow(9px 16px 47px #7bd9ff);
     }
 
 

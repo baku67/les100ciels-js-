@@ -5,6 +5,8 @@
         <link rel="icon" type="image/x-icon" href="/favicon1.ico">
         <link rel='stylesheet' href='style.css'>
         <link rel='stylesheet' href='phone.css'>
+        
+        <meta charset="UTF-8">
 
         <link rel='stylesheet' href='styleSass.css'>
         <link rel='stylesheet' href='styleSass2k.css'>
@@ -1033,6 +1035,13 @@
               <li><a href="contact.php">Contact</a></li>
             </ul>
 
+
+            <!-- (TODO: changer SVG burger: -->
+            <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
+                Your browser does not support SVG
+            </object>
+
+
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
             </div>
@@ -1092,19 +1101,30 @@
 
                         <img id="haikuImg" class="haikusContentImg" src="haiku1.png" alt="haiku 1 block-notes">
 
-                        <!-- Previous Haiku Mobile chevron -->
-                        <div id="previousHaikuDivMobile" class="isMobile">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </div>
-                        <!-- Next Haiku Mobile chevron -->
-                        <div id="nextHaikuDivMobile" class="isMobile">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </div>
+
 
                     </div>
 
                     <div class="haikusContentDescriptionDiv">
-                        <h3 id="haikuTitle">Titre Haiku 1</h3>
+
+
+
+                        <div class="haikuTitleNav-mobile">
+                            <!-- Previous Haiku Mobile chevron -->
+                            <div id="previousHaikuDivMobile" class="isMobile">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </div>
+                            <!-- Next Haiku Mobile chevron -->
+                            <div id="nextHaikuDivMobile" class="isMobile">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+
+                            <!-- Title Haiku -->
+                            <h3 id="haikuTitle">
+                                Titre Haiku 1
+                            </h3>
+                        </div>
+                        
                         <p id="haikuContent">
                             Pieds nus dans l'herbe,
                             <br>
@@ -1366,7 +1386,7 @@
                     // pas opti :
                     document.getElementById("titlesDiv").style.filter = "blur(2px)";
                     document.getElementById("main").style.filter = "blur(3px)";
-                    document.getElementById("svgArbre").style.filter = "blur(2px)";
+                    // document.getElementById("svgArbre").style.filter = "blur(2px)";
                 }
 
                 function closeNav() {
@@ -1374,7 +1394,7 @@
 
                     document.getElementById("titlesDiv").style.filter = "blur(0px)";
                     document.getElementById("main").style.filter = "blur(0px)";
-                    document.getElementById("svgArbre").style.filter = "blur(0px)";
+                    // document.getElementById("svgArbre").style.filter = "blur(0px)";
 
                     sidenav.classList.add('closeBurgerColorAnimated');
                     setTimeout(function() {

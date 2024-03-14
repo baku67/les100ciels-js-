@@ -81,7 +81,7 @@
 
     #nextHaikuDivMobile {
         position: absolute;
-        font-size: 3em;
+        font-size: 2em;
         color: #ffecbc;
         right: auto;
         top: 50%;
@@ -91,7 +91,7 @@
 
     #previousHaikuDivMobile {
         position: absolute;
-        font-size: 3em;
+        font-size: 2em;
         color: #ffecbc;
         left: auto;
         top: 50%;
@@ -190,7 +190,7 @@
         border-radius: 6px;
 
         border: 1px solid #e8ca7d21;
-        background-color: #e8ca7d0d;
+        background-color: #e8ca7d1c;
     }
 
 
@@ -387,14 +387,19 @@
     .haikusContentContainer {
         padding: 0;
 
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: column-reverse;
+        gap: 25px;
         width: 100%;
+    }
+
+    .haikuTitleNav-mobile {
+        position: relative;
     }
 
 
     .haikusContentImg {
-        height: 27vh;
+        /* height: 27vh; */
+        height: 30vh;
     }
 
     .haikusContentDescriptionDiv {

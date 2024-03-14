@@ -374,6 +374,13 @@
               <li><a href="contact.php" class="burgerOngletActif">Contact</a></li>
             </ul>
 
+
+            <!-- (TODO: changer SVG burger: -->
+            <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
+                Your browser does not support SVG
+            </object>
+
+
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
             </div>
