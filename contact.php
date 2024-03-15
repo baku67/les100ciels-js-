@@ -128,6 +128,31 @@
 
 
 
+        <!-- Desktop: rectangle detection sideNav-desktop -->
+        <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
+
+        <!-- Nav Burger DESKTOP (onHover title) -->
+        <div id="mySidenav-desktop" class="sidenav-desktop sideNavContact isDesktop">
+
+            <ul>
+            <!-- <li><a href="index.html">Home</a></li> -->
+            <li><a href="peinture.html">Acrylique</a></li>
+            <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+            <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
+            <li><a href="haikus.html">Ha&iuml;kus</a></li>
+            <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+            <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
+            <li><a href="contact.php" class="burgerOngletActif-desktop">Contact</a></li>
+            </ul>
+
+            <div class="mentionsLegalesDiv">
+                <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
+            </div>
+        </div>
+
+
+
+
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
         <div id="mySidenav" class="sidenav sideNavContact isMobile">
@@ -407,7 +432,7 @@
 
 
             <!-- titre absolute -->
-            <div id="titlesDiv" class="titlesDiv">
+            <div id="titlesDiv" class="titlesDiv titleDiv-Contact">
                 <a href="./index.html" class="linkTitle">
                     <h1 class="h1title">Les 100 ciels</h1>
                 </a>
@@ -515,6 +540,48 @@
                 }
             }
         });
+
+
+
+
+        // DESKTOP hover title = sideNav-desktop:
+        
+        // Détection mobile (isMobile JS)
+        var mobileDetection;
+        if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+            mobileDetection = true ;
+        } else {
+            mobileDetection = false ;
+        }
+
+        if (!mobileDetection) {
+
+            document.getElementById('titlesDiv').addEventListener("mouseenter", function() {
+                document.getElementById('mySidenav-desktop').style.left = "0";
+                document.getElementById('mySidenav-desktop').style.opacity = "1";
+            });
+            document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
+                console.log("NETERED");
+                document.getElementById('mySidenav-desktop').style.left = "0";
+                document.getElementById('mySidenav-desktop').style.opacity = "1";
+            });
+
+
+            document.getElementById('mySidenav-desktop').addEventListener("mouseleave", function() {
+                document.getElementById('mySidenav-desktop').style.left = "-350px";
+                document.getElementById('mySidenav-desktop').style.opacity = "0";
+            });
+
+        }
+
+
+
 
     </script>
 

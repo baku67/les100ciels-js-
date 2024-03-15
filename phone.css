@@ -60,11 +60,12 @@
 
     .contactFormWrapper {
         width: 85%;
-        margin: 0 auto;
+        margin: 25px auto;
+
     }
     .contactForm {
         width: 100%;
-        margin: 25px 0px;
+
         padding: 13px 20px 30px 20px;
 
         border-radius: 9px;
@@ -72,6 +73,14 @@
     .formLinePc {
         gap: 0px;
         flex-direction: column;
+    }
+
+
+    .titleDiv-Haikus {
+        z-index: 99999999;
+    }
+    .titleDiv-Haikus .h1title {
+        padding: 13px 20px;
     }
 
 
@@ -99,7 +108,7 @@
 
     #nextHaikuDivMobile {
         position: absolute;
-        font-size: 2em;
+        font-size: 1.7em;
         color: #ffecbc;
         right: auto;
         top: 50%;
@@ -109,7 +118,7 @@
 
     #previousHaikuDivMobile {
         position: absolute;
-        font-size: 2em;
+        font-size: 1.7em;
         color: #ffecbc;
         left: auto;
         top: 50%;
@@ -438,8 +447,8 @@
     }
 
     .haikusSubTitle {
-        margin-block-start: 1em;
-        margin-block-end: 0.4em;
+        margin-block-start: 0.5em;
+        margin-block-end: 0.2em;
     }
 
       
