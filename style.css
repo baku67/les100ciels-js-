@@ -2110,6 +2110,9 @@ body {
   .fadeOutHaikuImg {
     animation: fadeOut 0.5s 0s ease forwards;
   }
+  .fadeOutHaikuContent {
+    animation: fadeOut 0.5s 0s ease forwards;
+  }
 
   @keyframes fadeOut {
     from {
@@ -2123,7 +2126,9 @@ body {
   .fadeInHaikuImg {
     animation: fadeIn 0.5s 0s ease forwards;
   }
-
+  .fadeOutHaikuContent {
+    animation: fadeIn 0.5s 0s ease forwards;
+  }
 
 
 

@@ -1134,7 +1134,7 @@
 
                 <!-- Section img et Section description (row/column) -->
                 <!-- State intial JS -->
-                <div class="haikusContentContainer">
+                <div id="haikusContentContainer" class="haikusContentContainer">
 
                     <div class="haikusContentImgDiv">
 
@@ -1309,6 +1309,26 @@
                 document.getElementById("haikuTitle").innerHTML = currentHaiku.title;
                 document.getElementById("haikuContent").innerHTML = currentHaiku.content;
 
+                // Si premier ou dernier Haiku = Disabled nav flèche:
+
+
+
+                function animTransition() {
+                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+
+                    document.getElementById("haikusContentContainer").classList.remove("fadeInHaikuImg");
+                    document.getElementById("haikusContentContainer").classList.add("fadeOutHaikuImg");
+
+                    setTimeout(function() {
+                        document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
+                        document.getElementById("haikuContent").innerHTML = targetHaiku.content;
+                        document.getElementById("haikuImg").src = targetHaiku.src;
+
+                        document.getElementById("haikusContentContainer").classList.remove("fadeOutHaikuImg");
+                        document.getElementById("haikusContentContainer").classList.add("fadeInHaikuImg");
+                    }, 501);
+                }
+
 
 
                 // Click previous Btn (MOBILE):
@@ -1321,19 +1341,8 @@
                         indexHaiku = haikusArray.length;
                     }
 
-                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
-
-                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
-                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
-
-                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
-                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
-                    setTimeout(function() {
-                        document.getElementById("haikuImg").src = targetHaiku.src;
-                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
-
-                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
-                    }, 501);
+                    animTransition();
+                    
                 });
                 // Click next Btn (MOBILE):
                 document.getElementById("nextHaikuDivMobile").addEventListener("click", function() {
@@ -1345,19 +1354,8 @@
                         indexHaiku = 1;
                     }
 
-                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
-
-                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
-                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
-
-                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
-                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
-                    setTimeout(function() {
-                        document.getElementById("haikuImg").src = targetHaiku.src;
-                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
-
-                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
-                    }, 501);
+                    animTransition();
+                
                 });
 
 
@@ -1371,19 +1369,8 @@
                         indexHaiku = haikusArray.length;
                     }
 
-                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
+                    animTransition();
 
-                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
-                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
-
-                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
-                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
-                    setTimeout(function() {
-                        document.getElementById("haikuImg").src = targetHaiku.src;
-                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
-
-                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
-                    }, 501);
                 });
                 // Click next Btn (DESKTOP):
                 document.getElementById("nextHaikuDivDesktop").addEventListener("click", function() {
@@ -1395,19 +1382,7 @@
                         indexHaiku = 1;
                     }
 
-                    var targetHaiku = findByPropertyValue(haikusArray, 'index', indexHaiku);
-
-                    document.getElementById("haikuImg").classList.remove("fadeInHaikuImg");
-                    document.getElementById("haikuImg").classList.add("fadeOutHaikuImg");
-
-                    document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
-                    document.getElementById("haikuContent").innerHTML = targetHaiku.content;
-                    setTimeout(function() {
-                        document.getElementById("haikuImg").src = targetHaiku.src;
-                        document.getElementById("haikuImg").classList.remove("fadeOutHaikuImg");
-
-                        document.getElementById("haikuImg").classList.add("fadeInHaikuImg");
-                    }, 501);
+                    animTransition();
                 });
 
 
