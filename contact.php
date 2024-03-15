@@ -511,15 +511,15 @@
         function openNav() {
             sidenav.classList.add("active");
             // pas opti :
-            document.getElementById("titlesDiv").style.filter = "blur(2px)";
-            document.getElementById("contactContent").style.filter = "blur(3px)";
+            // document.getElementById("titlesDiv").style.filter = "blur(2px)";
+            // document.getElementById("contactContent").style.filter = "blur(3px)";
         }
 
         function closeNav() {
             sidenav.classList.remove("active");
 
-            document.getElementById("titlesDiv").style.filter = "blur(0px)";
-            document.getElementById("contactContent").style.filter = "blur(0px)";
+            // document.getElementById("titlesDiv").style.filter = "blur(0px)";
+            // document.getElementById("contactContent").style.filter = "blur(0px)";
 
             sidenav.classList.add('closeBurgerColorAnimated');
             setTimeout(function() {

@@ -1127,17 +1127,42 @@
         <!-- Contenu Page: -->
         <main class="mentionsLegalesMain">
 
-            <h2>Mentions légales</h2>
+            <h2 style="font-family: 'Montserrat Alternates', sans-serif;">Mentions légales</h2>
 
-            <p>
-                - Le site est hébergé chez OVH
-                <br>
-                - Editeur du site: Basile Kuntz (basile08@hotmail.fr)
-                <br>
-                - Le site utilise javascript
-            </p>
+            <div class="mentionsLegales-content">
+
+                <div>
+                    <h3 style="color:#e8ca7d; font-family: 'Montserrat Alternates', sans-serif;">- Hébergement -</h3>
+                    <h4 style="margin: 0px;">OVH</h4>
+                    <p>
+                        SAS au capital de 10 174 560 €
+                        <br>                
+                        RCS Lille Métropole 424 761 419 00045
+                        <br>
+                        Code APE 2620Z
+                        <br>
+                        N° TVA : FR 22 424 761 419
+                        <br>
+                        Siège social : 2 rue Kellermann - 59100 Roubaix - France
+                        <br>
+                        OVH SAS est une filiale de la société OVH Groupe SA, société immatriculée au RCS de Lille sous le numéro 537 407 926 sise 2, rue Kellermann, 59100 Roubaix.
+                        <br>
+                        Directeur de la publication : Michel Paulin
+                        <br>
+                        Ce site est hébergé par OVH SAS 2 rue Kellermann - 59100 Roubaix - France
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color:#e8ca7d; font-family: 'Montserrat Alternates', sans-serif;">- Édition -</h3>
+                    <p>Le site a été développé par <a href="https://www.bk-dev.fr"><strong>Basile Kuntz</strong></p></a>
+                </div>
+
+                <p>Le site utilise javascript</p>
+            </div>
             
-            <a href="http://les100ciels.art">retour</a>
+            <!-- <a href="http://les100ciels.art" class="mentionsLegale-backBtn">retour</a> -->
+            <span onClick="history.back();" class="mentionsLegale-backBtn"><i class="fa-solid fa-arrow-left" style="margin-right: 5px;"></i> Retour</span>
 
         </main>
 
@@ -1146,8 +1171,7 @@
 
 
     <script>
-        // DESKTOP hover title = sideNav-desktop:
-                    
+
         // Détection mobile (isMobile JS)
         var mobileDetection;
         if (navigator.userAgent.match(/Android/i)
@@ -1162,6 +1186,55 @@
             mobileDetection = false ;
         }
 
+
+
+
+        // *** MOBILE Menu burger :
+        if(mobileDetection) {
+            var sidenav = document.getElementById("mySidenav");
+            var openBtn = document.getElementById("openBtn");
+            var closeBtn = document.getElementById("closeBtn");
+
+            openBtn.onclick = openNav;
+            closeBtn.onclick = closeNav;
+
+            function openNav() {
+                sidenav.classList.add("active");
+                // pas opti :
+                // document.getElementById("titlesDiv").style.filter = "blur(2px)";
+                // document.getElementById("contactContent").style.filter = "blur(3px)";
+            }
+            function closeNav() {
+                sidenav.classList.remove("active");
+
+                // document.getElementById("titlesDiv").style.filter = "blur(0px)";
+                // document.getElementById("contactContent").style.filter = "blur(0px)";
+
+                sidenav.classList.add('closeBurgerColorAnimated');
+                setTimeout(function() {
+                    sidenav.classList.remove('closeBurgerColorAnimated');
+                }, 500);
+            }
+
+            // WIP click outer navBurger = close() (MOBILE):
+            document.getElementById("contactContent").addEventListener('click', function(e){   
+
+                if (document.getElementById('mySidenav').contains(e.target)){
+                    // click dans nav burger
+                } else {
+                    // click en dehors nav burger
+                    if (sidenav.classList.contains("active")) {
+                        closeNav();
+                    }
+                }
+            });
+        };
+
+
+
+
+
+        // *** DESKTOP hover title = sideNav-desktop:   
         if (!mobileDetection) {
 
             document.getElementById('titlesDiv').addEventListener("mouseenter", function() {
@@ -1181,6 +1254,7 @@
             });
 
         }
+
     </script>
 
 </html>

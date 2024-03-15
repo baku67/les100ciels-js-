@@ -398,15 +398,61 @@ body {
   }
 
 
+  .mentionsLegales-content {
+    z-index: 999999; 
+    margin: 40px auto;
+  }
+
+
+
   .mentionsLegalesMain {
+    z-index: 99999;
+    position: relative;
     text-align: center;
     color: white;
+
+    opacity: 0;
+
+    animation: fadeIn 1.5s 1.2s ease forwards;
   }
 
 
-  .contactContent {
+  .contactContent-merci {
     /* margin-top: 60px; */
+    position: relative;
+    top: 25%;
+
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
   }
+
+
+  .mentionsLegale-backBtn {
+    cursor: pointer;
+    z-index: 99999999999;
+    position: relative;
+    padding: 8px 18px;
+
+    background-color: #e8ca7d;
+    color: #141537;
+    border-radius: 3px;
+
+    position: relative;
+    top: 50px;
+
+    border: 1px solid rgba(255, 255, 255, 0);
+
+    transition: all 0.3s;
+  }
+  .mentionsLegale-backBtn:hover {
+    background-color: #212353;
+    color: #e8ca7d;
+    border: 1px solid #e8ca7d;
+  }
+
 
   .contactFormWrapper {
     width: 100%;
@@ -915,6 +961,8 @@ body {
   }
   .modalPreviewContent p {
     color: white;
+
+    height: 5vh;
   }
 
   .modalPreviewNavContainer {
@@ -1716,7 +1764,7 @@ body {
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
   
-      transform: translateX(-6px);
+      /* transform: translateX(-6px); */
 
       width: 100%;
       padding: 12px 0px 12px 0px !important;
@@ -2303,6 +2351,14 @@ body {
 
       opacity: 0;
       animation: fadeIn 1.5s 1s ease forwards;
+  }
+  .contactSubTitle-2 {
+    margin: 15px auto;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #e8ca7d;
+
+    opacity: 0;
+    animation: fadeIn 1.2s 2s ease forwards;
   }
 
   .contactFormIconTitle {

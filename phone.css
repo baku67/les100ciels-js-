@@ -58,6 +58,12 @@
         height: auto !important;
     }
 
+
+    .mentionsLegales-content {
+        margin: 22px auto;
+        width: 80%;
+    }
+
     .contactFormWrapper {
         width: 85%;
         margin: 25px auto;
@@ -66,7 +72,8 @@
     .contactForm {
         width: 100%;
 
-        padding: 13px 20px 30px 20px;
+        /* padding: 13px 20px 30px 20px; */
+        padding: 0px;
 
         border-radius: 9px;
     }
@@ -80,6 +87,22 @@
         z-index: 99999999;
     }
     .titleDiv-Haikus .h1title {
+        padding: 13px 20px;
+    }
+
+
+    .titleDiv-Contact {
+        z-index: 99999999;
+    }
+    .titleDiv-Contact .h1title {
+        padding: 13px 20px;
+    }
+
+
+    .titleDiv-Peinture {
+        z-index: 99999999;
+    }
+    .titleDiv-Peinture .h1title {
         padding: 13px 20px;
     }
 
@@ -261,15 +284,36 @@
 
     #modalPreviewImg {
         width: 100%;
-        height: auto;
+        /* height: auto; */
+        height: 40vh;
         margin-top: 30px;
 
         filter: drop-shadow(0px 0px 7px #e8ca7d);
     }
 
+
+    .modalPreviewTitle {
+
+    }
+
+
     .closeModalPreview {
-        top: 21px;
-        right: 23px;
+        /* top: 21px;
+        right: 23px; */
+
+        padding: 9px;
+        top: 10px;
+        right: 9px;
+    }
+
+    .modalPreviewContent h2 {
+        width: 80%;
+        margin: 10px auto;
+
+        min-height: 64px;
+        align-items: center;
+        display: inline-flex;
+        justify-content: center;
     }
 
 
@@ -492,7 +536,7 @@
 
     /* Contact.html */
     .contactSubTitle {
-        margin-top: 30px;
+        margin-top: 20px;
     }
   
     #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 {
