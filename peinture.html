@@ -155,7 +155,7 @@
 
                 position: absolute;
                 /* right: 6vw; */
-                right: 4vw;
+                right: 7vw;
                 top: 50%;
 
                 width: 40%; 
@@ -167,7 +167,7 @@
             }
 
 
-            .svgArbre {
+            .svgArbreSVG {
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -175,17 +175,40 @@
                 width: auto;
                 opacity: 0;
                 animation: fadeInSvgArbre 2s 0.3s ease forwards;
+            }
+            .svgArbrePNG {
+                position: absolute;
+                bottom: 50%;
+                left: 22%;
+                transform: translateX(-22%) translateY(50%);
+                height: 72vh;
+                width: auto;
 
+                filter: drop-shadow(1px 2px 8px #ffdc8461);
 
+                opacity: 0;
+                animation: fadeInSvgArbre 2s 0.3s ease forwards;
+            }
 
+            .svgArbre {
                 /* position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 98vh;
+                width: auto;
+                opacity: 0;
+                animation: fadeInSvgArbre 2s 0.3s ease forwards; */
+
+
+
+                position: absolute;
                 bottom: 50%;
                 left: 20%;
                 transform: translateX(-20%) translateY(50%);
                 height: 80vh;
                 width: auto;
                 opacity: 0;
-                animation: fadeInSvgArbre 2s 0.3s ease forwards; */
+                animation: fadeInSvgArbre 2s 0.3s ease forwards;
 
             }
             @keyframes fadeInSvgArbre {
@@ -204,7 +227,7 @@
 
             } */
 
-            .svgArbre g {
+            .svgArbreSVG g {
                 /* fill: #fbc949; */
                 fill: #e8ca7d;
 
@@ -827,7 +850,7 @@
                 }
 
                 .subTitle {
-                    font-size: 1.1em;
+                    font-size: 1.6em;
                 }
                 .subSubTitle {
                     font-size: 1.7em;
@@ -1214,9 +1237,9 @@
 
 
         <!-- svg container (vide, load avec JS) -->
-        <!-- <img id="svgArbre" class="svgArbre" src="peintureAcry-mirrored.png" > -->
+        <img id="svgArbreImg" class="svgArbrePNG" src="peintureAcry-mirrored.png" >
 
-        <svg id="svgArbre" class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
+        <svg style="display: none;" id="svgArbreSvg" class="svgArbreSVG" version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="957.000000pt" height="968.000000pt" viewBox="0 0 957.000000 968.000000"
             preserveAspectRatio="xMidYMid meet">
 

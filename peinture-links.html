@@ -44,13 +44,21 @@
 
     document.getElementById("link-section1").addEventListener("click", function() {
 
-        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');        
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');   
+        
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
 
         // Anim fade In/Out SVG + changement path svg selon rubrique:
         var svgArbreGroup = document.getElementById('svgArbreGroup');
         
         svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(()=> {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
@@ -91,11 +99,19 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
+
         // Anim fade In/Out SVG + changement path svg selon rubrique:
         var svgArbreGroup = document.getElementById('svgArbreGroup');
         
         svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(()=> {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
@@ -136,12 +152,19 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
+
         // Anim fade In/Out SVG + changement path svg selon rubrique:
         var svgArbreGroup = document.getElementById('svgArbreGroup');
                 
-
         svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
@@ -178,12 +201,20 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
+
         // Anim fade In/Out SVG + changement path svg selon rubrique:
         var svgArbreGroup = document.getElementById('svgArbreGroup');
 
 
         svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
@@ -220,12 +251,19 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
+
         // Anim fade In/Out SVG + changement path svg selon rubrique:
         var svgArbreGroup = document.getElementById('svgArbreGroup');
 
-
         svgArbreGroup.classList.add('svgFadeOut');
         setTimeout(function() {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
