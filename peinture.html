@@ -24,6 +24,10 @@
         <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 
         <!-- Preloads images -->
+        <link rel="preload" as="image" href="peintureAcry.png" />
+        <link rel="preload" as="image" href="peintureAcry-mirrored.png" />
+
+
         <link rel="preload" as="image" href="toiles/1-min.jpg" />
         <link rel="preload" as="image" href="toiles/2-min.jpg" />
         <link rel="preload" as="image" href="toiles/3-min.jpg" />
@@ -683,7 +687,7 @@
                 }
 
                 .galleryShortcuts {
-                    border-top: 1px solid #e8ca7d36;
+                    border-top: 0px solid rgba(232, 202, 125, 0);
                     position: relative;
                 }
 
@@ -733,7 +737,7 @@
                     border-radius: 12px;
                     margin: 0 auto;
 
-                    padding: 16px 0px 23px 0px;
+                    padding: 7px 0px 23px 0px;
                     background-color: #00000000;
 
                     position: relative;
@@ -853,6 +857,9 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
+            <!-- Chevalet background: (Desktop burger) -->
+            <img src="peintureAcry.png" class="chevaletPeinturesBg isDesktop"> 
+
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
             </div>
@@ -863,6 +870,10 @@
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
         <div id="mySidenav" class="sidenav sideNavPeintureAcr isMobile">
+
+            <!-- Chevalet background: (mobile burger) -->
+            <img src="peintureAcry-mirrored.png" class="chevaletPeinturesBg isMobile"> 
+
 
             <a id="closeBtn" href="#" class="close">&times;</a>
 

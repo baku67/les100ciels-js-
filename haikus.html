@@ -20,6 +20,15 @@
 
         <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 
+        <link rel="preload" as="image" href="haiku1.png" />
+        <link rel="preload" as="image" href="haiku2.png" />
+        <link rel="preload" as="image" href="haiku3.png" />
+        <link rel="preload" as="image" href="haiku4.png" />
+        <link rel="preload" as="image" href="haiku5.png" />
+        <link rel="preload" as="image" href="haiku6.png" />
+
+        <link rel="preload" as="image" href="haiku-heron3.png" />
+
         <title>Ha&iuml;kus</title>
 
         <style>
@@ -822,6 +831,9 @@
               <li><a href="contact.php">Contact</a></li>
             </ul>
 
+            <!-- Heron background: (desktop burger) -->
+            <img src="haiku-heron3.png" class="heronHaikuBg isDesktop"> 
+
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
             </div>
@@ -831,6 +843,11 @@
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
         <div id="mySidenav" class="sidenav sideNavHaikus isMobile">
+
+
+            <!-- Heron background: (mobile burger) -->
+            <img src="haiku-heron3.png" class="heronHaikuBg isMobile"> 
+
 
             <a id="closeBtn" href="#" class="close">&times;</a>
 
@@ -1117,11 +1134,13 @@
 
         <!-- Previous Haiku Desktop chevron -->
         <div id="previousHaikuDivDesktop" class="isDesktop">
-            <i class="fa-solid fa-chevron-left"></i>
+            <!-- <i class="fa-solid fa-chevron-left"></i> -->
+            <img src="navArrowPrevious.png">
         </div>
         <!-- Next Haiku Desktop chevron -->
         <div id="nextHaikuDivDesktop" class="isDesktop">
-            <i class="fa-solid fa-chevron-right"></i>
+            <!-- <i class="fa-solid fa-chevron-right"></i> -->
+            <img src="navArrowNext.png">
         </div>
 
 
@@ -1131,6 +1150,8 @@
             <div id="" class="" >
 
                 <h2 class="haikusSubTitle">Ha&iuml;kus</h2>
+
+                <div class="traitHaiku"></div>
 
                 <!-- Section img et Section description (row/column) -->
                 <!-- State intial JS -->
@@ -1281,7 +1302,7 @@
                     },
                     {
                         index: 4,
-                        title: "haiku 5",
+                        title: "haiku <span class='haikuNbr'>5</span>",
                         content: `
                             <span class='haikuWord haiku4-haikuWord1'>Gazouillis d'oiseaux,</span>
                             <br>
@@ -1290,6 +1311,30 @@
                             <span class='haikuWord haiku4-haikuWord3'>Quel concert de joie !</span>
                         `,
                         src: "haiku4.png",
+                    },
+                    {
+                        index: 5,
+                        title: "haiku <span class='haikuNbr'>6</span>",
+                        content: `
+                            <span class='haikuWord haiku5-haikuWord1'>Lumière du monde'</span>
+                            <br>
+                            <span class='haikuWord haiku5-haikuWord2'>Qui emplit tout l'univers</span>
+                            <br>
+                            <span class='haikuWord haiku5-haikuWord3'>Amour infini</span>
+                        `,
+                        src: "haiku5.png",
+                    },
+                    {
+                        index: 6,
+                        title: "haiku <span class='haikuNbr'>7</span>",
+                        content: `
+                            <span class='haikuWord haiku6-haikuWord1'>Merci à la Vie</span>
+                            <br>
+                            <span class='haikuWord haiku6-haikuWord2'>Qui est douceur et amour</span>
+                            <br>
+                            <span class='haikuWord haiku6-haikuWord3'>pour nous les humains.</span>
+                        `,
+                        src: "haiku6.png",
                     },
                 ]
 

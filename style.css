@@ -1703,7 +1703,7 @@ body {
       color: #e7d5a4;
       display: block;
 
-      text-shadow: 0 0 black;
+      text-shadow: 0px 0px 4px black;
 
       transition: 0.3s;
     }
@@ -1740,6 +1740,8 @@ body {
   
       transform: translateX(-6px);
       width: 295px;
+
+      text-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important;
 
       padding: 12px 0px 12px 50px !important;
     }
@@ -1806,7 +1808,7 @@ body {
     padding-top: 60px;
     z-index: 999999999999;
 
-    transition: right 0.5s ease;
+    transition: right 0.5s ease, box-shadow 0.5s ease;
   }
 
   /* Sidenav menu links */
@@ -1817,6 +1819,8 @@ body {
     color: #e7d5a4;
     display: block;
     transition: 0.3s;
+
+    text-shadow: 0px 0px 3px black;
   }
 
   .sidenav a:hover {
@@ -1902,6 +1906,8 @@ body {
     box-shadow: 0px 0px 10px #e7d5a47a;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
+
+    text-shadow: 0px 0px 0px black !important;
 
     transform: translateX(-4px);
     width: 100%;
@@ -2096,13 +2102,50 @@ body {
     
 
 
+  /* HAIKU 5*/
+  .haiku5-haikuWord1 {
+    animation: wordAnim 1.5s 0.5s ease forwards;
+  }
+  .haiku5-haikuWord2 {
+    animation: wordAnim 1.5s 0.8s ease forwards;
+  }
+  .haiku5-haikuWord3 {
+    animation: wordAnim 1.5s 1.1s ease forwards;
+  }
 
 
 
+  /* HAIKU 6*/
+  .haiku6-haikuWord1 {
+    animation: wordAnim 1.5s 0.5s ease forwards;
+  }
+  .haiku6-haikuWord2 {
+    animation: wordAnim 1.5s 0.8s ease forwards;
+  }
+  .haiku6-haikuWord3 {
+    animation: wordAnim 1.5s 1.1s ease forwards;
+  }
 
 
 
-  
+  .chevaletPeinturesBg {
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    opacity: 0.3;
+    transform: translateX(-15%);
+  }
+
+
+
+  .heronHaikuBg {
+    position: absolute;
+    width: 40%;
+    bottom: 57px;
+    left: 8px;
+    opacity: 0.4;
+}
 
 
 
@@ -2143,6 +2186,13 @@ body {
     color: #ffffff61;
   }
 
+  #nextHaikuDivDesktop img, #previousHaikuDivDesktop img {
+    width: 90px;
+    transition: all 0.4s;
+  }
+  #nextHaikuDivDesktop:hover img, #previousHaikuDivDesktop:hover img {
+    opacity: 0.6;
+  }
 
   .mentionsLegalesDiv {
     position: absolute;
@@ -2168,6 +2218,8 @@ body {
     width: 50px;
     height: 50px;
     padding: 2px 9px;
+
+    filter: drop-shadow(1px 2px 1px black);
   }
   .svgBurgerHomeBtn g {
     fill: #e7d5a4;
@@ -2261,6 +2313,8 @@ body {
       gap: 100px;
 
       flex-direction: row;
+
+      margin-top: 35px;
     }
 
 
@@ -2270,6 +2324,16 @@ body {
       line-height: 1.7em;
     }
 
+
+    .traitHaiku {
+      position: relative;
+      height: 1px;
+      width: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, rgb(255 255 255 / 52%) 50%, rgb(90 90 90 / 0%) 100%);
+  }
 
 
     .haikusContentImg {
@@ -2286,7 +2350,7 @@ body {
     }
     .haikusContentImg:hover {
       /* opacity: 0.8 !important; */
-      transform: scale(1.06) rotateZ(-3deg);
+      transform: scale(1.06) rotateZ(-1deg);
 
       /* légendraire doré: */
       filter: drop-shadow(0px 0px 47px #e8ca7d);
@@ -2302,7 +2366,8 @@ body {
     .haikusSubTitle {
       font-family: 'Montserrat Alternates', sans-serif;
       color: white;
-      margin-block-end: 1.5em;
+      margin-block-start: 0.3em;
+      margin-block-end: 0.7em;
       font-size: 2em;
       font-weight: 200;
     }

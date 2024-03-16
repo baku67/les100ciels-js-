@@ -207,7 +207,7 @@
     }
 
     .subTitleAcryliqueLinks {
-        margin-bottom: 15px;
+        margin-bottom: 0px;
         gap: 11px;
 
     }
@@ -296,6 +296,47 @@
 
     }
 
+    .traitHaiku {
+        position: relative;
+        height: 1px;
+        width: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: -webkit-linear-gradient(left, rgb(90,90,90) 0%, rgba(255,255,255,1) 50%, rgb(90,90,90) 100%);
+    }
+
+    .traitPeintureAcr {
+        position: relative;
+        height: 1px;
+        width: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, #e8ca7da9 50%, rgb(90 90 90 / 0%) 100%);
+    }
+
+    .traitPeintureAcr-rubrique {
+        position: relative;
+        height: 1px;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, #e8ca7da9 50%, rgb(90 90 90 / 0%) 100%);
+    }
+
+
+
+
+    .heronHaikuBg {
+        position: absolute;
+        width: 65%;
+        bottom: 60px;
+        left: 11px;
+        opacity: 0.4;
+    }
+    
 
     .closeModalPreview {
         /* top: 21px;
@@ -497,7 +538,9 @@
 
       
     .haikusContentDescriptionDiv h3 {
+        margin-block-start: 0.5em;
         margin-block-end: 1.5em;
+
         transform: translateX(0px);
 
         text-align: center;
@@ -505,6 +548,21 @@
 
 
 
+    .chevaletPeinturesBg {
+        width: 80%;
+        position: absolute;
+        bottom: 0px;
+        left: 70%;
+        opacity: 0.3;
+        transform: translateX(-70%);
+    }
+
+
+    .sidenav a:hover {
+        color: #e7d5a4;
+        letter-spacing: 2px;
+        background-color: #e7d5a42e;
+    }
 
 
 
