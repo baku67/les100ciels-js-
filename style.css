@@ -78,6 +78,15 @@ body {
 }
 
 
+
+.burger-arbrePng {
+  width: 100%;
+  bottom: 50px;
+  position: absolute;
+  z-index: 5;
+}
+
+
 .subTitleSectionWrapper {
   font-size: 1.2em;
   margin-bottom: 40px;
@@ -778,10 +787,16 @@ body {
   }
 
   .sideNavHaikus {
-    background: rgb(17 63 49);
+    /* background: rgb(17 63 49);
     background: -moz-linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
     background: -webkit-linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
     background: linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
+
+    background: rgb(29 71 89);
+    background: -moz-linear-gradient(180deg, rgb(34 113 87) 0%, rgb(29 71 89) 80%);
+    background: -webkit-linear-gradient(180deg, rgb(34 113 87) 0%, rgb(29 71 89) 80%);
+    background: linear-gradient(180deg, rgb(34 113 87) 0%, rgb(29 71 89) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
   }
 
@@ -1119,7 +1134,7 @@ body {
   .acryliqueSectionList {
     display: inline-flex;
     flex-direction: column;
-    gap: 2vh;
+    gap: 1.3vh;
   }
 
   #link-section1 {
@@ -1684,6 +1699,9 @@ body {
       padding-top: 60px;
       z-index: 999999999999;
 
+
+      overflow: hidden;
+
       /* box-shadow: 5px 5px 20px #e7d5a426; */
       box-shadow: 0px 0px 56px #00000096;
   
@@ -1715,6 +1733,9 @@ body {
       padding: 0;
       margin: 0;
 
+      z-index: 9999999;
+      position: relative;
+
       margin-top: 50px;
     }
 
@@ -1724,14 +1745,23 @@ body {
 
       color: #010125 !important;
       font-weight: bold;
-      background-color: #e7d5a4;
-      border-top: 1px solid #0000002b;
-      border-bottom: 1px solid #0000002b;
+
+      /* background-color: #e7d5a4; */
+      background: rgb(231,213,164);
+      background: -moz-linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+      background: -webkit-linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+      background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e7d5a4",endColorstr="#000000",GradientType=1);
+  
+
+
+      /* border-top: 1px solid #0000002b; */
+      /* border-bottom: 1px solid #0000002b; */
   
       /* filter: drop-shadow(4px 3px 0px black); */
       border-left: 1px solid #00000045;
   
-      box-shadow: 0px 0px 10px #e7d5a47a;
+      /* box-shadow: 0px 0px 10px #e7d5a47a; */
       border-top-left-radius: 3px;
       border-bottom-left-radius: 3px;
   
@@ -1798,7 +1828,7 @@ body {
     /* Anims: */
     background-color: #ffecbc;
 
-    border-top-left-radius: 12px;
+    border-top-left-radius: 6px;
 
     font-family: 'Montserrat Alternates', sans-serif;
     
@@ -1893,20 +1923,29 @@ body {
   .burgerOngletActif {
     color: #010125 !important;
     font-weight: bold;
-    background-color: #e7d5a4;
-    border-top: 1px solid #0000002b;
-    border-bottom: 1px solid #0000002b;
+
+    /* background-color: #e7d5a4; */
+    background: rgb(231,213,164);
+    background: -moz-linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e7d5a4",endColorstr="#000000",GradientType=1);
+
+
+
+    /* border-top: 1px solid #0000002b;
+    border-bottom: 1px solid #0000002b; */
 
     /* filter: drop-shadow(4px 3px 0px black); */
     border-left: 1px solid #00000045;
 
-    box-shadow: 0px 0px 10px #e7d5a47a;
-    border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;
+    /* box-shadow: 0px 0px 10px #e7d5a47a; */
+    /* border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px; */
 
     text-shadow: 0px 0px 0px black !important;
 
-    transform: translateX(-4px);
+    transform: translateX(-1px);
     width: 100%;
   }
 
@@ -2153,10 +2192,10 @@ body {
     position: absolute;
     width: 40%;
     bottom: 57px;
-    left: 8px;
+    left: 4px;
     opacity: 0.4;
 
-    filter: drop-shadow(2px 4px 6px black);
+    filter: drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.5));
 
 }
 
@@ -2211,6 +2250,9 @@ body {
     position: absolute;
     bottom: 75px;
     width: 100%;
+
+    text-shadow: 2px 2px 2px black;
+    z-index: 99999;
   }
   .mentionsLegalesDiv a {
     font-size: 0.92em;

@@ -333,7 +333,7 @@
         position: absolute;
         width: 65%;
         bottom: 60px;
-        left: 11px;
+        left: -1px;
         opacity: 0.4;
     }
     
@@ -372,9 +372,9 @@
         overflow: visible !important;
 
         /* ATTENTION   QUE SI IMG trepied */
-        width: 60% !important;
+        width: 50% !important;
         height: auto !important;
-        top: 100% !important;
+        top: 95% !important;
         left: 50% !important;
         transform: translateY(-100%) translateX(-50%) !important;
     }
