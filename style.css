@@ -44,6 +44,15 @@ body {
 
 
 
+.traitPeintureAcr {
+  position: relative;
+  height: 1px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, #e8ca7da9 50%, rgb(90 90 90 / 0%) 100%);
+}
 
 
 
@@ -51,9 +60,9 @@ body {
 .subTitle {
 
   color: #ffffff;
-  background: -webkit-linear-gradient(#ffffff, rgb(246, 250, 255));
+  /* background: -webkit-linear-gradient(#ffffff, rgb(246, 250, 255));
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-family: 'Montserrat Alternates', sans-serif;
 
   margin-block-start: 0;
@@ -94,22 +103,25 @@ body {
 
 .subSubTitle {
   cursor: pointer;
-  color: #ffecbc;
+  /* color: #ffecbc; */
+  color: #fff2d1;
   font-size: 1.9em;
   margin-block-start: 0;
   text-align: left;
   transition: all 0.5s;
 }
 .subSubTitle:hover {
-  transform: translateX(8px);
+  transform: translateX(10px);
+
   /* GARDER UN DES 2 au moins  */
   /* filter: drop-shadow(2px 4px 6px black); */
-  filter: invert(1);
+  /* filter: invert(1); */
   /* filter: drop-shadow(2px 4px 6px black) invert(1); */
 
   /* color: #fbfbfb; */
-  color: black;
-  text-shadow: 1px 1px 2px white !important;
+  color: #edeae1;
+  opacity: 0.6;
+  /* text-shadow: 1px 1px 2px white !important; */
 }
 
 
@@ -775,10 +787,10 @@ body {
 
 
   .sideNavPeintureAcr {
-    background: rgb(39 57 85);
-    background: -moz-linear-gradient(310deg, #11123f 0%, rgbrgb(39 57 85) 100%);
-    background: -webkit-linear-gradient(310deg, #11123f 0%, rgb(39 57 85) 100%);
-    background: linear-gradient(310deg, #11123f 0%, rgb(39 57 85) 100%);
+    background: rgb(66 87 91);
+    background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+    background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
 
   }
@@ -1117,20 +1129,12 @@ body {
     padding: 6px 25px 10px 16px;
     
     /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/11_button.png"); */
+    linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
+    url("./toiles/toilesButtonBg/gradient/gradient-global/esprit_et_epouse-min.png"); */
 
-      /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/less-opacity/1_button.png"); */
-
-      background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/gradient/gradient-global/esprit_et_epouse-min.png");
     background-size: cover;
     background-position-y: center;
   }
-
 
   #link-section2 {
     border-radius: 7px;
@@ -1139,11 +1143,8 @@ body {
     padding: 6px 25px 10px 16px;
     
     /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/22_button2.png"); */
-    background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/gradient/gradient-global/flute_enchantee-min.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/flute_enchantee-min.png"); */
     background-size: cover;
     background-position-y: center;
   }
@@ -1155,11 +1156,8 @@ body {
     padding: 6px 25px 10px 16px;
     
     /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/22_button2.png"); */
-    background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/gradient/gradient-global/licorne-min.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/licorne-min.png"); */
     background-size: cover;
     background-position-y: center;
   }
@@ -1171,15 +1169,11 @@ body {
     padding: 6px 25px 10px 16px;
     
     /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/55_button.png"); */
-    background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/gradient/gradient-global/3contes-min.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/3contes-min.png"); */
     background-size: cover;
     background-position-y: center;
   }
-
 
   #link-section5 {
     border-radius: 7px;
@@ -1188,13 +1182,15 @@ body {
     padding: 6px 25px 10px 16px;
     
     /* background: 
-      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-      url("./toiles/toilesButtonBg/66_button.png"); */
-    background: 
     linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)),
-    url("./toiles/toilesButtonBg/gradient/gradient-global/arbre_de_vie-min.png");
+    url("./toiles/toilesButtonBg/gradient/gradient-global/arbre_de_vie-min.png"); */
     background-size: cover;
     background-position-y: center;
+  }
+
+
+  .linkSectionStrong {
+    color: #ffdc84;
   }
 
 
@@ -2136,8 +2132,21 @@ body {
     left: 15%;
     opacity: 0.3;
     transform: translateX(-15%);
+
+    filter: drop-shadow(2px 4px 6px black);
   }
 
+
+  .lettersContactBg {
+    width: 100%;
+    position: absolute;
+    bottom: 69px;
+    left: 0%;
+    opacity: 0.2;
+    transform: translateX(-0%);
+
+    filter: drop-shadow(2px 4px 6px black);
+  }
 
 
   .heronHaikuBg {
@@ -2146,6 +2155,9 @@ body {
     bottom: 57px;
     left: 8px;
     opacity: 0.4;
+
+    filter: drop-shadow(2px 4px 6px black);
+
 }
 
 
@@ -2220,7 +2232,7 @@ body {
     height: 50px;
     padding: 2px 9px;
 
-    filter: drop-shadow(1px 2px 1px black);
+    filter: drop-shadow(1px 1px 0px black);
   }
   .svgBurgerHomeBtn g {
     fill: #e7d5a4;
@@ -2237,18 +2249,22 @@ body {
     color: #e8ca7d;
     -webkit-text-fill-color: #e8ca7d;
 
-    padding: 8px 10px;
+    padding: 8px 16px;
     border-radius: 6px;
-    border: 1px solid #e8ca7d21;
+    border: 0px solid #e8ca7d21;
     background-color: #e8ca7d0d;
 
     transition: all 0.4s ease;
   }
-  #nextRubriqueBtn:hover, #prevRubriqueBtn:hover {
+  #nextRubriqueBtn:hover {
     transform: scale(1.1);
     -webkit-text-fill-color: #fff6df;
-    transform: translateX(5px);
-
+    transform: translateX(7px);
+  }
+  #prevRubriqueBtn:hover {
+    transform: scale(1.1);
+    -webkit-text-fill-color: #fff6df;
+    transform: translateX(-7px);
   }
 
 
@@ -2256,7 +2272,10 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 30px;
-    margin-bottom:35px;
+    margin-bottom:27px;
+
+    position: relative;
+    right: 86px;
   }
   .subTitleAcrylique {
     display: inline-flex;
@@ -2364,12 +2383,40 @@ body {
     }
 
 
+    .traitPeintureAcr-rubrique {
+      /* position: relative;
+      height: 1px;
+      width: 90%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, #e8ca7da9 50%, rgb(90 90 90 / 0%) 100%); */
+
+      position: relative;
+    height: 1px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, #e8ca7db3 50%, rgb(90 90 90 / 0%) 100%);
+  }
+
+
     .haikusSubTitle {
       font-family: 'Montserrat Alternates', sans-serif;
       color: white;
-      margin-block-start: 0.3em;
+      margin-block-start: 0em;
       margin-block-end: 0.7em;
       font-size: 2em;
+      font-weight: 200;
+    }
+
+
+    .subTitle {
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: white;
+      margin-block-start: 0em;
+      margin-block-end: 0em;
+      font-size: 2.3em;
       font-weight: 200;
     }
 

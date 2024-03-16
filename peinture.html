@@ -155,7 +155,7 @@
 
                 position: absolute;
                 /* right: 6vw; */
-                right: 3vw;
+                right: 4vw;
                 top: 50%;
 
                 width: 40%; 
@@ -168,18 +168,25 @@
 
 
             .svgArbre {
-                position: absolute;
-
-                /* top: 0; */
+                /* position: absolute;
                 bottom: 0;
                 left: 0;
-                /* height: 100vh; */
                 height: 98vh;
                 width: auto;
-
                 opacity: 0;
-                /* transform: scale(0.5); */
+                animation: fadeInSvgArbre 2s 0.3s ease forwards; */
+
+
+
+                position: absolute;
+                bottom: 50%;
+                left: 20%;
+                transform: translateX(-20%) translateY(50%);
+                height: 80vh;
+                width: auto;
+                opacity: 0;
                 animation: fadeInSvgArbre 2s 0.3s ease forwards;
+
             }
             @keyframes fadeInSvgArbre {
                 from {
@@ -269,7 +276,7 @@
                 flex-flow: wrap;
                 place-content: center;
 
-                border-top: 1px solid #e8ca7d;
+                /* border-top: 1px solid #e8ca7d; */
                 padding-top: 20px;
             }
 
@@ -366,15 +373,15 @@
                 overflow: hidden;
 
                 /* background: rgb(17,18,63);
-                background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
-                background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
-                background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#11123f",GradientType=1); */
-
-                background: rgb(17,18,63);
                 background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
                 background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
                 background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
+
+                background: rgb(17,18,63);
+                background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+                background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+                background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
             }
 
@@ -689,6 +696,10 @@
                 .galleryShortcuts {
                     border-top: 0px solid rgba(232, 202, 125, 0);
                     position: relative;
+
+                    /* background: linear-gradient(180deg, #0000002b, transparent); */
+                    padding-bottom: 201px;
+                    border-radius: 16px;
                 }
 
                 @keyframes fadeInSvgArbre {
@@ -722,8 +733,6 @@
                 } */
 
 
-
-                /* (ATTENTION l'overflow du body marche pas donc ça dépasse si je veux faire un zoom) */
                 .svgArbre {
                     width: 100%;
                     height: auto;
@@ -1205,14 +1214,15 @@
 
 
         <!-- svg container (vide, load avec JS) -->
-        <svg id="svgArbre" class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
+        <img id="svgArbre" class="svgArbre" src="peintureAcry-mirrored.png" >
+
+        <!-- <svg id="svgArbre" class="svgArbre" version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="957.000000pt" height="968.000000pt" viewBox="0 0 957.000000 968.000000"
             preserveAspectRatio="xMidYMid meet">
 
             <g id="svgArbreGroup" fill="#000000" stroke="none">
-                <!-- g-content loaded JS -->
             </g>
-        </svg>
+        </svg> -->
 
 
         <div id="main" class="main" style="background:rgba(0,0,0,0);">

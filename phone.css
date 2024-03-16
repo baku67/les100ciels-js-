@@ -198,7 +198,7 @@
 
 
     .subTitleSectionWrapper {
-        margin-bottom: 13px;
+        margin-bottom: 11px;
         margin-block-start: 0;
     }
     .subTitleSection {
@@ -207,9 +207,9 @@
     }
 
     .subTitleAcryliqueLinks {
-        margin-bottom: 0px;
+        margin-bottom: 3px;
         gap: 11px;
-
+        right: 0px;
     }
     .subTitleAcrylique {
         margin-bottom: 15px;
@@ -258,9 +258,9 @@
         font-size: 1.3em;
 
         font-family: 'Montserrat Alternates', sans-serif;
-        background: -webkit-linear-gradient(white, #ffffff42);
+        /* background: -webkit-linear-gradient(white, #ffffff42);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent; */
         font-weight: 400;
     }
 
@@ -309,7 +309,7 @@
     .traitPeintureAcr {
         position: relative;
         height: 1px;
-        width: 60%;
+        width: 70%;
         left: 50%;
         transform: translateX(-50%);
 
@@ -366,6 +366,13 @@
 
     .svgArbre {
         overflow: visible !important;
+
+        /* ATTENTION   QUE SI IMG trepied */
+        width: 60% !important;
+        height: auto !important;
+        top: 100% !important;
+        left: 50% !important;
+        transform: translateY(-100%) translateX(-50%) !important;
     }
 
     .svgArbreGroup-rubrique2 {
@@ -539,7 +546,7 @@
 
 
     .sidenav.active {
-        box-shadow: -70px -49px 95px #000000b3;
+        box-shadow: -70px -49px 95px #0000006b;
     }
 
       
@@ -575,6 +582,17 @@
         opacity: 0.3;
         transform: translateX(-70%);
     }
+
+    .lettersContactBg {
+        width: 100%;
+        position: absolute;
+        bottom: 55px;
+        left: 15%;
+        opacity: 0.2;
+        transform: translateX(-15%);
+    
+        filter: drop-shadow(2px 4px 6px black);
+      }
 
 
     .sidenav a:hover {

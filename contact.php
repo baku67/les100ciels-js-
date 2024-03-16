@@ -135,15 +135,18 @@
         <div id="mySidenav-desktop" class="sidenav-desktop sideNavContact isDesktop">
 
             <ul>
-            <!-- <li><a href="index.html">Home</a></li> -->
-            <li><a href="peinture.html">Acrylique</a></li>
-            <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
-            <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
-            <li><a href="haikus.html">Ha&iuml;kus</a></li>
-            <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
-            <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
-            <li><a href="contact.php" class="burgerOngletActif-desktop">Contact</a></li>
+                <!-- <li><a href="index.html">Home</a></li> -->
+                <li><a href="peinture.html">Acrylique</a></li>
+                <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+                <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
+                <li><a href="haikus.html">Ha&iuml;kus</a></li>
+                <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+                <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
+                <li><a href="contact.php" class="burgerOngletActif-desktop">Contact</a></li>
             </ul>
+
+            <!-- Letters background: (Desktop burger) -->
+            <img src="contactImage-min_v3.png" class="lettersContactBg isDesktop"> 
 
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
@@ -156,6 +159,9 @@
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
         <div id="mySidenav" class="sidenav sideNavContact isMobile">
+
+            <!-- Letters background: (Mobile burger) -->
+            <img src="contactImage-min_v3.png" class="lettersContactBg isMobile"> 
 
             <a id="closeBtn" href="#" class="close">&times;</a>
 
