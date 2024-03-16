@@ -795,7 +795,7 @@
 
 
 
-    <body class="bodyMentionsLegales">
+    <body id="bodyMentionsLegales" class="bodyMentionsLegales">
 
 
 
@@ -1125,7 +1125,7 @@
 
 
         <!-- Contenu Page: -->
-        <div class="contactContent-merci">
+        <div id="contactContent-merci" class="contactContent-merci">
 
             <h2 class="contactSubTitle">Votre message a bien été envoyé</h2>
             <span class="contactSubTitle-2"><span style="color: white;">Merci</span> !</span>
@@ -1187,7 +1187,7 @@
             }
 
             // WIP click outer navBurger = close() (MOBILE):
-            document.getElementById("contactContent").addEventListener('click', function(e){   
+            document.getElementById("contactContent-merci").addEventListener('click', function(e){   
 
                 if (document.getElementById('mySidenav').contains(e.target)){
                     // click dans nav burger

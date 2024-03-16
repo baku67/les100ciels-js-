@@ -1125,7 +1125,7 @@
 
 
         <!-- Contenu Page: -->
-        <main class="mentionsLegalesMain">
+        <main id="mentionsLegales-content" class="mentionsLegalesMain">
 
             <h2 style="font-family: 'Montserrat Alternates', sans-serif;">Mentions légales</h2>
 
@@ -1217,7 +1217,7 @@
             }
 
             // WIP click outer navBurger = close() (MOBILE):
-            document.getElementById("contactContent").addEventListener('click', function(e){   
+            document.getElementById("mentionsLegales-content").addEventListener('click', function(e){   
 
                 if (document.getElementById('mySidenav').contains(e.target)){
                     // click dans nav burger

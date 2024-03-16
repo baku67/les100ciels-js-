@@ -767,9 +767,9 @@ body {
 
   .sideNavHaikus {
     background: rgb(17 63 49);
-    background: -moz-linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
-    background: -webkit-linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
-    background: linear-gradient(310deg, rgb(17 63 49) 0%, rgb(41 106 117) 100%);
+    background: -moz-linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
+    background: -webkit-linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
+    background: linear-gradient(310deg, rgb(0 61 42) 0%, rgb(56 99 107) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
   }
 
@@ -1688,7 +1688,8 @@ body {
       padding-top: 60px;
       z-index: 999999999999;
 
-      box-shadow: 5px 5px 20px #e7d5a426;
+      /* box-shadow: 5px 5px 20px #e7d5a426; */
+      box-shadow: 0px 0px 56px #00000096;
   
       opacity: 0;
 
@@ -1808,7 +1809,7 @@ body {
     padding-top: 60px;
     z-index: 999999999999;
 
-    transition: right 0.5s ease, box-shadow 0.5s ease;
+    transition: right 0.5s ease, box-shadow 0.4s 0.1s ease;
   }
 
   /* Sidenav menu links */

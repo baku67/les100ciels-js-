@@ -536,6 +536,12 @@
         margin-block-end: 0.2em;
     }
 
+
+
+    .sidenav.active {
+        box-shadow: -70px -49px 95px #000000b3;
+    }
+
       
     .haikusContentDescriptionDiv h3 {
         margin-block-start: 0.5em;
@@ -546,6 +552,19 @@
         text-align: center;
     }
 
+
+
+    .contactContent-merci {
+        height: 100%;
+        justify-content: center;
+        position: relative;
+        top: 0%;
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0 auto;
+        left: 0%;
+        transform: translateX(-0%) translateY(-60px);
+    }
 
 
     .chevaletPeinturesBg {
