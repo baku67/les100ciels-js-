@@ -394,7 +394,7 @@
             </a>
 
 
-            <ul style="margin-top:5px;">
+            <ul>
               <!-- <li><a href="index.html">Home</a></li> -->
               <li><a href="peinture.html">Acrylique</a></li>
               <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>

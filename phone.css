@@ -230,10 +230,23 @@
     }
 
 
+    #mySidenav ul {
+        margin-top:9px;
+    }
+
+
+    .mentionsLegalesDiv {
+        bottom: 64px;
+    }
+
+
     .svgArbreGroup-rubrique1 {
         transform: translate(0px, 1036px) scale(0.060, -0.060) !important;
     }
 
+    .svgArbreGroup-rubrique-7ciels {
+        transform: translate(156px, 920px) scale(0.1, -0.1) !important;
+      }
 
     #nextRubriqueBtn, #prevRubriqueBtn {
         padding: 5px 12px;

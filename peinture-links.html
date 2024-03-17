@@ -25,6 +25,10 @@
             <!-- <img src="../star.png" class="isMobile" /> -->
             Triptyque "<span class="linkSectionStrong">Les licornes</span>"
         </span>
+        <span id="link-section6" class="subSubTitle">
+            <!-- <img src="../star.png" class="isMobile" /> -->
+            Triptyque "<span class="linkSectionStrong">Les 7 ciels</span>"
+        </span>
         <span id="link-section5" class="subSubTitle">
             <!-- <img src="../star.png" class="isMobile" /> -->
             Collection "<span class="linkSectionStrong">Arbres de vie</span>"
@@ -94,7 +98,6 @@
     })
 
 
-    // TODO imgs + svg "flute enchantée"
     document.getElementById("link-section2").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
@@ -147,7 +150,6 @@
     })
 
 
-
     document.getElementById("link-section3").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
@@ -194,7 +196,6 @@
 
         },701)
     })
-
 
 
     document.getElementById("link-section4").addEventListener("click", function() {
@@ -246,7 +247,6 @@
     })
 
 
-    // TODO SVG arbre rond "arbre de vie"
     document.getElementById("link-section5").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
@@ -294,5 +294,60 @@
 
         },701)
     })
+
+
+
+    document.getElementById("link-section6").addEventListener("click", function() {
+
+        document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        // Transition img chevalet -> svg rubriques (1/2)
+        document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
+        document.getElementById('svgArbreImg').classList.add('fadeOut');
+
+        // Anim fade In/Out SVG + changement path svg selon rubrique:
+        var svgArbreGroup = document.getElementById('svgArbreGroup');
+
+        svgArbreGroup.classList.add('svgFadeOut');
+        setTimeout(function() {
+
+            // Transition img chevalet -> svg rubriques (2/2)
+            document.getElementById('svgArbreSvg').style.display = "block";
+            document.getElementById('svgArbreSvg').classList.add('fadeIn');
+
+            svgArbreGroup.style.opacity = "0";
+            svgArbreGroup.classList.remove('svgFadeOut');
+            
+            $("#gallery").load("peinture-group6.html", function() {
+                
+                // Fix SVG position rubrique 1:
+                document.getElementById('svgArbreGroup').classList.add('svgArbreGroup-rubrique-7ciels');
+
+                // Load 7ciels SVG 
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', '../les7ciels-gContent.svg', true);
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 300) {
+
+                        svgArbreGroup.innerHTML = xhr.responseText;
+                        svgArbreGroup.classList.add('svgFadeIn');
+                        setTimeout(()=> {
+                            svgArbreGroup.style.opacity = "1";
+                            svgArbreGroup.classList.remove('svgFadeIn');
+                        }, 701)
+                        
+                    } else {
+                        console.error('Failed to load external SVG: ' + xhr.statusText);
+                    }
+                };
+                xhr.send();
+
+            })
+
+        },701)
+    })
+
+
+
 
 </script>
