@@ -390,6 +390,9 @@
         top: 95% !important;
         left: 50% !important;
         transform: translateY(-100%) translateX(-50%) !important;
+
+        /* Mieux responsive sur petit smartphone: */
+        height: 38vh !important;
     }
 
     
@@ -413,6 +416,41 @@
         width: 85pt;
         height: 35pt;
     }
+
+
+
+
+    #modalPreviewImgBackground {
+        position: absolute;
+        z-index: -5;
+        height: 100vh;
+        opacity: 0.03;
+    }
+
+    .bgToile-fadeIn {
+        animation: bgToile-fadeIn 0.3s 0s ease forwards;
+      }
+      @keyframes bgToile-fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 0.03;
+        }
+      }
+      .bgToile-fadeOut {
+        animation: bgToile-fadeOut 0.3s 0s ease forwards;
+      }
+      @keyframes bgToile-fadeOut {
+        from {
+          opacity: 0.03;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+
 
 
     #link-section1 {

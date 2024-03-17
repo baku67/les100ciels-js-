@@ -150,17 +150,27 @@
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
 
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = nextImg.src;
+            document.getElementById('modalPreviewImgBackground').src = nextImg.src;
             document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
             document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
             }, 301)
         }, 301)
 
@@ -185,17 +195,27 @@
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
 
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = prevImg.src;
+            document.getElementById('modalPreviewImgBackground').src = prevImg.src;
             document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
             document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
             }, 301)
         }, 301)
 
@@ -226,6 +246,7 @@
 
             // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+            document.getElementById('modalPreviewImgBackground').src = item.querySelector('img').src;
             document.getElementById('modalPreviewTitle').innerHTML = item.querySelector('.titleImage').innerHTML;
             document.getElementById('modalPreviewDescription').innerHTML = item.querySelector('.descriptionImage').innerHTML;
             
@@ -264,17 +285,27 @@
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
 
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = targetImg.src;
-                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
-                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+                document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewImgBackground').src = prevImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
 
                 setTimeout(function() {
                     document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
                 }, 301)
             }, 301)
         }
@@ -286,17 +317,27 @@
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
 
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = targetImg.src;
-                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
-                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+                document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewImgBackground').src = nextImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
 
                 setTimeout(function() {
                     document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
                 }, 301)
             }, 301)
         }

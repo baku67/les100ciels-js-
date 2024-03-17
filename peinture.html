@@ -87,7 +87,7 @@
             }
             
             .gallery-item {
-              margin: 3px;
+              margin: 7px 7px;
             }
             
             .gallery-item img {
@@ -98,7 +98,10 @@
               cursor: pointer;
 
               border: 2px solid transparent;
-              padding: 2px;
+
+              /* MAJ: */
+              /* padding: 2px; */
+              box-shadow: 0px 0px 11px #e8ca7d85;
 
               border-radius: 9px;
 
@@ -786,7 +789,7 @@
                     width: 75px;
                     height: 75px;
 
-                    filter: drop-shadow(0px 0px 5px #e8ca7d);
+                    /* filter: drop-shadow(0px 0px 5px #e8ca7d); */
                 }
 
                 #previewImg {
@@ -1187,6 +1190,9 @@
 
         <!-- Modal preview -->
         <div id="modalPreview">
+
+            <!-- BackgroundImage toile selected: -->
+            <img id="modalPreviewImgBackground" src="">
 
             <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
 

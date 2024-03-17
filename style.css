@@ -921,7 +921,10 @@ body {
     z-index: 9999999999;
     width: 100%;
     height: 100%;
-    background-color: #151b35f0;
+
+    /* Maj backgroundToile: */
+    /* background-color: #151b35f0; */
+    background-color: #151b35;
 
     transform: translateY(20px);
   }
@@ -1757,6 +1760,39 @@ body {
       margin-top: 35px;
     }
 
+
+    #modalPreviewImgBackground {
+      position: absolute;
+      z-index: -5;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      opacity: 0.025;
+    }
+
+    .bgToile-fadeIn {
+      animation: bgToile-fadeIn 0.3s 0s ease forwards;
+    }
+    @keyframes bgToile-fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 0.025;
+      }
+    }
+    .bgToile-fadeOut {
+      animation: bgToile-fadeOut 0.3s 0s ease forwards;
+    }
+    @keyframes bgToile-fadeOut {
+      from {
+        opacity: 0.025;
+      }
+      to {
+        opacity: 0;
+      }
+    }
 
 
     .burgerOngletActif-desktop {

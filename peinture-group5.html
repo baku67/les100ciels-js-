@@ -165,17 +165,27 @@
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
 
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = nextImg.src;
-            document.getElementById('modalPreviewTitle').textContent = nextImg.title;
-            document.getElementById('modalPreviewDescription').textContent = nextImg.description;
+            document.getElementById('modalPreviewImgBackground').src = nextImg.src;
+            document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
             }, 301)
         }, 301)
 
@@ -200,17 +210,27 @@
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
         document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
 
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
         document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
         setTimeout(function() {
             document.getElementById('modalPreviewImg').src = prevImg.src;
-            document.getElementById('modalPreviewTitle').textContent = prevImg.title;
-            document.getElementById('modalPreviewDescription').textContent = prevImg.description;
+            document.getElementById('modalPreviewImgBackground').src = prevImg.src;
+            document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
+            document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
             }, 301)
         }, 301)
 
@@ -248,6 +268,7 @@
 
             // *** Modif modal 
             document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+            document.getElementById('modalPreviewImgBackground').src = item.querySelector('img').src;
             document.getElementById('modalPreviewTitle').textContent = item.querySelector('.titleImage').textContent;
             document.getElementById('modalPreviewDescription').textContent = item.querySelector('.descriptionImage').textContent;
             
@@ -289,17 +310,27 @@
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
 
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = targetImg.src;
-                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
-                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+                document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewImgBackground').src = prevImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
 
                 setTimeout(function() {
                     document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
                 }, 301)
             }, 301)
         }
@@ -311,17 +342,27 @@
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
             document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
 
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
             document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = targetImg.src;
-                document.getElementById('modalPreviewTitle').textContent = targetImg.title;
-                document.getElementById('modalPreviewDescription').textContent = targetImg.description;
+                document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewImgBackground').src = nextImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
 
                 setTimeout(function() {
                     document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
                 }, 301)
             }, 301)
         }
@@ -438,19 +479,19 @@
                 svgArbreGroup.style.opacity = "0";
                 svgArbreGroup.classList.remove('svgFadeOut');
 
-                $("#gallery").load("peinture-group3.html", function() {
+                $("#gallery").load("peinture-group6.html", function() {
+
+                    // Fix SVG position les 7 ciels
+                    document.getElementById('svgArbreGroup').classList.add('svgArbreGroup-rubrique-7ciels');
 
                     // Reset Fix SVG position rubrique 1:
                     document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique1');
                     // Reset Fix SVG position rubrique 2:
                     document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique2');
-                    // Reset Fix SVG position rubrique 7ciels:
-                    document.getElementById('svgArbreGroup').classList.remove('svgArbreGroup-rubrique-7ciels');
-
 
                     // *** load svg arbre (retour sur rubriques)
                     var xhr = new XMLHttpRequest();
-                    xhr.open('GET', '../licorne-gContent.svg', true);
+                    xhr.open('GET', '../les7ciels-gContent.svg', true);
                     xhr.onload = function() {
                         if (xhr.status >= 200 && xhr.status < 300) {
 
