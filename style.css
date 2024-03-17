@@ -1141,7 +1141,7 @@ body {
   .acryliqueSectionList {
     display: inline-flex;
     flex-direction: column;
-    gap: 1.3vh;
+    gap: 0.2vh;
   }
 
   #link-section1 {
@@ -1794,6 +1794,106 @@ body {
       }
     }
 
+    .fadeOutChevalet {
+      animation: fadeOut 1s 0s ease forwards !important;
+    }
+    .fadeInChevalet {
+      animation: fadeIn 1s 0s ease forwards !important;
+    }
+
+
+    /* MAJ pour wrapper (pour onClick changer toiles) */
+    .chevaletWrapper {
+      position: absolute;
+      z-index: 9999;
+      cursor: pointer;
+      height: 72%;
+      bottom: 50%;
+      left: 25%;
+      transform: translateX(-25%) translateY(50%);
+      width: fit-content;
+    }
+
+
+
+
+    .svgArbrePNG {
+      /* MAJ pour wrapper (pour onClick changer toiles) */
+      height: 100%;
+      /* position: absolute; */
+      position: relative;
+      z-index: 9999;
+
+      /* bottom: 50%; */
+      /* left: 23%; */
+      /* transform: translateX(-23%) translateY(50%); */
+      /* height: 72vh; */
+      /* width: auto; */
+
+      filter: drop-shadow(1px 2px 8px #ffdc8461);
+      cursor: pointer;
+
+
+      opacity: 0;
+      animation: fadeInSvgArbre 2s 0.3s ease forwards;
+
+      transition: all 0.4s;
+  }
+
+  .chevaletWrapper:hover .svgArbrePNG {
+      /* filter: drop-shadow(1px 2px 8px #ffdc8461) saturate(0.4); */
+      filter: drop-shadow(1px 2px 20px #ffdc8461);
+      transform: rotate(1deg);
+  }
+
+
+  #chevalet2Toile-div {
+    position: absolute;
+    z-index: 9999;
+    top: 0px;
+    left: 47%;
+    transform: translate(-47%);
+
+    opacity: 0;
+  }
+  #chevalet2Toile-img {
+    width: 215px;
+    filter: saturate(1) drop-shadow(2px -1px 1px black);
+
+    transition: 0.4s;
+    /* Toile1:  */
+    transform: translateX(-1px) translateY(82px);
+  }
+
+
+  .svgArbrePNG2 {
+      position: absolute;
+      z-index: 9998;
+
+      bottom: 0%;
+      left: 0%;
+      height: 100%;
+
+      filter: drop-shadow(1px 2px 8px #ffdc8461);
+      cursor: pointer;
+
+      opacity: 0;
+
+      transition: all 0.4s;
+  }
+  .chevaletWrapper:hover .svgArbrePNG2 {
+    /* filter: drop-shadow(1px 2px 8px #ffdc8461) saturate(0.4); */
+    filter: drop-shadow(1px 2px 20px #ffdc8461);
+    transform: rotate(1deg);
+  }
+
+  .chevaletWrapper:hover #chevalet2Toile-img {
+    transform: translateX(-2px) translateY(82px) rotate(1deg);
+
+    filter: saturate(0.7) drop-shadow(2px -1px 1px black);
+  }
+
+
 
     .burgerOngletActif-desktop {
 
@@ -1858,16 +1958,25 @@ body {
 
     #shapeDetection-navBarre-desktop {
       height: 100%;
-      width: 50px;
+      width: 75px;
       position: absolute;
       left: 0;
       top: 0;
 
       z-index: 999999999;
 
-      background-color: rgba(255, 255, 255, 0);
+      /* background-color: rgba(255, 255, 255, 0); */
+      background: rgb(231,213,164);
+      background: -moz-linear-gradient(90deg, rgb(231 213 164 / 14%) 0%, rgba(0,0,0,0) 50%);
+      background: -webkit-linear-gradient(90deg, rgb(231 213 164 / 14%) 0%, rgba(0,0,0,0) 50%);
+      background: linear-gradient(90deg, rgb(231 213 164 / 14%) 0%, rgba(0,0,0,0) 50%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e7d5a4",endColorstr="#000000",GradientType=1);
     }
 
+
+    .toile2-fix {
+      transform: translateX(0px) translateY(30px) !important;
+    }
 
 
 

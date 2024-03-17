@@ -371,6 +371,17 @@
     }
 
 
+    .chevaletWrapper {
+        position: absolute;
+        z-index: 9999;
+        cursor: pointer;
+        height: fit-content;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: fit-content;
+    }
+
     #haikuContent {
         position: relative;
         left: 13px;
@@ -381,18 +392,37 @@
         height: auto !important;
         width: 100% !important;
     }
+
     .svgArbrePNG {
         overflow: visible !important;
 
-        /* ATTENTION   QUE SI IMG trepied */
-        width: 50% !important;
+        /* MAJ chevaletWrapper: */
+        /* width: 50% !important; */
+        width: 100% !important;
         height: auto !important;
-        top: 95% !important;
+        /* top: 95% !important; */
         left: 50% !important;
-        transform: translateY(-100%) translateX(-50%) !important;
+        transform: translateX(-50%) !important;
 
         /* Mieux responsive sur petit smartphone: */
-        height: 38vh !important;
+        /* MAJ chevaletWrapper: */
+        /* height: 38vh !important; */
+    }
+    .svgArbrePNG2 {
+        overflow: visible !important;
+
+        /* MAJ chevaletWrapper: */
+        /* width: 50% !important; */
+        width: 100% !important;
+        height: auto !important;
+        /* top: 95% !important; */
+        top: 0;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+
+        /* Mieux responsive sur petit smartphone: */
+        /* MAJ chevaletWrapper: */
+        /* height: 38vh !important; */
     }
 
     
@@ -420,11 +450,31 @@
 
 
 
+
+
+    .chevaletWrapper:hover #chevalet2Toile-img {
+        /* transform: translateX(-2px) translateY(38px) rotate(1deg); */
+        /* transform: none; */
+    }
+
+    #chevalet2Toile-img {
+        width: 130px;
+        transform: translateX(-2px) translateY(38px) rotate(1deg) !important;
+    }
+
+
+
+    .toile2-fix {
+        
+    }
+
+
+
     #modalPreviewImgBackground {
         position: absolute;
         z-index: -5;
         height: 100vh;
-        opacity: 0.03;
+        opacity: 0.05;
     }
 
     .bgToile-fadeIn {
@@ -494,7 +544,14 @@
         background-size: cover;
         background-position-y: center;
     }
-
+    #link-section6 {
+        border-radius: 4px;
+        padding: 1px 10px 5px 10px;
+        /* background: linear-gradient(to left, #c58e52, rgba(0, 0, 0, 0.1)), url("./toiles/toilesButtonBg/gradient/arbre_de_vie-min.png"); */
+        background: rgba(0, 0, 0, 0);
+        background-size: cover;
+        background-position-y: center;
+    }
 
 
 

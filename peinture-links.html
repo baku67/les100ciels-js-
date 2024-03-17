@@ -49,7 +49,16 @@
     document.getElementById("link-section1").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');   
-        
+
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
+
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
         document.getElementById('svgArbreImg').classList.add('fadeOut');
@@ -101,6 +110,15 @@
     document.getElementById("link-section2").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
 
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
@@ -154,6 +172,15 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
+
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
         document.getElementById('svgArbreImg').classList.add('fadeOut');
@@ -201,6 +228,15 @@
     document.getElementById("link-section4").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
 
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
@@ -250,6 +286,15 @@
     document.getElementById("link-section5").addEventListener("click", function() {
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
+
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
 
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
@@ -301,6 +346,15 @@
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
+        // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
+        if(document.getElementById("svgArbreImg2").classList.contains('fadeInChevalet')) {
+            document.getElementById("svgArbreImg2").classList.remove('fadeInChevalet');
+            document.getElementById("svgArbreImg2").classList.add('fadeOutChevalet');
+
+            document.getElementById("chevalet2Toile-div").classList.remove('fadeIn');
+            document.getElementById("chevalet2Toile-div").classList.add('fadeOut');
+        }
+
         // Transition img chevalet -> svg rubriques (1/2)
         document.getElementById('svgArbreImg').classList.remove('fadeInSvgArbre');
         document.getElementById('svgArbreImg').classList.add('fadeOut');
@@ -347,6 +401,97 @@
         },701)
     })
 
+
+
+
+    // OnClick Chevalet peintures:
+
+    var toilesChevalet = [
+        {
+            id: 1,
+            src: "../chevaletToiles/chevalet-toile1.png",
+            // classFix: "",
+            jsFixTransform: "",
+        },
+        {
+            id: 2,
+            src: "../chevaletToiles/chevalet-toile2.png",
+            // classFix: "toile2-fix",
+            jsFixTransformDesktop: "translateX(0px) translateY(30px)",
+            jsFixTransformMobile: "translateX(0px) translateY(5px)",
+        },
+    ]
+
+    var mobileDetection;
+    if (navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/webOS/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)) {
+        mobileDetection = true ;
+    } else {
+        mobileDetection = false ;
+    }
+
+
+    var chevaletWrapper = document.getElementById('chevaletWrapper');
+    var chevalet = document.getElementById('svgArbreImg');
+    var chevaletVoid = document.getElementById('svgArbreImg2');
+    var chevaletToile = document.getElementById('chevalet2Toile-img');
+
+    var firstClickChevalet = false;
+
+    chevaletWrapper.addEventListener("click", function() {
+
+        // Premier click chevalet = randomToile + chevalet dynamique
+        if(firstClickChevalet == false) {
+
+            firstClickChevalet = true;
+
+            chevalet.classList.add('fadeOutChevalet');
+            chevaletVoid.classList.add('fadeInChevalet');
+
+            setTimeout(function() {
+                document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+                // random:
+                // chevaletToile.src = "chevalet-toile2.png";
+            }, 400);
+
+        }
+        // Clicks suivant: switch random toile affichée sur le chevalet (random):
+        else {
+
+            document.getElementById('chevalet2Toile-div').classList.remove('fadeIn');
+            document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+
+            // setTimeout(() => {
+                
+                // TODO: check si meme toile que previous toile
+
+                // reset all classFix:
+                // chevaletToile.className = "";
+                chevaletToile.style = "";
+
+                // Changement de toile et classFix:
+                var randomToile = toilesChevalet[Math.floor(Math.random()*toilesChevalet.length)]
+                chevaletToile.src = randomToile.src;
+
+                // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
+                // chevaletToile.classList.add(randomToile.classFix);
+                if(mobileDetection) {
+                    chevaletToile.style.transform = randomToile.jsFixTransformMobile;
+                }
+                else {
+                    chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
+                }
+
+            // }, 401);
+
+        }
+
+    })
 
 
 

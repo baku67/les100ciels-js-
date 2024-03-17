@@ -179,18 +179,10 @@
                 opacity: 0;
                 animation: fadeInSvgArbre 2s 0.3s ease forwards;
             }
-            .svgArbrePNG {
-                position: absolute;
-                bottom: 50%;
-                left: 23%;
-                transform: translateX(-23%) translateY(50%);
-                height: 72vh;
-                width: auto;
 
-                filter: drop-shadow(1px 2px 8px #ffdc8461);
 
-                opacity: 0;
-                animation: fadeInSvgArbre 2s 0.3s ease forwards;
+            #svgArbreImg2 {
+                
             }
 
             .svgArbre {
@@ -1249,7 +1241,16 @@
 
 
         <!-- svg container (vide, load avec JS) -->
-        <img id="svgArbreImg" class="svgArbrePNG" src="peintureAcry-mirrored.png" >
+        <!-- WIP wrapper pour la toile qui change quand on clique sur le chevalet -->
+        <div id="chevaletWrapper" class="chevaletWrapper">
+
+            <img id="svgArbreImg" class="svgArbrePNG" src="peintureAcry-mirrored.png" >
+            <img id="svgArbreImg2" class="svgArbrePNG2" src="peintureAcry-mirrored(void2).png" >
+
+            <div id="chevalet2Toile-div">
+                <img id="chevalet2Toile-img" src="./chevaletToiles/chevalet-toile1.png">
+            </div>
+        </div>
 
         <svg style="display: none;" id="svgArbreSvg" class="svgArbreSVG" version="1.0" xmlns="http://www.w3.org/2000/svg"
             width="957.000000pt" height="968.000000pt" viewBox="0 0 957.000000 968.000000"
