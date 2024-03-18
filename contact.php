@@ -73,6 +73,8 @@
         <!-- FIX STARS / BODY / HTML -->
         <style>
 
+
+
             body {
                 overflow: scroll;
 
@@ -87,6 +89,15 @@
                 }
             } */
 
+
+            .burgerOngletActif {
+                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
+            }
+            .burgerOngletActif-desktop {
+                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(146 239 255 / 40%) 100%);
+            }
+
+            
             .bgStars {
             height: 100%;
             overflow: hidden;

@@ -435,7 +435,7 @@
             id: 6,
             src: "../chevaletToiles/chevalet-toile6.png",
             jsFixTransformDesktop: "translateX(-1px) translateY(27%)",
-            jsFixTransformMobile: "translateX(-2px) translateY(27) rotate(-1deg)",
+            jsFixTransformMobile: "translateX(-2px) translateY(27%) rotate(-1deg)",
         },
         {
             id: 7,
@@ -457,7 +457,8 @@
             id: 1,
             src: "../chevaletToiles/chevalet-toile1.png",
             // classFix: "",
-            jsFixTransform: "",
+            jsFixTransformDesktop: "",
+            jsFixTransformMobile: "",
         },
     ];
 
@@ -502,34 +503,49 @@
         // Clicks suivant: switch random toile affichée sur le chevalet (random):
         else {
 
+            // anims transitions toile:
             document.getElementById('chevalet2Toile-div').classList.remove('fadeIn');
-            document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+            document.getElementById('chevalet2Toile-div').classList.add('fadeOut');
 
-            // reset all classFix:
-            // chevaletToile.className = "";
-            chevaletToile.style = "";
 
-            if (toilesChevalet.length === 0) {
-                // If all objects have been selected, reset the array
-                toilesChevalet = alreadySeenToiles.slice(); // Reset to the selected objects
-                alreadySeenToiles = []; // Clear the selected objects array
-            }
+            setTimeout(() => {
 
-            // Changement de toile et classFix:
-            var randomIndex = Math.floor(Math.random() * toilesChevalet.length);
-            var randomToile = toilesChevalet[randomIndex];
-            chevaletToile.src = randomToile.src;
+                // reset all classFix:
+                // chevaletToile.className = "";
+                chevaletToile.style = "";
 
-            // Remove the selected object from the array and add it to the selected objects array
-            alreadySeenToiles.push(toilesChevalet.splice(randomIndex, 1)[0]);
+                if (toilesChevalet.length === 0) {
+                    // If all objects have been selected, reset the array
+                    toilesChevalet = alreadySeenToiles.slice(); // Reset to the selected objects
+                    alreadySeenToiles = []; // Clear the selected objects array
+                }
 
-            // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
-            if(mobileDetection) {
-                chevaletToile.style.transform = randomToile.jsFixTransformMobile;
-            }
-            else {
-                chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
-            }
+                // Changement de toile et classFix:
+                var randomIndex = Math.floor(Math.random() * toilesChevalet.length);
+                var randomToile = toilesChevalet[randomIndex];
+                chevaletToile.src = randomToile.src;
+
+                // Remove the selected object from the array and add it to the selected objects array
+                alreadySeenToiles.push(toilesChevalet.splice(randomIndex, 1)[0]);
+
+                // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
+                if(mobileDetection) {
+                    chevaletToile.style.transform = randomToile.jsFixTransformMobile;
+                }
+                else {
+                    chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
+                }
+
+                // anims transitions toile:
+                document.getElementById('chevalet2Toile-div').classList.remove('fadeOut');
+                document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+
+            }, 500);
+
+
+
+
+
 
         }
 
