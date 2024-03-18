@@ -1885,6 +1885,14 @@ body {
   }
 
 
+  .fadeInFast {
+    animation: fadeIn 0.5s 0s ease forwards;
+  }
+  .fadeOutFast {
+    animation: fadeOut 0.5s 0s ease forwards;
+  }
+
+
   .svgArbrePNG2 {
       position: absolute;
       z-index: 9998;

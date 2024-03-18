@@ -428,7 +428,7 @@
         {
             id: 5,
             src: "../chevaletToiles/chevalet-toile5.png",
-            jsFixTransformDesktop: "translateX(-1px) translateY(2%) scale(1.5)",
+            jsFixTransformDesktop: "translateX(18px) translateY(2%) scale(1.5)",
             jsFixTransformMobile: "translateX(-1px) translateY(2%) scale(1.5) rotate(-1deg)",
         },
         {
@@ -494,7 +494,7 @@
             chevaletVoid.classList.add('fadeInChevalet');
 
             setTimeout(function() {
-                document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+                document.getElementById('chevalet2Toile-div').classList.add('fadeInFast');
                 // random:
                 // chevaletToile.src = "chevalet-toile2.png";
             }, 400);
@@ -504,9 +504,8 @@
         else {
 
             // anims transitions toile:
-            document.getElementById('chevalet2Toile-div').classList.remove('fadeIn');
-            document.getElementById('chevalet2Toile-div').classList.add('fadeOut');
-
+            document.getElementById('chevalet2Toile-div').classList.remove('fadeInFast');
+            document.getElementById('chevalet2Toile-div').classList.add('fadeOutFast');
 
             setTimeout(() => {
 
@@ -523,12 +522,13 @@
                 // Changement de toile et classFix:
                 var randomIndex = Math.floor(Math.random() * toilesChevalet.length);
                 var randomToile = toilesChevalet[randomIndex];
+
                 chevaletToile.src = randomToile.src;
 
                 // Remove the selected object from the array and add it to the selected objects array
                 alreadySeenToiles.push(toilesChevalet.splice(randomIndex, 1)[0]);
 
-                // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
+                // Fix ajouté après le fadeOut de la toile1 (class spécifique à chaque toile)
                 if(mobileDetection) {
                     chevaletToile.style.transform = randomToile.jsFixTransformMobile;
                 }
@@ -536,15 +536,13 @@
                     chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
                 }
 
-                // anims transitions toile:
-                document.getElementById('chevalet2Toile-div').classList.remove('fadeOut');
-                document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
+                setTimeout(function() {
+                    // anims transitions toile:
+                    document.getElementById('chevalet2Toile-div').classList.remove('fadeOutFast');
+                    document.getElementById('chevalet2Toile-div').classList.add('fadeInFast');
+                }, 505);
 
-            }, 500);
-
-
-
-
+            }, 505);
 
 
         }
