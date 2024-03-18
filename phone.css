@@ -462,8 +462,9 @@
     }
 
     #chevalet2Toile-img {
-        width: 130px;
-        transform: translateX(-2px) translateY(38px) rotate(-1deg);
+        /* width: 130px; */
+        width: 100%;
+        transform: translateX(-2px) translateY(24%) rotate(-1deg);
 
         filter: saturate(1) drop-shadow(0px 0px 1px #666666);
     }
@@ -480,7 +481,7 @@
         position: absolute;
         z-index: -5;
         height: 100vh;
-        opacity: 0.07;
+        opacity: 0.05;
     }
 
     .bgToile-fadeIn {

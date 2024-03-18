@@ -1856,6 +1856,10 @@ body {
 
   #chevalet2Toile-div {
     position: absolute;
+
+    /* oskour #1 */
+    width: 74%;
+
     z-index: 9999;
     top: 0px;
     left: 47%;
@@ -1865,12 +1869,17 @@ body {
     opacity: 0;
   }
   #chevalet2Toile-img {
-    width: 215px;
+    /* oskour #2 */
+    /* width: 215px; */
+    width: 100%;
+
     filter: saturate(1) drop-shadow(2px 0px 1px black);
 
     transition: 0.4s;
+
     /* Toile1:  */
-    transform: translateX(-1px) translateY(82px);
+    /* transform: translateX(-1px) translateY(82px); */
+    transform: translateX(-1px) translateY(25%) rotate(-1deg);
   }
 
 
