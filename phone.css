@@ -449,6 +449,10 @@
 
 
 
+    .chevaletWrapper:hover #chevalet2Toile-div {
+        filter: saturate(0.7) drop-shadow(1px 0px 1px black);
+    }
+
 
 
 
@@ -459,7 +463,9 @@
 
     #chevalet2Toile-img {
         width: 130px;
-        transform: translateX(-2px) translateY(38px) rotate(1deg) !important;
+        transform: translateX(-2px) translateY(38px) rotate(-1deg);
+
+        filter: saturate(1) drop-shadow(0px 0px 1px #666666);
     }
 
 
@@ -474,7 +480,7 @@
         position: absolute;
         z-index: -5;
         height: 100vh;
-        opacity: 0.05;
+        opacity: 0.07;
     }
 
     .bgToile-fadeIn {

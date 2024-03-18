@@ -408,19 +408,58 @@
 
     var toilesChevalet = [
         {
+            id: 2,
+            src: "../chevaletToiles/chevalet-toile2.png",
+            jsFixTransformDesktop: "translateX(0px) translateY(30px)",
+            jsFixTransformMobile: "translateX(0px) translateY(5px) rotate(-1deg)",
+        },
+        {
+            id: 3,
+            src: "../chevaletToiles/chevalet-toile3.png",
+            jsFixTransformDesktop: "translateX(0px) translateY(11px)",
+            jsFixTransformMobile: "translateX(0px) translateY(-6px) rotate(-1deg)",
+        },
+        {
+            id: 4,
+            src: "../chevaletToiles/chevalet-toile4.png",
+            jsFixTransformDesktop: "",
+            jsFixTransformMobile: "",
+        },
+        {
+            id: 5,
+            src: "../chevaletToiles/chevalet-toile5.png",
+            jsFixTransformDesktop: "translateX(-1px) translateY(31px) scale(1.5)",
+            jsFixTransformMobile: "translateX(-1px) translateY(7px) scale(1.5) rotate(-1deg)",
+        },
+        {
+            id: 6,
+            src: "../chevaletToiles/chevalet-toile6.png",
+            jsFixTransformDesktop: "translateX(-1px) translateY(85px)",
+            jsFixTransformMobile: "translateX(-2px) translateY(39px) rotate(-1deg)",
+        },
+        {
+            id: 7,
+            src: "../chevaletToiles/chevalet-toile7.png",
+            jsFixTransformDesktop: "translateX(0px) translateY(-4px)",
+            jsFixTransformMobile: "translateX(0px) translateY(-15px) rotate(-1deg)",
+        },
+        {
+            id: 8,
+            src: "../chevaletToiles/chevalet-toile8.png",
+            jsFixTransformDesktop: "translateX(-3px) translateY(122px) scale(1.2)",
+            jsFixTransformMobile: "translateX(-3px) translateY(61px) scale(1.2) rotate(-1deg)",
+        },
+    ]
+
+    var alreadySeenToiles = [
+        // Toile initiale (retiréz du pool mais tout va bien), synchro avec le sr html initial
+        {
             id: 1,
             src: "../chevaletToiles/chevalet-toile1.png",
             // classFix: "",
             jsFixTransform: "",
         },
-        {
-            id: 2,
-            src: "../chevaletToiles/chevalet-toile2.png",
-            // classFix: "toile2-fix",
-            jsFixTransformDesktop: "translateX(0px) translateY(30px)",
-            jsFixTransformMobile: "translateX(0px) translateY(5px)",
-        },
-    ]
+    ];
 
     var mobileDetection;
     if (navigator.userAgent.match(/Android/i)
@@ -466,28 +505,31 @@
             document.getElementById('chevalet2Toile-div').classList.remove('fadeIn');
             document.getElementById('chevalet2Toile-div').classList.add('fadeIn');
 
-            // setTimeout(() => {
-                
-                // TODO: check si meme toile que previous toile
+            // reset all classFix:
+            // chevaletToile.className = "";
+            chevaletToile.style = "";
 
-                // reset all classFix:
-                // chevaletToile.className = "";
-                chevaletToile.style = "";
+            if (toilesChevalet.length === 0) {
+                // If all objects have been selected, reset the array
+                toilesChevalet = alreadySeenToiles.slice(); // Reset to the selected objects
+                alreadySeenToiles = []; // Clear the selected objects array
+            }
 
-                // Changement de toile et classFix:
-                var randomToile = toilesChevalet[Math.floor(Math.random()*toilesChevalet.length)]
-                chevaletToile.src = randomToile.src;
+            // Changement de toile et classFix:
+            var randomIndex = Math.floor(Math.random() * toilesChevalet.length);
+            var randomToile = toilesChevalet[randomIndex];
+            chevaletToile.src = randomToile.src;
 
-                // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
-                // chevaletToile.classList.add(randomToile.classFix);
-                if(mobileDetection) {
-                    chevaletToile.style.transform = randomToile.jsFixTransformMobile;
-                }
-                else {
-                    chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
-                }
+            // Remove the selected object from the array and add it to the selected objects array
+            alreadySeenToiles.push(toilesChevalet.splice(randomIndex, 1)[0]);
 
-            // }, 401);
+            // Fix ajouté après le fadeOut de la toile1 (pour éviter de voir le déplacement du fix de l'image)
+            if(mobileDetection) {
+                chevaletToile.style.transform = randomToile.jsFixTransformMobile;
+            }
+            else {
+                chevaletToile.style.transform = randomToile.jsFixTransformDesktop;
+            }
 
         }
 

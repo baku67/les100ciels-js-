@@ -1139,6 +1139,8 @@ body {
 
 
   .acryliqueSectionList {
+    font-family: 'Montserrat Alternates', sans-serif;
+
     display: inline-flex;
     flex-direction: column;
     gap: 0.2vh;
@@ -1846,6 +1848,11 @@ body {
       transform: rotate(1deg);
   }
 
+  .chevaletWrapper:hover #chevalet2Toile-div {
+    transform: translate(-47%) rotate(1deg);
+    filter: saturate(0.7) drop-shadow(2px -1px 1px black); 
+  }
+
 
   #chevalet2Toile-div {
     position: absolute;
@@ -1853,12 +1860,13 @@ body {
     top: 0px;
     left: 47%;
     transform: translate(-47%);
+    transition: all 0.4s;
 
     opacity: 0;
   }
   #chevalet2Toile-img {
     width: 215px;
-    filter: saturate(1) drop-shadow(2px -1px 1px black);
+    filter: saturate(1) drop-shadow(2px 0px 1px black);
 
     transition: 0.4s;
     /* Toile1:  */
@@ -1888,9 +1896,9 @@ body {
   }
 
   .chevaletWrapper:hover #chevalet2Toile-img {
-    transform: translateX(-2px) translateY(82px) rotate(1deg);
+    /* transform: translateX(-2px) translateY(82px) rotate(1deg);
 
-    filter: saturate(0.7) drop-shadow(2px -1px 1px black);
+    filter: saturate(0.7) drop-shadow(2px -1px 1px black); */
   }
 
 
