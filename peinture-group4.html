@@ -377,16 +377,33 @@
 
 
     // Back Btn to "peinture acrylique"
-    document.getElementById("acryliqueBackBtn4").addEventListener("click", function() {
+    document.getElementById("acryliqueBackBtn2").addEventListener("click", function() {
 
+
+        // Détection mobile (isMobile JS)
+        var mobileDetection;
+        if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+            mobileDetection = true ;
+        } else {
+            mobileDetection = false ;
+        }
 
         // Retour du btn en haut à droite PC:
-        document.getElementById('acryliqueBackBtnAccueil').style.display = "block";
-        document.getElementById('acryliqueBackBtnAccueil').classList.add('fadeIn');
-        setTimeout(()=>{
-            document.getElementById('acryliqueBackBtnAccueil').classList.remove('fadeIn');
-            document.getElementById('acryliqueBackBtnAccueil').style.opacity = "1";
-        }, 501);
+        if(!mobileDetection) {
+            document.getElementById('acryliqueBackBtnAccueil').style.display = "block";
+            document.getElementById('acryliqueBackBtnAccueil').classList.add('fadeIn');
+            setTimeout(()=>{
+                document.getElementById('acryliqueBackBtnAccueil').classList.remove('fadeIn');
+                document.getElementById('acryliqueBackBtnAccueil').style.opacity = "1";
+            }, 501);
+        }
+
 
 
 
