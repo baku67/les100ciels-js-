@@ -5,6 +5,8 @@
         <link rel="icon" type="image/x-icon" href="/favicon1.ico">
         <link rel='stylesheet' href='style.css'>
         <link rel='stylesheet' href='phone.css'>
+        
+        <meta charset="UTF-8">
 
         <link rel='stylesheet' href='styleSass.css'>
         <link rel='stylesheet' href='styleSass2k.css'>
@@ -18,51 +20,11 @@
 
         <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 
-        <!-- Preloads images -->
-        <link rel="preload" as="image" href="peintureAcry.png" />
-        <link rel="preload" as="image" href="peintureAcry-mirrored.png" />
 
-
-        <link rel="preload" as="image" href="toiles/1-min.jpg" />
-        <link rel="preload" as="image" href="toiles/2-min.jpg" />
-        <link rel="preload" as="image" href="toiles/3-min.jpg" />
-        <link rel="preload" as="image" href="toiles/4-min.jpg" />
-        <link rel="preload" as="image" href="toiles/5-min.jpg" />
-        <link rel="preload" as="image" href="toiles/6-min.jpg" />
-        <link rel="preload" as="image" href="toiles/7-min.jpg" />
-        <link rel="preload" as="image" href="toiles/8-min.jpg" />
-        <link rel="preload" as="image" href="toiles/9-min.jpg" />
-        <link rel="preload" as="image" href="toiles/10-min.jpg" />
-        <link rel="preload" as="image" href="toiles/11-min.jpg" />
-        <link rel="preload" as="image" href="toiles/12-min.jpg" />
-        <link rel="preload" as="image" href="toiles/13-min.jpg" />
-
-        <link rel="preload" as="image" href="toiles/11.jpg" />
-        <link rel="preload" as="image" href="toiles/22.jpg" />
-        <link rel="preload" as="image" href="toiles/33.jpg" />
-        <link rel="preload" as="image" href="toiles/44.jpg" />
-        <link rel="preload" as="image" href="toiles/55.jpg" />
-        <link rel="preload" as="image" href="toiles/66.jpg" />
-        <link rel="preload" as="image" href="toiles/77.jpg" />
-
-        <link rel="preload" as="image" href="toiles/toilesButtonBg/esprit_et_epouse-min.png" />
-        <link rel="preload" as="image" href="toiles/toilesButtonBg/flute_enchantee-min.png" />
-        <link rel="preload" as="image" href="toiles/toilesButtonBg/licorne-min.png" />
-        <link rel="preload" as="image" href="toiles/toilesButtonBg/3contes-min.png" />
-
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile1.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile2.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile3.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile4.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile5.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile6.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile7.png" />
-        <link rel="preload" as="image" href="chevaletToiles/chevalet-toile8.png" />
-
-
-        <title>Peinture acrylique</title>
+        <title>Méthode Haushka</title>
 
         <style>
+
 
             .burgerOngletActif {
                 background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
@@ -99,7 +61,7 @@
             }
             
             .gallery-item {
-              margin: 7px 7px;
+              margin: 3px;
             }
             
             .gallery-item img {
@@ -110,10 +72,7 @@
               cursor: pointer;
 
               border: 2px solid transparent;
-
-              /* MAJ: */
-              /* padding: 2px; */
-              box-shadow: 0px 0px 11px #e8ca7d85;
+              padding: 2px;
 
               border-radius: 9px;
 
@@ -160,7 +119,7 @@
                 height: 100vh;
 
                 opacity: 0;
-                animation: fadeIn 3s 1.2s ease forwards;
+                animation: fadeIn 2s 0.5s ease forwards;
             }
 
             .galleryContainer {
@@ -169,10 +128,7 @@
                 flex-direction: column;
 
                 position: absolute;
-                /* right: 6vw; */
-                /* right: 8vw; */
-                /* C'est une boucle ? */
-                right: 5vw;
+                right: 6vw;
                 top: 50%;
 
                 width: 40%; 
@@ -184,41 +140,19 @@
             }
 
 
-            .svgArbreSVG {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 98vh;
-                width: auto;
-                opacity: 0;
-                animation: fadeInSvgArbre 2s 0.3s ease forwards;
-            }
-
-
-            #svgArbreImg2 {
-                
-            }
-
             .svgArbre {
-                /* position: absolute;
+                position: absolute;
+
+                /* top: 0; */
                 bottom: 0;
                 left: 0;
+                /* height: 100vh; */
                 height: 98vh;
                 width: auto;
+
                 opacity: 0;
-                animation: fadeInSvgArbre 2s 0.3s ease forwards; */
-
-
-
-                position: absolute;
-                bottom: 50%;
-                left: 20%;
-                transform: translateX(-20%) translateY(50%);
-                height: 80vh;
-                width: auto;
-                opacity: 0;
+                /* transform: scale(0.5); */
                 animation: fadeInSvgArbre 2s 0.3s ease forwards;
-
             }
             @keyframes fadeInSvgArbre {
                 from {
@@ -236,7 +170,7 @@
 
             } */
 
-            .svgArbreSVG g {
+            .svgArbre g {
                 /* fill: #fbc949; */
                 fill: #e8ca7d;
 
@@ -308,7 +242,7 @@
                 flex-flow: wrap;
                 place-content: center;
 
-                /* border-top: 1px solid #e8ca7d; */
+                border-top: 1px solid #e8ca7d;
                 padding-top: 20px;
             }
 
@@ -401,19 +335,19 @@
                 transition: all 0.4s;
             }
 
-            .bodyPeinture {
+            .bodyHaiku {
                 overflow: hidden;
 
                 /* background: rgb(17,18,63);
-                background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
-                background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
-                background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(24,33,47,1) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
+                background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
+                background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
+                background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#11123f",GradientType=1); */
 
-                background: rgb(17,18,63);
-                background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
-                background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
-                background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+                background: rgb(17 63 49);
+                background: -moz-linear-gradient(180deg, rgb(32 91 72) 0%, rgb(28 54 65) 100%);
+                background: -webkit-linear-gradient(180deg, rgb(32 91 72) 0%, rgb(28 54 65) 100%);
+                background: linear-gradient(180deg, rgb(32 91 72) 0%, rgb(28 54 65) 100%);
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
             }
 
@@ -620,6 +554,12 @@
                 top: 0;
             }
 
+            .subTitleAcrylique {
+                display: inline-flex;
+                align-items: center;
+                gap: 30px;
+                margin-bottom:35px;
+            }
 
 
 
@@ -647,18 +587,6 @@
             }
 
 
-            .isDesktop {
-                display: block;
-            }
-            .isDesktopFlex {
-                display: inline-flex;
-            }
-            .isMobile {
-                display: none;
-            }
-            .isMobileFlex {
-                display: none;
-            }
 
             
 
@@ -667,18 +595,7 @@
             /* SMARTPHONE */
             @media (max-width: 450px) {
 
-                .isDesktop {
-                    display: none;
-                }
-                .isDesktopFlex {
-                    display: none;
-                }
-                .isMobile {
-                    display: block;
-                }
-                .isMobileFlex {
-                    display: inline-flex;
-                }
+
 
                 .main {
                     margin-top: 0px;
@@ -690,7 +607,10 @@
                     font-size: 1em;
                 }
 
-
+                .subTitleAcrylique {
+                    margin-bottom: 15px;
+                    gap: 11px;
+                }
 
                 .breadcrumbs {
                     font-size: 1em;
@@ -726,12 +646,8 @@
                 }
 
                 .galleryShortcuts {
-                    border-top: 0px solid rgba(232, 202, 125, 0);
+                    border-top: 1px solid #e8ca7d26;
                     position: relative;
-
-                    /* background: linear-gradient(180deg, #0000002b, transparent); */
-                    padding-bottom: 201px;
-                    border-radius: 16px;
                 }
 
                 @keyframes fadeInSvgArbre {
@@ -739,8 +655,7 @@
                         opacity: 0;
                     }
                     100% {
-                        /* opacity: 0.65; */
-                        opacity: 1;
+                        opacity: 0.65;
                     }
                 }
 
@@ -765,6 +680,8 @@
                 } */
 
 
+
+                /* (ATTENTION l'overflow du body marche pas donc ça dépasse si je veux faire un zoom) */
                 .svgArbre {
                     width: 100%;
                     height: auto;
@@ -778,13 +695,16 @@
                     border-radius: 12px;
                     margin: 0 auto;
 
-                    padding: 0px 0px 23px 0px;
+                    padding: 23px 0px;
                     background-color: #00000000;
 
                     position: relative;
                     top: 0%;
                     right: 0%;
                     transform: translate(0%, -0%);
+
+                    /* right: 50%;
+                    transform: translate(50%, -50%); */
                 }
                 .galleriePreview img {
                     width: 200px;
@@ -794,8 +714,6 @@
                     border-radius: 6px;
                     width: 75px;
                     height: 75px;
-
-                    /* filter: drop-shadow(0px 0px 5px #e8ca7d); */
                 }
 
                 #previewImg {
@@ -817,7 +735,7 @@
 
 
                 .acryliqueSectionList {
-                    padding-top: 12px;
+                    padding-top: 5px;
                 }
 
             }
@@ -859,7 +777,7 @@
                 }
 
                 .subTitle {
-                    font-size: 1.6em;
+                    font-size: 1.1em;
                 }
                 .subSubTitle {
                     font-size: 1.7em;
@@ -877,32 +795,44 @@
 
 
 
-    <body class="bodyPeinture">
+    <body class="bodyHaushka">
 
+
+
+        <!-- Modal preview -->
+        <div id="modalPreview">
+
+            <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
+
+            <div class="modalPreviewContent modalPreviewContent-HaikuMobil">
+
+                <h2 id="modalPreviewTitle"></h2>
+                <img id="modalPreviewImg" class="blueGlowFix-haikus" src="">
+
+            </div>
+        </div>
+        
 
 
         <!-- Desktop: rectangle detection sideNav-desktop -->
         <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
 
         <!-- Nav Burger DESKTOP (onHover title) -->
-        <div id="mySidenav-desktop" class="sidenav-desktop sideNavPeintureAcr isDesktop">
+        <div id="mySidenav-desktop" class="sidenav-desktop sideNavHaushka isDesktop">
 
             <ul>
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="peinture.html" class="burgerOngletActif-desktop">Acrylique</a></li>
-                <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
-                <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
-                <li><a href="haikus.html">Ha&iuml;kus</a></li>
-                <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
-                <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
-                <li><a href="contact.php">Contact</a></li>
+              <!-- <li><a href="index.html">Home</a></li> -->
+              <li><a href="peinture.html">Acrylique</a></li>
+              <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+              <li><a href="haushka.html" class="burgerOngletActif-desktop">Haushka</a></li>
+              <li><a href="haikus.html">Ha&iuml;kus</a></li>
+              <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+              <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
+              <li><a href="contact.php">Contact</a></li>
             </ul>
 
-            <!-- arbrePng -->
-            <img src="svgArbrePng-burger-min.png" class="burger-arbrePng">
-
-            <!-- Chevalet background: (Desktop burger)  (DESACTIVE)-->
-            <!-- <img src="peintureAcry.png" class="chevaletPeinturesBg isDesktop">  -->
+            <!-- TODO BACKGROUND: Heron background: (desktop burger) -->
+            <!-- <img src="haiku-heron3.png" class="heronHaikuBg isDesktop">  -->
 
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
@@ -910,16 +840,13 @@
         </div>
 
 
-
         <!-- *** Nav MenuBurger mobile -->
         <!-- NavDiv -->
-        <div id="mySidenav" class="sidenav sideNavPeintureAcr isMobile">
+        <div id="mySidenav" class="sidenav sideNavHaushka isMobile">
 
-            <!-- arbrePng -->
-            <img src="svgArbrePng-burger-min.png" class="burger-arbrePng isMobile">
 
-            <!-- Chevalet background: (mobile burger) (DESACTIVE) -->
-            <!-- <img src="peintureAcry-mirrored.png" class="chevaletPeinturesBg isMobile">  -->
+            <!-- TODO BACKGROUND: Heron background: (mobile burger) -->
+            <!-- <img src="haiku-heron3.png" class="heronHaikuBg isMobile">  -->
 
 
             <a id="closeBtn" href="#" class="close">&times;</a>
@@ -1155,19 +1082,21 @@
 
             <ul>
               <!-- <li><a href="index.html">Home</a></li> -->
-              <li><a href="peinture.html" class="burgerOngletActif">Acrylique</a></li>
+              <li><a href="peinture.html">Acrylique</a></li>
               <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
-              <li><a href="#" class="navBurgerDisabled">Haushka</a></li>
+              <li><a href="haushka.html" class="burgerOngletActif">Haushka</a></li>
               <li><a href="haikus.html">Ha&iuml;kus</a></li>
               <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
               <li><a href="contact.php">Contact</a></li>
             </ul>
 
+
             <!-- (TODO: changer SVG burger: EZ) -->
             <!-- <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
                 Your browser does not support SVG
             </object> -->
+
 
             <div class="mentionsLegalesDiv">
                 <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
@@ -1190,99 +1119,56 @@
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
-
-            <span></span>
         </div>
 
-
-
-        <!-- Modal preview -->
-        <div id="modalPreview">
-
-            <!-- BackgroundImage toile selected: -->
-            <img id="modalPreviewImgBackground" src="">
-
-            <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
-
-            <div class="modalPreviewContent">
-
-                <h2 id="modalPreviewTitle">Titre image</h2>
-                <img id="modalPreviewImg" src="">
-                <p id="modalPreviewDescription">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dictum tellus, sed efficitur nibh. Aliquam nec luctus dolor. Ut ut iaculis justo. Integer massa arcu, hendrerit ac molestie nec, feugiat id orci. In mollis sagittis ultricies. Donec ac gravida eros.</p>
-            
-                <!-- Nav desktop: (dimensions responsiv)-->
-                <div class="modalPreviewNavContainer">
-                    <svg id="modalPreviewPrevious" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                    width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
-                    preserveAspectRatio="xMidYMid meet">
-                        <g id="modalPreviewPreviousG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
-                        fill="#000000" stroke="none">
-                        <path d="M347 486 c-83 -37 -192 -100 -242 -140 -25 -20 -28 -28 -19 -43 22
-                        -37 267 -157 345 -169 39 -6 41 -6 37 17 -2 14 -25 41 -60 69 -48 38 -54 46
-                        -40 54 27 15 750 12 952 -4 256 -20 262 -20 270 10 3 14 4 36 0 50 -7 30 -4
-                        30 -335 11 -231 -14 -890 -11 -927 4 -14 6 -3 19 54 65 75 61 93 84 83 100
-                        -10 17 -37 11 -118 -24z"/>
-                    </svg>
-
-                    <svg id="modalPreviewNext" version="1.0" xmlns="http://www.w3.org/2000/svg"
-                    width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
-                    preserveAspectRatio="xMidYMid meet">
-                        <g id="modalPreviewNextG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
-                        fill="#000000" stroke="none">
-                        <path  d="M1242 509 c2 -14 25 -41 60 -69 48 -38 54 -46 40 -54 -27 -15 -750
-                        -12 -952 4 -256 20 -263 20 -270 -10 -4 -14 -3 -36 0 -50 8 -30 4 -30 335 -11
-                        231 14 890 11 927 -4 14 -6 3 -19 -54 -65 -39 -32 -75 -66 -80 -74 -14 -25 1
-                        -39 34 -32 75 15 332 158 345 193 3 7 0 20 -7 28 -29 35 -272 150 -341 161
-                        -39 6 -41 6 -37 -17z"/>
-                        </g>
-                    </svg>
-                </div>
-
-                <!-- Pagination (alimenté JS) -->
-                <div id="modalPreviewPaginationDiv">
-                    <!-- <span>1</span>
-                    <span>2</span> -->
-                </div>
-
-            </div>
-        </div>
 
 
         <!-- titre absolute -->
-        <div id="titlesDiv" class="titlesDiv titleDiv-Peinture">
+        <div id="titlesDiv" class="titlesDiv titleDiv-Haikus" style="position: relative;">
             <a href="./index.html" class="linkTitle">
                 <h1 class="h1title">Les 100 ciels</h1>
             </a>
         </div>
 
 
-        <!-- svg container (vide, load avec JS) -->
-        <!-- WIP wrapper pour la toile qui change quand on clique sur le chevalet -->
-        <div id="chevaletWrapper" class="chevaletWrapper">
 
-            <img id="svgArbreImg" class="svgArbrePNG" src="peintureAcry-mirrored.png" >
-            <img id="svgArbreImg2" class="svgArbrePNG2" src="peintureAcry-mirrored(void2).png" >
 
-            <div id="chevalet2Toile-div">
-                <img id="chevalet2Toile-img" src="../chevaletToiles/chevalet-toile1.png">
+        <div id="main" class="main" style="position:relative; background:rgba(0,0,0,0);">
+
+            <div id="" class="" >
+                <h2 class="haikusSubTitle">Méthode Haushka</h2>
+                <div class="traitHaiku"></div>
             </div>
-        </div>
 
-        <svg style="display: none;" id="svgArbreSvg" class="svgArbreSVG" version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="957.000000pt" height="968.000000pt" viewBox="0 0 957.000000 968.000000"
-            preserveAspectRatio="xMidYMid meet">
+            <!-- Contenu loadé JS onClick rubrique: -->
+            <div id="hauskaContent" class="hauskaContent">
 
-            <g id="svgArbreGroup" fill="#000000" stroke="none">
-            </g>
-        </svg>
+                <!-- LINKS: -->
+                <section>   
+                    <h3>Couleurs primaires</h3>
+                    <ul>
+                        <li class="hausha-jaune">Jaune</li>
+                        <li class="hausha-rouge">Rouge</li>
+                        <li class="hausha-bleu">Bleu</li>
+                    </ul>
+                </section>
+
+                <section>   
+                    <h3>Couleurs secondaires</h3>
+                    <ul>
+                        <li class="hausha-orange">Orange</li>
+                        <li class="hausha-vert">Vert</li>
+                        <li class="hausha-violet">Violet</li>
+                    </ul>
+                </section>
+
+                <section>   
+                    <h3>Autres</h3>
+                </section>
 
 
-        <div id="main" class="main" style="background:rgba(0,0,0,0);">
-
-            <div id="gallery" class="gallery galleryContainer" >
-                <!-- Contenu loaded JS -->
             </div>
-    
+
         </div>
 
         
@@ -1291,41 +1177,6 @@
         <script>
 
             document.addEventListener("DOMContentLoaded", function() {
-
-                var index = 0;
-                var imagesObj = [];
-
-                // *** load svg arbre (initial)
-                var xhr = new XMLHttpRequest();
-                xhr.open('GET', '../arbre_de_vie-gContent.svg', true);
-                xhr.onload = function() {
-                    if (xhr.status >= 200 && xhr.status < 300) {
-                        var svgArbreGroup = document.getElementById('svgArbreGroup');
-                        svgArbreGroup.innerHTML = xhr.responseText;
-                    } else {
-                        console.error('Failed to load external SVG: ' + xhr.statusText);
-                    }
-                };
-                xhr.send();
-
-
-                $("#gallery").load("peinture-links.html", function() {
-
-                })
-
-                // Btn close Modal (+ remove anims modal)
-                document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
-
-                    document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
-                    document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
-                    setTimeout(() => {
-                        document.getElementById('modalPreview').style.display = "none";
-                        document.getElementById('modalPreview').style.opacity = "0";
-                        document.getElementById('modalPreview').style.transform = "translateY(20px)";
-                        document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
-                    }, 701)
-                    
-                })
 
 
                 // Menu burger mobile pop:
@@ -1341,7 +1192,6 @@
                     // pas opti :
                     // document.getElementById("titlesDiv").style.filter = "blur(2px)";
                     // document.getElementById("main").style.filter = "blur(3px)";
-                    // document.getElementById("svgArbre").style.filter = "blur(2px)";
                 }
 
                 function closeNav() {
@@ -1349,7 +1199,6 @@
 
                     // document.getElementById("titlesDiv").style.filter = "blur(0px)";
                     // document.getElementById("main").style.filter = "blur(0px)";
-                    // document.getElementById("svgArbre").style.filter = "blur(0px)";
 
                     sidenav.classList.add('closeBurgerColorAnimated');
                     setTimeout(function() {
@@ -1370,6 +1219,47 @@
                         }
                     }
                 });
+
+
+
+
+
+
+
+                // Click image Haushka => Modal 
+                // document.getElementById('haikuImg').addEventListener('click', function() {
+
+                //     document.getElementById('modalPreviewImg').src = document.getElementById('haikuImg').src;
+                //     document.getElementById('modalPreviewTitle').innerHTML = document.getElementById('haikuTitle').innerText;
+                    
+
+                //     document.getElementById('modalPreview').style.display = "block";
+                //     document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+                //     setTimeout(()=> {
+                //         document.getElementById('modalPreview').style.opacity = "1";
+                //         document.getElementById('modalPreview').style.transform = "translateY(0px)";
+                //         document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                //     }, 701)
+
+                // });
+
+
+                // // Btn close Modal (+ remove anims modal)
+                // document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
+
+                //     document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                //     document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
+                //     setTimeout(() => {
+                //         document.getElementById('modalPreview').style.display = "none";
+                //         document.getElementById('modalPreview').style.opacity = "0";
+                //         document.getElementById('modalPreview').style.transform = "translateY(20px)";
+                //         document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
+                //     }, 701)
+                // })
+
+
+
+
 
 
                 // DESKTOP hover title = sideNav-desktop:
@@ -1407,6 +1297,8 @@
                     });
 
                 }
+
+
 
 
             });

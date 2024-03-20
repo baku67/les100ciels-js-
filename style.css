@@ -233,6 +233,78 @@ body {
   }
 }
 
+
+    /* RAJOUT sur la div wrapper bgStars: Les étoiles filantes => */
+    .bgStars span{
+
+      position: absolute;
+      top:15%;
+      left:50%;
+      width: 4px;
+      height: 4px;
+      background: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
+
+      opacity: 0.5;
+      animation: animate 12s 0s linear infinite;
+
+  }
+  .bgStars span::before{
+      content:'';
+      position: absolute;
+      top: 15%;
+      transform: translateY(-15%);
+      width: 170px;
+      height: 1px;
+      background: linear-gradient(90deg,#fff,transparent);
+  }
+  @keyframes animate
+  {
+      0% {
+        opacity: 0;
+      }
+      89% {
+        opacity: 0;
+      }
+      90% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 0;
+      }
+      93% {
+        opacity: 1;
+      }
+      97% {
+        opacity: 0;
+      }
+      100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+      }
+
+      /* 0% {
+        opacity: 0;
+      }
+      79% {
+        opacity: 0;
+      }
+      80% {
+        transform: rotate(315deg) translateX(0);
+        opacity: 1;
+      }
+      94% {
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(315deg) translateX(-1000px);
+        opacity: 0;
+      } */
+
+  }
+
+
+
+
 #main {
   text-align: center; 
 
@@ -801,6 +873,14 @@ body {
   }
 
 
+  .sideNavHaushka {
+    background: rgb(17 63 49);
+    background: -moz-linear-gradient(180deg, rgb(16 73 97) 60%, rgb(125 43 57) 100%);
+    background: -webkit-linear-gradient(180deg, rgb(16 73 97) 60%, rgb(16 73 97)rgb(125 43 57) 100%);
+    background: linear-gradient(180deg, rgb(16 73 97) 60%, rgb(125 43 57) 100%);
+  }
+
+
   .sideNavPeintureAcr {
     background: rgb(66 87 91);
     background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
@@ -838,6 +918,14 @@ body {
     animation: underlineShow 0.5s forwards ease;
     opacity: 1 !important;
   } 
+
+
+  .bodyHaushka {
+    background: rgb(17 63 49);
+    background: -moz-linear-gradient(180deg, rgb(125 43 57) 0%, rgb(16 73 97) 100%);
+    background: -webkit-linear-gradient(180deg, rgb(125 43 57) 0%, rgb(16 73 97) 100%);
+    background: linear-gradient(180deg, rgb(125 43 57) 0%, rgb(16 73 97) 100%);
+  }
 
 
   .bodyContact {
@@ -2728,3 +2816,56 @@ body {
   #plz-form-c50d7ff1-e8c3-4e7e-b889-f6fc24999c54 input.plezi-submit-btn {
       background: #e8ca7d !important;
   }
+
+
+
+
+  .hauskaContent section {
+
+  }
+
+  .hauskaContent section h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+  }
+
+  .hauskaContent section ul {
+    display: inline-flex;
+    color: white;
+    list-style-type: none;
+    padding-inline-start: 0;
+  }
+
+  .hauskaContent section ul li {
+    margin: 0 16px;
+    padding: 15px 50px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    transition: all 0.4s;
+  }
+
+  .hauskaContent section ul li:hover .hauskaContent section ul li:not(){
+
+  }
+
+
+  /* .hausha-jaune {
+    background-color: yellow;
+  }
+  .hausha-rouge {
+    background-color: red;
+  }
+  .hausha-bleu {
+    background-color: blue;
+  }
+
+  .hausha-orange {
+    background-color: orange;
+  }
+  .hausha-vert {
+    background-color: green;
+  }
+  .hausha-violet {
+    background-color: purple;
+  } */
