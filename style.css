@@ -2053,10 +2053,13 @@ body {
   /* Active class */
   .sidenav.active {
     border-left: 1px solid #e7d5a44a;
-    box-shadow: 0px 0px 65px #e7d5a457;
+    /* TEST RAM MOBILE: */
+    /* box-shadow: 0px 0px 65px #e7d5a457; */
     right: 0;
     opacity: 1;
-    animation: navBurgerColorAnim 0.5s 0s ease forwards;
+
+    /* TEST RAM MOBILE: */
+    /* animation: navBurgerColorAnim 0.5s 0s ease forwards; */
   }
   @keyframes navBurgerColorAnim {
     from {
