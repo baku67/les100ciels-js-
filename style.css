@@ -2075,7 +2075,7 @@ body {
   .haushkaStrong {
     text-shadow: 1px 1px black;
     font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
 
@@ -2905,8 +2905,49 @@ body {
 
 
 
-  .hauskaContent section {
+  .hauska-img-bleu {
+    box-shadow: 0px 0px 30px #7de3e885;
+  }
+  .hauska-img-jaune {
+    box-shadow: 0px 0px 30px #fbfbb3;
+  }
+  .hauska-img-rouge {
+    box-shadow: 0px 0px 30px #ffb1b1;
+  }
+  .hauska-img-orange {
+    box-shadow: 0px 0px 30px #fedb99;
+  }
+  .hauska-img-vert {
+    box-shadow: 0px 0px 30px #a1e3a2;
+  }
+  .hauska-img-violet {
+    box-shadow: 0px 0px 30px #eb8bec;
+  }
 
+  #bodyHaushka {
+    transition: all 0.4s;
+  }
+
+  .bodyHaushka-purple {
+    background: rgb(121 43 125);
+    background: -moz-linear-gradient(180deg, rgb(121 43 125) 20%, rgb(16 73 97) 100%);
+    background: -webkit-linear-gradient(180deg, rgb(121 43 125) 20%, rgb(16 73 97) 100%);
+    background: linear-gradient(180deg, rgb(121 43 125) 20%, rgb(16 73 97) 100%);
+  }
+
+
+  .haushkaSection-header {
+    margin: 37px auto;
+  }
+
+  .haushkaSection-content {
+
+    margin: 5px auto;
+
+    width: 100%;
+    display: inline-flex;
+    flex-flow: wrap;
+    justify-content: center;
   }
 
   .hauskaContent section h3 {
@@ -2934,6 +2975,20 @@ body {
     transition: all 0.4s;
   }
 
+  .hauskaContent section ul .liShrinked {
+    position: relative;
+    margin: 7px 10px;
+    padding: 6px 65px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    overflow: visible;
+
+
+    transition: all 0.4s;
+  }
+
+
   .hauskaContent section ul li span {
     color: #161616;
     font-weight: 600;
@@ -2941,6 +2996,21 @@ body {
     z-index: 9999999;
     position: relative;
 
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+
+  .haushkaSectionTitleTxt {
+    color: #161616;
+    text-shadow: 1px 1px #ffffff94;
+    font-weight: 600;
+
+    font-size: 1.6em;
+
+    z-index: 9999999;
+    position: relative;
+
+    font-family: 'Montserrat Alternates', sans-serif;
   }
 
 
@@ -3016,7 +3086,18 @@ body {
 
 
 
+  .haushkaSection-header {
+    margin-top: 50px;
+  }
 
+.haushkaSectionTitle {
+  position: relative;
+
+  height: 75px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
 
 
   .haushka-brushStroke {
@@ -3025,6 +3106,28 @@ body {
     opacity: 1;
     top: -4px;
     left: 8px;
+
+    transition: all 0.7s;
+  }
+
+  .haushka-brushStroke-shrinked {
+    position: absolute;
+    width: 97px;
+    opacity: 1;
+    top: -4px;
+    left: 8px;
+
+    transition: all 0.7s;
+  }
+
+  .haushka-brushStroke-central {
+    position: absolute;
+    opacity: 1;
+
+    width: 180px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     transition: all 0.7s;
   }

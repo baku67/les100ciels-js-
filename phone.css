@@ -223,6 +223,27 @@
         transform: translateX(-10px);
       }
 
+      .haushkaSection-header {
+        margin: 37px auto;
+      }
+
+      .haushkaSectionTitleTxt {
+        font-size: 1.4em;
+      }
+
+      .hauska-img-bleu {
+        box-shadow: 0px 0px 15px #7de3e885;
+      }
+
+      .haushkaSection-content {
+
+        margin: 5px auto;
+    
+        width: 100%;
+        display: inline-flex;
+        flex-flow: wrap;
+        justify-content: center;
+      }
 
       .hauskaContent section ul {
         flex-direction: row;
@@ -263,6 +284,35 @@
         top: 0px;
         left: 6px;
       }
+
+      .haushka-brushStroke-shrinked {
+        width: 60px;
+        top: 0px;
+        left: 6px;
+      }
+
+      .hauskaContent section ul .liShrinked {
+        margin: 0 3px;
+        padding: 6px 17px;
+      }
+
+
+      .haushka-brushStroke-central {
+        position: absolute;
+        opacity: 1;
+        
+        width: 140px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        transition: all 0.7s;
+      }
+
+
+      .haushkaSection-header {
+        margin-top: 32px;
+      } 
 
       .mainHaushka {
         width: 95%;

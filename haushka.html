@@ -61,7 +61,7 @@
             }
             
             .gallery-item {
-              margin: 3px;
+              margin: 10px;
             }
             
             .gallery-item img {
@@ -71,8 +71,8 @@
               border-radius: 5px;
               cursor: pointer;
 
-              border: 2px solid transparent;
-              padding: 2px;
+              border: 1px solid transparent;
+              padding: 0px;
 
               border-radius: 9px;
 
@@ -714,6 +714,7 @@
                     border-radius: 6px;
                     width: 75px;
                     height: 75px;
+                    padding: 0px;
                 }
 
                 #previewImg {
@@ -722,7 +723,7 @@
 
                 .gallery-item {
                     /* margin: 3px; */
-                    margin: 4px;
+                    margin: 8px 4px;
                     height: 75px;
                 }
 
@@ -795,7 +796,7 @@
 
 
 
-    <body class="bodyHaushka">
+    <body id="bodyHaushka" class="bodyHaushka">
 
 
 
@@ -1140,28 +1141,30 @@
 
                 <div class="traitHaiku"></div>
 
-                <p class="haushkaIntroTxt">D'abord a lieu la découverte des couleurs primaires, le geste enveloppant du <span class="haushkaStrong" style="color:#a3a3e9;">bleu</span>, celui rayonnant et généreux du <span class="haushkaStrong" style="color:#fbfbb3;">jaune</span>, le mouvement du <span class="haushkaStrong" style="color:#ffb1b1;">rouge</span> ; viennent ensuite les couleurs secondaires, qui par le biais des rencontres, font naître toutes les richesses de <span class="haushkaStrong" style="color:#a5e7a5;">verts</span>, <span class="haushkaStrong" style="color:#ffdb9a;">oranges</span> et <span class="haushkaStrong" style="color:#eb8beb;">violets</span>.</p>
-
             </div>
 
             <!-- Contenu loadé JS onClick rubrique: -->
             <div id="hauskaContent" class="hauskaContent">
 
+                <!-- INTRO -->
+                <p class="haushkaIntroTxt">D'abord a lieu la découverte des couleurs primaires, le geste enveloppant du <span class="haushkaStrong" style="color:#a3a3e9;">bleu</span>, celui rayonnant et généreux du <span class="haushkaStrong" style="color:#fbfbb3;">jaune</span>, le mouvement du <span class="haushkaStrong" style="color:#ffb1b1;">rouge</span> ; viennent ensuite les couleurs secondaires, qui par le biais des rencontres, font naître toutes les richesses de <span class="haushkaStrong" style="color:#a5e7a5;">verts</span>, <span class="haushkaStrong" style="color:#ffdb9a;">oranges</span> et <span class="haushkaStrong" style="color:#eb8beb;">violets</span>.</p>
+
+
                 <!-- LINKS: -->
                 <section>   
                     <h3>Couleurs primaires</h3>
                     <ul>
-                        <li class="haushkaLi hausha-jaune">
+                        <li id="haushkas-jaunes-btn" class="haushkaLi hausha-jaune">
                             <div class="bgHoverDesktop bgHoverDesktop-yellow isDesktop"></div>
                             <span>Jaune</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-yellow.png" />
                         </li>
-                        <li class="haushkaLi hausha-rouge">
+                        <li id="haushkas-rouges-btn" class="haushkaLi hausha-rouge">
                             <div class="bgHoverDesktop bgHoverDesktop-red isDesktop"></div>
                             <span>Rouge</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-red.png" />
                         </li>
-                        <li class="haushkaLi hausha-bleu">
+                        <li id="haushkas-bleus-btn" class="haushkaLi hausha-bleu">
                             <div class="bgHoverDesktop bgHoverDesktop-blue isDesktop"></div>
                             <span>Bleu</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-blue.png" />
@@ -1172,17 +1175,17 @@
                 <section>   
                     <h3>Couleurs secondaires</h3>
                     <ul>
-                        <li class="haushkaLi hausha-orange">
+                        <li id="haushkas-oranges-btn" class="haushkaLi hausha-orange">
                             <div class="bgHoverDesktop bgHoverDesktop-orange isDesktop"></div>
                             <span>Orange</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-orange.png" />
                         </li>
-                        <li class="haushkaLi hausha-vert">
+                        <li id="haushkas-verts-btn" class="haushkaLi hausha-vert">
                             <div class="bgHoverDesktop bgHoverDesktop-green isDesktop"></div>
                             <span>Vert</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-green.png" />
                         </li>
-                        <li class="haushkaLi hausha-violet">
+                        <li id="haushkas-violets-btn" class="haushkaLi hausha-violet">
                             <div class="bgHoverDesktop bgHoverDesktop-purple isDesktop"></div>
                             <span>Violet</span>
                             <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-purple.png" />
@@ -1205,6 +1208,65 @@
         <script>
 
             document.addEventListener("DOMContentLoaded", function() {
+
+
+
+
+
+                // Click section JAUNE:
+                document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
+
+                    });
+                })
+
+
+
+                // Click section BLEU:
+                document.getElementById("haushkas-bleus-btn").addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
+
+                    });
+                })
+
+
+                // Click section ROUGE:
+                document.getElementById("haushkas-rouges-btn").addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+
+                    });
+                })
+
+
+                // Click section ORANGE:
+                document.getElementById("haushkas-oranges-btn").addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
+
+                    });
+                })
+
+
+                // Click section VERT:
+                document.getElementById("haushkas-verts-btn").addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
+
+                    });
+                })
+
+
+                // Click section VIOLET:
+                document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
+
+                    $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
+                        
+                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
+                    });
+                })
+                
+
+
+
+
 
 
                 // Menu burger mobile pop:
