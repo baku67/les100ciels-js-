@@ -1136,7 +1136,7 @@
 
         <div id="main" class="main mainHaushka" style="position:relative; background:rgba(0,0,0,0);">
 
-            <div id="" class="" >
+            <div id="haushkaSubTitleDiv" class="" >
                 <h2 class="haushkaSubTitle">Méthode Haushka</h2>
 
                 <div class="traitHaiku"></div>
@@ -1156,45 +1156,52 @@
                     <ul>
                         <li id="haushkas-jaunes-btn" class="haushkaLi hausha-jaune">
                             <div class="bgHoverDesktop bgHoverDesktop-yellow isDesktop"></div>
-                            <span>Jaune</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-yellow.png" />
+                            <span style="color: black;">Jaune</span>
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-yellow.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-yellow.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                         <li id="haushkas-rouges-btn" class="haushkaLi hausha-rouge">
                             <div class="bgHoverDesktop bgHoverDesktop-red isDesktop"></div>
                             <span>Rouge</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-red.png" />
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-red.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-red.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                         <li id="haushkas-bleus-btn" class="haushkaLi hausha-bleu">
                             <div class="bgHoverDesktop bgHoverDesktop-blue isDesktop"></div>
                             <span>Bleu</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-blue.png" />
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-blue.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-blue.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                     </ul>
                 </section>
-
+                
                 <section>   
                     <h3>Couleurs secondaires</h3>
                     <ul>
                         <li id="haushkas-oranges-btn" class="haushkaLi hausha-orange">
                             <div class="bgHoverDesktop bgHoverDesktop-orange isDesktop"></div>
                             <span>Orange</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-orange.png" />
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-orange.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-orange.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                         <li id="haushkas-verts-btn" class="haushkaLi hausha-vert">
                             <div class="bgHoverDesktop bgHoverDesktop-green isDesktop"></div>
                             <span>Vert</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-green.png" />
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-green.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-green.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                         <li id="haushkas-violets-btn" class="haushkaLi hausha-violet">
                             <div class="bgHoverDesktop bgHoverDesktop-purple isDesktop"></div>
                             <span>Violet</span>
-                            <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-purple.png" />
+                            <!-- <img class="haushka-brushStroke" src="brushStrokes-haushka/brushStroke-purple.png" /> -->
+                            <img src="brushStrokes-haushka/svgs/brushStroke-purple.svg" class="haushka-brushStroke" alt="svg brush stroke">
                         </li>
                     </ul>
                 </section>
+                
 
                 <section>   
-                    <h3>Autres</h3>
+                    <h3>Toutes couleurs</h3>
                 </section>
 
 
@@ -1209,6 +1216,14 @@
 
             document.addEventListener("DOMContentLoaded", function() {
 
+
+
+                // Click titre "Méthode Haushka" = retour links
+                document.getElementById('haushkaSubTitleDiv').addEventListener("click", function() {
+                    $("#hauskaContent").load("../haushkasContents/haushka-links.html", function() {
+
+                    });
+                })
 
 
 
@@ -1258,7 +1273,7 @@
                 document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
 
                     $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
-                        
+
                         document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
                     });
                 })
@@ -1387,8 +1402,7 @@
                     });
 
                 }
-
-
+                
 
 
             });
