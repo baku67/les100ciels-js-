@@ -224,6 +224,52 @@
       }
 
 
+      .hauskaContent section ul {
+        flex-direction: row;
+      }
+
+      .haushkaIntroTxt {
+        width: 90%;
+      }
+
+      .hauskaContent section h3 {
+        margin-block-end: 0.1em;
+        text-shadow: 1px 1px black;
+      }
+
+      .haushkaSubTitle {
+        font-family: 'Montserrat Alternates', sans-serif;
+        color: white;
+        margin-block-start: 0.4em;
+        margin-block-end: 0.2em;
+        font-size: 1.7em;
+        font-weight: 200;
+
+        text-shadow: 1px 1px black;
+      }
+
+      .hauskaContent section ul li {
+        position: relative;
+        margin: 0 3px;
+        padding: 15px 30px;
+        border-radius: 5px;
+        cursor: pointer;
+        min-width: 40px;
+        transition: all 0.4s;
+      }
+
+      .haushka-brushStroke {
+        width: 92px;
+        top: 0px;
+        left: 6px;
+      }
+
+      .mainHaushka {
+        width: 95%;
+        margin: 0 auto;
+      }
+
+
     .subTitleSection {
         font-size: 1.35em;
         margin-left: 5px;
@@ -295,7 +341,7 @@
 
     .subTitle {
         margin: 0;
-        font-size: 1.45em;
+        font-size: 1.52em;
 
         font-family: 'Montserrat Alternates', sans-serif;
         /* background: -webkit-linear-gradient(white, #ffffff42);
@@ -717,6 +763,8 @@
     .haikusSubTitle {
         margin-block-start: 0.3em;
         margin-block-end: 0.2em;
+
+        text-shadow: 1px 1px black;
     }
 
 
