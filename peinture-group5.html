@@ -12,7 +12,7 @@
         
         <h3 class="subTitle subTitleRubrique">
             <i id="prevRubriqueBtn" class="fa-solid fa-chevron-left"></i>
-            <span>Arbres de vie</span> 
+            <span><span class="linkSectionStrong">Arbres de vie</span></span> 
             <i id="nextRubriqueBtn" class="fa-solid fa-chevron-right"></i>
         </h3>
     </div>
@@ -318,10 +318,10 @@
             document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
 
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = prevImg.src;
-                document.getElementById('modalPreviewImgBackground').src = prevImg.src;
-                document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
-                document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = targetImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = targetImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
@@ -349,10 +349,10 @@
             document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
 
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = nextImg.src;
-                document.getElementById('modalPreviewImgBackground').src = nextImg.src;
-                document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
-                document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = targetImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = targetImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');

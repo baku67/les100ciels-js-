@@ -11,7 +11,7 @@
         
         <h3 class="subTitle subTitleRubrique">
             <i id="prevRubriqueBtn" class="fa-solid fa-chevron-left"></i>
-            <span>Triptyque "Les 7 ciels"</span> 
+            <span>Triptyque dédié à <span class="linkSectionStrong">Hildegarde</span></span> 
             <i id="nextRubriqueBtn" class="fa-solid fa-chevron-right"></i>
         </h3>
     </div>
@@ -22,8 +22,8 @@
     <div class="galleryShortcuts">
 
         <div class="gallery-item">
-            <img src="toiles/7ciels-1.jpg" alt="Toile 1">
-            <p class="titleImage">Le ciel vivant</p>
+            <img src="toiles/7ciels-3.jpg" alt="Toile 1">
+            <p class="titleImage">La terre vivante</p>
             <p class="descriptionImage"></p>
             <p class="indexImage">1</p>
         </div>
@@ -36,8 +36,8 @@
         </div>
 
         <div class="gallery-item">
-            <img src="toiles/7ciels-3.jpg" alt="Toile 3">
-            <p class="titleImage">La terre vivante</p>
+            <img src="toiles/7ciels-1.jpg" alt="Toile 3">
+            <p class="titleImage">Le ciel vivant</p>
             <p class="descriptionImage"></p>
             <p class="indexImage">3</p>
         </div>
@@ -54,8 +54,8 @@
     imagesObj = [
         {
             index: 1,
-            title: "Le ciel vivant",
-            src: "toiles/7ciels-1.jpg",
+            title: "La terre vivante",
+            src: "toiles/7ciels-3.jpg",
             description: "",
         },
         {
@@ -66,8 +66,8 @@
         },
         {
             index: 3,
-            title: "La terre vivante",
-            src: "toiles/7ciels-3.jpg",
+            title: "Le ciel vivant",
+            src: "toiles/7ciels-1.jpg",
             description: "",
         },
     ]
@@ -275,10 +275,10 @@
             document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
 
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = prevImg.src;
-                document.getElementById('modalPreviewImgBackground').src = prevImg.src;
-                document.getElementById('modalPreviewTitle').innerHTML = prevImg.title;
-                document.getElementById('modalPreviewDescription').innerHTML = prevImg.description;
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = targetImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = targetImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
@@ -306,10 +306,10 @@
             document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
 
             setTimeout(function() {
-                document.getElementById('modalPreviewImg').src = nextImg.src;
-                document.getElementById('modalPreviewImgBackground').src = nextImg.src;
-                document.getElementById('modalPreviewTitle').innerHTML = nextImg.title;
-                document.getElementById('modalPreviewDescription').innerHTML = nextImg.description;
+                document.getElementById('modalPreviewImg').src = targetImg.src;
+                document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+                document.getElementById('modalPreviewTitle').innerHTML = targetImg.title;
+                document.getElementById('modalPreviewDescription').innerHTML = targetImg.description;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
                 document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');

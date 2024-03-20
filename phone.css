@@ -103,7 +103,7 @@
         z-index: 99999999;
     }
     .titleDiv-Peinture .h1title {
-        padding: 13px 20px;
+        padding: 11px 20px 13px 10px;
     }
 
 
@@ -204,6 +204,7 @@
     .subTitleSection {
         font-size: 1.25em;
         margin-left: 5px;
+        font-weight: 400;
     }
 
     .subTitleAcryliqueLinks {
@@ -274,7 +275,9 @@
         /* background: -webkit-linear-gradient(white, #ffffff42);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; */
-        font-weight: 400;
+
+        /* font-weight: 400; */
+        font-weight: 200;
     }
 
     .subSubTitle {
