@@ -1,8 +1,8 @@
 <div id="contentSectionAcrylique" class="acrylique-content-fade">
 
 
-    <h2 class="subTitleSectionWrapper">
-        <i id="acryliqueBackBtn3" class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
+    <h2 id="acryliqueBackBtn2" class="subTitleSectionWrapper">
+        <i class="acryliqueBackBtn fa-solid fa-arrow-left"></i>
         <span class="subTitleSection"> Peinture acrylique</span>
     </h2>
 
@@ -358,6 +358,17 @@
 
     // Back Btn to "peinture acrylique"
     document.getElementById("acryliqueBackBtn3").addEventListener("click", function() {
+
+
+        // Retour du btn en haut à droite PC:
+        document.getElementById('acryliqueBackBtnAccueil').style.display = "block";
+        document.getElementById('acryliqueBackBtnAccueil').classList.add('fadeIn');
+        setTimeout(()=>{
+            document.getElementById('acryliqueBackBtnAccueil').classList.remove('fadeIn');
+            document.getElementById('acryliqueBackBtnAccueil').style.opacity = "1";
+        }, 501);
+
+
 
         document.getElementById("contentSectionAcrylique").classList.remove('acrylique-content-fade');
         document.getElementById("contentSectionAcrylique").style.opacity = "1";

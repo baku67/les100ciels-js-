@@ -1,11 +1,15 @@
 <div id="linksSectionAcrylique" class="acrylique-content-fade">
 
-    <div class="subTitleAcryliqueLinks">
-        <a href="./index.html" class="acryliqueBackBtnAccueil" style="position:relative; display:contents;">
-            <i id="acryliqueBackBtn" class="fa-solid fa-arrow-left"></i>
-        </a>
-        <h2 class="subTitle">Peinture acrylique</h2>
-    </div>
+    <!-- <a href="index.html"> -->
+        <div class="subTitleAcryliqueLinks">
+            <!-- <div class="acryliqueBackBtnAccueil" style="position:relative; display:contents;">
+                <i id="acryliqueBackBtn" class="fa-solid fa-arrow-left"></i>
+            </div> -->
+            <h2 class="subTitle">Peinture acrylique</h2>
+        </div>
+    <!-- </a> -->
+
+
 
     <div class="traitPeintureAcr"></div>
 
@@ -46,7 +50,24 @@
 
 <script>
 
+
+    // Disparition du btn en haut à droite PC
+    function disableBackToIndexBtn() {
+        document.getElementById('acryliqueBackBtnAccueil').classList.add('fadeOut');
+        setTimeout(()=>{
+            document.getElementById('acryliqueBackBtnAccueil').classList.remove('fadeOut');
+            document.getElementById('acryliqueBackBtnAccueil').style.opacity = "0";
+            document.getElementById('acryliqueBackBtnAccueil').style.display = "none";
+        }, 501);
+    }
+
+
+
+
+
     document.getElementById("link-section1").addEventListener("click", function() {
+
+        disableBackToIndexBtn();
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');   
 
@@ -109,6 +130,8 @@
 
     document.getElementById("link-section2").addEventListener("click", function() {
 
+        disableBackToIndexBtn();
+
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
         // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
@@ -170,6 +193,8 @@
 
     document.getElementById("link-section3").addEventListener("click", function() {
 
+        disableBackToIndexBtn();
+
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
         // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
@@ -226,6 +251,8 @@
 
 
     document.getElementById("link-section4").addEventListener("click", function() {
+
+        disableBackToIndexBtn();
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
@@ -285,6 +312,8 @@
 
     document.getElementById("link-section5").addEventListener("click", function() {
 
+        disableBackToIndexBtn();
+
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 
         // Chevalet fadeOu (remettre quand on click sur svg rubrique?)
@@ -343,6 +372,8 @@
 
 
     document.getElementById("link-section6").addEventListener("click", function() {
+
+        disableBackToIndexBtn();
 
         document.getElementById("linksSectionAcrylique").classList.add('acrylique-content-fadeOut');
 

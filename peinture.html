@@ -164,7 +164,7 @@
             }
 
             .galleryContainer {
-                transform: translateY(-50%); 
+                transform: translateY(-42%); 
                 display: inline-flex;
                 flex-direction: column;
 
@@ -173,7 +173,7 @@
                 /* right: 8vw; */
                 /* C'est une boucle ? */
                 right: 5vw;
-                top: 50%;
+                top: 42%;
 
                 width: 40%; 
                 margin: 0 auto;
@@ -881,6 +881,12 @@
 
 
 
+        <!-- Desktop: btn back-to-index en haut à droite: -->
+        <div id="acryliqueBackBtnAccueil" class="acryliqueBackBtnAccueil isDesktop">
+            <i id="acryliqueBackBtn" class="fa-solid fa-arrow-left"></i>
+        </div>
+
+
         <!-- Desktop: rectangle detection sideNav-desktop -->
         <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
 
@@ -1407,6 +1413,12 @@
                     });
 
                 }
+
+
+
+                document.getElementById("acryliqueBackBtnAccueil").addEventListener('click', function () {
+                    location.href = "../index.html";
+                });
 
 
             });
