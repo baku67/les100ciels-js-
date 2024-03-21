@@ -803,12 +803,48 @@
         <!-- Modal preview -->
         <div id="modalPreview">
 
+            <!-- BackgroundImage toile selected: -->
+            <img id="modalPreviewImgBackground" src="">
+
             <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
 
-            <div class="modalPreviewContent modalPreviewContent-HaikuMobil">
+            <div class="modalPreviewContent">
 
-                <h2 id="modalPreviewTitle"></h2>
-                <img id="modalPreviewImg" class="blueGlowFix-haikus" src="">
+                <img id="modalPreviewImg" src="">
+            
+                <!-- Nav desktop: (dimensions responsiv)-->
+                <div class="modalPreviewNavContainer">
+                    <svg id="modalPreviewPrevious" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
+                    preserveAspectRatio="xMidYMid meet">
+                        <g id="modalPreviewPreviousG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path d="M347 486 c-83 -37 -192 -100 -242 -140 -25 -20 -28 -28 -19 -43 22
+                        -37 267 -157 345 -169 39 -6 41 -6 37 17 -2 14 -25 41 -60 69 -48 38 -54 46
+                        -40 54 27 15 750 12 952 -4 256 -20 262 -20 270 10 3 14 4 36 0 50 -7 30 -4
+                        30 -335 11 -231 -14 -890 -11 -927 4 -14 6 -3 19 54 65 75 61 93 84 83 100
+                        -10 17 -37 11 -118 -24z"/>
+                    </svg>
+
+                    <svg id="modalPreviewNext" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
+                    preserveAspectRatio="xMidYMid meet">
+                        <g id="modalPreviewNextG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                        <path  d="M1242 509 c2 -14 25 -41 60 -69 48 -38 54 -46 40 -54 -27 -15 -750
+                        -12 -952 4 -256 20 -263 20 -270 -10 -4 -14 -3 -36 0 -50 8 -30 4 -30 335 -11
+                        231 14 890 11 927 -4 14 -6 3 -19 -54 -65 -39 -32 -75 -66 -80 -74 -14 -25 1
+                        -39 34 -32 75 15 332 158 345 193 3 7 0 20 -7 28 -29 35 -272 150 -341 161
+                        -39 6 -41 6 -37 -17z"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- Pagination (alimenté JS) -->
+                <div id="modalPreviewPaginationDiv">
+                    <!-- <span>1</span>
+                    <span>2</span> -->
+                </div>
 
             </div>
         </div>
@@ -1220,9 +1256,32 @@
 
                 // Click titre "Méthode Haushka" = retour links
                 document.getElementById('haushkaSubTitleDiv').addEventListener("click", function() {
-                    $("#hauskaContent").load("../haushkasContents/haushka-links.html", function() {
 
-                    });
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
+
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-links.html", function() {
+
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-yellow");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-blue");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-red");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-orange");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-vert");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-purple");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+
+                        });
+                    }, 500);
+
                 })
 
 
@@ -1230,47 +1289,73 @@
 
                 // Click section JAUNE:
                 document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
-                    $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
 
-                    });
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
+
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-yellow");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
-
 
 
                 // Click section BLEU:
                 document.getElementById("haushkas-bleus-btn").addEventListener("click", function() {
+
                     $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
 
+                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
                     });
                 })
 
 
                 // Click section ROUGE:
                 document.getElementById("haushkas-rouges-btn").addEventListener("click", function() {
+
                     $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
 
+                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
                     });
                 })
 
 
                 // Click section ORANGE:
                 document.getElementById("haushkas-oranges-btn").addEventListener("click", function() {
+
                     $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
 
+                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
                     });
                 })
 
 
                 // Click section VERT:
                 document.getElementById("haushkas-verts-btn").addEventListener("click", function() {
+
                     $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
 
+                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-vert");
                     });
                 })
 
 
                 // Click section VIOLET:
                 document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
+
 
                     $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
 
@@ -1282,6 +1367,21 @@
 
 
 
+
+
+                // Btn close Modal (+ remove anims modal)
+                document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
+
+                    document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                    document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
+                    setTimeout(() => {
+                        document.getElementById('modalPreview').style.display = "none";
+                        document.getElementById('modalPreview').style.opacity = "0";
+                        document.getElementById('modalPreview').style.transform = "translateY(20px)";
+                        document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
+                    }, 701)
+
+                })
 
 
                 // Menu burger mobile pop:
@@ -1327,46 +1427,6 @@
 
 
 
-
-
-
-
-                // Click image Haushka => Modal 
-                // document.getElementById('haikuImg').addEventListener('click', function() {
-
-                //     document.getElementById('modalPreviewImg').src = document.getElementById('haikuImg').src;
-                //     document.getElementById('modalPreviewTitle').innerHTML = document.getElementById('haikuTitle').innerText;
-                    
-
-                //     document.getElementById('modalPreview').style.display = "block";
-                //     document.getElementById('modalPreview').classList.add("fadeInModalPreview");
-                //     setTimeout(()=> {
-                //         document.getElementById('modalPreview').style.opacity = "1";
-                //         document.getElementById('modalPreview').style.transform = "translateY(0px)";
-                //         document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
-                //     }, 701)
-
-                // });
-
-
-                // // Btn close Modal (+ remove anims modal)
-                // document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
-
-                //     document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
-                //     document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
-                //     setTimeout(() => {
-                //         document.getElementById('modalPreview').style.display = "none";
-                //         document.getElementById('modalPreview').style.opacity = "0";
-                //         document.getElementById('modalPreview').style.transform = "translateY(20px)";
-                //         document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
-                //     }, 701)
-                // })
-
-
-
-
-
-
                 // DESKTOP hover title = sideNav-desktop:
                 
                 // Détection mobile (isMobile JS)
@@ -1402,10 +1462,9 @@
                     });
 
                 }
-                
-
 
             });
+
         </script>
 
 

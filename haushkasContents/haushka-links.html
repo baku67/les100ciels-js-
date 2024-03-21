@@ -57,12 +57,14 @@
 
 
 
+<!-- ATTENTIOn DOublon avec links initial /haishku.tml -->
 <script>
 
     // Click section JAUNE:
     document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
         $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
-            console.log('EQFAQEFQFZEEQFZQZF')
+            
+            document.getElementById("bodyHaushka").classList.add("bodyHaushka-yellow");
         });
     })
 
@@ -72,6 +74,7 @@
     document.getElementById("haushkas-bleus-btn").addEventListener("click", function() {
         $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
 
+            document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
         });
     })
 
@@ -79,6 +82,8 @@
     // Click section ROUGE:
     document.getElementById("haushkas-rouges-btn").addEventListener("click", function() {
         $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+
+            document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
 
         });
     })
@@ -88,6 +93,7 @@
     document.getElementById("haushkas-oranges-btn").addEventListener("click", function() {
         $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
 
+            document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
         });
     })
 
@@ -96,6 +102,7 @@
     document.getElementById("haushkas-verts-btn").addEventListener("click", function() {
         $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
 
+            document.getElementById("bodyHaushka").classList.add("bodyHaushka-vert");
         });
     })
 

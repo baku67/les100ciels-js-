@@ -280,9 +280,11 @@
       }
 
       .haushka-brushStroke {
-        width: 92px;
-        top: 0px;
-        left: 6px;
+        width: 110px;
+        top: -3px;
+        left: 1px;
+
+        filter: blur(1px);
       }
 
       .haushka-brushStroke-shrinked {

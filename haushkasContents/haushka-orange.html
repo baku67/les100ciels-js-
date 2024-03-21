@@ -41,3 +41,303 @@
     </div>
 
 </section>
+
+
+
+
+
+<script>
+    
+    imagesObj = [
+        {
+            index: 1,
+            src: "toiles/haushka/orange-1.jpg",
+        },
+        {
+            index: 2,
+            src: "toiles/haushka/orange-2.jpg",
+        },
+        {
+            index: 3,
+            src: "toiles/haushka/orange-3.jpg",
+        },
+        {
+            index: 4,
+            src: "toiles/haushka/orange-4.jpg",
+        },
+        {
+            index: 5,
+            src: "toiles/haushka/orange-5.jpg",
+        },
+    ]
+
+    // trouver l'objet selon index:
+    function findByPropertyValue(array, property, value) {
+        return array.find(function(element) {
+            return element[property] === value;
+        });
+    }
+
+
+    // onclick previews => modal :
+    galleryItems = document.querySelectorAll(".gallery-item");
+    // var index = 0;
+
+
+
+    // *** Suppression anciens écouteurs d'évènement Next/Previous (fix cumul entres rubriques)
+
+    // Obtenez une référence à l'élément
+    var modalPreviewPrevious = document.getElementById('modalPreviewPrevious');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewPrevious'
+    removeAllEventListeners(modalPreviewPrevious);
+
+    // Obtenez une référence à l'élément
+    var modalPreviewNext = document.getElementById('modalPreviewNext');
+    // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+    function removeAllEventListeners(element) {
+        var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+        element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+    }
+    // Supprimez tous les écouteurs d'événements de 'modalPreviewNext'
+    removeAllEventListeners(modalPreviewNext);
+
+
+
+    // Btn nextImg:
+    document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+    // console.log('CLICK SUIVANT rubrique3');
+
+    if(index+1 > imagesObj.length) {
+        var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+        index = 1;
+    }
+    else {
+        var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+        index += 1;
+    }
+
+    // Anims Slide Next
+    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+
+    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+    document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+    document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+    setTimeout(function() {
+        document.getElementById('modalPreviewImg').src = nextImg.src;
+        document.getElementById('modalPreviewImgBackground').src = nextImg.src;
+
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+        document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+
+        setTimeout(function() {
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        }, 301)
+    }, 301)
+
+
+    // Puce pagination:
+    paginationPuceSelect(index);
+    });
+
+    // Btn previousImg:
+    document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+    if(index-1 < 1) {
+        var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+        index = imagesObj.length;
+    }
+    else {
+        var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+        index -= 1;
+    }
+
+    // Anims Slide Prev
+    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+
+    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
+    document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+    document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+    setTimeout(function() {
+        document.getElementById('modalPreviewImg').src = prevImg.src;
+        document.getElementById('modalPreviewImgBackground').src = prevImg.src;
+
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+        document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+        setTimeout(function() {
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        }, 301)
+    }, 301)
+
+
+    // Puce pagination:
+    paginationPuceSelect(index);
+    });
+
+
+
+
+    galleryItems.forEach(function(item) {
+
+    item.addEventListener("click", function() {
+
+        // *** NAVIGATION prev/next image modal
+        // get l'index pour équivalent [] 
+        index = +item.querySelector('.indexImage').innerText;
+
+        // remove les puces .selected 
+        var paginationPuces = document.getElementsByClassName('paginationPuce');
+        Array.from(paginationPuces).forEach(function(elem) {
+            elem.classList.remove('selectedPagination');
+        });
+        // Pagination ajout .selected sur puce associée
+        document.getElementById(`paginationNbr${index}`).classList.add('selectedPagination');
+
+
+        // *** Modif modal 
+        document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+        document.getElementById('modalPreviewImgBackground').src = item.querySelector('img').src;
+        
+        document.getElementById('modalPreview').style.display = "block";
+        document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+        setTimeout(()=> {
+            document.getElementById('modalPreview').style.opacity = "1";
+            document.getElementById('modalPreview').style.transform = "translateY(0px)";
+            document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+        }, 701)
+    })
+    });
+
+
+
+
+
+    // pagination modalPreview:
+    function paginationClick(targetIndex) {
+
+    var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+
+    // Style puce selected:
+    // remove les .selected
+    var paginationPuces = document.getElementsByClassName('paginationPuce');
+    Array.from(paginationPuces).forEach(function(elem) {
+        elem.classList.remove('selectedPagination');
+    });
+    // ajout .selected à la puce cliquée
+    var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+    currentIcon.classList.add('selectedPagination');
+
+
+    // Anim CSS: Si target index < actuel ? SlidePrev() : SlideNext()
+    if(targetIndex < index) {
+        // Anims Slide Prev
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
+        document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+        setTimeout(function() {
+            document.getElementById('modalPreviewImg').src = targetImg.src;
+            document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            }, 301)
+        }, 301)
+    }
+    else if(targetIndex == index) {
+        // click sur la meme image: rien
+    }
+    else {
+        // Anims Slide Next
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+        document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+        document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+        setTimeout(function() {
+            document.getElementById('modalPreviewImg').src = targetImg.src;
+            document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            }, 301)
+        }, 301)
+    }
+
+
+    index = targetIndex;
+
+    }
+
+
+    function paginationPuceSelect(targetIndex) {
+    var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+    index = targetIndex;
+    // Style puce selected:
+    // remove les .selected
+    var paginationPuces = document.getElementsByClassName('paginationPuce');
+    Array.from(paginationPuces).forEach(function(elem) {
+        elem.classList.remove('selectedPagination');
+    });
+    // ajout .selected à la puce cliquée
+    var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+    currentIcon.classList.add('selectedPagination');
+    }
+
+
+    var paginationContent = "";
+
+    for (let index = 1; index <= imagesObj.length; index++) {
+    paginationContent += `<i id='paginationNbr${index}' onclick='paginationClick(${index})' class='paginationPuce fa-solid fa-circle'></i>`;
+    }
+    document.getElementById('modalPreviewPaginationDiv').innerHTML = paginationContent;
+
+
+
+</script>
