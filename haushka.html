@@ -1248,6 +1248,13 @@
         
 
 
+
+
+
+
+
+
+
         <script>
 
             document.addEventListener("DOMContentLoaded", function() {
@@ -1288,6 +1295,8 @@
 
 
                 // Click section JAUNE:
+                // <!-- ATTENTIOn DOublon avec links initial /haushka-links.tml -->
+
                 document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
 
                     document.getElementById('hauskaContent').classList.remove("fadeOut");
@@ -1314,42 +1323,107 @@
 
 
                 // Click section BLEU:
+                // <!-- ATTENTIOn DOublon avec links initial /haushka-links.tml -->
                 document.getElementById("haushkas-bleus-btn").addEventListener("click", function() {
 
-                    $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
 
-                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
-                    });
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
 
 
                 // Click section ROUGE:
                 document.getElementById("haushkas-rouges-btn").addEventListener("click", function() {
 
-                    $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
 
-                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
-                    });
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
 
 
                 // Click section ORANGE:
                 document.getElementById("haushkas-oranges-btn").addEventListener("click", function() {
 
-                    $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
 
-                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
-                    });
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
 
 
                 // Click section VERT:
                 document.getElementById("haushkas-verts-btn").addEventListener("click", function() {
 
-                    $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
 
-                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-vert");
-                    });
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-green");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
 
 
@@ -1357,10 +1431,26 @@
                 document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
 
 
-                    $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
+                    document.getElementById('hauskaContent').classList.remove("fadeOut");
+                    document.getElementById('hauskaContent').classList.add("fadeOut");
 
-                        document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
-                    });
+                    setTimeout(function() {
+
+                        $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
+                            
+                            document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
+
+                            document.getElementById('hauskaContent').style.opacity = "0";
+                            document.getElementById('hauskaContent').classList.remove("fadeOut");
+                            document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                            setTimeout(function() {
+                                document.getElementById('hauskaContent').style.opacity = "1";
+                                document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                            },500)
+                        });
+                        
+                    }, 500);
                 })
                 
 

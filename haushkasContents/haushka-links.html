@@ -60,60 +60,164 @@
 <!-- ATTENTIOn DOublon avec links initial /haishku.tml -->
 <script>
 
+
     // Click section JAUNE:
+    // <!-- ATTENTIOn DOublon avec links initial /haishku.tml -->
     document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
-        $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
+
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-yellow");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
             
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-yellow");
-        });
+        }, 500);
     })
 
 
 
     // Click section BLEU:
+    // <!-- ATTENTIOn DOublon avec links initial /haishku.tml -->
     document.getElementById("haushkas-bleus-btn").addEventListener("click", function() {
-        $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
 
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
-        });
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
+            
+        }, 500);
     })
 
 
     // Click section ROUGE:
     document.getElementById("haushkas-rouges-btn").addEventListener("click", function() {
-        $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
 
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
 
-        });
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
+            
+        }, 500);
     })
 
 
     // Click section ORANGE:
     document.getElementById("haushkas-oranges-btn").addEventListener("click", function() {
-        $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
 
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
-        });
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
+            
+        }, 500);
     })
 
 
     // Click section VERT:
     document.getElementById("haushkas-verts-btn").addEventListener("click", function() {
-        $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
 
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-vert");
-        });
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-green");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
+            
+        }, 500);
     })
 
 
     // Click section VIOLET:
     document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
 
-        $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
 
-            document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
-        });
+        document.getElementById('hauskaContent').classList.remove("fadeOut");
+        document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        setTimeout(function() {
+
+            $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
+                
+                document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
+
+                document.getElementById('hauskaContent').style.opacity = "0";
+                document.getElementById('hauskaContent').classList.remove("fadeOut");
+                document.getElementById('hauskaContent').classList.add("fadeIn");
+
+                setTimeout(function() {
+                    document.getElementById('hauskaContent').style.opacity = "1";
+                    document.getElementById('hauskaContent').classList.remove("fadeIn"); 
+                },500)
+            });
+            
+        }, 500);
     })
 
 </script>
