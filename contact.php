@@ -10,31 +10,43 @@
 
         // Check if the required keys "message" and "from" are set in $_POST
         if(isset($_POST["message"]) && isset($_POST["from"])) {
-            // Extract the message and sender's email
-            $message = $_POST["message"];
-            $from = $_POST["from"];
-            
-            // Additional optional fields
-            $name = isset($_POST["name"]) ? $_POST["name"] : "Non renseigné (optionnel)";
-            $lastName = isset($_POST["last_name"]) ? $_POST["last_name"] : "Non renseigné (optionnel)";
-            $phoneNumber = isset($_POST["phone_number"]) ? $_POST["phone_number"] : "Non renseigné (optionnel)";
 
-            // Construct the email content
-            $emailContent = "Nom du contact (optionnel): $name $lastName\n";
-            // $emailContent .= "Last Name: $lastName\n";
-            $emailContent .= "Numéro de téléphone (optionnel): $phoneNumber\n\n";
-            $emailContent .= "Email du contact: $from\n";
-            $emailContent .= "Message: \"$message\"\n";
-            
-            // Email configuration
-            $to = "christine.k2r2@free.fr";
-            $subject = "www.les100ciels.art : Nouveau message depuis le formulaire de contact";
-            // $headers = "From: $from\r\n";
-            $headers = "From: les100ciels.art\r\n";
+            // Sanitize and validate email
+            $from = filter_input(INPUT_POST, 'from', FILTER_SANITIZE_EMAIL);
+            if (!filter_var($from, FILTER_VALIDATE_EMAIL)) {
+                echo "Invalid email format.";
+                exit();
+            }
+            else {
+                // Sanitize other inputs
+                $message = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_STRING);
+                $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+                $lastName = filter_input(INPUT_POST, 'last_name', FILTER_SANITIZE_STRING);
+                $phoneNumber = filter_input(INPUT_POST, 'phone_number', FILTER_SANITIZE_STRING);
 
-            // Send the emails (cc)
-            mail($to, $subject, $emailContent, $headers);
-            mail("basile08@hotmail.fr", $subject, $emailContent, $headers);
+                // Additional optional fields
+                $name = $name ? $name : "Non renseigné (optionnel)";
+                $lastName = $lastName ? $lastName : "Non renseigné (optionnel)";
+                $phoneNumber = $phoneNumber ? $phoneNumber : "Non renseigné (optionnel)";
+
+                // Construct the email content
+                $emailContent = "Nom du contact (optionnel): $name $lastName\n";
+                // $emailContent .= "Last Name: $lastName\n";
+                $emailContent .= "Numéro de téléphone (optionnel): $phoneNumber\n\n";
+                $emailContent .= "Email du contact: $from\n";
+                $emailContent .= "Message: \"$message\"\n";
+
+                // Email configuration
+                $to = "christine.k2r2@free.fr";
+                $subject = "www.les100ciels.art : Nouveau message depuis le formulaire de contact";
+                // $headers = "From: $from\r\n";
+                $headers = "From: les100ciels.art\r\n";
+
+                // Send the emails (cc)
+                mail($to, $subject, $emailContent, $headers);
+                mail("basile08@hotmail.fr", $subject, $emailContent, $headers);
+            }
+            
         } else {
             echo "Vous devez remplir les champs obligatoires pour pouvoir vous recontacter.";
         }
