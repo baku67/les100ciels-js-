@@ -61,12 +61,63 @@
 <script>
 
 
+
+    // Hovers boutons => bodyHaushka background-color :
+    // Btn jaune:
+    document.getElementById('haushkas-jaunes-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 217 16 / 30%)";
+    })
+    document.getElementById('haushkas-jaunes-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+    // Btn violet:
+    document.getElementById('haushkas-violets-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(121 43 125 / 30%)";
+    })
+    document.getElementById('haushkas-violets-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+    // Btn rouge:
+    document.getElementById('haushkas-rouges-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(221 28 28 / 30%)";
+    })
+    document.getElementById('haushkas-rouges-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+
+    // Btn bleu:
+    document.getElementById('haushkas-bleus-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 11 97 / 30%)";
+    })
+    document.getElementById('haushkas-bleus-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+    // Btn orange:
+    document.getElementById('haushkas-oranges-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 120 0 / 30%)";
+    })
+    document.getElementById('haushkas-oranges-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+    // Btn vert:
+    document.getElementById('haushkas-verts-btn').addEventListener('mouseover', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 255 128 / 30%)";
+    })
+    document.getElementById('haushkas-verts-btn').addEventListener('mouseout', function() {
+        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+    })
+
+
+
     // Click section JAUNE:
     // <!-- ATTENTIOn DOublon avec links initial /haishku.tml -->
     document.getElementById("haushkas-jaunes-btn").addEventListener("click", function() {
 
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#353315";
 
         setTimeout(function() {
 
@@ -98,6 +149,9 @@
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
 
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#353315";
+
         setTimeout(function() {
 
             $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
@@ -125,6 +179,9 @@
 
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#351515";
 
         setTimeout(function() {
 
@@ -154,6 +211,9 @@
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
 
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#352315";
+
         setTimeout(function() {
 
             $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
@@ -182,6 +242,9 @@
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
 
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#203515";
+
         setTimeout(function() {
 
             $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
@@ -207,9 +270,11 @@
     // Click section VIOLET:
     document.getElementById("haushkas-violets-btn").addEventListener("click", function() {
 
-
         document.getElementById('hauskaContent').classList.remove("fadeOut");
         document.getElementById('hauskaContent').classList.add("fadeOut");
+
+        // Couleur bg du modal preview:
+        document.getElementById('modalPreview').style.backgroundColor = "#351530";
 
         setTimeout(function() {
 
