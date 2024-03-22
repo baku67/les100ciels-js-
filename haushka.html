@@ -1173,9 +1173,9 @@
         <div id="main" class="main mainHaushka" style="position:relative; background:rgba(0,0,0,0);">
 
             <div id="haushkaSubTitleDiv" class="" >
-                <h2 class="haushkaSubTitle">Méthode Haushka</h2>
+                <h2 class="haushkaSubTitle"><i id="haushkaBackIcon" class="fa-solid fa-arrow-left"></i> Méthode Haushka</h2>
 
-                <div class="traitHaiku"></div>
+                <div class="traitHaushka"></div>
 
             </div>
 
@@ -1270,11 +1270,13 @@
 
                         $("#hauskaContent").load("../haushkasContents/haushka-links.html", function() {
 
+                            document.getElementById('haushkaBackIcon').style.opacity = "0";
+
                             document.getElementById("bodyHaushka").classList.remove("bodyHaushka-yellow");
                             document.getElementById("bodyHaushka").classList.remove("bodyHaushka-blue");
                             document.getElementById("bodyHaushka").classList.remove("bodyHaushka-red");
                             document.getElementById("bodyHaushka").classList.remove("bodyHaushka-orange");
-                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-vert");
+                            document.getElementById("bodyHaushka").classList.remove("bodyHaushka-green");
                             document.getElementById("bodyHaushka").classList.remove("bodyHaushka-purple");
 
                             document.getElementById('hauskaContent').style.opacity = "0";
@@ -1305,6 +1307,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-jaune.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-yellow");
 
@@ -1332,6 +1336,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-bleu.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-blue");
 
@@ -1358,6 +1364,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-rouge.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-red");
 
@@ -1384,6 +1392,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-orange.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-orange");
 
@@ -1410,6 +1420,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-vert.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-green");
 
@@ -1437,6 +1449,8 @@
                     setTimeout(function() {
 
                         $("#hauskaContent").load("../haushkasContents/haushka-violet.html", function() {
+
+                            document.getElementById('haushkaBackIcon').style.opacity = "1";
                             
                             document.getElementById("bodyHaushka").classList.add("bodyHaushka-purple");
 
