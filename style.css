@@ -3,9 +3,9 @@
 } */
 
 html {
-  height: 100%;
+  /* height: 100%;
   background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  overflow: hidden;
+  overflow: hidden; */
 }
 
 html, body {
@@ -979,6 +979,44 @@ body {
     100% {
       /* filter: hue-rotate(360deg); */
   
+    }
+  }
+
+
+  .elfSvg {
+    /* transform: rotate(6deg) rotateY(180deg); */
+    transform: rotate(-15deg) rotateY(180deg);
+    position: absolute;
+    /* bottom: 0; */
+    right: 15px;
+
+    opacity: 0;
+    bottom: -400px;
+    animation: fadeInElf 4s 1s ease forwards, floatingElf 8s 5s ease-in-out infinite;
+  }
+  @keyframes fadeInElf {
+    from {
+      bottom: -400px;
+      opacity: 0;
+      transform: rotate(-35deg) rotateY(180deg);
+    }
+    to {
+      bottom: 0px;
+      opacity: 1;
+      transform: rotate(12deg) rotateY(180deg);
+    }
+  }
+  /* Transition anim infinite  */
+  @keyframes floatingElf {
+    0% {
+      transform: rotate(12deg) rotateY(180deg);
+    }
+    50% {
+      bottom: -35px;
+      transform: rotate(8deg) rotateY(180deg);
+    }
+    100% {
+      transform: rotate(12deg) rotateY(180deg);
     }
   }
 
