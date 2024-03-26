@@ -1257,54 +1257,70 @@
 
         <script>
 
+            // Détection mobile (isMobile JS)
+            var mobileDetection;
+            if (navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
+                mobileDetection = true ;
+            } else {
+                mobileDetection = false ;
+            }
+
+
             document.addEventListener("DOMContentLoaded", function() {
 
 
+                if(!mobileDetection) {
+                    // Hovers boutons => bodyHaushka background-color :
+                    // Btn jaune:
+                    document.getElementById('haushkas-jaunes-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 217 16 / 30%)";
+                    })
+                    document.getElementById('haushkas-jaunes-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
+                    // Btn violet:
+                    document.getElementById('haushkas-violets-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(121 43 125 / 30%)";
+                    })
+                    document.getElementById('haushkas-violets-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
+                    // Btn rouge:
+                    document.getElementById('haushkas-rouges-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(221 28 28 / 30%)";
+                    })
+                    document.getElementById('haushkas-rouges-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
 
-                // Hovers boutons => bodyHaushka background-color :
-                // Btn jaune:
-                document.getElementById('haushkas-jaunes-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 217 16 / 30%)";
-                })
-                document.getElementById('haushkas-jaunes-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
-                // Btn violet:
-                document.getElementById('haushkas-violets-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(121 43 125 / 30%)";
-                })
-                document.getElementById('haushkas-violets-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
-                // Btn rouge:
-                document.getElementById('haushkas-rouges-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(221 28 28 / 30%)";
-                })
-                document.getElementById('haushkas-rouges-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
-
-                // Btn bleu:
-                document.getElementById('haushkas-bleus-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 11 97 / 30%)";
-                })
-                document.getElementById('haushkas-bleus-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
-                // Btn orange:
-                document.getElementById('haushkas-oranges-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 120 0 / 30%)";
-                })
-                document.getElementById('haushkas-oranges-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
-                // Btn vert:
-                document.getElementById('haushkas-verts-btn').addEventListener('mouseover', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 255 128 / 30%)";
-                })
-                document.getElementById('haushkas-verts-btn').addEventListener('mouseout', function() {
-                    document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
-                })
+                    // Btn bleu:
+                    document.getElementById('haushkas-bleus-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 11 97 / 30%)";
+                    })
+                    document.getElementById('haushkas-bleus-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
+                    // Btn orange:
+                    document.getElementById('haushkas-oranges-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(255 120 0 / 30%)";
+                    })
+                    document.getElementById('haushkas-oranges-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
+                    // Btn vert:
+                    document.getElementById('haushkas-verts-btn').addEventListener('mouseover', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "rgb(0 255 128 / 30%)";
+                    })
+                    document.getElementById('haushkas-verts-btn').addEventListener('mouseout', function() {
+                        document.getElementById('bodyHaushka').style.backgroundColor = "#1e3169";
+                    })
+                }
 
 
 
@@ -1603,20 +1619,6 @@
 
 
                 // DESKTOP hover title = sideNav-desktop:
-                
-                // Détection mobile (isMobile JS)
-                var mobileDetection;
-                if (navigator.userAgent.match(/Android/i)
-                || navigator.userAgent.match(/webOS/i)
-                || navigator.userAgent.match(/iPhone/i)
-                || navigator.userAgent.match(/iPad/i)
-                || navigator.userAgent.match(/iPod/i)
-                || navigator.userAgent.match(/BlackBerry/i)
-                || navigator.userAgent.match(/Windows Phone/i)) {
-                    mobileDetection = true ;
-                } else {
-                    mobileDetection = false ;
-                }
 
                 if (!mobileDetection) {
 

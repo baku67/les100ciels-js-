@@ -63,9 +63,10 @@
               cursor: pointer;
 
               border: 2px solid transparent;
-              padding: 2px;
+              padding: 0px;
 
               border-radius: 9px;
+              box-shadow: 0px 0px 11px #e8ca7d85;
 
               transition: all 0.4s;
             }
@@ -1450,6 +1451,53 @@
 
 
 
+                <!-- Modal preview -->
+                <div id="modalPreview">
+
+                    <!-- BackgroundImage toile selected: -->
+                    <img id="modalPreviewImgBackground" src="">
+        
+                    <i id="closeModalPreviewBtn" class="closeModalPreview fa-solid fa-xmark"></i>
+        
+                    <div class="modalPreviewContent">
+        
+                        <img id="modalPreviewImg" src="">
+                    
+                        <!-- Nav desktop: (dimensions responsiv)-->
+                        <div class="modalPreviewNavContainer">
+                            <svg id="modalPreviewPrevious" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                                <g id="modalPreviewPreviousG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
+                                fill="#000000" stroke="none">
+                                <path d="M347 486 c-83 -37 -192 -100 -242 -140 -25 -20 -28 -28 -19 -43 22
+                                -37 267 -157 345 -169 39 -6 41 -6 37 17 -2 14 -25 41 -60 69 -48 38 -54 46
+                                -40 54 27 15 750 12 952 -4 256 -20 262 -20 270 10 3 14 4 36 0 50 -7 30 -4
+                                30 -335 11 -231 -14 -890 -11 -927 4 -14 6 -3 19 54 65 75 61 93 84 83 100
+                                -10 17 -37 11 -118 -24z"/>
+                            </svg>
+        
+                            <svg id="modalPreviewNext" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="171.000000pt" height="66.000000pt" viewBox="0 0 171.000000 66.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                                <g id="modalPreviewNextG" transform="translate(0.000000,66.000000) scale(0.100000,-0.100000)"
+                                fill="#000000" stroke="none">
+                                <path  d="M1242 509 c2 -14 25 -41 60 -69 48 -38 54 -46 40 -54 -27 -15 -750
+                                -12 -952 4 -256 20 -263 20 -270 -10 -4 -14 -3 -36 0 -50 8 -30 4 -30 335 -11
+                                231 14 890 11 927 -4 14 -6 3 -19 -54 -65 -39 -32 -75 -66 -80 -74 -14 -25 1
+                                -39 34 -32 75 15 332 158 345 193 3 7 0 20 -7 28 -29 35 -272 150 -341 161
+                                -39 6 -41 6 -37 -17z"/>
+                                </g>
+                            </svg>
+                        </div>
+        
+                        <!-- Pagination (alimenté JS) -->
+                        <div id="modalPreviewPaginationDiv">
+                        </div>
+        
+                    </div>
+                </div>
+        
 
 
 
@@ -1465,6 +1513,20 @@
 
 
             <div class="">
+                <!-- <!- - liste des images - -> -->
+                <div class="galleryShortcuts">
+
+                    <div class="gallery-item">
+                        <img src="toiles/aquarelle/aquarelle-1.jpg" alt="Aquarelle 1">
+                        <p class="indexImage">1</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="toiles/aquarelle/aquarelle-2cropped.jpg" alt="Aquarelle 2">
+                        <p class="indexImage">2</p>
+                    </div>
+
+                </div>
+
 
 
             </div>
@@ -1477,6 +1539,27 @@
 
 
     <script>
+
+
+        var imagesObj = [
+            {
+                index: 1,
+                src: "toiles/aquarelle/aquarelle-1.jpg",
+            },
+            {
+                index: 2,
+                src: "toiles/aquarelle/aquarelle-2cropped.jpg",
+            }
+        ]
+
+        // trouver l'objet selon index:
+        function findByPropertyValue(array, property, value) {
+            return array.find(function(element) {
+                return element[property] === value;
+            });
+        }
+
+
 
         // Détection mobile (isMobile JS)
         var mobileDetection;
@@ -1560,6 +1643,304 @@
             });
 
         }
+
+
+
+
+
+
+
+
+        // onclick previews => modal :
+        galleryItems = document.querySelectorAll(".gallery-item");
+        // var index = 0;
+
+
+
+        // *** Suppression anciens écouteurs d'évènement Next/Previous (fix cumul entres rubriques)
+
+        // Obtenez une référence à l'élément
+        var modalPreviewPrevious = document.getElementById('modalPreviewPrevious');
+        // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+        function removeAllEventListeners(element) {
+            var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+            element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+        }
+        // Supprimez tous les écouteurs d'événements de 'modalPreviewPrevious'
+        removeAllEventListeners(modalPreviewPrevious);
+
+        // Obtenez une référence à l'élément
+        var modalPreviewNext = document.getElementById('modalPreviewNext');
+        // Créez une fonction pour supprimer tous les écouteurs d'événements de l'élément
+        function removeAllEventListeners(element) {
+            var clone = element.cloneNode(true); // Clonez l'élément pour conserver ses attributs et ses enfants
+            element.parentNode.replaceChild(clone, element); // Remplacez l'élément original par le clone
+        }
+        // Supprimez tous les écouteurs d'événements de 'modalPreviewNext'
+        removeAllEventListeners(modalPreviewNext);
+
+
+        // Btn nextImg:
+        document.getElementById('modalPreviewNext').addEventListener("click", function() {
+
+            if(index+1 > imagesObj.length) {
+                var nextImg = findByPropertyValue(imagesObj, 'index', 1);
+                index = 1;
+            }
+            else {
+                var nextImg = findByPropertyValue(imagesObj, 'index', index+1);
+                index += 1;
+            }
+
+            // Anims Slide Next
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewImgBackground').src = nextImg.src;
+
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                }, 301)
+            }, 301)
+
+
+            // Puce pagination:
+            paginationPuceSelect(index);
+        });
+
+        // Btn previousImg:
+        document.getElementById('modalPreviewPrevious').addEventListener("click", function() {
+
+            if(index-1 < 1) {
+                var prevImg = findByPropertyValue(imagesObj, 'index', imagesObj.length);
+                index = imagesObj.length;
+            }
+            else {
+                var prevImg = findByPropertyValue(imagesObj, 'index', index-1);
+                index -= 1;
+            }
+
+            // Anims Slide Prev
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+            document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+            document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
+            document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+            document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+            setTimeout(function() {
+                document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewImgBackground').src = prevImg.src;
+
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                }, 301)
+            }, 301)
+
+
+            // Puce pagination:
+            paginationPuceSelect(index);
+        });
+
+
+
+
+
+        galleryItems.forEach(function(item) {
+
+            item.addEventListener("click", function() {
+
+                // *** NAVIGATION prev/next image modal
+                // get l'index pour équivalent [] 
+                index = +item.querySelector('.indexImage').innerText;
+
+                function findByPropertyValue(array, property, value) {
+                    return array.find(function(element) {
+                        return element[property] === value;
+                    });
+                }
+
+                // remove les puces .selected 
+                var paginationPuces = document.getElementsByClassName('paginationPuce');
+                Array.from(paginationPuces).forEach(function(elem) {
+                    elem.classList.remove('selectedPagination');
+                });
+                // Pagination ajout .selected sur puce associée
+                document.getElementById(`paginationNbr${index}`).classList.add('selectedPagination');
+
+
+                // *** Modif modal 
+                document.getElementById('modalPreviewImg').src = item.querySelector('img').src;
+                document.getElementById('modalPreviewImgBackground').src = item.querySelector('img').src;
+                
+                document.getElementById('modalPreview').style.display = "block";
+                document.getElementById('modalPreview').classList.add("fadeInModalPreview");
+                setTimeout(()=> {
+                    document.getElementById('modalPreview').style.opacity = "1";
+                    document.getElementById('modalPreview').style.transform = "translateY(0px)";
+                    document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+                }, 701)
+            })
+        });
+
+
+
+
+
+
+
+        // pagination modalPreview:
+        function paginationClick(targetIndex) {
+
+            var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+
+            // Style puce selected:
+            // remove les .selected
+            var paginationPuces = document.getElementsByClassName('paginationPuce');
+            Array.from(paginationPuces).forEach(function(elem) {
+                elem.classList.remove('selectedPagination');
+            });
+            // ajout .selected à la puce cliquée
+            var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+            currentIcon.classList.add('selectedPagination');
+
+            
+            // Anim CSS: Si target index < actuel ? SlidePrev() : SlideNext()
+            if(targetIndex < index) {
+                // Anims Slide Prev
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight1');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').src = targetImg.src;
+                    document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+                    document.getElementById('modalPreviewImg').classList.add('previewImg-slideRight2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                    document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+                    setTimeout(function() {
+                        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+                        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                    }, 301)
+                }, 301)
+            }
+            else if(targetIndex == index) {
+                // click sur la meme image: rien
+            }
+            else {
+                // Anims Slide Next
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
+                document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight2');
+
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+
+                document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft1');
+                document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeOut');
+
+                setTimeout(function() {
+                    document.getElementById('modalPreviewImg').src = targetImg.src;
+                    document.getElementById('modalPreviewImgBackground').src = targetImg.src;
+
+                    document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
+                    document.getElementById('modalPreviewImg').classList.add('previewImg-slideLeft2');
+                    document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeOut');
+                    document.getElementById('modalPreviewImgBackground').classList.add('bgToile-fadeIn');
+
+
+                    setTimeout(function() {
+                        document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft2');
+                        document.getElementById('modalPreviewImgBackground').classList.remove('bgToile-fadeIn');
+                    }, 301)
+                }, 301)
+            }
+
+
+            index = targetIndex;
+
+        }
+
+
+        function paginationPuceSelect(targetIndex) {
+            var targetImg = findByPropertyValue(imagesObj, 'index', targetIndex);
+            index = targetIndex;
+            // Style puce selected:
+            // remove les .selected
+            var paginationPuces = document.getElementsByClassName('paginationPuce');
+            Array.from(paginationPuces).forEach(function(elem) {
+                elem.classList.remove('selectedPagination');
+            });
+            // ajout .selected à la puce cliquée
+            var currentIcon = document.getElementById(`paginationNbr${targetIndex}`);
+            currentIcon.classList.add('selectedPagination');
+        }
+
+
+        var paginationContent = "";
+
+        for (let index = 1; index <= imagesObj.length; index++) {
+            paginationContent += `<i id='paginationNbr${index}' onclick='paginationClick(${index})' class='paginationPuce fa-solid fa-circle'></i>`;
+        }
+        document.getElementById('modalPreviewPaginationDiv').innerHTML = paginationContent;
+
+
+
+
+
+
+
+        // Btn close Modal (+ remove anims modal)
+        document.getElementById('closeModalPreviewBtn').addEventListener("click", function() {
+
+            document.getElementById('modalPreview').classList.remove("fadeInModalPreview");
+            document.getElementById('modalPreview').classList.add("fadeOutModalPreview");
+            setTimeout(() => {
+                document.getElementById('modalPreview').style.display = "none";
+                document.getElementById('modalPreview').style.opacity = "0";
+                document.getElementById('modalPreview').style.transform = "translateY(20px)";
+                document.getElementById('modalPreview').classList.remove("fadeOutModalPreview");
+            }, 701)
+
+        })
+
+
+
+
+
+
 
     </script>
 

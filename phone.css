@@ -448,6 +448,33 @@
     }
 
 
+
+
+
+    .bodyHaushka-yellow {
+        background-color: rgb(121 107 34) !important;
+    }
+    .bodyHaushka-purple {
+        background-color: rgb(96 46 99) !important;
+    }
+    .bodyHaushka-red {
+        background-color: rgb(121 52 52) !important;
+    }   
+
+    .bodyHaushka-blue {
+        background-color: rgb(63 72 145) !important;
+    }
+    .bodyHaushka-orange {
+        background-color: rgb(137 86 41) !important;
+    }
+    .bodyHaushka-green {
+        background-color: rgb(50 105 67) !important;
+    }
+
+
+
+
+
     .modalPreviewTitle {
 
     }
