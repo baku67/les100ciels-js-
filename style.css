@@ -1123,6 +1123,7 @@ body {
       transform: translateY(0px);
     }
   }
+
   /* Anim fadeOut JS depuis peinture.html (JS global) */
   .fadeOutModalPreview {
     animation: fadeOutModalPreview 0.7s 0s ease forwards;
@@ -1158,12 +1159,14 @@ body {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+    margin-top: 60px;
   }
 
   .modalPreviewContent {
     text-align: center;
     width: 70%;
     margin: 0 auto;
+    margin-top: 60px;
   }
   .modalPreviewContent h2 {
     color: #e8ca7d;
@@ -1181,6 +1184,11 @@ body {
     color: white;
 
     height: 5vh;
+  }
+
+  .modalPreview-contes .modalPreviewContent p {
+    height: auto;
+    text-align: justify;
   }
 
   .modalPreviewNavContainer {
@@ -1213,6 +1221,15 @@ body {
       opacity: 1;    }
   }
 
+
+
+  #modalPreviewPaginationDiv {
+    margin-bottom: 55px;
+  }
+
+  .modalPreview-contes {
+    overflow-y: scroll;
+  }
 
 
   

@@ -303,6 +303,14 @@
       }
 
 
+      #modalPreviewPaginationDiv {
+        margin-bottom: 35px;
+      }
+
+      .modalPreview-contes .modalPreviewContent p {
+        text-align: left;
+      }
+
       .haushka-brushStroke-central {
         position: absolute;
         opacity: 1;
@@ -424,6 +432,10 @@
 
     .modalPreviewContent {
         width: 85%;
+        margin-top: 25px;
+    }
+    .modalPreviewContent-Haushka {
+        margin-top: 0 !important;
     }
 
     #modalPreviewImg {

@@ -281,6 +281,11 @@
 
             svgArbreGroup.style.opacity = "0";
             svgArbreGroup.classList.remove('svgFadeOut');
+
+            // Ajout scroll-y modal contes:
+            document.getElementById('modalPreview').classList.add('modalPreview-contes');
+            // Fix fit background img modal:
+            document.getElementById('modalPreviewImgBackground').style.height = "auto";
             
             $("#gallery").load("peinture-group4.html", function() {
                 
