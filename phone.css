@@ -448,11 +448,22 @@
     }
 
 
+    #bgStars {
+        transition: all 1.5s;
+      }
+
+
+    .bgStarsAnimLutinClickMobile {
+        transform: scale(3);
+        /* filter: blur(5px); */
+        opacity: 0;
+      }
 
 
     .elfSvg {
         width: 80%;
 
+        z-index: 999999999;
 
         /* transform: rotate(6deg) rotateY(180deg); */
         transform: rotate(-15deg) rotateY(180deg);
@@ -488,6 +499,38 @@
         100% {
           transform: rotate(12deg) rotateY(180deg);
         }
+      }
+
+
+
+      #aquarellePng {
+        position: absolute;
+        object-fit: cover;
+        left: 50%;
+        transform: translateX(-50%);
+        overflow: visible;
+    
+        /* Test très gros png: */
+        /* height: 200px;
+        bottom: 100px; */
+        height: 400px;
+        bottom: 63px;
+    
+        opacity: 0;
+        transition: all 1.7s 0.1s ;
+      }
+
+
+      /* Test très gros png: */
+      .aquarellePngFadeIn {
+        height: 719px !important;
+        bottom: -188px !important;
+        opacity: 0.7 !important;
+      }
+
+
+      .elfSvg:hover {
+        filter: drop-shadow(1px 1px 5px black);
       }
     
 

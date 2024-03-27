@@ -20,9 +20,19 @@
 
         <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
 
-        <title>Mentions légales</title>
+        <link rel="preload" as="image" href="aquarelle.html" />
+        <link rel="preload" as="image" href="aquarelle-mobile.png" />
+
+        <title>Aquarelle</title>
+
+
+
 
         <style>
+
+            html {
+                overflow: hidden;
+            }
 
             #modalPreview {
                 top: 0px;
@@ -812,7 +822,7 @@
 
 
 
-    <body class="bodyMentionsLegales">
+    <body id="bodyAquarelle" class="bodyMentionsLegales">
 
 
         <!-- Desktop: rectangle detection sideNav-desktop -->
@@ -1107,7 +1117,7 @@
 
 
         <!-- Try bg étoile  -->
-        <div class="bgStars">
+        <div id="bgStars" class="bgStars">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
@@ -1125,18 +1135,25 @@
 
 
 
+
         <!-- svg enfant lutin: -->
         <div class="svgLutin-mobileFixOverflow">
+
+            <!-- png taches aquarelles: (poid responsiv (url JS))-->
+            <!-- <img id="aquarellePng" class="isDesktop" src="aquarelle.png" alt="tâches d'aquarelle">
+            <img id="aquarellePng" class="isMobile" src="aquarelle-mobile.png" alt="tâches d'aquarelle"> -->
+            <img id="aquarellePng" src="" alt="tâches d'aquarelle">
+
             <?xml version="1.0" standalone="no"?>
             <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
             "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-            <svg class="elfSvg" version="1.0" xmlns="http://www.w3.org/2000/svg"
+            <svg id="elfSvg" class="elfSvg" version="1.0" xmlns="http://www.w3.org/2000/svg"
                             width="300.000000pt" height="300.000000pt" viewBox="0 0 500.000000 500.000000"
                             preserveAspectRatio="xMidYMid meet">
                             <metadata>
                             Created by potrace 1.14, written by Peter Selinger 2001-2017
                             </metadata>
-                            <g transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
+                            <g id="elfSvg-g" transform="translate(0.000000,500.000000) scale(0.100000,-0.100000)"
                             fill="#e8ca7d" stroke="none">
                             <path d="M552 4445 c-61 -78 -27 -296 64 -404 99 -118 301 -188 468 -162 209
                             32 356 24 504 -25 78 -26 192 -96 192 -117 0 -7 -16 -29 -36 -48 -78 -74 -232
@@ -1525,7 +1542,7 @@
 
 
         <!-- Contenu Page: -->
-        <main id="mentionsLegales-content" class="mentionsLegalesMain">
+        <main id="mentionsLegales-content" class="mentionsLegalesMain" style="height:-webkit-fill-available;">
 
             <h2 class="haikusSubTitle">Aquarelle</h2>
 
@@ -1595,6 +1612,69 @@
             mobileDetection = false ;
         }
 
+
+        // Chargement de la bonne mage aquarelle.png selon mobile ou Desktop:
+        if(mobileDetection) {
+            document.getElementById('aquarellePng').src = "aquarelle-mobile.png";
+        }
+        else {
+            document.getElementById('aquarellePng').src = "aquarelle.png";
+        }
+
+
+        // Click lutin:
+        if(mobileDetection) {
+            document.getElementById("elfSvg").addEventListener("click", function() {
+
+                // Il faut adapter le body comme sur Haushka pour changer le gradient:
+                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
+
+                document.getElementById("bgStars").classList.toggle('bgStarsAnimLutinClickMobile');
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+            })
+        }
+
+        else {
+            document.getElementById("elfSvg").addEventListener("mouseenter", function() {
+
+                // Il faut adapter le body comme sur Haushka pour changer le gradient:
+                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
+
+                document.getElementById("bgStars").style.filter = "blur(12px)";
+                document.getElementById("bgStars").style.transform = "scale(3)";
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
+                    elem.style.borderColor = "#181818";
+                });
+
+            })
+
+            document.getElementById("elfSvg").addEventListener("mouseleave", function() {
+
+                // Il faut adapter le body comme sur Haushka pour changer le gradient:
+                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
+
+                document.getElementById("bgStars").style.filter = "blur(0px)";
+                document.getElementById("bgStars").style.transform = "scale(1)";
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
+                    elem.style.borderColor = "transparent";
+                });
+
+            })
+        }
 
 
 

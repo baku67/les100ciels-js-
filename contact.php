@@ -160,7 +160,7 @@
             <ul>
                 <!-- <li><a href="index.html">Home</a></li> -->
                 <li><a href="peinture.html">Acrylique</a></li>
-                <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+                <li><a href="aquarelle.html">Aquarelle</a></li>
                 <li><a href="haushka.html">Haushka</a></li>
                 <li><a href="haikus.html">Ha&iuml;kus</a></li>
                 <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
@@ -420,7 +420,7 @@
             <ul>
               <!-- <li><a href="index.html">Home</a></li> -->
               <li><a href="peinture.html">Acrylique</a></li>
-              <li><a href="#" class="navBurgerDisabled">Aquarelle</a></li>
+              <li><a href="aquarelle.html">Aquarelle</a></li>
               <li><a href="haushka.html">Haushka</a></li>
               <li><a href="haikus.html">Ha&iuml;kus</a></li>
               <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>

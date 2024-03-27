@@ -258,6 +258,19 @@ body {
   }
 }
 
+#bodyAquarelle {
+  overflow: hidden;
+  position: relative;
+
+  transition: all 1.5s;
+}
+
+#bgStars {
+  transition: all 2s;
+}
+
+
+
 
     /* RAJOUT sur la div wrapper bgStars: Les étoiles filantes => */
     .bgStars span{
@@ -787,6 +800,14 @@ body {
   } 
 
 
+  #svgAuroreBoreale {
+    position: absolute;
+    fill: none;
+    stroke: #ffecbc;
+    filter: blur(0px) drop-shadow(0px 0px 2px #ffecbc);
+  }
+
+
   .accueilLink-2:hover {
     /* animation: linkHover2 0.4s 0s ease normal forwards; */
     color: #ffa97e;
@@ -1012,6 +1033,8 @@ body {
 
 
   .elfSvg {
+    cursor: pointer;
+    z-index: 9999999999999;
     /* transform: rotate(6deg) rotateY(180deg); */
     transform: rotate(-15deg) rotateY(180deg);
     position: absolute;
@@ -1020,6 +1043,7 @@ body {
 
     opacity: 0;
     bottom: -400px;
+    transition: all 0.5s;
     animation: fadeInElf 4s 1s ease forwards, floatingElf 8s 5s ease-in-out infinite;
   }
   @keyframes fadeInElf {
@@ -1048,6 +1072,43 @@ body {
     }
   }
 
+  .elfSvg:hover {
+    filter: drop-shadow(1px 1px 10px rgb(232, 202, 125));
+  }
+
+
+  #aquarellePng {
+    
+    /* left: 50%;
+    transform: translateX(-50%);
+    height: 200px;
+    bottom: 100px; */
+    width: 150%;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+
+    position: absolute;
+    object-fit: cover;
+    overflow: visible;
+    opacity: 0;
+    transition: all 1.7s 0.2s ;
+  }
+
+  .aquarellePngFadeIn {
+    width: 170% !important;
+    /* height: 351px !important; */
+    /* bottom: 60px !important; */
+    opacity: 0.8 !important;
+  }
+
+
+  #elfSvg-g {
+    transition: all 1.5s;
+  }
+  .elfSvg-g-color {
+    fill: white !important;
+  }
 
 
   .bodyContact {
