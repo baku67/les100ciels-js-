@@ -1154,6 +1154,10 @@ body {
 
   #h1titleAquarelle {
     transition: all 0.5s;
+
+    font-weight: 200 !important;
+    -webkit-text-fill-color: #f3eeee;
+    text-shadow: 0px 0px 6px black;
   }
 
 
@@ -1307,6 +1311,12 @@ body {
     width: 70%;
     margin: 0 auto;
     margin-top: 60px;
+
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .modalPreviewContent h2 {
     color: #e8ca7d;
@@ -2138,13 +2148,23 @@ body {
 
 
     #modalPreviewImgBackground {
-      position: absolute;
+      /* position: absolute;
       z-index: -5;
       height: 100%;
       width: 100%;
       object-fit: cover;
 
-      opacity: 0.055;
+      opacity: 0.055; */
+
+      position: absolute;
+      z-index: -5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: visible;
+      height: auto;
+      width: 150%;
+      opacity: 0.4;
     }
 
 
@@ -2190,10 +2210,31 @@ body {
       left: 25%;
       transform: translateX(-25%) translateY(50%);
       width: fit-content;
+
+      animation: chevaletWrapper-glowing 3s 0s linear infinite;
+      filter: drop-shadow(1px 2px 8px #ffdc8461);
+    }
+    @keyframes chevaletWrapper-glowing {
+      0% {
+        filter: drop-shadow(1px 2px 15px #ffdc8461);
+      }
+      33.33% {
+        filter: drop-shadow(1px 2px 15px #ffdc8400);
+      }
+      66.67% {
+        filter: drop-shadow(1px 2px 15px #ffdc8400);
+      }
+      100% {
+        filter: drop-shadow(1px 2px 15px #ffdc8461);
+      }
     }
 
 
 
+    .closeModalPreview-aquarelle {
+      text-shadow: 0px 0px 2px rgb(12, 12, 12);
+      color: #fbf9f9;
+    }
 
     .svgArbrePNG {
       /* MAJ pour wrapper (pour onClick changer toiles) */
@@ -2992,7 +3033,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
 
-    background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, rgb(255 255 255 / 52%) 50%, rgb(90 90 90 / 0%) 100%);
+    background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, rgb(255 255 255 / 62%) 50%, rgb(90 90 90 / 0%) 100%);
 
     animation: fadeIn-traitAquarelle 2s 1s ease forwards;
   }
@@ -3080,11 +3121,13 @@ body {
       margin-block-start: 0em;
 
       margin-bottom: 0;
-      padding-bottom: 0.7em;
+      padding-bottom: 0.6em;
 
-      font-size: 2em;
+      /* font-size: 2em; */
+      font-size: 2.1em;
       font-weight: 200;
-      text-shadow: 2px 2px black;
+      /* text-shadow: 2px 2px black; */
+      text-shadow: 0px 0px 3px black;
 
       opacity: 0;
       transform: translateY(60px);

@@ -374,7 +374,6 @@
     })
 
 
-
     document.getElementById("link-section6").addEventListener("click", function() {
 
         disableBackToIndexBtn();
@@ -517,6 +516,11 @@
     var chevaletToile = document.getElementById('chevalet2Toile-img');
 
     var firstClickChevalet = false;
+
+    // Stop glowing chevalet quand on hover PC (ducoup quand click mobile aussi):
+    chevaletWrapper.addEventListener("mouseover", function() {
+        chevaletWrapper.style.animation = "none";
+    })
 
     chevaletWrapper.addEventListener("click", function() {
 
