@@ -460,6 +460,19 @@
       }
 
 
+    .svgBurgerHomeBtn-aquarelle {
+        filter: drop-shadow(0px 0px 3px black);
+    }
+
+    .svgBurgerHomeBtn-aquarelle g {
+        fill: #f4f1ea;
+    }
+
+    .sideNavMentionsAquarelle.active {
+        border-left: 1px solid #cccccc !important;
+    }
+
+
     .elfSvg {
         width: 80%;
 

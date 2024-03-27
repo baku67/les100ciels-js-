@@ -1117,7 +1117,9 @@ body {
     /* bottom: 60px !important; */
     opacity: 0.8 !important;
 
+    /* animation: aquarellePngFadeIn-infinitePc 22s 4s linear infinite, aquarellePngFadeIn-infinitePc-movement 8s 5s ease-in-out infinite; */
     animation: aquarellePngFadeIn-infinitePc 22s 4s linear infinite;
+
   }
   @keyframes aquarellePngFadeIn-infinitePc {
     from {
@@ -1126,6 +1128,35 @@ body {
     to {
       filter: hue-rotate(360deg);
     }
+  }
+  @keyframes aquarellePngFadeIn-infinitePc-movement {
+    0% {
+      bottom: 50%;
+      transform: translate(-50%, 50%) rotate(1deg);
+    }
+    50% {
+      bottom: 55%;
+      transform: translate(-50%, 50%) rotate(-1deg);
+    }
+    100% {
+      bottom: 50%;
+      transform: translate(-50%, 50%) rotate(1deg);
+    }
+  }
+
+  .chatSvg {
+    position: absolute;
+    z-index: 99999999999;
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    bottom: 50px;
+    opacity: 0.6;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .chatSvg g {
+    fill: #e7d5a4;
   }
 
 
