@@ -1657,9 +1657,6 @@
         if(mobileDetection) {
             document.getElementById("elfSvg").addEventListener("click", function() {
 
-                // Il faut adapter le body comme sur Haushka pour changer le gradient:
-                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
-
                 document.getElementById("bgStars").classList.toggle('bgStarsAnimLutinClickMobile');
 
                 document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
@@ -1687,9 +1684,6 @@
         else {
             document.getElementById("elfSvg").addEventListener("mouseenter", function() {
 
-                // Il faut adapter le body comme sur Haushka pour changer le gradient:
-                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
-
                 document.getElementById("bgStars").style.filter = "blur(12px)";
                 document.getElementById("bgStars").style.transform = "scale(3)";
 
@@ -1704,10 +1698,8 @@
 
             })
 
+            
             document.getElementById("elfSvg").addEventListener("mouseleave", function() {
-
-                // Il faut adapter le body comme sur Haushka pour changer le gradient:
-                // document.getElementById("bodyAquarelle").style.background = "linear-gradient(180deg, rgb(70 71 135) 0%, rgb(137 111 46) 100%)";
 
                 document.getElementById("bgStars").style.filter = "blur(0px)";
                 document.getElementById("bgStars").style.transform = "scale(1)";
