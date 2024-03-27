@@ -1125,6 +1125,11 @@ body {
   }
 
 
+  .aquarelle-item-border-lutin {
+    border-color: #181818c7 !important;
+  }
+
+
   .bodyContact {
     /* background: rgb(63 17 59);
     background: -moz-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
@@ -2941,11 +2946,21 @@ body {
   .traitAquarelle {
     position: relative;
     height: 1px;
-    width: 30%;
+    width: 0%;
     left: 50%;
     transform: translateX(-50%);
 
     background: -webkit-linear-gradient(left, rgb(90 90 90 / 0%) 0%, rgb(255 255 255 / 52%) 50%, rgb(90 90 90 / 0%) 100%);
+
+    animation: fadeIn-traitAquarelle 2s 1s ease forwards;
+  }
+  @keyframes fadeIn-traitAquarelle {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 30%;
+    }
   }
 
   .traitHaushka {
@@ -3015,6 +3030,36 @@ body {
 
       text-shadow: 2px 2px black;
     }
+
+
+    .aquarelleSubTitle {
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: white;
+      margin-block-start: 0em;
+
+      margin-bottom: 0;
+      padding-bottom: 0.7em;
+
+      font-size: 2em;
+      font-weight: 200;
+      text-shadow: 2px 2px black;
+
+      opacity: 0;
+      transform: translateY(60px);
+      animation: aquarelleSubTitle-slideIn 1.4s 1.6s ease forwards;
+    }
+    @keyframes aquarelleSubTitle-slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(60px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    
 
     .haushkaSubTitle {
       width: fit-content;
