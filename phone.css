@@ -504,27 +504,40 @@
 
 
       #aquarellePng {
-        position: absolute;
+        /* Aquarelle moitié bas mobile: */
+
+        /* position: absolute;
         object-fit: cover;
         left: 50%;
         transform: translateX(-50%);
         overflow: visible;
     
-        /* Test très gros png: */
-        /* height: 200px;
-        bottom: 100px; */
         height: 400px;
         bottom: 63px;
     
         opacity: 0;
-        transition: all 1.7s 0.1s ;
+        transition: all 1.7s 0.1s ; */
+
+        /* Aquarelle png fill/cover: */
+        position: absolute;
+        object-fit: cover;
+        left: 50%;
+        transform: translate(-50%, 45%);
+        overflow: visible;
+        height: 160%;
+        bottom: 55%;
+        opacity: 0;
+        transition: all 1.7s 0.1s;
       }
 
 
       /* Test très gros png: */
       .aquarellePngFadeIn {
-        height: 719px !important;
+        /* height: 719px !important;
         bottom: -188px !important;
+        opacity: 0.7 !important; */
+
+        height: 170%;
         opacity: 0.7 !important;
       }
 
@@ -539,7 +552,10 @@
         position: absolute;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+
+        /* Re-visible pour le png aquarelle: */
+        /* overflow: hidden; */
+        overflow: visible;
     }
 
 
@@ -550,6 +566,16 @@
         box-shadow: 0px 0px 11px #17bfe5 !important;
       }
 
+
+
+      .aquarelleBurgersPng {
+        position: absolute;
+        bottom: -10%;
+        left: 50%;
+        transform: translate(-50%, -10%);
+        width: 160%;
+        opacity: 0.4;
+      }
 
 
 

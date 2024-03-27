@@ -1111,6 +1111,20 @@ body {
   }
 
 
+  .aquarelleBurgersPng {
+    position: absolute;
+    bottom: -30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    width: 160%;
+    opacity: 0.4;
+  }
+
+  #h1titleAquarelle {
+    transition: all 0.5s;
+  }
+
+
   .bodyContact {
     /* background: rgb(63 17 59);
     background: -moz-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
