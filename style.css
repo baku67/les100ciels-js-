@@ -1100,6 +1100,16 @@ body {
     /* height: 351px !important; */
     /* bottom: 60px !important; */
     opacity: 0.8 !important;
+
+    animation: aquarellePngFadeIn-infinitePc 15s 2s linear infinite;
+  }
+  @keyframes aquarellePngFadeIn-infinitePc {
+    from {
+      filter: hue-rotate(0deg);
+    }
+    to {
+      filter: hue-rotate(360deg);
+    }
   }
 
 
