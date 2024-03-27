@@ -1123,10 +1123,16 @@ body {
 
   .aquarelleBurgersPng {
     position: absolute;
-    bottom: -30%;
+    
+    /* bottom: -30%;
     left: 50%;
     transform: translate(-50%, -30%);
-    width: 160%;
+    width: 160%; */
+    bottom: -60%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    height: 150%;
+
     opacity: 0.4;
   }
 

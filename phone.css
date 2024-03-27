@@ -575,10 +575,18 @@
 
       .aquarelleBurgersPng {
         position: absolute;
-        bottom: -10%;
+
+        /* bottom: -10%;
         left: 50%;
         transform: translate(-50%, -10%);
+        width: 160%; */
+        bottom: 55%;
+        left: 50%;
+        transform: translate(-50%, 45%);
         width: 160%;
+        object-fit: cover;
+        z-index: -3;
+
         opacity: 0.4;
       }
 
