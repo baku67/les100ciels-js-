@@ -1663,20 +1663,13 @@
 
                 document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
 
-
                 document.querySelectorAll(".gallery-item img").forEach(function(elem) {
                     elem.classList.toggle('aquarelle-item-border-lutin');
                 });
 
-
-
-                // BurgerIcon style fix quand aquarellePng:
                 document.querySelectorAll(".burger-icon span").forEach(function(elem) {
-                    // elem.style.border = "1px solid #0000007d";
-                    // elem.style.borderRadius = "4px";
                 });
 
-                // Title style fix quand aquarellePng:
 
             })
         }
@@ -1684,22 +1677,6 @@
         else {
             document.getElementById("elfSvg").addEventListener("mouseenter", function() {
 
-                document.getElementById("bgStars").style.filter = "blur(12px)";
-                document.getElementById("bgStars").style.transform = "scale(3)";
-
-                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
-
-                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
-
-                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
-                    elem.classList.toggle('aquarelle-item-border-lutin');
-                    // elem.style.borderColor = "#181818";
-                });
-
-            })
-
-            
-            document.getElementById("elfSvg").addEventListener("mouseleave", function() {
 
                 document.getElementById("bgStars").style.filter = "blur(0px)";
                 document.getElementById("bgStars").style.transform = "scale(1)";
@@ -1710,11 +1687,55 @@
 
                 document.querySelectorAll(".gallery-item img").forEach(function(elem) {
                     elem.classList.toggle('aquarelle-item-border-lutin');
-                    // elem.style.borderColor = "transparent";
+                });
+
+            })
+
+            
+            document.getElementById("elfSvg").addEventListener("mouseleave", function() {
+
+                document.getElementById("bgStars").style.filter = "blur(12px)";
+                document.getElementById("bgStars").style.transform = "scale(3)";
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
+                    elem.classList.toggle('aquarelle-item-border-lutin');
                 });
 
             })
         }
+
+        setTimeout(function() {
+            if(mobileDetection) {
+                document.getElementById("bgStars").classList.toggle('bgStarsAnimLutinClickMobile');
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
+                    elem.classList.toggle('aquarelle-item-border-lutin');
+                });
+
+                document.querySelectorAll(".burger-icon span").forEach(function(elem) {
+                });
+            }
+            else {
+                document.getElementById("bgStars").style.filter = "blur(12px)";
+                document.getElementById("bgStars").style.transform = "scale(3)";
+
+                document.getElementById("aquarellePng").classList.toggle('aquarellePngFadeIn');
+
+                document.getElementById('elfSvg-g').classList.toggle('elfSvg-g-color');
+
+                document.querySelectorAll(".gallery-item img").forEach(function(elem) {
+                    elem.classList.toggle('aquarelle-item-border-lutin');
+                });
+            }
+        }, 1500)
 
 
 
