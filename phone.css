@@ -868,6 +868,11 @@
         opacity: 0.8;
     }
 
+    .modalPreviewImgBackground-aquarelle {
+        height: 195vh !important;
+        width: auto !important;
+    }
+
     .bgToile-fadeIn {
         animation: bgToile-fadeIn 0.3s 0s ease forwards;
       }

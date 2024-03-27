@@ -2148,23 +2148,25 @@ body {
 
 
     #modalPreviewImgBackground {
-      /* position: absolute;
+      position: absolute;
       z-index: -5;
       height: 100%;
       width: 100%;
       object-fit: cover;
 
-      opacity: 0.055; */
+      opacity: 0.055;
+    }
 
-      position: absolute;
-      z-index: -5;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      overflow: visible;
-      height: auto;
-      width: 150%;
-      opacity: 0.4;
+
+    .modalPreviewImgBackground-aquarelle {
+
+      top: 50% !important;
+      left: 50% !important;
+      transform: translate(-50%, -50%) !important;
+      overflow: visible !important;
+      height: auto !important;
+      width: 150% !important;
+      opacity: 0.4 !important;
     }
 
 
