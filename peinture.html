@@ -880,6 +880,8 @@
     <body class="bodyPeinture">
 
 
+        <!-- Cache pour opacity quand burgers actifs: -->
+        <div id="burgerActif-shadePage"></div>
 
         <!-- Desktop: btn back-to-index en haut à droite: -->
         <div id="acryliqueBackBtnAccueil" class="acryliqueBackBtnAccueil isDesktop">
@@ -903,6 +905,9 @@
                 <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
+
+            <!-- Etoile filante burger: -->
+            <span id="etoileFilanteBurger-desktop" class=""></span>
 
             <!-- arbrePng -->
             <img src="svgArbrePng-burger-min.png" class="burger-arbrePng">
@@ -1170,6 +1175,10 @@
               <li><a href="contact.php">Contact</a></li>
             </ul>
 
+
+            <!-- Etoile filante burger: -->
+            <span id="etoileFilanteBurger-mobile" class=""></span>
+
             <!-- (TODO: changer SVG burger: EZ) -->
             <!-- <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
                 Your browser does not support SVG
@@ -1298,6 +1307,23 @@
 
             document.addEventListener("DOMContentLoaded", function() {
 
+
+                // Détection mobile (isMobile JS)
+                var mobileDetection;
+                if (navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)) {
+                    mobileDetection = true ;
+                } else {
+                    mobileDetection = false ;
+                }
+
+
+
                 var index = 0;
                 var imagesObj = [];
 
@@ -1348,6 +1374,10 @@
                     // document.getElementById("titlesDiv").style.filter = "blur(2px)";
                     // document.getElementById("main").style.filter = "blur(3px)";
                     // document.getElementById("svgArbre").style.filter = "blur(2px)";
+
+                    document.getElementById("etoileFilanteBurger-mobile").classList.add("etoileFilanteBurger");
+
+                    document.getElementById("burgerActif-shadePage").classList.toggle("shadePage-active");
                 }
 
                 function closeNav() {
@@ -1361,11 +1391,15 @@
                     setTimeout(function() {
                         sidenav.classList.remove('closeBurgerColorAnimated');
                     }, 500);
+
+                    document.getElementById("etoileFilanteBurger-mobile").classList.remove("etoileFilanteBurger");
+
+                    document.getElementById("burgerActif-shadePage").classList.toggle("shadePage-active");
                 }
 
 
                 // WIP click outer navBurger = close() (MOBILE):
-                document.getElementById("main").addEventListener('click', function(e){   
+                document.getElementById("burgerActif-shadePage").addEventListener('click', function(e){   
 
                     if (document.getElementById('mySidenav').contains(e.target)){
                         // click dans nav burger
@@ -1378,38 +1412,36 @@
                 });
 
 
-                // DESKTOP hover title = sideNav-desktop:
-                
-                // Détection mobile (isMobile JS)
-                var mobileDetection;
-                if (navigator.userAgent.match(/Android/i)
-                || navigator.userAgent.match(/webOS/i)
-                || navigator.userAgent.match(/iPhone/i)
-                || navigator.userAgent.match(/iPad/i)
-                || navigator.userAgent.match(/iPod/i)
-                || navigator.userAgent.match(/BlackBerry/i)
-                || navigator.userAgent.match(/Windows Phone/i)) {
-                    mobileDetection = true ;
-                } else {
-                    mobileDetection = false ;
-                }
 
+                // DESKTOP hover title = sideNav-desktop:
                 if (!mobileDetection) {
 
                     document.getElementById('titlesDiv').addEventListener("mouseenter", function() {
                         document.getElementById('mySidenav-desktop').style.left = "0";
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
+
+                        document.getElementById("etoileFilanteBurger-desktop").classList.add("etoileFilanteBurger");
+
+                        document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
                     });
                     document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
                         console.log("NETERED");
                         document.getElementById('mySidenav-desktop').style.left = "0";
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
+
+                        document.getElementById("etoileFilanteBurger-desktop").classList.add("etoileFilanteBurger");
+
+                        document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
                     });
 
 
                     document.getElementById('mySidenav-desktop').addEventListener("mouseleave", function() {
                         document.getElementById('mySidenav-desktop').style.left = "-350px";
                         document.getElementById('mySidenav-desktop').style.opacity = "0";
+
+                        document.getElementById("etoileFilanteBurger-desktop").classList.remove("etoileFilanteBurger");
+
+                        document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
                     });
 
                 }

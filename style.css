@@ -290,7 +290,7 @@ body {
       box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
 
       opacity: 0.5;
-      animation: animate 12s 0s linear infinite;
+      animation: etoileFilante 12s 0s linear infinite;
 
   }
   .bgStars span::before{
@@ -302,7 +302,7 @@ body {
       height: 1px;
       background: linear-gradient(90deg,#fff,transparent);
   }
-  @keyframes animate
+  @keyframes etoileFilante
   {
       0% {
         opacity: 0;
@@ -345,6 +345,75 @@ body {
 
   }
 
+
+  .etoileFilanteBurger {
+    position: absolute;
+
+    bottom: 502px;
+    left: 120%;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.2),0 0 20px rgba(255,255,255,0.1);
+
+    opacity: 1;
+    animation: etoileFilanteBurger 12s 0s linear infinite;
+
+  }
+  .etoileFilanteBurger::before {
+    content:'';
+    position: absolute;
+    top: 15%;
+    transform: translateY(-15%);
+    width: 130px;
+    height: 1px;
+    background: linear-gradient(90deg,#fff,transparent);
+  }
+
+  
+  @keyframes etoileFilanteBurger
+  {
+
+      0% {
+        transform: rotate(320deg) translateX(0px);
+        opacity: 0;
+      }
+      3% {
+        opacity: 0;
+      }
+      7% {
+        opacity: 1;
+      }
+      10% {
+        transform: rotate(320deg) translateX(-770px);
+        opacity: 0;
+      }
+      11% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+  }
+
+
+
+  #burgerActif-shadePage {
+    background-color: #00000000;
+    /* background-color: #000000b8; */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* z-index: 9; */
+
+    transition: all 0.7s;
+  }
+  .shadePage-active {
+    background-color: #0000008c !important;
+    z-index: 99999 !important;
+  }
 
 
 
@@ -967,10 +1036,16 @@ body {
 
 
   .sideNavPeintureAcr {
-    background: rgb(66 87 91);
+    /* background: rgb(66 87 91);
     background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
     background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
     background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
+
+    background: rgb(46 100 111);
+    background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(46 100 111) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(46 100 111) 100%);
+    background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(46 100 111) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
 
   }
@@ -1669,7 +1744,7 @@ body {
   
 
   .acryliqueBackBtnAccueil {
-    z-index: 9999999;
+    z-index: 9999;
     color: #e8ca7d;
     font-size: 2.3em;
     position: absolute;
