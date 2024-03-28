@@ -835,6 +835,9 @@
     <body class="bodyHaiku">
 
 
+        <!-- Cache pour opacity quand burgers actifs: -->
+        <div id="burgerActif-shadePage"></div>
+
 
         <!-- Modal preview -->
         <div id="modalPreview">
@@ -1482,6 +1485,9 @@
                     // pas opti :
                     // document.getElementById("titlesDiv").style.filter = "blur(2px)";
                     // document.getElementById("main").style.filter = "blur(3px)";
+
+                    document.getElementById("burgerActif-shadePage").classList.toggle("shadePage-active");
+
                 }
 
                 function closeNav() {
@@ -1494,11 +1500,13 @@
                     setTimeout(function() {
                         sidenav.classList.remove('closeBurgerColorAnimated');
                     }, 500);
+
+                    document.getElementById("burgerActif-shadePage").classList.toggle("shadePage-active");
                 }
 
 
                 // WIP click outer navBurger = close() (MOBILE):
-                document.getElementById("main").addEventListener('click', function(e){   
+                document.getElementById("burgerActif-shadePage").addEventListener('click', function(e){   
 
                     if (document.getElementById('mySidenav').contains(e.target)){
                         // click dans nav burger
@@ -1568,17 +1576,23 @@
                     document.getElementById('titlesDiv').addEventListener("mouseenter", function() {
                         document.getElementById('mySidenav-desktop').style.left = "0";
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
+
+                        document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
                     });
                     document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
                         console.log("NETERED");
                         document.getElementById('mySidenav-desktop').style.left = "0";
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
+
+                        document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
                     });
 
 
                     document.getElementById('mySidenav-desktop').addEventListener("mouseleave", function() {
                         document.getElementById('mySidenav-desktop').style.left = "-350px";
                         document.getElementById('mySidenav-desktop').style.opacity = "0";
+
+                        document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
                     });
 
                 }

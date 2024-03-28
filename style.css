@@ -411,8 +411,8 @@ body {
     transition: all 0.7s;
   }
   .shadePage-active {
-    background-color: #0000008c !important;
-    z-index: 99999 !important;
+    background-color: #00000059 !important;
+    z-index: 999999 !important;
   }
 
 
@@ -999,6 +999,9 @@ body {
     background: -moz-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
     background: -webkit-linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%);
     background: linear-gradient(313deg, rgb(44 17 63) 0%, rgb(28 54 65) 100%); */
+
+    box-shadow: 0px 0px 56px #ffffff61 !important;
+
     background: rgb(43 110 125);
     background: -moz-linear-gradient(313deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
     background: -webkit-linear-gradient(313deg, rgb(37 24 77) 0%, rgb(43 110 125) 100%);
@@ -1018,6 +1021,8 @@ body {
     background: linear-gradient(180deg, rgb(34 113 87) 0%, rgb(29 71 89) 80%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
 
+    box-shadow: 0px 0px 56px #ffffff61 !important;
+
     background: rgb(34 117 103);
     background: -moz-linear-gradient(180deg, rgb(34 117 103) 0%, rgb(31 64 79) 80%);
     background: -webkit-linear-gradient(180deg, rgb(34 117 103) 0%, rgb(31 64 79) 80%);
@@ -1028,10 +1033,13 @@ body {
 
 
   .sideNavHaushka {
-    background: rgb(17 63 49);
-    background: -moz-linear-gradient(180deg, rgb(16 73 97) 60%, rgb(125 43 57) 100%);
-    background: -webkit-linear-gradient(180deg, rgb(16 73 97) 60%, rgb(16 73 97)rgb(125 43 57) 100%);
-    background: linear-gradient(180deg, rgb(16 73 97) 60%, rgb(125 43 57) 100%);
+
+    box-shadow: 0px 0px 56px #ffffff61 !important;
+
+    background: rgb(223 142 27);
+    background: -moz-linear-gradient(110deg, rgb(223 142 27) 0%, rgb(16 67 129) 100%);
+    background: -webkit-linear-gradient(110deg, rgb(223 142 27) 0%, rgb(16 67 129) 100%);
+    background: linear-gradient(110deg, rgb(223 142 27) 0%, rgb(16 67 129) 100%);
   }
 
 
@@ -1041,6 +1049,8 @@ body {
     background: -webkit-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
     background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(66 87 91) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1); */
+
+    box-shadow: 0px 0px 56px #ffffff61 !important;
 
     background: rgb(46 100 111);
     background: -moz-linear-gradient(180deg, rgba(17,18,63,1) 0%, rgb(46 100 111) 100%);
@@ -2203,8 +2213,8 @@ body {
       left: -350px;
       /* Anims: */
       background-color: #ffecbc;
-      /* border-right: 2px solid #e8ca7d; */
-      border-right: 1px solid #e8ca7d3d;
+      /* border-right: 1px solid #e8ca7d3d; */
+      border-right: 1px solid #ffffff63;
   
       border-top-right-radius: 6px;
   
@@ -2216,8 +2226,8 @@ body {
 
       overflow: hidden;
 
-      /* box-shadow: 5px 5px 20px #e7d5a426; */
-      box-shadow: 0px 0px 56px #00000096;
+      /* box-shadow: 0px 0px 56px #00000096; */
+      box-shadow: 0px 0px 56px #e5e5e596;
   
       opacity: 0;
 

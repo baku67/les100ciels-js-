@@ -84,7 +84,8 @@
 
 
     .titleDiv-Haikus {
-        z-index: 99999999;
+        /* z-index: 99999999; */
+        z-index: 99999;
     }
     .titleDiv-Haikus .h1title {
         padding: 11px 20px 13px 10px;
@@ -1197,7 +1198,7 @@
         box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
     
         opacity: 1;
-        animation: etoileFilanteBurger 8s 0.15s linear infinite;
+        animation: etoileFilanteBurger 7s 0.5s linear infinite;
     
       }
       .etoileFilanteBurger::before {
@@ -1233,6 +1234,19 @@
             opacity: 0;
           }
           }
+
+
+
+
+
+    #burgerActif-shadePage {
+    
+    }
+
+    .shadePage-active {
+    background-color: #0000008c !important;
+    z-index: 999999 !important;
+    }
 
 
 
