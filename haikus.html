@@ -414,6 +414,20 @@
                 height: -webkit-fill-available;
             }
 
+            .bgStarsHaiku {
+                transform: rotate(180deg);
+
+                animation: bgStarsRotate 250s 0s linear forwards infinite; 
+            }
+            @keyframes bgStarsRotate {
+                from {
+                    transform: rotate(180deg);
+                }
+                to {
+                    transform: rotate(-180deg);
+                }
+            }
+
 
             .linkTitle {
                 width: fit-content; 
@@ -602,6 +616,21 @@
 
             /* SMARTPHONE */
             @media (max-width: 450px) {
+
+
+                .bgStarsHaiku {
+                    transform: rotate(180deg);
+
+                    animation: none; 
+                }
+                @keyframes bgStarsRotate {
+                    from {
+                        transform: rotate(180deg);
+                    }
+                    to {
+                        transform: rotate(-180deg);
+                    }
+                }
 
 
 
@@ -1123,7 +1152,7 @@
 
 
         <!-- Try bg étoile  -->
-        <div class="bgStars">
+        <div class="bgStars bgStarsHaiku">
             <div id="stars"></div>
             <div id="stars2"></div>
             <div id="stars3"></div>
