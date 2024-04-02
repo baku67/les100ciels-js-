@@ -897,20 +897,20 @@
 
             <ul>
                 <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="peinture.html" class="burgerOngletActif-desktop">Acrylique</a></li>
-                <li><a href="aquarelle.html">Aquarelle</a></li>
-                <li><a href="haushka.html">Haushka</a></li>
-                <li><a href="haikus.html">Ha&iuml;kus</a></li>
-                <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
-                <li><a href="#" class="navBurgerDisabled">Expositions</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="peinture.html" class="burgerPcElem burgerOngletActif-desktop">Acrylique</a></li>
+                <li><a href="aquarelle.html" class="burgerPcElem">Aquarelle</a></li>
+                <li><a href="haushka.html" class="burgerPcElem">Haushka</a></li>
+                <li><a href="haikus.html" class="burgerPcElem">Ha&iuml;kus</a></li>
+                <li><a href="#" class="burgerPcElem navBurgerDisabled">Reproductions</a></li>
+                <li><a href="#" class="burgerPcElem navBurgerDisabled">Expositions</a></li>
+                <li><a href="contact.php" class="burgerPcElem">Contact</a></li>
             </ul>
 
             <!-- Etoile filante burger: -->
             <span id="etoileFilanteBurger-desktop" class=""></span>
 
             <!-- arbrePng -->
-            <img src="svgArbrePng-burger-min.png" class="burger-arbrePng">
+            <img src="svgArbrePng-burger-min.png" class="burgerPcElem burger-arbrePng">
 
             <!-- Chevalet background: (Desktop burger)  (DESACTIVE)-->
             <!-- <img src="peintureAcry.png" class="chevaletPeinturesBg isDesktop">  -->
@@ -1375,7 +1375,9 @@
                     // document.getElementById("main").style.filter = "blur(3px)";
                     // document.getElementById("svgArbre").style.filter = "blur(2px)";
 
-                    document.getElementById("etoileFilanteBurger-mobile").classList.add("etoileFilanteBurger");
+                    setTimeout(function() {
+                        document.getElementById("etoileFilanteBurger-mobile").classList.add("etoileFilanteBurger");
+                    }, 1000)
 
                     document.getElementById("burgerActif-shadePage").classList.toggle("shadePage-active");
                 }
@@ -1423,6 +1425,24 @@
                         document.getElementById("etoileFilanteBurger-desktop").classList.add("etoileFilanteBurger");
 
                         document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                        // Fade/Slide des onglets (interval):
+                        setTimeout(function() {
+                            var elements = document.querySelectorAll('.burgerPcElem');
+                            function addClassWithDelay(elements, className, delay) {
+                                var index = 0;
+                                var intervalId = setInterval(function() {
+                                    if (index >= elements.length) {
+                                        clearInterval(intervalId); 
+                                        return;
+                                    }
+                                    elements[index].classList.add(className);
+                                    index++; 
+                                }, delay);
+                            }
+                            addClassWithDelay(elements, 'burgerFadePc', 150);
+                        }, 110)
+
                     });
                     document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
                         console.log("NETERED");
@@ -1432,6 +1452,23 @@
                         document.getElementById("etoileFilanteBurger-desktop").classList.add("etoileFilanteBurger");
 
                         document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                        // Fade/Slide des onglets (interval):
+                        setTimeout(function() {
+                            var elements = document.querySelectorAll('.burgerPcElem');
+                            function addClassWithDelay(elements, className, delay) {
+                                var index = 0;
+                                var intervalId = setInterval(function() {
+                                    if (index >= elements.length) {
+                                        clearInterval(intervalId); 
+                                        return;
+                                    }
+                                    elements[index].classList.add(className);
+                                    index++; 
+                                }, delay);
+                            }
+                            addClassWithDelay(elements, 'burgerFadePc', 150);
+                        }, 110)
                     });
 
 
@@ -1442,6 +1479,15 @@
                         document.getElementById("etoileFilanteBurger-desktop").classList.remove("etoileFilanteBurger");
 
                         document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
+
+
+                        // Fade/Slide des onglets (interval):
+                        setTimeout(function() {
+                            var elements = document.querySelectorAll('.burgerPcElem');
+                            elements.forEach(function(elem) {
+                                elem.classList.remove("burgerFadePc");
+                            })
+                        }, 110)
                     });
 
                 }

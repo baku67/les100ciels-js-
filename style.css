@@ -738,7 +738,8 @@ body {
 
 
   .navBurgerDisabled {
-    opacity: 0.37;
+    /* opacity: 0.37; */
+    color: #888888 !important;
     pointer-events: none;
   }
 
@@ -1268,6 +1269,26 @@ body {
     }
   }
 
+
+
+  .burgerPcElem {
+    position: relative;
+    left: 35px;
+    opacity: 0;
+  }
+  .burgerFadePc {
+    animation: fadeSlideInBurgerPc 1s 0s ease forwards;
+  }
+  @keyframes fadeSlideInBurgerPc {
+    from {
+      opacity: 0;
+      left: 35px;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
 
 
 
