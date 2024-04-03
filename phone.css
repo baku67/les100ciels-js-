@@ -434,7 +434,8 @@
     }
 
     .modalPreviewContent {
-        width: 85%;
+        /* width: 85%; */
+        width: 100%;
         margin-top: 25px;
     }
     .modalPreviewContent-Haushka {
@@ -912,7 +913,14 @@
         overflow: visible;
         height: 195vh;
         width: auto;
-        opacity: 0.8;
+
+        /* opacity: 0.8; */
+        opacity: 0.1;
+    }
+
+
+    .hauskaContent {
+      overflow: hidden;
     }
 
     .modalPreviewImgBackground-aquarelle {

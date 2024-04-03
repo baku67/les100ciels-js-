@@ -89,7 +89,7 @@ body {
 .burger-arbrePng {
   width: 100%;
   bottom: 50px;
-  position: absolute;
+  position: absolute !important;
   z-index: 5;
 }
 
