@@ -1068,7 +1068,10 @@
 
 
 
-
+    /* MOBILE Index.html  =>   Soleil + liens mieux centrés: */
+    .main-header {
+      justify-content: flex-start;
+    }
 
 
 
