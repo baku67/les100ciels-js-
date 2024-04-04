@@ -729,13 +729,20 @@ body {
 
 
   .gallery-item-section1fix {
-    height: 100px !important;
-}
-.gallery-item-section1fix img {
-    width: 100px !important;
-    height: 100px !important;
-}
+      height: 100px !important;
+  }
+  .gallery-item-section1fix img {
+      width: 100px !important;
+      height: 100px !important;
+  }
 
+  .gisf-haushka {
+    height: 120px !important;
+  }
+  .gisf-haushka img {
+    width: 120px !important;
+    height: 120px !important;
+  }
 
   .navBurgerDisabled {
     /* opacity: 0.37; */

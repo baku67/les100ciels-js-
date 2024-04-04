@@ -825,6 +825,44 @@
                 }
             }
 
+
+
+
+
+
+
+            
+            .bgStars {
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                width: 100%;
+            }
+
+
+
+            @media (max-width: 480px) {
+                html {
+                    /* height: auto; */
+                    /* height: -webkit-fill-available; */
+                    height: 100%;
+                }
+                body {
+                    position: relative;
+                    overflow: auto;
+                }
+
+                .bodyHaiku {
+                    overflow: scroll;
+                    height: auto;
+                }
+
+                .titlesDiv h1 {
+                    margin-block-end: 0px;
+                }
+            }
+
+
         </style>
 
     </head>
@@ -1187,7 +1225,7 @@
 
         <div id="main" class="main" style="position:relative; background:rgba(0,0,0,0);">
 
-            <div id="" class="" >
+            <!-- <div id="" class="" > -->
 
                 <h2 class="haikusSubTitle">Ha&iuml;kus</h2>
 
@@ -1248,7 +1286,7 @@
 
                 </div>
 
-            </div>
+            <!-- </div> -->
     
         </div>
 

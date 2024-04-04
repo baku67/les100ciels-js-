@@ -84,23 +84,9 @@
 
         <!-- FIX STARS / BODY / HTML -->
         <style>
-
-
-
             body {
                 overflow: scroll;
-
-                /* animation: backgroundAnim 1s 0s linear forwards; */
             }
-            /* @keyframes backgroundAnim {
-                0% {
-                    background: rgb(28 29 73);
-                }
-                100% {
-                    background: rgb(27 43 69);
-                }
-            } */
-
 
             .burgerOngletActif {
                 background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
@@ -126,7 +112,6 @@
             }
 
             @media (max-width: 480px) {
-
                 html {
                     height: auto;
                 }
@@ -138,9 +123,7 @@
                 .titlesDiv h1 {
                     margin-block-end: 0px;
                 }
-
             }
-
         </style>
 
     </head>
