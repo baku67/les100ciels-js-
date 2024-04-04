@@ -911,7 +911,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
         overflow: visible;
-        height: 195vh;
+
+        /* height: 195vh; */
+        height: 100%;
+
+
         width: auto;
 
         /* opacity: 0.8; */
@@ -1075,6 +1079,9 @@
 
 
 
+    #modalPreview {
+      overflow: hidden;
+    }
 
 
 

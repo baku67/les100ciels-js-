@@ -595,6 +595,9 @@
                 document.getElementById('modalPreview').classList.add('modalPreview-contes');
                 // Fix fit background img modal:
                 document.getElementById('modalPreviewImgBackground').style.height = "auto";
+                // Mobile contes modal height fix:
+                document.getElementById('modalPreview').style.overflowX = "hidden";
+                document.getElementById('modalPreview').style.overflowY = "scroll";
 
 
                 // *** load svg arbre (retour sur rubriques)
