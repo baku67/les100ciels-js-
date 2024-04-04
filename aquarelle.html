@@ -1450,7 +1450,15 @@
         <!-- titre absolute -->
         <div id="titlesDiv" class="titlesDiv titleDiv-Haikus" style="position: relative;">
             <a href="./index.html" class="linkTitle">
-                <h1 id="h1titleAquarelle" class="h1title">Les 100 ciels</h1>
+                <h1 id="h1titleAquarelle" class="h1title h1titleBurgerDesktop">
+                    <!-- Burger Icone PC (à titre indicatif): -->
+                    <span id="burger-icon-desktop" class="burger-icon-desktop isDesktop">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    Les 100 ciels
+                </h1>
             </a>
         </div>
 
@@ -2092,6 +2100,9 @@
                 document.getElementById('mySidenav-desktop').style.opacity = "1";
 
                 document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                document.getElementById('burger-icon-desktop').style.opacity = "0";
+                document.getElementById('h1titleAquarelle').style.transform = "translateX(-35px)";
             });
             document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
                 console.log("NETERED");
@@ -2099,6 +2110,9 @@
                 document.getElementById('mySidenav-desktop').style.opacity = "1";
 
                 document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                document.getElementById('burger-icon-desktop').style.opacity = "0";
+                document.getElementById('h1titleAquarelle').style.transform = "translateX(-35px)";
             });
 
 
@@ -2107,6 +2121,9 @@
                 document.getElementById('mySidenav-desktop').style.opacity = "0";
 
                 document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
+
+                document.getElementById('burger-icon-desktop').style.opacity = "1";
+                document.getElementById('h1titleAquarelle').style.transform = "translateX(0px)";
             });
 
         }

@@ -35,10 +35,10 @@
 
 
             .burgerOngletActif {
-                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
+                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(123, 235, 255, 0) 100%);
             }
             .burgerOngletActif-desktop {
-                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(146 239 255 / 40%) 100%);
+                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgba(146, 239, 255, 0) 100%);
             }
 
             #loader {
@@ -843,9 +843,9 @@
 
             @media (max-width: 480px) {
                 html {
-                    /* height: auto; */
+                    height: auto;
                     /* height: -webkit-fill-available; */
-                    height: 100%;
+                    /* height: 100%; */
                 }
                 body {
                     position: relative;
@@ -854,11 +854,19 @@
 
                 .bodyHaiku {
                     overflow: scroll;
+
                     height: auto;
+                    /* Si contenu trop petit en hauteur: */
+                    min-height: 100vh;
                 }
 
                 .titlesDiv h1 {
                     margin-block-end: 0px;
+                }
+
+                .haikusContentImg {
+                    width: 70%;
+                    height: auto;
                 }
             }
 
@@ -1204,7 +1212,16 @@
         <!-- titre absolute -->
         <div id="titlesDiv" class="titlesDiv titleDiv-Haikus" style="position: relative;">
             <a href="./index.html" class="linkTitle">
-                <h1 class="h1title">Les 100 ciels</h1>
+
+                <h1 id="h1titleBurgerDesktop" class="h1title h1titleBurgerDesktop">
+                    <!-- Burger Icone PC (à titre indicatif): -->
+                    <span id="burger-icon-desktop" class="burger-icon-desktop isDesktop">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    Les 100 ciels
+                </h1>
             </a>
         </div>
 
@@ -1616,6 +1633,9 @@
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
 
                         document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                        document.getElementById('burger-icon-desktop').style.opacity = "0";
+                        document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(-35px)";
                     });
                     document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
                         console.log("NETERED");
@@ -1623,6 +1643,9 @@
                         document.getElementById('mySidenav-desktop').style.opacity = "1";
 
                         document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
+
+                        document.getElementById('burger-icon-desktop').style.opacity = "0";
+                        document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(-35px)";
                     });
 
 
@@ -1631,6 +1654,9 @@
                         document.getElementById('mySidenav-desktop').style.opacity = "0";
 
                         document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
+
+                        document.getElementById('burger-icon-desktop').style.opacity = "1";
+                        document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(0px)";
                     });
 
                 }
