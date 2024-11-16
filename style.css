@@ -85,6 +85,10 @@ body {
 }
 
 
+#modalPreviewDescription {
+  max-width: 80%;
+}
+
 
 .burger-arbrePng {
   width: 100%;

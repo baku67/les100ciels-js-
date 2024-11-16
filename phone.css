@@ -443,7 +443,7 @@
     }
 
     #modalPreviewImg {
-        width: 100%;
+        width: 90%;
         /* height: auto; */
         height: 40vh;
         margin-top: 40px;
@@ -1019,7 +1019,9 @@
 
 
 
-
+    #modalPreviewDescription {
+      max-width: 90%;
+    }
 
 
 
