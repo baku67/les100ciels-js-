@@ -1,12 +1,21 @@
 <?php
-
+    session_start();
     // Question maths:
-    // Générer deux nombres aléatoires entre 1 et 10
-    $number1 = rand(1, 10);
-    $number2 = rand(1, 10);
-    // Calculer la réponse et la stocker dans la session
-    $_SESSION['math_answer'] = $number1 + $number2;
+    if (!isset($_SESSION['math_answer'])) {
+        // Utiliser mt_rand() au lieu de rand() pour une meilleure performance
+        $_SESSION['number1'] = mt_rand(1, 10);
+        $_SESSION['number2'] = mt_rand(1, 10);
+        $_SESSION['math_answer'] = $_SESSION['number1'] + $_SESSION['number2'];
+        session_write_close(); // Forcer la sauvegarde de la session ici
+    } 
+    
+    // Affectation des variables locales
+    $number1 = isset($_SESSION['number1']) ? $_SESSION['number1'] : 'undefined';
+    $number2 = isset($_SESSION['number2']) ? $_SESSION['number2'] : 'undefined';
 
+    // Vérifier les valeurs des variables pour le débogage 
+    // echo "Debug: number1 = $number1, number2 = $number2, math_answer = ".$_SESSION['math_answer'];
+    // echo 'Session save path: ' . session_save_path();
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -18,8 +27,8 @@
         if(isset($_POST["message"]) && isset($_POST["from"])) {
 
             // Check réponse à la question de maths:
-            if (!isset($_POST['math']) || $_POST['math'] != $_SESSION['math_answer']) {
-                die("Bot detected or incorrect answer.");
+            if (!isset($_POST['math']) || intval($_POST['math']) !== $_SESSION['math_answer']) {
+                die("Bot detected or incorrect answer. \n SessionAnswer:" . $_SESSION['math_answer'] . "\nYourAnswer:" . $_POST['math']);
             }
 
             // Sanitize and validate email
@@ -56,6 +65,11 @@
                 // Send the emails (cc)
                 mail($to, $subject, $emailContent, $headers);
                 mail("basile08@hotmail.fr", $subject, $emailContent, $headers);
+            
+                // Après avoir envoyé le mail avec succès
+                unset($_SESSION['math_answer']);
+                unset($_SESSION['number1']);
+                unset($_SESSION['number2']);
             }
             
         } else {
@@ -515,7 +529,7 @@
                     <!-- Disclaimer  -->
                     <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter.</p>
 
-                    <label for="math">Combien font <?php echo $number1 . " + " . $number2; ?> ?</label>
+                    <label for="math">Combien font <?php echo $_SESSION['number1']; ?> + <?php echo $_SESSION['number2']; ?> ?</label>
                     <input type="text" id="math" name="math" required>
 
                     <br>
