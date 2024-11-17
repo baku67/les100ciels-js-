@@ -51,6 +51,20 @@ body {
 
 
 
+.comte-auteur {
+  color: #E8CA7D;
+  display: flex;
+  justify-content: end;
+}
+
+
+.podmielle {
+  display: none;
+}
+#podmielle {
+  display: none;
+}
+
 .traitPeintureAcr {
   position: relative;
   height: 1px;

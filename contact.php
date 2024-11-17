@@ -1,15 +1,26 @@
 <?php
 
+    // Question maths:
+    // Générer deux nombres aléatoires entre 1 et 10
+    $number1 = rand(1, 10);
+    $number2 = rand(1, 10);
+    // Calculer la réponse et la stocker dans la session
+    $_SESSION['math_answer'] = $number1 + $number2;
+
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        // Check if the honeypot field is filled
-        if (!empty($_POST['honeypot'])) {
-            // If honeypot is filled, it's likely a bot, so reject the submission
+        if (!empty($_POST['podmielle'])) {
             die("Spam submission detected. Please try again.");
         }
 
         // Check if the required keys "message" and "from" are set in $_POST
         if(isset($_POST["message"]) && isset($_POST["from"])) {
+
+            // Check réponse à la question de maths:
+            if (!isset($_POST['math']) || $_POST['math'] != $_SESSION['math_answer']) {
+                die("Bot detected or incorrect answer.");
+            }
 
             // Sanitize and validate email
             $from = filter_input(INPUT_POST, 'from', FILTER_SANITIZE_EMAIL);
@@ -489,21 +500,25 @@
 
                     <br>
 
+                    <!-- Podmielle -->
+                    <label for="podmielle" class="podmielle">podmielle</label>
+                    <input type="text" name="podmielle" id="podmielle">
+
                     <label for="message">Votre message :</label>
                     <textarea name="message" id="message" rows="4" required maxlength="2000"></textarea>
 
                     <br>
-
-                    <!-- Honeypot Field -->
-                    <div style="display: none;">
-                        <input type="text" name="honeypot" id="honeypot">
-                    </div>
 
                     <!-- reCAPTCHA désactivé  -->
                     <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
 
                     <!-- Disclaimer  -->
                     <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter.</p>
+
+                    <label for="math">Combien font <?php echo $number1 . " + " . $number2; ?> ?</label>
+                    <input type="text" id="math" name="math" required>
+
+                    <br>
 
                     <input class="contactFormSubmitBtn" type="submit">
                 </form>

@@ -50,6 +50,11 @@
         width: 95% !important;
     }
 
+
+    .bodyContact {
+      /* height: 100vh; */
+    }
+
     .contactContent {
         /* margin-top: 20px; */
     }
