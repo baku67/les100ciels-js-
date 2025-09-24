@@ -82,6 +82,11 @@
 
       .gallery-item {
         margin: 3px;
+
+        display: inline-flex;
+        flex-direction: column;
+        color: #c1c1c1;
+        font-weight: 300;
       }
 
       .gallery-item img {
@@ -748,7 +753,7 @@
             flex-flow: wrap;
             align-items: center;
             gap: 10px;
-            margin: 50px auto;
+            margin: 50px 20px;
 
             .craie-image {
                 border-radius: 8px !important;
@@ -757,6 +762,13 @@
             .craie-image:hover {
             }
           }
+        }
+
+        #modalPreviewTitle {
+            color: #ffffff !important;
+            font-weight: 300 !important;
+            font-size: 1.4em !important;
+            text-shadow: 0px 0px 1px black !important;
         }
       }
 
@@ -852,6 +864,14 @@
             transform: scale(0.95);
           }
         }
+      }
+
+      #modalPreviewTitle {
+            color: white;
+    margin-top: 8px;
+        color: #c1c1c1;
+    font-weight: 300;
+        font-size: 1.2em;
       }
 
       .background-craies {
@@ -1210,6 +1230,8 @@
                     <div class="modalPreviewContent" style="width: 100%;">
         
                         <img id="modalPreviewImg" class="modalPreviewImg-aquarelle" src="">
+
+                        <span id="modalPreviewTitle"></span>
                     
                         <!-- Nav desktop: (dimensions responsiv)-->
                         <div class="modalPreviewNavContainer">
@@ -1260,7 +1282,9 @@
             src="craies/craie-1.webp"
             alt="Craie sèche 1, exposition Les 100 Ciels"
             class="craie-image"
+            title="Jeune fille en hiver"
           />
+          <span>Jeune fille en hiver</span>
           <p class="indexImage">1</p>
         </div>
 
@@ -1269,7 +1293,9 @@
             src="craies/craie-2.webp"
             alt="Craie sèche 2, exposition Les 100 Ciels"
             class="craie-image"
+            title="Jeune fille en été"
           />
+          <span>Jeune fille en été</span>
           <p class="indexImage">2</p>
         </div>
         <div class="gallery-item">
@@ -1277,7 +1303,9 @@
             src="craies/craie-3.webp"
             alt="Craie sèche 3, exposition Les 100 Ciels"
             class="craie-image"
+            title="Jeune fille au sari"
           />
+          <span>Jeune fille au sari</span>
           <p class="indexImage">3</p>
         </div>
       </div>
@@ -1337,7 +1365,7 @@
 
       // WIP click outer navBurger = close() (MOBILE):
       document
-        .getElementById("contactContent-merci")
+        .getElementById("craie-content")
         .addEventListener("click", function (e) {
           if (document.getElementById("mySidenav").contains(e.target)) {
             // click dans nav burger
@@ -1402,14 +1430,17 @@
             {
                 index: 1,
                 src: "craies/craie-1.webp",
+                title: "Jeune fille en hiver"
             },
             {
                 index: 2,
                 src: "craies/craie-2.webp",
+                title: "Jeune fille en été"
             },
                         {
                 index: 3,
                 src: "craies/craie-3.webp",
+                title: "Jeune fille au sari"
             }
         ]
 
@@ -1469,6 +1500,7 @@
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').src = nextImg.src;
+                document.getElementById('modalPreviewTitle').textContent = nextImg.title;
                 // document.getElementById('modalPreviewImgBackground').src = nextImg.src;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideLeft1');
@@ -1513,6 +1545,7 @@
 
             setTimeout(function() {
                 document.getElementById('modalPreviewImg').src = prevImg.src;
+                document.getElementById('modalPreviewTitle').textContent = prevImg.title;
                 // document.getElementById('modalPreviewImgBackground').src = prevImg.src;
 
                 document.getElementById('modalPreviewImg').classList.remove('previewImg-slideRight1');
@@ -1561,6 +1594,8 @@
         // *** Modif modal
         document.getElementById("modalPreviewImg").src =
           item.querySelector("img").src;
+        document.getElementById("modalPreviewTitle").textContent =
+          item.querySelector(".craie-image").title;
         // document.getElementById('modalPreviewImgBackground').src = item.querySelector('img').src;
 
         document.getElementById("modalPreview").style.display = "block";
@@ -1612,6 +1647,7 @@
 
         setTimeout(function () {
           document.getElementById("modalPreviewImg").src = targetImg.src;
+          document.getElementById("modalPreviewTitle").textContent = targetImg.title;
           // document.getElementById('modalPreviewImgBackground').src = targetImg.src;
 
           document
@@ -1651,6 +1687,7 @@
 
         setTimeout(function () {
           document.getElementById("modalPreviewImg").src = targetImg.src;
+          document.getElementById("modalPreviewTitle").textContent = targetImg.title;
           // document.getElementById('modalPreviewImgBackground').src = targetImg.src;
 
           document
