@@ -1,100 +1,172 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="/favicon1.ico">
-        <link rel='stylesheet' href='style.css'>
-        <link rel='stylesheet' href='styleSass.css'>
-        <meta name="description" content="Site vitrine d'artiste (Strasbourg). Peinture acrylique, aquarelle, méthode Haushka, expositions, contact etc...">
+<html lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- URL canonique, pas de /index ici-->
+    <link rel="canonical" href="https://les100ciels.art/" />
 
-        <meta charset="UTF-8">
-        <link rel='stylesheet' href='styleSass2k.css'>
-        <link rel='stylesheet' href='phone.css'>
-        <script src='script.js'></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet">
-        <title>Les 100 ciels</title>
-    </head>
+    <link rel="icon" type="image/x-icon" href="/favicon1.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styleSass.css" />
 
-    <body>
-        <div id="main" class="main">
+    <meta
+      name="description"
+      content="Site vitrine d'artiste (Strasbourg). Peinture acrylique, aquarelle, craie sèche, méthode Haushka, expositions, contact etc..."
+    />
 
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styleSass2k.css" />
+    <link rel="stylesheet" href="phone.css" />
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <title>Les 100 ciels</title> -->
+    <title>
+      Les 100 Ciels – Artiste à Strasbourg : acrylique, aquarelle, craie sèche
+    </title>
+  </head>
 
-            <header class="main-header">
-                <div class="logo-Container" id="logoContainer">
-                    <div class="wrapperOverflow">
-                        <div class="logo-image logoImage1" id="ceinture">
-                            <img src="logo1.png" class="main-logo1" alt="soleil"/>
-                        </div>
-                        <div class="logo-image logoImage2">
-                            <img src="logo2.png" class="main-logo2" alt="soleil2"/>
-                        </div>
-                    </div>
-                </div>
+  <body>
+    <div id="main" class="main">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
 
-                <script>
-                    window.onload = function() {
-                        
-                        document.getElementById("logoContainer").addEventListener("click", function() {
+      <header class="main-header">
+        <div class="logo-Container" id="logoContainer">
+          <div class="wrapperOverflow">
+            <div class="logo-image logoImage1" id="ceinture">
+              <img src="logo1.png" class="main-logo1" alt="soleil" />
+            </div>
+            <div class="logo-image logoImage2">
+              <img src="logo2.png" class="main-logo2" alt="soleil2" />
+            </div>
+          </div>
+        </div>
 
-                            if(!document.getElementById('ceinture').classList.contains("toggle2dLogo")) {
-                                // Anims Soleil (onclick)
-                                document.getElementById('ceinture').classList.remove("toggle3dLogo");
-                                document.getElementById('ceinture').classList.add("toggle2dLogo");
+        <script>
+          window.onload = function () {
+            document
+              .getElementById("logoContainer")
+              .addEventListener("click", function () {
+                if (
+                  !document
+                    .getElementById("ceinture")
+                    .classList.contains("toggle2dLogo")
+                ) {
+                  // Anims Soleil (onclick)
+                  document
+                    .getElementById("ceinture")
+                    .classList.remove("toggle3dLogo");
+                  document
+                    .getElementById("ceinture")
+                    .classList.add("toggle2dLogo");
 
-                                // Anims du background (onClick soleil)
-                                document.getElementById('main').classList.remove("main");
-                                document.getElementById('main').classList.remove("newGradient2");
-                                document.getElementById('main').classList.add("newGradient");
-                            }
-                            else {
-                                // Anims Soleil (onclick)
-                                document.getElementById('ceinture').classList.remove("toggle2dLogo");
-                                document.getElementById('ceinture').classList.add("toggle3dLogo");
+                  // Anims du background (onClick soleil)
+                  document.getElementById("main").classList.remove("main");
+                  document
+                    .getElementById("main")
+                    .classList.remove("newGradient2");
+                  document.getElementById("main").classList.add("newGradient");
+                } else {
+                  // Anims Soleil (onclick)
+                  document
+                    .getElementById("ceinture")
+                    .classList.remove("toggle2dLogo");
+                  document
+                    .getElementById("ceinture")
+                    .classList.add("toggle3dLogo");
 
-                                // Anims du background (onClick soleil)
-                                document.getElementById('main').classList.remove("newGradient");
-                                document.getElementById('main').classList.add("newGradient2");
+                  // Anims du background (onClick soleil)
+                  document
+                    .getElementById("main")
+                    .classList.remove("newGradient");
+                  document.getElementById("main").classList.add("newGradient2");
 
-                                // document.getElementById('main').style.background = "rgb(21 24 54)";
-                            }
-                        });
-                    }
-                </script>
+                  // document.getElementById('main').style.background = "rgb(21 24 54)";
+                }
+              });
+          };
+        </script>
 
-                <div class="homepageDivider"></div>
+        <div class="homepageDivider"></div>
 
-                <div class="wrapperOverflow">
-                    <div class="subContent">
-                        <h1 class="title">Les 100 ciels</h1>
+        <div class="wrapperOverflow">
+          <div class="subContent">
+            <h1 class="title">Les 100 ciels</h1>
 
-                        <!-- Pages en onstruction => CSS .disabledLink (+:hover .underline opacity) -->
-                        <div class="ongletsLine">
-                            <div class="ongletWrapper" style="margin: 0px 7px;">
-                                <a class="accueilLink accueilLink-1" href="peinture.html" rel="noopener noreferrer">Peinture acrylique</a>
-                                <div class="underline" style="opacity: 0; background-color:#ff8383;"></div>
-                            </div>
+            <!-- Pages en onstruction => CSS .disabledLink (+:hover .underline opacity) -->
+            <div class="ongletsLine">
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-1"
+                  href="peinture.html"
+                  rel="noopener noreferrer"
+                  >Peinture acrylique</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #ff8383"
+                ></div>
+              </div>
 
-                            <div class="ongletWrapper" style="margin: 0px 7px;">
-                                <a class="accueilLink accueilLink-2" href="aquarelle.html" rel="noopener noreferrer">Aquarelle</a>
-                                <div class="underline" style="opacity: 0; background-color:#ffa97e;"></div>
-                            </div>
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-2"
+                  href="aquarelle.html"
+                  rel="noopener noreferrer"
+                  >Aquarelle</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #ffa97e"
+                ></div>
+              </div>
 
-                            <div class="ongletWrapper" style="margin: 0px 7px;">
-                                <a class="accueilLink accueilLink-3" href="haushka.html" rel="noopener noreferrer">Méthode Haushka</a>
-                                <div class="underline" style="opacity: 0; background-color:#ebde82;"></div>
-                            </div>
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-3"
+                  href="craie.html"
+                  rel="noopener noreferrer"
+                  >Craie sèche</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #e3cf2e"
+                ></div>
+              </div>
 
-                            <div class="ongletWrapper" style="margin: 0px 7px;">
-                                <a class="accueilLink accueilLink-4" href="haikus.html" rel="noopener noreferrer">Ha&iuml;kus</a>
-                                <div class="underline" style="opacity: 0; background-color:#b1e482;"></div>
-                            </div>
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-4"
+                  href="haushka.html"
+                  rel="noopener noreferrer"
+                  >Méthode Haushka</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #ebde82"
+                ></div>
+              </div>
 
-                            <!-- <div class="ongletWrapper" style="margin: 0px 7px;">
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-5"
+                  href="haikus.html"
+                  rel="noopener noreferrer"
+                  >Ha&iuml;kus</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #b1e482"
+                ></div>
+              </div>
+
+              <!-- <div class="ongletWrapper" style="margin: 0px 7px;">
                                 <a class="disabledLink accueilLink accueilLink-5" rel="noopener noreferrer">Reproductions</a>
                                 <div class="underline" style="opacity: 0; background-color:#85ecd6;"></div>
                             </div>
@@ -104,21 +176,25 @@
                                 <div class="underline" style="opacity: 0; background-color:#7abbf5;"></div>
                             </div> -->
 
-                            <div class="ongletWrapper" style="margin: 0px 7px;">
-                                <a class="accueilLink accueilLink-7" href="contact.php" rel="noopener noreferrer">Contact</a>
-                                <div class="underline" style="opacity: 0; background-color:#f076e0;"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </header>
-
+              <div class="ongletWrapper" style="margin: 0px 7px">
+                <a
+                  class="accueilLink accueilLink-7"
+                  href="contact.php"
+                  rel="noopener noreferrer"
+                  >Contact</a
+                >
+                <div
+                  class="underline"
+                  style="opacity: 0; background-color: #f076e0"
+                ></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </header>
+    </div>
 
-        <!-- Test anim https://css-generators.com/wavy-shapes/ (AUTRES SITES: https://blog.logrocket.com/best-css-shape-generators-demo/) -->
-        <!-- <div class="box"></div> -->
-
-        
-    </body>
+    <!-- Test anim https://css-generators.com/wavy-shapes/ (AUTRES SITES: https://blog.logrocket.com/best-css-shape-generators-demo/) -->
+    <!-- <div class="box"></div> -->
+  </body>
 </html>

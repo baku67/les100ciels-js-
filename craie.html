@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="canonical" href="https://les100ciels.art/haikus" />
+    <link rel="canonical" href="https://les100ciels.art/craie" />
 
     <link rel="icon" type="image/x-icon" href="/favicon1.ico" />
     <link rel="stylesheet" href="style.css" />
@@ -31,30 +31,21 @@
       crossorigin="anonymous"
     ></script>
 
-    <link rel="preload" as="image" href="haiku1.png" />
-    <link rel="preload" as="image" href="haiku2.png" />
-    <link rel="preload" as="image" href="haiku3.png" />
-    <link rel="preload" as="image" href="haiku4.png" />
-    <link rel="preload" as="image" href="haiku5.png" />
-    <link rel="preload" as="image" href="haiku6.png" />
-
-    <link rel="preload" as="image" href="haiku-heron3.png" />
-
-    <title>Ha&iuml;kus | Les 100 Ciels</title>
+    <title>Craie sèche | Les 100 Ciels</title>
 
     <style>
       .burgerOngletActif {
         background: linear-gradient(
           90deg,
           rgba(231, 213, 164, 1) 50%,
-          rgba(123, 235, 255, 0) 100%
+          rgb(123 235 255 / 54%) 100%
         );
       }
       .burgerOngletActif-desktop {
         background: linear-gradient(
           90deg,
           rgba(231, 213, 164, 1) 50%,
-          rgba(146, 239, 255, 0) 100%
+          rgb(146 239 255 / 0%) 100%
         );
       }
 
@@ -364,20 +355,40 @@
                 background: linear-gradient(180deg, rgba(17,18,63,1) 0%, rgba(255,183,0,0) 100%, rgba(17,18,63,1) 100%);
                 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#11123f",GradientType=1); */
 
-        background: rgb(32 91 81);
+        background: rgb(17 63 49);
         background: -moz-linear-gradient(
           180deg,
-          rgb(32 91 81) 0%,
+          rgb(32 91 72) 0%,
           rgb(28 54 65) 100%
         );
         background: -webkit-linear-gradient(
           180deg,
-          rgb(32 91 81) 0%,
+          rgb(32 91 72) 0%,
           rgb(28 54 65) 100%
         );
         background: linear-gradient(
           180deg,
-          rgb(32 91 81) 0%,
+          rgb(32 91 72) 0%,
+          rgb(28 54 65) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
+      }
+
+      .bodyMentionsLegales {
+        background: rgb(17 63 49);
+        background: -moz-linear-gradient(
+          180deg,
+          rgb(20 21 55) 0%,
+          rgb(28 54 65) 100%
+        );
+        background: -webkit-linear-gradient(
+          180deg,
+          rgb(20 21 55) 0%,
+          rgb(28 54 65) 100%
+        );
+        background: linear-gradient(
+          180deg,
+          rgb(20 21 55) 0%,
           rgb(28 54 65) 100%
         );
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#11123f",endColorstr="#18212f",GradientType=1);
@@ -430,21 +441,6 @@
         position: absolute;
         width: 100%;
         height: -webkit-fill-available;
-      }
-
-      .bgStarsHaiku {
-        transform: rotate(180deg);
-
-        /* good try mais non: */
-        /* animation: bgStarsRotate 250s 0s linear forwards infinite;  */
-      }
-      @keyframes bgStarsRotate {
-        from {
-          transform: rotate(180deg);
-        }
-        to {
-          transform: rotate(-180deg);
-        }
       }
 
       .linkTitle {
@@ -613,20 +609,6 @@
 
       /* SMARTPHONE */
       @media (max-width: 450px) {
-        .bgStarsHaiku {
-          transform: rotate(180deg);
-
-          animation: none;
-        }
-        @keyframes bgStarsRotate {
-          from {
-            transform: rotate(180deg);
-          }
-          to {
-            transform: rotate(-180deg);
-          }
-        }
-
         .main {
           margin-top: 0px;
           /* Attention */
@@ -759,6 +741,22 @@
         .acryliqueSectionList {
           padding-top: 5px;
         }
+
+        .craie-content {
+          .craie-content-wrapper {
+            /* flex-direction: column !important; */
+            flex-flow: wrap;
+            align-items: center;
+            gap: 10px;
+            margin: 50px auto;
+
+            .craie-image {
+            }
+
+            .craie-image:hover {
+            }
+          }
+        }
       }
 
       /* TABLET */
@@ -808,84 +806,87 @@
         }
       }
 
-      .bgStars {
-        height: 100%;
-        overflow: hidden;
-        position: absolute;
-        width: 100%;
+      @keyframes fadeInGalleryDown {
+        from {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0px);
+        }
       }
 
-      @media (max-width: 480px) {
-        html {
-          height: auto;
-          /* height: -webkit-fill-available; */
-          /* height: 100%; */
-        }
-        body {
+      .craie-content {
+        text-align: center;
+        z-index: 100;
+        position: relative;
+
+        .craie-content-wrapper {
           position: relative;
-          overflow: auto;
-        }
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          gap: 10px;
+          margin: 50px auto;
+          max-width: 1200px;
 
-        .bodyHaiku {
-          overflow: scroll;
+          opacity: 0;
+          transform: translateY(-50px);
 
-          height: auto;
-          /* Si contenu trop petit en hauteur: */
-          min-height: 100vh;
-        }
+          animation: fadeInGalleryDown 2.2s 1.8s ease forwards;
 
-        .titlesDiv h1 {
-          margin-block-end: 0px;
-        }
+          .craie-image {
+            cursor: pointer;
+            width: 150px;
+            height: 209px;
+            object-fit: cover;
+            border-radius: 5px;
 
-        .haikusContentImg {
-          width: 70%;
-          height: auto;
+            transition: all 0.4s;
+          }
+
+          .craie-image:hover {
+            opacity: 0.8;
+            transform: scale(0.95);
+          }
         }
+      }
+
+      .background-craies {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        opacity: 0.15;
+        object-fit: cover;
       }
     </style>
   </head>
 
-  <body class="bodyHaiku">
-    <!-- Cache pour opacity quand burgers actifs: -->
-    <div id="burgerActif-shadePage"></div>
-
-    <!-- Modal preview -->
-    <div id="modalPreview">
-      <i
-        id="closeModalPreviewBtn"
-        class="closeModalPreview fa-solid fa-xmark"
-      ></i>
-
-      <div class="modalPreviewContent modalPreviewContent-HaikuMobil">
-        <h2 id="modalPreviewTitle"></h2>
-        <img id="modalPreviewImg" class="blueGlowFix-haikus" src="" />
-      </div>
-    </div>
-
+  <body id="bodyMentionsLegales" class="bodyMentionsLegales">
     <!-- Desktop: rectangle detection sideNav-desktop -->
     <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
 
     <!-- Nav Burger DESKTOP (onHover title) -->
-    <div id="mySidenav-desktop" class="sidenav-desktop sideNavHaikus isDesktop">
+    <div
+      id="mySidenav-desktop"
+      class="sidenav-desktop sideNavMentionsLegales isDesktop"
+    >
       <ul>
         <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="peinture.html">Acrylique</a></li>
         <li><a href="aquarelle.html">Aquarelle</a></li>
-        <li><a href="craie.html">Craie sèche</a></li>
-        <li><a href="haushka.html">Haushka</a></li>
         <li>
-          <a href="haikus.html" class="burgerOngletActif-desktop"
-            >Ha&iuml;kus</a
-          >
+          <a href="craie.html" class="burgerOngletActif-desktop">Craie sèche</a>
         </li>
+        <li><a href="haushka.html">Haushka</a></li>
+        <li><a href="haikus.html">Ha&iuml;kus</a></li>
         <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
         <li><a href="contact.php">Contact</a></li>
       </ul>
-
-      <!-- Heron background: (desktop burger) -->
-      <img src="haiku-heron3.png" class="heronHaikuBg isDesktop" />
 
       <div class="mentionsLegalesDiv">
         <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
@@ -894,10 +895,7 @@
 
     <!-- *** Nav MenuBurger mobile -->
     <!-- NavDiv -->
-    <div id="mySidenav" class="sidenav sideNavHaikus isMobile">
-      <!-- Heron background: (mobile burger) -->
-      <img src="haiku-heron3.png" class="heronHaikuBg isMobile" />
-
+    <div id="mySidenav" class="sidenav sideNavMentionsLegales isMobile">
       <a id="closeBtn" href="#" class="close">&times;</a>
 
       <a href="index.html" class="linkBurgerHomeBtn">
@@ -1143,12 +1141,13 @@
       </a>
 
       <ul>
-        <!-- <li><a href="index.html">Home</a></li> -->
         <li><a href="peinture.html">Acrylique</a></li>
         <li><a href="aquarelle.html">Aquarelle</a></li>
-        <li><a href="craie.html">Craie sèche</a></li>
+        <li>
+          <a href="craie.html" class="burgerOngletActif">Craie sèche</a>
+        </li>
         <li><a href="haushka.html">Haushka</a></li>
-        <li><a href="haikus.html" class="burgerOngletActif">Ha&iuml;kus</a></li>
+        <li><a href="haikus.html">Ha&iuml;kus</a></li>
         <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
         <li><a href="contact.php">Contact</a></li>
@@ -1173,7 +1172,7 @@
     </a>
 
     <!-- Try bg étoile  -->
-    <div class="bgStars bgStarsHaiku">
+    <div class="bgStars">
       <div id="stars"></div>
       <div id="stars2"></div>
       <div id="stars3"></div>
@@ -1198,463 +1197,146 @@
       </a>
     </div>
 
-    <!-- Previous Haiku Desktop chevron -->
-    <div id="previousHaikuDivDesktop" class="isDesktop">
-      <!-- <i class="fa-solid fa-chevron-left"></i> -->
-      <img src="navArrowPrevious.png" />
-    </div>
-    <!-- Next Haiku Desktop chevron -->
-    <div id="nextHaikuDivDesktop" class="isDesktop">
-      <!-- <i class="fa-solid fa-chevron-right"></i> -->
-      <img src="navArrowNext.png" />
-    </div>
-
-    <div
-      id="main"
-      class="main"
-      style="position: relative; background: rgba(0, 0, 0, 0)"
-    >
-      <!-- <div id="" class="" > -->
-
-      <h2 class="haikusSubTitle">Ha&iuml;kus</h2>
-
-      <div class="traitHaiku"></div>
-
-      <!-- Section img et Section description (row/column) -->
-      <!-- State intial JS -->
-      <div id="haikusContentContainer" class="haikusContentContainer">
-        <div class="haikusContentImgDiv">
-          <img
-            id="haikuImg"
-            class="haikusContentImg"
-            src="haiku1.png"
-            alt="haiku 1 block-notes"
-          />
-        </div>
-
-        <div class="haikusContentDescriptionDiv">
-          <div class="haikuTitleNav-mobile">
-            <!-- Previous Haiku Mobile chevron -->
-            <div id="previousHaikuDivMobile" class="isMobile">
-              <i class="fa-solid fa-chevron-left"></i>
-            </div>
-            <!-- Next Haiku Mobile chevron -->
-            <div id="nextHaikuDivMobile" class="isMobile">
-              <i class="fa-solid fa-chevron-right"></i>
-            </div>
-
-            <!-- Title Haiku -->
-            <h3 id="haikuTitle">Titre Haiku 1</h3>
-          </div>
-
-          <p id="haikuContent">
-            Pieds nus dans l'herbe,
-            <br />
-            Communion avec les arbres'
-            <br />
-            Salutation au soleil
-            <br /><br />
-            L'homme, lien entre
-            <br />
-            Terre-m&egrave;re et P&eacute;re-ciel
-            <br />
-            Verticalit&egrave;
-            <br /><br />
-            Viens nous visiter
-            <br />
-            Et r&egrave;chauffe nos &acirc;mes
-            <br />
-            Oh soleil levant !
-          </p>
-        </div>
+    <!-- Contenu Page: -->
+    <div id="craie-content" class="craie-content">
+      <div style="overflow: hidden">
+        <h2 class="aquarelleSubTitle">Craie sèche</h2>
       </div>
 
-      <!-- </div> -->
+      <div class="traitAquarelle"></div>
+
+      <div class="craie-content-wrapper">
+        <img
+          src="craies/craie-1.webp"
+          alt="Craie sèche 1, exposition Les 100 Ciels"
+          class="craie-image"
+        />
+        <img
+          src="craies/craie-2.webp"
+          alt="Craie sèche 2, exposition Les 100 Ciels"
+          class="craie-image"
+        />
+        <img
+          src="craies/craie-3.webp"
+          alt="Craie sèche 3, exposition Les 100 Ciels"
+          class="craie-image"
+        />
+      </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var haikusArray = [
-          {
-            index: 1,
-            title: "<span class='haikuNbr'>4.1</span> Yoga",
-            content: `
-                            <span class='haikuWord haiku1-haikuWord1'>Pieds nus dans l'herbe,</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord2'>Communion avec les arbres'</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord3'>Salutation au soleil</span>
-                            <br><br>
-                            <span class='haikuWord haiku1-haikuWord4'>L'homme, lien entre</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord5'>Terre-m&egrave;re et P&egrave;re-ciel</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord6'>Verticalit&eacute;</span>
-                            <br><br>
-                            <span class='haikuWord haiku1-haikuWord7'>Viens nous visiter</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord8'>Et r&eacute;chauffe nos &#226;mes</span>
-                            <br>
-                            <span class='haikuWord haiku1-haikuWord9'>Oh soleil levant !</span>
-                        `,
-            src: "haiku1.png",
-          },
-          {
-            index: 2,
-            title: "<span class='haikuNbr'>4.2</span> Danse",
-            content: `
-                            <span class='haikuWord haiku2-haikuWord1'>Ils dansent de joie</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord2'>Fils et filles' de la terre</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord3'>Lumi&egrave;re du soir..</span>
-                            <br><br>
-                            <span class='haikuWord haiku2-haikuWord4'>C&eacute;leste musique,</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord5'>Epinette vosgienne et</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord6'>Troubadours z&eacute;l&eacute;s.</span>
-                            <br><br>
-                            <span class='haikuWord haiku2-haikuWord7'>Techno m&eacute;di&eacute;vale'</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord8'>A entrain&eacute; les amis</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord9'>Dans la ronde riante.</span>
-                            <br><br>
-                            <span class='haikuWord haiku2-haikuWord10'>Autour de la table'</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord11'>Les belles &#226;mes sont nourries</span>
-                            <br>
-                            <span class='haikuWord haiku2-haikuWord12'>Flottent sourires !</span>
-                        `,
-            src: "haiku2.png",
-          },
-          {
-            index: 3,
-            title:
-              "<span class='haikuNbr'>4.3</span> <span class='haikuTitleText'>Chant</span>",
-            content: `
-                            <span class='haikuWord haiku3-haikuWord1'>Les mantras s'&eacute;l&egrave;vent'</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord2'>Chants à l'unisson des &#226;mes'</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord3'>Tel l'encens vers Toi ...</span>
-                            <br><br>
-                            <span class='haikuWord haiku3-haikuWord4'>Gaïa me porte</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord5'>Ma vie est une louange,</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord6'>La t&#234;te dans les ciels.</span>
-                            <br><br>
-                            <span class='haikuWord haiku3-haikuWord7'>Nourrie par la terre'</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord8'>Ma vie comme une offrande</span>
-                            <br>
-                            <span class='haikuWord haiku3-haikuWord9'>&#224; la Source de Vie.</span>
-                        `,
-            src: "haiku3.png",
-          },
-          {
-            index: 4,
-            title: "haiku <span class='haikuNbr'>5</span>",
-            content: `
-                            <span class='haikuWord haiku4-haikuWord1'>Gazouillis d'oiseaux,</span>
-                            <br>
-                            <span class='haikuWord haiku4-haikuWord2'>Monte vers la lumière,</span>
-                            <br>
-                            <span class='haikuWord haiku4-haikuWord3'>Quel concert de joie !</span>
-                        `,
-            src: "haiku4.png",
-          },
-          {
-            index: 5,
-            title: "haiku <span class='haikuNbr'>6</span>",
-            content: `
-                            <span class='haikuWord haiku5-haikuWord1'>Lumière du monde'</span>
-                            <br>
-                            <span class='haikuWord haiku5-haikuWord2'>Qui emplit tout l'univers</span>
-                            <br>
-                            <span class='haikuWord haiku5-haikuWord3'>Amour infini</span>
-                        `,
-            src: "haiku5.png",
-          },
-          {
-            index: 6,
-            title: "haiku <span class='haikuNbr'>7</span>",
-            content: `
-                            <span class='haikuWord haiku6-haikuWord1'>Merci à la Vie</span>
-                            <br>
-                            <span class='haikuWord haiku6-haikuWord2'>Qui est douceur et amour</span>
-                            <br>
-                            <span class='haikuWord haiku6-haikuWord3'>pour nous les humains.</span>
-                        `,
-            src: "haiku6.png",
-          },
-        ];
-
-        // trouver l'objet selon index:
-        function findByPropertyValue(array, property, value) {
-          return array.find(function (element) {
-            return element[property] === value;
-          });
-        }
-
-        // State initial haiku 1 default:
-        var indexHaiku = 1;
-        var currentHaiku = findByPropertyValue(
-          haikusArray,
-          "index",
-          indexHaiku
-        );
-
-        document.getElementById("haikuImg").src = currentHaiku.src;
-        document.getElementById("haikuTitle").innerHTML = currentHaiku.title;
-        document.getElementById("haikuContent").innerHTML =
-          currentHaiku.content;
-
-        // Si premier ou dernier Haiku = Disabled nav flèche:
-
-        function animTransition() {
-          var targetHaiku = findByPropertyValue(
-            haikusArray,
-            "index",
-            indexHaiku
-          );
-
-          document
-            .getElementById("haikusContentContainer")
-            .classList.remove("fadeInHaikuImg");
-          document
-            .getElementById("haikusContentContainer")
-            .classList.add("fadeOutHaikuImg");
-
-          setTimeout(function () {
-            document.getElementById("haikuTitle").innerHTML = targetHaiku.title;
-            document.getElementById("haikuContent").innerHTML =
-              targetHaiku.content;
-            document.getElementById("haikuImg").src = targetHaiku.src;
-
-            document
-              .getElementById("haikusContentContainer")
-              .classList.remove("fadeOutHaikuImg");
-            document
-              .getElementById("haikusContentContainer")
-              .classList.add("fadeInHaikuImg");
-          }, 501);
-        }
-
-        // Click previous Btn (MOBILE):
-        document
-          .getElementById("previousHaikuDivMobile")
-          .addEventListener("click", function () {
-            if (indexHaiku - 1 != 0) {
-              indexHaiku -= 1;
-            } else {
-              indexHaiku = haikusArray.length;
-            }
-
-            animTransition();
-          });
-        // Click next Btn (MOBILE):
-        document
-          .getElementById("nextHaikuDivMobile")
-          .addEventListener("click", function () {
-            if (indexHaiku + 1 <= haikusArray.length) {
-              indexHaiku += 1;
-            } else {
-              indexHaiku = 1;
-            }
-
-            animTransition();
-          });
-
-        // Click previous Btn (DESKTOP):
-        document
-          .getElementById("previousHaikuDivDesktop")
-          .addEventListener("click", function () {
-            if (indexHaiku - 1 != 0) {
-              indexHaiku -= 1;
-            } else {
-              indexHaiku = haikusArray.length;
-            }
-
-            animTransition();
-          });
-        // Click next Btn (DESKTOP):
-        document
-          .getElementById("nextHaikuDivDesktop")
-          .addEventListener("click", function () {
-            if (indexHaiku + 1 <= haikusArray.length) {
-              indexHaiku += 1;
-            } else {
-              indexHaiku = 1;
-            }
-
-            animTransition();
-          });
-
-        // Menu burger mobile pop:
-        var sidenav = document.getElementById("mySidenav");
-        var openBtn = document.getElementById("openBtn");
-        var closeBtn = document.getElementById("closeBtn");
-
-        openBtn.onclick = openNav;
-        closeBtn.onclick = closeNav;
-
-        function openNav() {
-          sidenav.classList.add("active");
-          // pas opti :
-          // document.getElementById("titlesDiv").style.filter = "blur(2px)";
-          // document.getElementById("main").style.filter = "blur(3px)";
-
-          document
-            .getElementById("burgerActif-shadePage")
-            .classList.toggle("shadePage-active");
-        }
-
-        function closeNav() {
-          sidenav.classList.remove("active");
-
-          // document.getElementById("titlesDiv").style.filter = "blur(0px)";
-          // document.getElementById("main").style.filter = "blur(0px)";
-
-          sidenav.classList.add("closeBurgerColorAnimated");
-          setTimeout(function () {
-            sidenav.classList.remove("closeBurgerColorAnimated");
-          }, 500);
-
-          document
-            .getElementById("burgerActif-shadePage")
-            .classList.toggle("shadePage-active");
-        }
-
-        // WIP click outer navBurger = close() (MOBILE):
-        document
-          .getElementById("burgerActif-shadePage")
-          .addEventListener("click", function (e) {
-            if (document.getElementById("mySidenav").contains(e.target)) {
-              // click dans nav burger
-            } else {
-              // click en dehors nav burger
-              if (sidenav.classList.contains("active")) {
-                closeNav();
-              }
-            }
-          });
-
-        // Click image haiku => Modal
-        document
-          .getElementById("haikuImg")
-          .addEventListener("click", function () {
-            document.getElementById("modalPreviewImg").src =
-              document.getElementById("haikuImg").src;
-            document.getElementById("modalPreviewTitle").innerHTML =
-              document.getElementById("haikuTitle").innerText;
-
-            document.getElementById("modalPreview").style.display = "block";
-            document
-              .getElementById("modalPreview")
-              .classList.add("fadeInModalPreview");
-            setTimeout(() => {
-              document.getElementById("modalPreview").style.opacity = "1";
-              document.getElementById("modalPreview").style.transform =
-                "translateY(0px)";
-              document
-                .getElementById("modalPreview")
-                .classList.remove("fadeInModalPreview");
-            }, 701);
-          });
-
-        // Btn close Modal (+ remove anims modal)
-        document
-          .getElementById("closeModalPreviewBtn")
-          .addEventListener("click", function () {
-            document
-              .getElementById("modalPreview")
-              .classList.remove("fadeInModalPreview");
-            document
-              .getElementById("modalPreview")
-              .classList.add("fadeOutModalPreview");
-            setTimeout(() => {
-              document.getElementById("modalPreview").style.display = "none";
-              document.getElementById("modalPreview").style.opacity = "0";
-              document.getElementById("modalPreview").style.transform =
-                "translateY(20px)";
-              document
-                .getElementById("modalPreview")
-                .classList.remove("fadeOutModalPreview");
-            }, 701);
-          });
-
-        // DESKTOP hover title = sideNav-desktop:
-
-        // Détection mobile (isMobile JS)
-        var mobileDetection;
-        if (
-          navigator.userAgent.match(/Android/i) ||
-          navigator.userAgent.match(/webOS/i) ||
-          navigator.userAgent.match(/iPhone/i) ||
-          navigator.userAgent.match(/iPad/i) ||
-          navigator.userAgent.match(/iPod/i) ||
-          navigator.userAgent.match(/BlackBerry/i) ||
-          navigator.userAgent.match(/Windows Phone/i)
-        ) {
-          mobileDetection = true;
-        } else {
-          mobileDetection = false;
-        }
-
-        if (!mobileDetection) {
-          document
-            .getElementById("titlesDiv")
-            .addEventListener("mouseenter", function () {
-              document.getElementById("mySidenav-desktop").style.left = "0";
-              document.getElementById("mySidenav-desktop").style.opacity = "1";
-
-              document
-                .getElementById("burgerActif-shadePage")
-                .classList.add("shadePage-active");
-
-              document.getElementById("burger-icon-desktop").style.opacity =
-                "0";
-              document.getElementById("h1titleBurgerDesktop").style.transform =
-                "translateX(-35px)";
-            });
-          document
-            .getElementById("shapeDetection-navBarre-desktop")
-            .addEventListener("mouseenter", function () {
-              console.log("NETERED");
-              document.getElementById("mySidenav-desktop").style.left = "0";
-              document.getElementById("mySidenav-desktop").style.opacity = "1";
-
-              document
-                .getElementById("burgerActif-shadePage")
-                .classList.add("shadePage-active");
-
-              document.getElementById("burger-icon-desktop").style.opacity =
-                "0";
-              document.getElementById("h1titleBurgerDesktop").style.transform =
-                "translateX(-35px)";
-            });
-
-          document
-            .getElementById("mySidenav-desktop")
-            .addEventListener("mouseleave", function () {
-              document.getElementById("mySidenav-desktop").style.left =
-                "-350px";
-              document.getElementById("mySidenav-desktop").style.opacity = "0";
-
-              document
-                .getElementById("burgerActif-shadePage")
-                .classList.remove("shadePage-active");
-
-              document.getElementById("burger-icon-desktop").style.opacity =
-                "1";
-              document.getElementById("h1titleBurgerDesktop").style.transform =
-                "translateX(0px)";
-            });
-        }
-      });
-    </script>
+    <!-- Background page -->
+    <img
+      src="craies/background-chalks.jpg"
+      alt="Background craies"
+      class="background-craies"
+    />
   </body>
+
+  <script>
+    // Détection mobile (isMobile JS)
+    var mobileDetection;
+    if (
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)
+    ) {
+      mobileDetection = true;
+    } else {
+      mobileDetection = false;
+    }
+
+    // *** MOBILE Menu burger :
+    if (mobileDetection) {
+      var sidenav = document.getElementById("mySidenav");
+      var openBtn = document.getElementById("openBtn");
+      var closeBtn = document.getElementById("closeBtn");
+
+      openBtn.onclick = openNav;
+      closeBtn.onclick = closeNav;
+
+      function openNav() {
+        sidenav.classList.add("active");
+        // pas opti :
+        // document.getElementById("titlesDiv").style.filter = "blur(2px)";
+        // document.getElementById("contactContent").style.filter = "blur(3px)";
+      }
+      function closeNav() {
+        sidenav.classList.remove("active");
+
+        // document.getElementById("titlesDiv").style.filter = "blur(0px)";
+        // document.getElementById("contactContent").style.filter = "blur(0px)";
+
+        sidenav.classList.add("closeBurgerColorAnimated");
+        setTimeout(function () {
+          sidenav.classList.remove("closeBurgerColorAnimated");
+        }, 500);
+      }
+
+      // WIP click outer navBurger = close() (MOBILE):
+      document
+        .getElementById("contactContent-merci")
+        .addEventListener("click", function (e) {
+          if (document.getElementById("mySidenav").contains(e.target)) {
+            // click dans nav burger
+          } else {
+            // click en dehors nav burger
+            if (sidenav.classList.contains("active")) {
+              closeNav();
+            }
+          }
+        });
+    }
+
+    // *** DESKTOP hover title = sideNav-desktop:
+    if (!mobileDetection) {
+      document
+        .getElementById("titlesDiv")
+        .addEventListener("mouseenter", function () {
+          document.getElementById("mySidenav-desktop").style.left = "0";
+          document.getElementById("mySidenav-desktop").style.opacity = "1";
+
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.add("shadePage-active");
+
+          document.getElementById("burger-icon-desktop").style.opacity = "0";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(-35px)";
+        });
+      document
+        .getElementById("shapeDetection-navBarre-desktop")
+        .addEventListener("mouseenter", function () {
+          console.log("NETERED");
+          document.getElementById("mySidenav-desktop").style.left = "0";
+          document.getElementById("mySidenav-desktop").style.opacity = "1";
+
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.add("shadePage-active");
+
+          document.getElementById("burger-icon-desktop").style.opacity = "0";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(-35px)";
+        });
+
+      document
+        .getElementById("mySidenav-desktop")
+        .addEventListener("mouseleave", function () {
+          document.getElementById("mySidenav-desktop").style.left = "-350px";
+          document.getElementById("mySidenav-desktop").style.opacity = "0";
+
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.remove("shadePage-active");
+
+          document.getElementById("burger-icon-desktop").style.opacity = "1";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(0px)";
+        });
+    }
+  </script>
 </html>

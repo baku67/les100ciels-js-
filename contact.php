@@ -84,9 +84,10 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="canonical" href="https://les100ciels.art/contact" />
         <link rel="icon" type="image/x-icon" href="/favicon1.ico">
 
         <link rel='stylesheet' href='style.css'>
@@ -106,6 +107,7 @@
         <!-- reCAPTCHA -->
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+        <title>Contact | Les 100 Ciels</title>
 
         <!-- FIX STARS / BODY / HTML -->
         <style>
@@ -117,7 +119,7 @@
                 background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
             }
             .burgerOngletActif-desktop {
-                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(146 239 255 / 40%) 100%);
+                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(146 239 255 / 0%) 100%);
             }
 
             
@@ -169,6 +171,7 @@
                 <!-- <li><a href="index.html">Home</a></li> -->
                 <li><a href="peinture.html">Acrylique</a></li>
                 <li><a href="aquarelle.html">Aquarelle</a></li>
+                <li><a href="craie.html">Craie sèche</a></li>
                 <li><a href="haushka.html">Haushka</a></li>
                 <li><a href="haikus.html">Ha&iuml;kus</a></li>
                 <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
@@ -429,6 +432,7 @@
               <!-- <li><a href="index.html">Home</a></li> -->
               <li><a href="peinture.html">Acrylique</a></li>
               <li><a href="aquarelle.html">Aquarelle</a></li>
+              <li><a href="craie.html">Craie sèche</a></li>
               <li><a href="haushka.html">Haushka</a></li>
               <li><a href="haikus.html">Ha&iuml;kus</a></li>
               <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
