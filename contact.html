@@ -82,130 +82,152 @@
     }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="canonical" href="https://les100ciels.art/contact" />
-        <link rel="icon" type="image/x-icon" href="/favicon1.ico">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://les100ciels.art/contact" />
+    <link rel="icon" type="image/x-icon" href="/favicon1.ico" />
 
-        <link rel='stylesheet' href='style.css'>
-        <link rel='stylesheet' href='phone.css'>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="phone.css" />
 
-        <link rel='stylesheet' href='styleSass.css'>
-        <!-- <link rel='stylesheet' href='styleSass2k.css'> -->
+    <link rel="stylesheet" href="styleSass.css" />
+    <!-- <link rel='stylesheet' href='styleSass2k.css'> -->
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&display=swap"
+      rel="stylesheet"
+    />
 
-        <script src="https://kit.fontawesome.com/698848973e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/698848973e.js"
+      crossorigin="anonymous"
+    ></script>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
 
-        <!-- reCAPTCHA -->
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-        <title>Contact | Les 100 Ciels</title>
+    <title>Contact | Les 100 Ciels</title>
 
-        <!-- FIX STARS / BODY / HTML -->
-        <style>
-            body {
-                overflow: scroll;
-            }
+    <!-- FIX STARS / BODY / HTML -->
+    <style>
+      body {
+        overflow: scroll;
+      }
 
-            .burgerOngletActif {
-                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(123 235 255 / 54%) 100%);
-            }
-            .burgerOngletActif-desktop {
-                background: linear-gradient(90deg, rgba(231,213,164,1) 50%, rgb(146 239 255 / 0%) 100%);
-            }
+      .burgerOngletActif {
+        background: linear-gradient(
+          90deg,
+          rgba(231, 213, 164, 1) 50%,
+          rgb(123 235 255 / 54%) 100%
+        );
+      }
+      .burgerOngletActif-desktop {
+        background: linear-gradient(
+          90deg,
+          rgba(231, 213, 164, 1) 50%,
+          rgb(146 239 255 / 0%) 100%
+        );
+      }
 
-            
-            .bgStars {
-            height: 100%;
-            overflow: hidden;
-            position: absolute;
-            width: 100%;
-            }
+      .bgStars {
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+      }
 
-            /* Mobile (déjà absulte sur pc) */
-            .titlesDiv {
-                position: relative;
-            }
-            .titlesDiv h1 {
-                margin-block-end: 20px;
-            }
+      /* Mobile (déjà absulte sur pc) */
+      .titlesDiv {
+        position: relative;
+      }
+      .titlesDiv h1 {
+        margin-block-end: 20px;
+      }
 
-            @media (max-width: 480px) {
-                html {
-                    height: auto;
-                }
-                body {
-                    position: relative;
-                    overflow: auto;
-                }
+      @media (max-width: 480px) {
+        html {
+          height: auto;
+        }
+        body {
+          position: relative;
+          overflow: auto;
+        }
 
-                .titlesDiv h1 {
-                    margin-block-end: 0px;
-                }
-            }
-        </style>
+        .titlesDiv h1 {
+          margin-block-end: 0px;
+        }
+      }
+    </style>
+  </head>
 
-    </head>
+  <body class="bodyContact" style="overflow: auto">
+    <!-- Desktop: rectangle detection sideNav-desktop -->
+    <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
 
-
-
-    <body class="bodyContact" style="overflow:auto;">
-
-
-
-        <!-- Desktop: rectangle detection sideNav-desktop -->
-        <div id="shapeDetection-navBarre-desktop" class="isDesktop"></div>
-
-        <!-- Nav Burger DESKTOP (onHover title) -->
-        <div id="mySidenav-desktop" class="sidenav-desktop sideNavContact isDesktop">
-
-            <ul>
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="peinture.html">Acrylique</a></li>
-                <li><a href="aquarelle.html">Aquarelle</a></li>
-                <li><a href="craie.html">Craie sèche</a></li>
-                <li><a href="haushka.html">Haushka</a></li>
-                <li><a href="haikus.html">Ha&iuml;kus</a></li>
-                <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+    <!-- Nav Burger DESKTOP (onHover title) -->
+    <div
+      id="mySidenav-desktop"
+      class="sidenav-desktop sideNavContact isDesktop"
+    >
+      <ul>
+        <!-- <li><a href="index.html">Home</a></li> -->
+        <li><a href="peinture.html">Acrylique</a></li>
+        <li><a href="aquarelle.html">Aquarelle</a></li>
+        <li><a href="craie.html">Craie sèche</a></li>
+        <li><a href="haushka.html">Haushka</a></li>
+        <li><a href="haikus.html">Ha&iuml;kus</a></li>
+        <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
                 <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
-                <li><a href="contact.php" class="burgerOngletActif-desktop">Contact</a></li>
-            </ul>
+        <li>
+          <a href="contact.html" class="burgerOngletActif-desktop">Contact</a>
+        </li>
+      </ul>
 
-            <!-- Letters background: (Desktop burger) -->
-            <img src="contactImage-min_v3.png" class="lettersContactBg isDesktop"> 
+      <!-- Letters background: (Desktop burger) -->
+      <img src="contactImage-min_v3.png" class="lettersContactBg isDesktop" />
 
-            <div class="mentionsLegalesDiv">
-                <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
-            </div>
-        </div>
+      <div class="mentionsLegalesDiv">
+        <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
+      </div>
+    </div>
 
+    <!-- *** Nav MenuBurger mobile -->
+    <!-- NavDiv -->
+    <div id="mySidenav" class="sidenav sideNavContact isMobile">
+      <!-- Letters background: (Mobile burger) -->
+      <img src="contactImage-min_v3.png" class="lettersContactBg isMobile" />
 
+      <a id="closeBtn" href="#" class="close">&times;</a>
 
-
-        <!-- *** Nav MenuBurger mobile -->
-        <!-- NavDiv -->
-        <div id="mySidenav" class="sidenav sideNavContact isMobile">
-
-            <!-- Letters background: (Mobile burger) -->
-            <img src="contactImage-min_v3.png" class="lettersContactBg isMobile"> 
-
-            <a id="closeBtn" href="#" class="close">&times;</a>
-
-            <a href="index.html" class="linkBurgerHomeBtn">
-                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="svgBurgerHomeBtn"
-                width="341.000000pt" height="288.000000pt" viewBox="0 0 341.000000 288.000000"
-                preserveAspectRatio="xMidYMid meet">
-                    <metadata>Created by potrace 1.14, written by Peter Selinger 2001-2017</metadata>
-                    <g transform="translate(0.000000,288.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
-                        <path d="M2590 2395 c-138 -29 -298 -86 -473 -169 -53 -26 -109 -46 -125 -46
+      <a href="index.html" class="linkBurgerHomeBtn">
+        <svg
+          version="1.0"
+          xmlns="http://www.w3.org/2000/svg"
+          class="svgBurgerHomeBtn"
+          width="341.000000pt"
+          height="288.000000pt"
+          viewBox="0 0 341.000000 288.000000"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <metadata>
+            Created by potrace 1.14, written by Peter Selinger 2001-2017
+          </metadata>
+          <g
+            transform="translate(0.000000,288.000000) scale(0.100000,-0.100000)"
+            fill="#000000"
+            stroke="none"
+          >
+            <path
+              d="M2590 2395 c-138 -29 -298 -86 -473 -169 -53 -26 -109 -46 -125 -46
                         -20 0 -38 -10 -60 -34 -17 -19 -53 -47 -79 -62 -26 -15 -76 -44 -110 -66 -34
                         -21 -71 -38 -81 -38 -10 0 -32 -16 -50 -36 -25 -28 -35 -33 -49 -26 -30 16
                         -57 -1 -63 -39 -5 -31 -8 -34 -40 -34 -30 0 -37 -5 -53 -36 -14 -30 -97 -105
@@ -422,238 +444,267 @@
                         113 82 -25 44 -92 53 -117 16z m70 -39 c3 -6 1 -16 -5 -22 -11 -11 -30 5 -31
                         26 0 11 28 8 36 -4z M1965 890 c-26 -28 -23 -75 5 -105 45 -48 120 -20 120 45
                         0 65 -84 105 -125 60z m75 -55 c0 -4 -7 -13 -15 -21 -13 -13 -15 -12 -21 10
-                        -8 34 3 50 22 32 8 -8 14 -17 14 -21z"/>
-                    </g>
-                </svg>
-            </a>
+                        -8 34 3 50 22 32 8 -8 14 -17 14 -21z"
+            />
+          </g>
+        </svg>
+      </a>
 
-
-            <ul>
-              <!-- <li><a href="index.html">Home</a></li> -->
-              <li><a href="peinture.html">Acrylique</a></li>
-              <li><a href="aquarelle.html">Aquarelle</a></li>
-              <li><a href="craie.html">Craie sèche</a></li>
-              <li><a href="haushka.html">Haushka</a></li>
-              <li><a href="haikus.html">Ha&iuml;kus</a></li>
-              <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
+      <ul>
+        <!-- <li><a href="index.html">Home</a></li> -->
+        <li><a href="peinture.html">Acrylique</a></li>
+        <li><a href="aquarelle.html">Aquarelle</a></li>
+        <li><a href="craie.html">Craie sèche</a></li>
+        <li><a href="haushka.html">Haushka</a></li>
+        <li><a href="haikus.html">Ha&iuml;kus</a></li>
+        <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
-              <li><a href="contact.php" class="burgerOngletActif">Contact</a></li>
-            </ul>
+        <li><a href="contact.html" class="burgerOngletActif">Contact</a></li>
+      </ul>
 
-
-            <!-- (TODO: changer SVG burger: EZ) -->
-            <!-- <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
+      <!-- (TODO: changer SVG burger: EZ) -->
+      <!-- <object type="image/svg+xml" data="burgerDrawing.svg" width="260" height="auto" class="svgBurgerObj">
                 Your browser does not support SVG
             </object> -->
 
+      <div class="mentionsLegalesDiv">
+        <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
+      </div>
+    </div>
+    <!-- Btn burger -->
+    <a href="#" id="openBtn" class="isMobile">
+      <span class="burger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
 
-            <div class="mentionsLegalesDiv">
-                <a href="mentionsLegales.html">Mentions l&eacute;gales</a>
-            </div>
-        </div>
-        <!-- Btn burger -->
-        <a href="#" id="openBtn" class="isMobile">
-            <span class="burger-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="bgStars">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </div>
+
+    <div id="contactContent" class="contactContent">
+      <!-- titre absolute -->
+      <div id="titlesDiv" class="titlesDiv titleDiv-Contact">
+        <a href="./index.html" class="linkTitle">
+          <h1 id="h1titleBurgerDesktop" class="h1title h1titleBurgerDesktop">
+            <!-- Burger Icone PC (à titre indicatif): -->
+            <span
+              id="burger-icon-desktop"
+              class="burger-icon-desktop isDesktop"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
             </span>
+            Les 100 ciels
+          </h1>
         </a>
+      </div>
 
+      <h2 class="contactSubTitle">
+        <i class="fa-solid fa-envelope contactFormIconTitle"></i>
+        <span class="spanContactFormMobile"
+          >Formulaire de <br class="isMobile" />contact</span
+        >
+      </h2>
 
-
-
-        <div class="bgStars">
-            <div id="stars"></div>
-            <div id="stars2"></div>
-            <div id="stars3"></div>
-        </div>
-
-        <div id="contactContent" class="contactContent">
-
-
-            <!-- titre absolute -->
-            <div id="titlesDiv" class="titlesDiv titleDiv-Contact">
-                <a href="./index.html" class="linkTitle">
-                    <h1 id="h1titleBurgerDesktop" class="h1title h1titleBurgerDesktop">
-                        <!-- Burger Icone PC (à titre indicatif): -->
-                        <span id="burger-icon-desktop" class="burger-icon-desktop isDesktop">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        Les 100 ciels
-                    </h1>
-                </a>
+      <div class="contactFormWrapper">
+        <form
+          class="contactForm"
+          method="post"
+          action="contact.html"
+          enctype="multipart/form-data"
+        >
+          <div class="formLinePc">
+            <div class="formLineElemPc">
+              <label for="name"
+                >Votre nom <span class="fieldInfo">(facultatif)</span> :</label
+              >
+              <input type="text" name="name" id="name" maxlength="75" />
             </div>
 
-            <h2 class="contactSubTitle">
-                <i class="fa-solid fa-envelope contactFormIconTitle"></i>
-                <span class="spanContactFormMobile">Formulaire de <br class="isMobile">contact</span>
-            </h2>
-
-            <div class="contactFormWrapper">
-
-                <form class="contactForm" method="post" action="contact.php" enctype="multipart/form-data">
-                    <div class="formLinePc">
-                        <div class="formLineElemPc">
-                            <label for="name">Votre nom <span class="fieldInfo">(facultatif)</span> :</label>
-                            <input type="text" name="name" id="name" maxlength="75">
-                        </div>
-
-                        <div class="formLineElemPc">
-                            <label for="last_name">Votre prénom <span class="fieldInfo">(facultatif)</span> :</label>
-                            <input type="text" name="last_name" id="last_name" maxlength="75">
-                        </div>
-                    </div>
-
-                    <br>
-
-                    <label for="phone_number">Votre n° de téléphone <span class="fieldInfo">(facultatif)</span> :</label>
-                    <input type="text" name="phone_number" id="phone_number" maxlength="15">
-
-
-                    <label for="from">Votre adresse mail <span class="fieldInfo">(afin de vous recontacter)</span> :</label>
-                    <input type="email" name="from" id="from" required maxlength="100">
-
-                    <br>
-
-                    <!-- Podmielle -->
-                    <label for="podmielle" class="podmielle">podmielle</label>
-                    <input type="text" name="podmielle" id="podmielle">
-
-                    <label for="message">Votre message :</label>
-                    <textarea name="message" id="message" rows="4" required maxlength="2000"></textarea>
-
-                    <br>
-
-                    <!-- reCAPTCHA désactivé  -->
-                    <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
-
-                    <!-- Disclaimer  -->
-                    <p class="contactFormDisclaimer">Vos informations personnelles ne seront ni stockées ni partagées. Elles seront uniquement utilisées pour vous recontacter.</p>
-
-                    <label for="math">Combien font <?php echo $_SESSION['number1']; ?> + <?php echo $_SESSION['number2']; ?> ?</label>
-                    <input type="text" id="math" name="math" required>
-
-                    <br>
-
-                    <input class="contactFormSubmitBtn" type="submit">
-                </form>
-
-
+            <div class="formLineElemPc">
+              <label for="last_name"
+                >Votre prénom
+                <span class="fieldInfo">(facultatif)</span> :</label
+              >
+              <input
+                type="text"
+                name="last_name"
+                id="last_name"
+                maxlength="75"
+              />
             </div>
-        
-        </div>
+          </div>
 
-    </body>
+          <br />
 
+          <label for="phone_number"
+            >Votre n° de téléphone
+            <span class="fieldInfo">(facultatif)</span> :</label
+          >
+          <input
+            type="text"
+            name="phone_number"
+            id="phone_number"
+            maxlength="15"
+          />
 
+          <label for="from"
+            >Votre adresse mail
+            <span class="fieldInfo">(afin de vous recontacter)</span> :</label
+          >
+          <input type="email" name="from" id="from" required maxlength="100" />
 
+          <br />
 
-    <script>
+          <!-- Podmielle -->
+          <label for="podmielle" class="podmielle">podmielle</label>
+          <input type="text" name="podmielle" id="podmielle" />
 
-        // Menu burger mobile pop:
-        var sidenav = document.getElementById("mySidenav");
-        var openBtn = document.getElementById("openBtn");
-        var closeBtn = document.getElementById("closeBtn");
+          <label for="message">Votre message :</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="4"
+            required
+            maxlength="2000"
+          ></textarea>
 
-        openBtn.onclick = openNav;
-        closeBtn.onclick = closeNav;
+          <br />
 
-        function openNav() {
-            sidenav.classList.add("active");
-            // pas opti :
-            // document.getElementById("titlesDiv").style.filter = "blur(2px)";
-            // document.getElementById("contactContent").style.filter = "blur(3px)";
+          <!-- reCAPTCHA désactivé  -->
+          <!-- <div class="g-recaptcha" data-sitekey="your_site_key"></div> -->
+
+          <!-- Disclaimer  -->
+          <p class="contactFormDisclaimer">
+            Vos informations personnelles ne seront ni stockées ni partagées.
+            Elles seront uniquement utilisées pour vous recontacter.
+          </p>
+
+          <label for="math"
+            >Combien font <?php echo $_SESSION['number1']; ?> + <?php echo
+            $_SESSION['number2']; ?> ?</label
+          >
+          <input type="text" id="math" name="math" required />
+
+          <br />
+
+          <input class="contactFormSubmitBtn" type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    // Menu burger mobile pop:
+    var sidenav = document.getElementById("mySidenav");
+    var openBtn = document.getElementById("openBtn");
+    var closeBtn = document.getElementById("closeBtn");
+
+    openBtn.onclick = openNav;
+    closeBtn.onclick = closeNav;
+
+    function openNav() {
+      sidenav.classList.add("active");
+      // pas opti :
+      // document.getElementById("titlesDiv").style.filter = "blur(2px)";
+      // document.getElementById("contactContent").style.filter = "blur(3px)";
+    }
+
+    function closeNav() {
+      sidenav.classList.remove("active");
+
+      // document.getElementById("titlesDiv").style.filter = "blur(0px)";
+      // document.getElementById("contactContent").style.filter = "blur(0px)";
+
+      sidenav.classList.add("closeBurgerColorAnimated");
+      setTimeout(function () {
+        sidenav.classList.remove("closeBurgerColorAnimated");
+      }, 500);
+    }
+
+    // WIP click outer navBurger = close() (MOBILE):
+    document
+      .getElementById("contactContent")
+      .addEventListener("click", function (e) {
+        if (document.getElementById("mySidenav").contains(e.target)) {
+          // click dans nav burger
+        } else {
+          // click en dehors nav burger
+          if (sidenav.classList.contains("active")) {
+            closeNav();
+          }
         }
+      });
 
-        function closeNav() {
-            sidenav.classList.remove("active");
+    // DESKTOP hover title = sideNav-desktop:
 
-            // document.getElementById("titlesDiv").style.filter = "blur(0px)";
-            // document.getElementById("contactContent").style.filter = "blur(0px)";
+    // Détection mobile (isMobile JS)
+    var mobileDetection;
+    if (
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i) ||
+      navigator.userAgent.match(/iPad/i) ||
+      navigator.userAgent.match(/iPod/i) ||
+      navigator.userAgent.match(/BlackBerry/i) ||
+      navigator.userAgent.match(/Windows Phone/i)
+    ) {
+      mobileDetection = true;
+    } else {
+      mobileDetection = false;
+    }
 
-            sidenav.classList.add('closeBurgerColorAnimated');
-            setTimeout(function() {
-                sidenav.classList.remove('closeBurgerColorAnimated');
-            }, 500);
-        }
+    if (!mobileDetection) {
+      document
+        .getElementById("titlesDiv")
+        .addEventListener("mouseenter", function () {
+          document.getElementById("mySidenav-desktop").style.left = "0";
+          document.getElementById("mySidenav-desktop").style.opacity = "1";
 
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.add("shadePage-active");
 
-        // WIP click outer navBurger = close() (MOBILE):
-        document.getElementById("contactContent").addEventListener('click', function(e){   
+          document.getElementById("burger-icon-desktop").style.opacity = "0";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(-35px)";
+        });
+      document
+        .getElementById("shapeDetection-navBarre-desktop")
+        .addEventListener("mouseenter", function () {
+          console.log("NETERED");
+          document.getElementById("mySidenav-desktop").style.left = "0";
+          document.getElementById("mySidenav-desktop").style.opacity = "1";
 
-            if (document.getElementById('mySidenav').contains(e.target)){
-                // click dans nav burger
-            } else {
-                // click en dehors nav burger
-                if (sidenav.classList.contains("active")) {
-                    closeNav();
-                }
-            }
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.add("shadePage-active");
+
+          document.getElementById("burger-icon-desktop").style.opacity = "0";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(-35px)";
         });
 
+      document
+        .getElementById("mySidenav-desktop")
+        .addEventListener("mouseleave", function () {
+          document.getElementById("mySidenav-desktop").style.left = "-350px";
+          document.getElementById("mySidenav-desktop").style.opacity = "0";
 
+          document
+            .getElementById("burgerActif-shadePage")
+            .classList.remove("shadePage-active");
 
-
-        // DESKTOP hover title = sideNav-desktop:
-        
-        // Détection mobile (isMobile JS)
-        var mobileDetection;
-        if (navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i)) {
-            mobileDetection = true ;
-        } else {
-            mobileDetection = false ;
-        }
-
-        if (!mobileDetection) {
-
-            document.getElementById('titlesDiv').addEventListener("mouseenter", function() {
-                document.getElementById('mySidenav-desktop').style.left = "0";
-                document.getElementById('mySidenav-desktop').style.opacity = "1";
-
-                document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
-
-                document.getElementById('burger-icon-desktop').style.opacity = "0";
-                document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(-35px)";
-            });
-            document.getElementById('shapeDetection-navBarre-desktop').addEventListener("mouseenter", function() {
-                console.log("NETERED");
-                document.getElementById('mySidenav-desktop').style.left = "0";
-                document.getElementById('mySidenav-desktop').style.opacity = "1";
-
-                document.getElementById("burgerActif-shadePage").classList.add("shadePage-active");
-
-                document.getElementById('burger-icon-desktop').style.opacity = "0";
-                document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(-35px)";
-            });
-
-
-            document.getElementById('mySidenav-desktop').addEventListener("mouseleave", function() {
-                document.getElementById('mySidenav-desktop').style.left = "-350px";
-                document.getElementById('mySidenav-desktop').style.opacity = "0";
-
-                document.getElementById("burgerActif-shadePage").classList.remove("shadePage-active");
-
-                document.getElementById('burger-icon-desktop').style.opacity = "1";
-                document.getElementById('h1titleBurgerDesktop').style.transform = "translateX(0px)";
-            });
-
-        }
-
-
-
-
-    </script>
-
-
-
+          document.getElementById("burger-icon-desktop").style.opacity = "1";
+          document.getElementById("h1titleBurgerDesktop").style.transform =
+            "translateX(0px)";
+        });
+    }
+  </script>
 </html>
-

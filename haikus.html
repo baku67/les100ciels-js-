@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -881,7 +881,7 @@
         </li>
         <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <!-- Heron background: (desktop burger) -->
@@ -1151,7 +1151,7 @@
         <li><a href="haikus.html" class="burgerOngletActif">Ha&iuml;kus</a></li>
         <!-- <li><a href="#" class="navBurgerDisabled">Reproductions</a></li>
               <li><a href="#" class="navBurgerDisabled">Expositions</a></li> -->
-        <li><a href="contact.php">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
 
       <!-- (TODO: changer SVG burger: EZ) -->
@@ -1404,7 +1404,7 @@
         var currentHaiku = findByPropertyValue(
           haikusArray,
           "index",
-          indexHaiku
+          indexHaiku,
         );
 
         document.getElementById("haikuImg").src = currentHaiku.src;
@@ -1418,7 +1418,7 @@
           var targetHaiku = findByPropertyValue(
             haikusArray,
             "index",
-            indexHaiku
+            indexHaiku,
           );
 
           document
